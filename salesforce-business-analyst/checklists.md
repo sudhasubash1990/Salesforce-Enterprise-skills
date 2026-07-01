@@ -1,0 +1,147 @@
+---
+title: Checklists
+module: Salesforce Business Analyst
+category: Root
+document_type: Guide
+version: 1.1.0
+review_status: Approved
+owner: BA Practice Lead
+created_date: 2026-07-02
+last_updated: 2026-07-02
+review_cycle: quarterly
+related_brain_modules: [salesforce-business-analyst/brain/README.md]
+related_knowledge: [salesforce-business-analyst/knowledge/README.md]
+related_templates: [salesforce-business-analyst/templates/README.md]
+related_playbooks: [salesforce-business-analyst/playbooks/README.md]
+related_scenarios: [salesforce-business-analyst/scenarios/README.md]
+related_interview_topics: [salesforce-business-analyst/interview-guide/interview-index.md]
+related_examples: [examples/sample-project/README.md]
+related_documents: [docs/cross-linking-framework.md, ROADMAP.md]
+keywords: [checklists]
+tags: [checklists]
+---
+
+# BA Checklists
+
+Quality gates for Salesforce Business Analyst deliverables.
+
+## BRD Checklist
+
+- [ ] Executive summary with measurable outcomes
+- [ ] In scope and out of scope explicit
+- [ ] Assumptions and constraints listed
+- [ ] Each BR has unique ID, priority, source, owner
+- [ ] Success measures on business requirements
+- [ ] NFRs include security and performance where relevant
+- [ ] Integration overview with direction and frequency
+- [ ] Open questions have owners
+- [ ] No client PII or confidential identifiers
+- [ ] Terminology matches glossary
+
+## User Story Checklist
+
+- [ ] INVEST — story is splittable and valuable alone
+- [ ] Role, goal, benefit present
+- [ ] 3+ testable acceptance criteria
+- [ ] Negative and permission scenarios included
+- [ ] requirement_refs link to BR/FR
+- [ ] Data and integration notes when applicable
+- [ ] Not an epic (fits one sprint)
+- [ ] Definition of Done stated
+
+## Fit-Gap Checklist
+
+- [ ] Every Must/Should requirement classified
+- [ ] Standard options explored before Extend/Gap
+- [ ] Licensing flagged for Gap items
+- [ ] Architect review for Extend/Gap
+- [ ] Decisions recorded for pending items
+
+## Workshop Checklist
+
+- [ ] Objectives and agenda sent 48h ahead
+- [ ] Right SMEs in room (not only managers)
+- [ ] Notes distributed within 24h
+- [ ] Requirements tagged with source
+- [ ] Parking lot items tracked
+
+## Discovery Exit Checklist
+
+- [ ] Stakeholder RACI approved
+- [ ] Top pain points validated by 2+ sources
+- [ ] Systems inventory draft complete
+- [ ] Scope hypothesis agreed with sponsor
+- [ ] RAID log started
+
+## UAT Readiness Checklist
+
+- [ ] Test scenario per Must story
+- [ ] Traceability matrix updated
+- [ ] Test data and users provisioned
+- [ ] Defect severity scale agreed
+- [ ] Sign-off template prepared
+
+## Agent Pre-Delivery Checklist
+
+- [ ] Loaded correct industry scenario
+- [ ] Applied output standards
+- [ ] Assumptions section populated
+- [ ] Open questions listed
+- [ ] Suggested next steps included
+
+## Story Refinement (Grooming) Checklist
+
+- [ ] Story understood by dev without BA present
+- [ ] AC unambiguous to QA
+- [ ] Dependencies identified
+- [ ] Estimation complete or ready
+- [ ] No open fit-gap for Must items
+
+## Related Brain Modules
+
+- [Readme](brain/README.md)
+
+## Related Knowledge
+
+- [Readme](knowledge/README.md)
+
+## Related Templates
+
+- [Readme](templates/README.md)
+
+## Related Playbooks
+
+- [Readme](playbooks/README.md)
+
+## Related Industry Scenarios
+
+- [Readme](scenarios/README.md)
+
+## Related Interview Topics
+
+- [Interview Index](interview-guide/interview-index.md)
+
+## Related Examples
+
+- [Readme](../examples/sample-project/README.md)
+
+## Related Documents
+
+- [Cross Linking Framework](../docs/cross-linking-framework.md)
+- [Roadmap](../ROADMAP.md)
+
+## Traceability
+
+**Upstream:** — | **Downstream:** All skills | **Validation:** ROADMAP alignment
+
+## Navigation
+
+- **Previous:** [Changelog](changelog.md)
+- **Next:** [Interview Guide](interview-guide.md)
+- **See Also:** [skill.md](skill.md)
+
+## Version History
+
+| Version | Date | Author | Summary |
+|---------|------|--------|---------|
+| 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |

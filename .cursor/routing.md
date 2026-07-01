@@ -1,0 +1,181 @@
+---
+title: Routing
+module: Salesforce Business Analyst
+category: Governance
+document_type: Framework
+version: 1.1.0
+review_status: Approved
+owner: BA Practice Lead
+created_date: 2026-07-02
+last_updated: 2026-07-02
+review_cycle: quarterly
+related_knowledge: [salesforce-business-analyst/knowledge/README.md]
+related_templates: [salesforce-business-analyst/templates/README.md]
+related_playbooks: [salesforce-business-analyst/playbooks/README.md]
+related_scenarios: [salesforce-business-analyst/scenarios/README.md]
+related_interview_topics: [salesforce-business-analyst/interview-guide/interview-index.md]
+related_examples: [examples/sample-project/README.md]
+related_documents: [docs/metadata-schema.md, docs/cross-linking-framework.md]
+keywords: [routing]
+tags: [routing]
+---
+
+# Agent Routing
+
+Decision tree for routing user requests to the correct skill, playbook, or template.
+
+## Primary Router
+
+```
+User Request
+    │
+    ├─ Any BA task (start) ─────────────────────────► skill.md + brain/identity.md
+    │
+    ├─ Analyze requirement / recommend solution ────► brain/reasoning-framework.md
+    │       └─ brain/decision-framework.md + playbooks/fit-gap-analysis.md
+    │
+    ├─ Requirements / BRD / business needs ──────────► skill.md + brain/output-framework.md
+    │       └─ templates/brd-template.md
+    │
+    ├─ Functional requirements / FRD ───────────────► brain/output-framework.md
+    │       └─ templates/frd-template.md
+    │
+    ├─ User stories / backlog / acceptance criteria ► skill.md + brain/output-framework.md
+    │       └─ templates/user-story-template.md
+    │
+    ├─ RAID / risks / assumptions / dependencies ───► templates/raid-log-template.md
+    │
+    ├─ Traceability / RTM ──────────────────────────► templates/traceability-matrix-template.md
+    │
+    ├─ Discovery / workshops / stakeholder interviews ► brain/enterprise-behaviors.md
+    │       └─ playbooks/discovery-workshop-playbook.md + templates/workshop-agenda-template.md
+    │
+    ├─ Fit-gap / solution options / build vs buy ───► brain/decision-framework.md
+    │       └─ playbooks/gap-analysis-playbook.md + solution-recommendation-playbook.md
+    │
+    ├─ Validate output / review draft ──────────────► brain/validation-framework.md
+    │       └─ brain/anti-hallucination.md + checklists.md
+    │
+    ├─ UAT / test scenarios / sign-off ─────────────► playbooks/uat-playbook.md
+    │
+    ├─ Industry-specific context ───────────────────► scenarios/<industry>.md
+    │
+    ├─ Interview prep / hiring / mock interview / capability assessment ► interview-guide/interview-index.md
+    │       └─ interview-guide/<topic>.md per round type
+    │
+    ├─ Prompt engineering for BA tasks ─────────────► prompts.md
+    │
+    └─ Repository / governance / standards ─────────► docs/ or shared/
+```
+
+## Keyword Triggers
+
+| Keywords | Route To |
+|----------|----------|
+| BRD, business requirements, AS-IS, TO-BE, process | `skill.md` + `brain/output-framework.md` + `templates/brd-template.md` |
+| FRD, functional requirements, system behaviour | `brain/output-framework.md` + `templates/frd-template.md` |
+| user story, backlog, sprint, acceptance criteria | `skill.md` + `templates/user-story-template.md` |
+| RAID, risk, assumption, issue, dependency | `templates/raid-log-template.md` |
+| traceability, RTM, req to test mapping | `templates/traceability-matrix-template.md` |
+| analyze requirement, recommend approach | `brain/reasoning-framework.md` + `brain/decision-framework.md` |
+| validate, review draft, quality check | `brain/validation-framework.md` + `checklists.md` |
+| workshop, discovery, kickoff, stakeholder map | `playbooks/discovery-workshop-playbook.md` |
+| fit-gap, gap analysis, standard vs custom | `playbooks/gap-analysis-playbook.md` |
+| sprint planning, backlog grooming | `playbooks/sprint-planning-playbook.md`, `backlog-grooming-playbook.md` |
+| go-live, production readiness | `playbooks/production-readiness-playbook.md` |
+| utilities, retail, telecom, insurance, banking scenario | `scenarios/<industry>/` per [scenarios/README.md](../salesforce-business-analyst/scenarios/README.md) |
+| template, brd, frd, epic, rtm | `templates/README.md` |
+| UAT, test case, sign-off, defect | `playbooks/uat-playbook.md` |
+| banking, insurance, healthcare, manufacturing, government | `scenarios/<matching-industry>.md` |
+| glossary, terminology, definition | `shared/glossary.md` |
+| prioritization, moscow, kano, wsjf | `knowledge/moscow-prioritization.md` or `knowledge/prioritization-techniques.md` |
+| integration, api, middleware | `knowledge/integration-patterns.md` |
+| data migration, cutover | `knowledge/data-migration.md` |
+| security, sharing, permissions | `knowledge/security-model.md` |
+| stakeholder, raci | `knowledge/stakeholder-analysis.md` |
+| risk, assumption, constraint, dependency | `knowledge/risk-management.md`, `templates/raid-log-template.md` |
+| bpmn, process map | `knowledge/process-mapping.md`, `knowledge/bpmn.md` |
+| governance, release management | `knowledge/governance-framework.md`, `knowledge/release-management.md` |
+| ai assisted, responsible ai | `knowledge/ai-in-business-analysis.md` |
+| mock interview, hiring, behavioral, case study | `interview-guide/interview-index.md` |
+| interview prep, screening, whiteboard | `interview-guide/` per topic |
+| validate repository, certification, benchmark | `validation/README.md` |
+| maturity, competency, career level | `ba-maturity-model.md` |
+| learning path, onboarding, career | `learning-paths/README.md` |
+| skill guide, enterprise guide, adoption | `skill-guide.md` |
+| architecture, solution design (high-level) | `docs/architecture.md` + `shared/salesforce-capability-map.md` |
+
+## Industry Routing
+
+| Industry Signal | Scenario File |
+|-----------------|---------------|
+| KYC, AML, policy, claims, underwriting | `scenarios/financial-services.md` |
+| patient, HIPAA, provider, care plan | `scenarios/healthcare.md` |
+| manufacturing, dealer, supply chain | `scenarios/manufacturing.md` |
+| utilities, meter, outage, tariff | `scenarios/utilities/` |
+| retail, omnichannel, loyalty | `scenarios/retail/` |
+| telecom, provisioning, activation | `scenarios/telecom/` |
+| insurance, fnol, underwriting | `scenarios/insurance/` |
+| banking, kyc, loan | `scenarios/banking/` |
+| constituent, grant, case management, FOIA | `scenarios/public-sector.md` |
+
+## Multi-Skill Requests
+
+When a request spans BA + other disciplines:
+
+1. Produce BA artifacts first (requirements, stories)
+2. Flag architecture decisions as **open questions** for Solution Architect review
+3. Do not produce technical design unless explicitly asked
+
+## Fallback
+
+If no route matches, read `salesforce-business-analyst/skill.md` and ask one clarifying question about deliverable type and industry context.
+
+## Related Brain Modules
+
+N/A — no direct relationships for this document type.
+
+## Related Knowledge
+
+- [Readme](../salesforce-business-analyst/knowledge/README.md)
+
+## Related Templates
+
+- [Readme](../salesforce-business-analyst/templates/README.md)
+
+## Related Playbooks
+
+- [Readme](../salesforce-business-analyst/playbooks/README.md)
+
+## Related Industry Scenarios
+
+- [Readme](../salesforce-business-analyst/scenarios/README.md)
+
+## Related Interview Topics
+
+- [Interview Index](../salesforce-business-analyst/interview-guide/interview-index.md)
+
+## Related Examples
+
+- [Readme](../examples/sample-project/README.md)
+
+## Related Documents
+
+- [Metadata Schema](../docs/metadata-schema.md)
+- [Cross Linking Framework](../docs/cross-linking-framework.md)
+
+## Traceability
+
+**Upstream:** — | **Downstream:** All repository documents | **Validation:** validate_metadata.py
+
+## Navigation
+
+- **Previous:** [Instructions](instructions.md)
+- **Next:** [Rules](rules.md)
+- **See Also:** [cross-linking-framework](../docs/cross-linking-framework.md)
+
+## Version History
+
+| Version | Date | Author | Summary |
+|---------|------|--------|---------|
+| 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |

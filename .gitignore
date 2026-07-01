@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Cursor (keep rules; ignore local plans/cache)
+.cursor/plans/
+
+# Internal implementation specs (source docx / extracts — not for public repo)
+zzz_ImplmentationGuide/
+
+# Sprint spec extracts anywhere in repo
+**/Sprint * Specification-extract.txt
+**/sprint*-extract.txt
+
+# Extracted spec scratch files
+*.extracted.txt
+*.docx.extracted.txt

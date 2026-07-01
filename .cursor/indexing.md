@@ -1,0 +1,170 @@
+---
+title: Indexing
+module: Salesforce Business Analyst
+category: Governance
+document_type: Framework
+version: 1.1.0
+review_status: Approved
+owner: BA Practice Lead
+created_date: 2026-07-02
+last_updated: 2026-07-02
+review_cycle: quarterly
+related_knowledge: [salesforce-business-analyst/knowledge/README.md]
+related_templates: [salesforce-business-analyst/templates/README.md]
+related_playbooks: [salesforce-business-analyst/playbooks/README.md]
+related_scenarios: [salesforce-business-analyst/scenarios/README.md]
+related_interview_topics: [salesforce-business-analyst/interview-guide/interview-index.md]
+related_examples: [examples/sample-project/README.md]
+related_documents: [docs/metadata-schema.md, docs/cross-linking-framework.md]
+keywords: [indexing]
+tags: [indexing]
+---
+
+# Indexing Guide
+
+Instructions for indexing this repository in Cursor and other AI tooling.
+
+## Index Priority
+
+Files listed first should receive higher retrieval weight.
+
+### Tier 1 — Core Skill (always index)
+
+```
+salesforce-business-analyst/skill.md
+salesforce-business-analyst/brain/README.md
+salesforce-business-analyst/brain/reasoning-framework.md
+salesforce-business-analyst/brain/validation-framework.md
+salesforce-business-analyst/brain/decision-framework.md
+salesforce-business-analyst/brain/output-framework.md
+salesforce-business-analyst/knowledge/README.md
+salesforce-business-analyst/knowledge/requirement-types.md
+salesforce-business-analyst/knowledge/user-stories.md
+salesforce-business-analyst/templates/README.md
+salesforce-business-analyst/playbooks/README.md
+salesforce-business-analyst/scenarios/README.md
+salesforce-business-analyst/interview-guide/README.md
+salesforce-business-analyst/interview-guide/interview-index.md
+salesforce-business-analyst/validation/README.md
+salesforce-business-analyst/skill-guide.md
+salesforce-business-analyst/ba-maturity-model.md
+salesforce-business-analyst/learning-paths/README.md
+salesforce-business-analyst/checklists.md
+salesforce-business-analyst/prompts.md
+shared/glossary.md
+shared/output-standards.md
+.cursor/routing.md
+```
+
+### Tier 2 — Brain, Playbooks, Templates, Interview
+
+```
+salesforce-business-analyst/brain/*
+salesforce-business-analyst/playbooks/*
+salesforce-business-analyst/templates/*
+salesforce-business-analyst/knowledge/*
+salesforce-business-analyst/interview-guide/*
+salesforce-business-analyst/validation/*
+salesforce-business-analyst/learning-paths/*
+salesforce-business-analyst/implementation/*
+```
+
+### Tier 3 — Scenarios and Examples
+
+```
+salesforce-business-analyst/scenarios/*
+salesforce-business-analyst/examples/*
+examples/*
+```
+
+### Tier 4 — Governance (reference)
+
+```
+docs/*
+shared/*
+.cursor/instructions.md
+.cursor/rules.md
+```
+
+## Cursor-Specific Setup
+
+1. Add this repository as the workspace root
+2. Enable codebase indexing for the full repository
+3. Optionally add a project rule pointing to `.cursor/instructions.md`
+4. For skill auto-discovery, symlink or copy `salesforce-business-analyst/skill.md` to `.cursor/skills/salesforce-business-analyst/SKILL.md` (planned in roadmap)
+
+## Chunking Recommendations
+
+- Keep skill entry files under 500 lines for optimal context window usage
+- Playbooks and knowledge files may be longer; they are loaded on demand via links
+- Do not merge all playbooks into a single file
+
+## Metadata Tags for Search
+
+When adding new content, include searchable tags in frontmatter per [docs/metadata-schema.md](../docs/metadata-schema.md):
+
+```yaml
+tags: [salesforce, business-analyst, discovery, financial-services, service-cloud]
+salesforce_cloud: Sales Cloud, Service Cloud, Experience Cloud
+related_knowledge: [salesforce-business-analyst/knowledge/topic.md]
+related_interview_topics: [salesforce-business-analyst/interview-guide/topic.md]
+```
+
+Use `scripts/validate_metadata.py` after adding documents.
+
+## Exclusions
+
+Do not index:
+
+- Binary files
+- `.git/` internals
+- Local environment files (`.env`, credentials)
+
+## Related Brain Modules
+
+N/A — no direct relationships for this document type.
+
+## Related Knowledge
+
+- [Readme](../salesforce-business-analyst/knowledge/README.md)
+
+## Related Templates
+
+- [Readme](../salesforce-business-analyst/templates/README.md)
+
+## Related Playbooks
+
+- [Readme](../salesforce-business-analyst/playbooks/README.md)
+
+## Related Industry Scenarios
+
+- [Readme](../salesforce-business-analyst/scenarios/README.md)
+
+## Related Interview Topics
+
+- [Interview Index](../salesforce-business-analyst/interview-guide/interview-index.md)
+
+## Related Examples
+
+- [Readme](../examples/sample-project/README.md)
+
+## Related Documents
+
+- [Metadata Schema](../docs/metadata-schema.md)
+- [Cross Linking Framework](../docs/cross-linking-framework.md)
+
+## Traceability
+
+**Upstream:** — | **Downstream:** All repository documents | **Validation:** validate_metadata.py
+
+## Navigation
+
+- **Previous:** —
+- **Next:** [Instructions](instructions.md)
+- **See Also:** [cross-linking-framework](../docs/cross-linking-framework.md)
+
+## Version History
+
+| Version | Date | Author | Summary |
+|---------|------|--------|---------|
+| 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |
