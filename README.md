@@ -3,7 +3,7 @@ title: Readme
 module: Salesforce Business Analyst
 category: Root
 document_type: Guide
-version: 1.1.0
+version: 1.3.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
@@ -23,7 +23,7 @@ tags: [README]
 
 # Salesforce Enterprise Skills
 
-A curated, enterprise-grade knowledge repository for Salesforce consulting disciplines. This repository packages decades of delivery experience into reusable skills, playbooks, templates, and governance artifacts that AI agents and human practitioners can apply consistently across programs.
+A curated, enterprise-grade knowledge repository for Salesforce consulting disciplines—designed for **Cursor**, **Claude**, and human practitioners. Packages delivery experience into reusable skills, playbooks, templates, and governance artifacts for requirements documentation, process mapping, gap analysis, and stakeholder analysis.
 
 ## Purpose
 
@@ -38,13 +38,14 @@ Salesforce programs fail more often from unclear requirements, weak traceability
 | `shared/` | Cross-discipline glossary, taxonomy, and enterprise standards |
 | `examples/` | Reference artifacts (BRDs, user stories, workshops, projects) |
 | `salesforce-business-analyst/` | Primary BA skill, playbooks, templates, and scenarios |
+| `scripts/` | Metadata enrichment and repository validation |
 
 ## Getting Started
 
 ### For Human Practitioners
 
 1. Read [docs/vision.md](docs/vision.md) for strategic intent.
-2. Review [shared/consulting-principles.md](shared/consulting-principles.md).
+2. Review [salesforce-business-analyst/skill-guide.md](salesforce-business-analyst/skill-guide.md) for the full implementation guide.
 3. Open [salesforce-business-analyst/skill.md](salesforce-business-analyst/skill.md) for the core BA workflow.
 4. Use templates in `salesforce-business-analyst/templates/` for deliverables.
 
@@ -58,11 +59,11 @@ Salesforce programs fail more often from unclear requirements, weak traceability
 
 | Skill | Status | Description |
 |-------|--------|-------------|
-| Salesforce Business Analyst | Active (v0.6.0) | Brain, knowledge, templates, playbooks, industry scenarios |
+| Salesforce Business Analyst | Active (v1.3.0) | Brain, knowledge, templates, playbooks, scenarios, interview guide, validation, learning paths |
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). All contributions must follow [docs/markdown-standards.md](docs/markdown-standards.md) and pass the [docs/quality-framework.md](docs/quality-framework.md) checklist.
+See [CONTRIBUTING.md](CONTRIBUTING.md). All contributions must follow [docs/markdown-standards.md](docs/markdown-standards.md) and pass `python scripts/validate_repository.py`.
 
 ## License
 
@@ -115,4 +116,5 @@ MIT — see [LICENSE](LICENSE).
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.3.0 | 2026-07-02 | BA Practice Lead | Sprints 8–9 validation and continuous knowledge management |
 | 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |
