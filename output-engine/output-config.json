@@ -1,0 +1,24 @@
+{
+  "inputFolder": "outputs",
+  "defaultFormat": "markdown",
+  "recursiveScan": true,
+  "oneFormatPerFile": true,
+  "routingMode": "intelligent",
+  "formats": ["docx", "pptx", "xlsx", "pdf"],
+  "generate": {
+    "word": true,
+    "pdf": true,
+    "ppt": true,
+    "excel": true,
+    "html": false
+  },
+  "saveBesideSource": true,
+  "overwrite": false,
+  "parallelWorkers": 4,
+  "retryCount": 2,
+  "generateTOC": true,
+  "generateCoverPage": true,
+  "theme": "Enterprise",
+  "companyName": "Accenture",
+  "loggingLevel": "INFO"
+}

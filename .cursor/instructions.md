@@ -68,6 +68,16 @@ For onboarding, career progression, or competency tasks:
 - Flag out-of-scope items explicitly
 - Never invent regulatory requirements—cite the regulation or mark as "to be confirmed with Legal/Compliance"
 
+## Output Engine (Mandatory Post-Write)
+
+After writing or updating any deliverable under `outputs/`, run:
+
+```powershell
+python output-engine/convert.py --file <path-to.md>
+```
+
+Confirm the converted office file exists beside the Markdown source. See [output-generation.md](output-generation.md) and [output-engine/README.md](../output-engine/README.md).
+
 ## Salesforce-Specific Defaults
 
 - Prefer standard objects and features before custom objects

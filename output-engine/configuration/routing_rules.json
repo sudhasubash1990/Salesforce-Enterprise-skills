@@ -1,0 +1,82 @@
+{
+  "description": "Generic format routing rules applied when no project override matches",
+  "rules": [
+    {
+      "match": "document_type_contains",
+      "value": "Presentation",
+      "format": "pptx"
+    },
+    {
+      "match": "document_type_in",
+      "value": ["BRD", "FRD", "NFR", "Business Requirements Document"],
+      "format": "pdf"
+    },
+    {
+      "match": "document_type_in",
+      "value": [
+        "RAID Log",
+        "RTM",
+        "Test Scenarios",
+        "Checklist",
+        "Epic Backlog",
+        "Feature Backlog",
+        "User Story",
+        "Cost-Benefit Analysis",
+        "Risk Register",
+        "Assumption Log",
+        "Dependency Log",
+        "Decision Log"
+      ],
+      "format": "xlsx"
+    },
+    {
+      "match": "filename_pattern",
+      "value": "*-log.md",
+      "format": "xlsx"
+    },
+    {
+      "match": "filename_pattern",
+      "value": "*-checklist.md",
+      "format": "xlsx"
+    },
+    {
+      "match": "filename_pattern",
+      "value": "epic-*-stories.md",
+      "format": "xlsx"
+    },
+    {
+      "match": "filename_equals",
+      "value": "test-scenarios.md",
+      "format": "xlsx"
+    },
+    {
+      "match": "filename_equals",
+      "value": "rtm.md",
+      "format": "xlsx"
+    },
+    {
+      "match": "filename_equals",
+      "value": "brd.md",
+      "format": "pdf"
+    },
+    {
+      "match": "filename_equals",
+      "value": "frd.md",
+      "format": "pdf"
+    },
+    {
+      "match": "filename_equals",
+      "value": "nfr.md",
+      "format": "pdf"
+    },
+    {
+      "match": "filename_contains",
+      "value": "presentation",
+      "format": "pptx"
+    },
+    {
+      "match": "default",
+      "format": "docx"
+    }
+  ]
+}

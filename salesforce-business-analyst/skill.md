@@ -260,6 +260,14 @@ Map stories to test scenarios via [playbooks/uat-playbook.md](playbooks/uat-play
 
 All deliverables follow [shared/output-standards.md](../shared/output-standards.md).
 
+After generating each markdown artifact under `outputs/`, run the Output Engine:
+
+```powershell
+python output-engine/convert.py --file <path-to.md>
+```
+
+Routing is automatic (one office format per file). See [output-engine/README.md](../output-engine/README.md).
+
 End every generation with **Assumptions**, **Open Questions**, and **Suggested Next Steps**.
 
 ## Brain Module Index
