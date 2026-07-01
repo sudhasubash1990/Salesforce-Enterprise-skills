@@ -24,3 +24,6 @@ zzz_ImplmentationGuide/
 # Extracted spec scratch files
 *.extracted.txt
 *.docx.extracted.txt
+
+# output files
+outputs/
