@@ -30,3 +30,9 @@ outputs/
 
 # AI productive rules
 .cursor/rules/ai-productivity-ADO.mdc
+
+#mcp server
+.cursor/mcp.json
+
+#gitignore
+
