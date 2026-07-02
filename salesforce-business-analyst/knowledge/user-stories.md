@@ -3,7 +3,7 @@ title: User Stories
 module: Salesforce Business Analyst
 category: Knowledge
 document_type: Knowledge Article
-version: 0.3.0
+version: 0.4.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
@@ -12,7 +12,7 @@ review_cycle: quarterly
 difficulty: foundational
 industry: all
 related_brain_modules: [salesforce-business-analyst/brain/reasoning-framework.md, salesforce-business-analyst/brain/output-framework.md]
-related_knowledge: [salesforce-business-analyst/knowledge/README.md]
+related_knowledge: [salesforce-business-analyst/knowledge/README.md, salesforce-business-analyst/knowledge/ado-backlog-integration.md]
 related_templates: [salesforce-business-analyst/templates/README.md]
 related_playbooks: [salesforce-business-analyst/playbooks/README.md]
 related_scenarios: [salesforce-business-analyst/scenarios/README.md]
@@ -64,6 +64,31 @@ Stories must address permissions, record types, sharing, mobile, integration tou
 
 **Splitting techniques:** workflow steps, business rules, interface channels, CRUD variations, data variations.
 
+## Estimation (BA Role)
+
+Story points are a **relative** size measure (complexity + effort + uncertainty)—**not** hours, days, or months. The delivery team assigns final story points at backlog refinement / planning poker.
+
+| BA provides | BA does not provide |
+|-------------|---------------------|
+| T-shirt size (XS–XL) | Final story-point number (unless user explicitly requests indicative value) |
+| Estimation-input table (approach, complexity, risk, dependencies) | Calendar duration or hour estimates |
+| Splittability recommendation if story feels large | Velocity or sprint commitment |
+
+**T-shirt guidance:**
+
+| T-shirt | Typical signal |
+|---------|----------------|
+| S | Single object, few fields, no automation |
+| M | One workflow + declarative automation + reporting (fits one sprint) |
+| L | Multiple integrations, sharing complexity, or significant stakeholder iteration |
+| XL | Split or spike first |
+
+For ADO publishing rules, see [ado-backlog-integration.md](ado-backlog-integration.md).
+
+## Deliverables Ownership
+
+Distinguish **BA deliverables** (story, AC, business rules, estimation inputs) from **implementation team deliverables** (metadata, Flows, layouts, security, test evidence). Every story must include a **Deliverables Expected (Implementation Team)** section listing Salesforce build artifacts implied by the story. See [brain/identity.md](../brain/identity.md) scope table.
+
 ## Key Terminology
 
 | Term | Definition |
@@ -88,6 +113,9 @@ Story mapping for release planning—see [epic-design.md](epic-design.md).
 - Epics labeled as user stories
 - Missing benefit clause
 - No link to parent requirement
+- Assigning exact story points without team refinement
+- Omitting implementation deliverables (only listing BA artifacts)
+- Acceptance criteria as unreadable paragraphs instead of nested bullets (especially in ADO)
 
 ## Anti-Patterns
 
@@ -119,6 +147,9 @@ Always use [../templates/user-story-template.md](../templates/user-story-templat
 - [ ] INVEST pass
 - [ ] 3+ testable AC
 - [ ] requirement_refs present
+- [ ] T-shirt size and estimation inputs documented
+- [ ] Deliverables Expected (Implementation Team) listed
+- [ ] Story points deferred to team unless explicitly requested as indicative
 
 ## Related Brain Modules
 
@@ -168,4 +199,5 @@ Always use [../templates/user-story-template.md](../templates/user-story-templat
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 0.4.0 | 2026-07-02 | BA Practice Lead | Estimation discipline, deliverable ownership, ADO lessons |
 | 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |

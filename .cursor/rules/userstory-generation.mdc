@@ -1,7 +1,4 @@
 ---
-alwaysApply: true
----
----
 description: Generate Azure DevOps (ADO) compliant User Stories for Salesforce/Fusion projects
 globs:
 alwaysApply: true
@@ -9,16 +6,26 @@ alwaysApply: true
 
 # Purpose
 
-Generate complete and production-ready Azure DevOps (ADO) User Stories following Agile best practices.
+Generate complete and production-ready Azure DevOps (ADO) User Stories following Agile best practices and the Salesforce BA skill pack.
+
+**Mandatory reads before generating:**
+
+- [salesforce-business-analyst/skill.md](../salesforce-business-analyst/skill.md) — Step 5 User Stories
+- [salesforce-business-analyst/knowledge/user-stories.md](../salesforce-business-analyst/knowledge/user-stories.md)
+- [salesforce-business-analyst/knowledge/acceptance-criteria.md](../salesforce-business-analyst/knowledge/acceptance-criteria.md)
+- [salesforce-business-analyst/knowledge/ado-backlog-integration.md](../salesforce-business-analyst/knowledge/ado-backlog-integration.md)
+- [salesforce-business-analyst/brain/anti-hallucination.md](../salesforce-business-analyst/brain/anti-hallucination.md) — estimation red flags
+- [salesforce-business-analyst/templates/user-story-template.md](../salesforce-business-analyst/templates/user-story-template.md)
 
 The generated user story must be ready for:
+
 - Sprint Planning
 - Backlog Refinement
 - Development
 - QA Test Case Design
 - UAT Execution
 
-Do not generate implementation details unless explicitly requested.
+Do not generate Apex/LWC implementation details unless explicitly requested.
 
 # User Story Structure
 
@@ -47,6 +54,7 @@ Examples:
 - Billing - Create Invoice Adjustment
 - Contract Management - Amend Existing Contract
 - Account Management - Update Customer Status
+- Complaint Management - Record Customer Complaints in Service Cloud
 
 Title must be concise and business-focused.
 
@@ -75,23 +83,9 @@ Format:
 I want to <action>
 ```
 
-Examples:
-
-- I want to create invoice adjustments
-- I want to update contract details
-- I want to view customer billing history
-
 ## So That
 
-Describe the business value.
-
-Examples:
-
-- So that billing records remain accurate.
-- So that customer information is up to date.
-- So that contract amendments are processed efficiently.
-
-Must focus on business outcome.
+Describe the business value. Must focus on business outcome.
 
 ## Description
 
@@ -99,8 +93,8 @@ Provide detailed business requirements.
 
 Include:
 
-- Current process
-- Future process
+- Current process (AS-IS)
+- Future process (TO-BE)
 - Functional expectations
 - Business rules
 - Dependencies
@@ -110,36 +104,40 @@ Use bullet points where possible.
 
 # Acceptance Criteria
 
-Generate acceptance criteria in Gherkin format.
+Generate acceptance criteria in **Gherkin format** using **nested bullets** (not dense paragraphs). Each scenario must be scannable in ADO and backlog tools.
 
-Use numbering.
+Minimum: 3 AC covering happy path, validation/error, and permission (when applicable).
 
-Format:
+## Format (markdown / ADO Description)
 
-### AC1
+```markdown
+## Acceptance Criteria
 
-```gherkin
-Given
-When
-Then
+- **AC1 — [Scenario name]:**
+  - **Given** [precondition]
+  - **When** [action]
+  - **Then** [observable outcome]
+  - **And** [optional additional outcome]
+- **AC2 — [Validation / error path]:**
+  - **Given** …
+  - **When** …
+  - **Then** …
+- **AC3 — [Permission scenario]:**
+  - **Given** …
+  - **When** …
+  - **Then** …
 ```
 
-### AC2
+## Format (ADO HTML — nested lists)
 
-```gherkin
-Given
-When
-Then
-```
+Use nested `<ul>` / `<li>` with **Given**, **When**, **Then**, **And** labels per scenario.
 
 Requirements:
 
 - Every acceptance criterion must be testable.
-- Avoid technical implementation details.
-- Cover happy path.
-- Cover validation scenarios.
-- Cover error scenarios.
-- Cover permission scenarios if applicable.
+- Avoid technical implementation details (no Apex class names).
+- Cover happy path, validation, error, and permission scenarios where applicable.
+- Do **not** use single-paragraph AC blocks.
 
 # Business Rules
 
@@ -149,15 +147,9 @@ Format:
 
 ## Business Rules
 
-BR1:
-BR2:
-BR3:
-
-Examples:
-
-- BR1: Only active customers can create invoices.
-- BR2: Billing adjustments require manager approval.
-- BR3: Contract end date cannot precede start date.
+- BR1: …
+- BR2: …
+- BR3: …
 
 # Field Requirements
 
@@ -170,59 +162,122 @@ If fields are mentioned, generate a table.
 
 For Salesforce/Fusion projects always identify impacted objects.
 
-Format:
-
-## Objects Impacted
-
 | Object | Action |
-|----------|----------|
+|--------|--------|
 | Account | Update |
-| Contract | Create |
-| Invoice | Update |
 
-Actions:
-
-- Create
-- Update
-- Delete
-- Read
+Actions: Create, Update, Delete, Read
 
 # Security and Permissions
 
-Identify affected personas and permissions.
-
-Format:
-
 | Persona | Create | Read | Update | Delete |
-|----------|----------|----------|----------|----------|
+|---------|--------|------|--------|--------|
+
+# Estimation (BA Input — Team to Confirm at Refinement)
+
+**Do not assign final story points unless the user explicitly requests an indicative value.**
+
+Story points measure **relative size** (complexity + effort + uncertainty)—**not** hours, days, or months. The delivery team assigns final story points at backlog refinement / planning poker.
+
+| BA provides | BA does not provide |
+|-------------|---------------------|
+| T-shirt size (XS/S/M/L/XL) | Final story-point number (unless user asks for indicative) |
+| Estimation-input table | Calendar duration or hour estimates |
+
+Required content:
+
+```markdown
+## Estimation (BA Input — Team to Confirm at Refinement)
+
+**T-shirt size:** [XS / S / M / L / XL]
+
+**Story points:** Not finalized — delivery team to assign during backlog refinement / planning poker.
+
+**Note:** Story points are a relative measure of complexity, effort, and uncertainty — not hours, days, or months.
+
+| Estimation input | Assessment |
+|------------------|------------|
+| Solution approach | Standard / Config / Extend (from fit-gap) |
+| Complexity | Low / Medium / High |
+| Uncertainty / risk | [TBC items] |
+| Dependencies | [Upstream / downstream] |
+| Splittability | [Can split if oversized] |
+```
+
+**ADO field rule:** Leave `Microsoft.VSTS.Scheduling.StoryPoints` empty unless user explicitly requests a provisional value—and label it *indicative, pending planning poker* in Description.
+
+# Deliverables Expected (Implementation Team)
+
+Distinguish **BA deliverables** (this story document) from **implementation team deliverables** (Salesforce build artifacts).
+
+Every story must include a section listing what the **implementation team** will produce, for example:
+
+- Data model (record types, fields, picklists)
+- Page layout / UX
+- Automation (Flows, email templates, defaults)
+- Reports / dashboards
+- Security (profiles, permission sets)
+- Sandbox test evidence against AC; release notes
+
+Do not conflate BA artifact authorship with dev/admin build work. See [brain/identity.md](../salesforce-business-analyst/brain/identity.md) scope table.
+
+# Definition of Done
+
+- [ ] All acceptance criteria (AC1–ACn) validated in target sandbox
+- [ ] Implementation deliverables deployed and tested
+- [ ] Security review for new fields/objects/permissions
+- [ ] Test scenarios linked where applicable
+- [ ] Release notes drafted
+- [ ] Story points assigned by delivery team at refinement (if not already done)
 
 # Dependencies
 
-List:
-
-- Upstream dependencies
-- Downstream dependencies
-- Integration dependencies
-- Batch dependencies
+List upstream, downstream, integration, and batch dependencies.
 
 # Assumptions
 
-List assumptions separately.
+List assumptions separately with IDs where helpful (A1, A2, …).
 
 # Out of Scope
 
 Clearly identify items not included in the story.
+
+# Azure DevOps Publishing Rules
+
+When creating work items in ADO:
+
+| Work item type | Rule |
+|----------------|------|
+| **User Story** | Populate `Microsoft.VSTS.Common.AcceptanceCriteria` and Description |
+| **Task** (story-as-task) | **Always embed Acceptance Criteria in `System.Description`** — AC field may not render on Task forms even when populated |
+
+**Field mapping:**
+
+| Content | ADO field |
+|---------|-----------|
+| Title | `System.Title` |
+| Full story pack (incl. Estimation, Deliverables, AC) | `System.Description` (HTML) |
+| Acceptance criteria | `Microsoft.VSTS.Common.AcceptanceCriteria` (HTML nested bullets) + duplicate in Description for Task |
+| Priority | `Microsoft.VSTS.Common.Priority` |
+| Story points | `Microsoft.VSTS.Scheduling.StoryPoints` — empty unless user requests indicative value |
+| Tags | `System.Tags` (semicolon-separated) |
+
+- Multi-line ADO fields use **HTML** (`<h2>`, `<ul>`, `<table>`)—no CDATA.
+- Return the **real work item ID** on success or the **actual API error** on failure—never fabricate IDs.
 
 # Testability Review
 
 Before final output verify:
 
 - Every requirement has acceptance criteria.
-- Acceptance criteria are testable.
+- Acceptance criteria are testable and in nested bullet format.
 - Business rules are defined.
 - Personas are identified.
 - Object impacts are identified.
-- Dependencies are documented.
+- Dependencies documented.
+- T-shirt size and estimation inputs present; story points deferred unless requested.
+- Deliverables Expected (Implementation Team) section present.
+- Definition of Done stated.
 
 # Output Format
 
@@ -239,10 +294,13 @@ Always generate in this exact sequence:
 9. Field Requirements
 10. Objects Impacted
 11. Security and Permissions
-12. Dependencies
-13. Assumptions
-14. Out of Scope
-15. Testability Review
+12. Estimation (BA Input — Team to Confirm at Refinement)
+13. Deliverables Expected (Implementation Team)
+14. Definition of Done
+15. Dependencies
+16. Assumptions
+17. Out of Scope
+18. Testability Review
 
 # Validation Rules
 
@@ -258,21 +316,19 @@ Instead ask clarification questions.
 
 Whenever Salesforce/Fusion requirements are detected:
 
-- Identify impacted standard objects.
-- Identify impacted custom objects.
-- Identify automation impacts.
-- Identify batch process impacts.
-- Identify integration impacts.
-- Identify security model impacts.
-- Identify reporting impacts.
+- Identify impacted standard and custom objects.
+- Identify automation, batch, integration, security, and reporting impacts.
+- Prefer standard objects and declarative configuration before custom build (fit-gap: Standard / Config / Extend / Gap / Defer).
 
 # Quality Gate
 
 A user story is considered complete only if:
 
 - INVEST principle is satisfied.
-- Acceptance criteria are testable.
+- Acceptance criteria are testable (nested Given/When/Then bullets).
 - Business value is clear.
 - No ambiguity exists.
 - QA can derive test cases directly from the story.
-- Development team can estimate effort without additional clarification.
+- Development team can estimate effort from estimation inputs without additional BA clarification.
+- BA deliverables are distinguished from implementation deliverables.
+- Estimation follows anti-hallucination rules (no unsanctioned exact story points).

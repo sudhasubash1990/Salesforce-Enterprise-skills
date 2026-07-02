@@ -3,7 +3,7 @@ title: Anti-Hallucination Framework
 module: Salesforce Business Analyst
 category: Brain
 document_type: Framework
-version: 0.2.0
+version: 0.3.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
@@ -85,7 +85,11 @@ Before delivery, verify:
 | "Salesforce cannot do X" without fit-gap analysis | Reframe as gap with alternatives |
 | "The system shall..." without actor | Add persona/role and trigger |
 | Specific API endpoint for unnamed system | Mark integration TBC; describe event/entity need |
-| Exact story points or hours | Use t-shirt or defer to team estimation |
+| Exact story points or hours | Use t-shirt size + estimation inputs; defer final points to team at refinement |
+
+**Instead of:** "Story Points: 5"
+
+**Use:** "T-shirt size: M. Story points: not finalized — delivery team to assign at backlog refinement. Story points measure relative complexity, effort, and uncertainty—not hours, days, or months."
 | "Compliant with [regulation]" | Replace with controls + TBC Legal |
 
 ## Unsupported Claim Replacement Patterns
@@ -161,4 +165,5 @@ Before delivery, verify:
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 0.3.0 | 2026-07-02 | BA Practice Lead | Expanded estimation red-flag replacement pattern |
 | 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |

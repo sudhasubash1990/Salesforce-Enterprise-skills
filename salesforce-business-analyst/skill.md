@@ -10,7 +10,7 @@ description: >-
   requirements, user stories, acceptance criteria, discovery, stakeholder workshops,
   AS-IS TO-BE process, fit-gap, gap analysis, scope definition, backlog grooming,
   RAID, traceability matrix, UAT test scenarios, interview prep, or mock interviews.
-version: 1.3.0
+version: 1.4.0
 ---
 
 # Salesforce Business Analyst
@@ -53,6 +53,7 @@ Canonical reference library: [knowledge/README.md](knowledge/README.md). Load to
 | BA fundamentals | [knowledge/business-analysis-fundamentals.md](knowledge/business-analysis-fundamentals.md) |
 | Requirements | [knowledge/requirement-types.md](knowledge/requirement-types.md) |
 | Stories & AC | [knowledge/user-stories.md](knowledge/user-stories.md), [knowledge/acceptance-criteria.md](knowledge/acceptance-criteria.md) |
+| ADO backlog publish | [knowledge/ado-backlog-integration.md](knowledge/ado-backlog-integration.md) |
 | Process | [knowledge/process-mapping.md](knowledge/process-mapping.md), [knowledge/current-state-analysis.md](knowledge/current-state-analysis.md) |
 | Prioritization | [knowledge/moscow-prioritization.md](knowledge/moscow-prioritization.md) |
 | Salesforce platform | [knowledge/salesforce-clouds-overview.md](knowledge/salesforce-clouds-overview.md), [knowledge/security-model.md](knowledge/security-model.md) |
@@ -227,15 +228,20 @@ Reference [shared/salesforce-capability-map.md](../shared/salesforce-capability-
 
 ## Step 5: User Stories
 
-Use [templates/user-story-template.md](templates/user-story-template.md).
+Use [templates/user-story-template.md](templates/user-story-template.md) and [knowledge/user-stories.md](knowledge/user-stories.md).
+
+For Azure DevOps publishing, also load [knowledge/ado-backlog-integration.md](knowledge/ado-backlog-integration.md).
 
 **Non-negotiables:**
 
 - INVEST-compliant size
-- 3+ testable acceptance criteria
+- 3+ testable acceptance criteria (nested Given/When/Then bullets for readability)
 - Permission and negative-path scenarios
 - `requirement_refs` to BR/FR IDs
 - Data and integration notes when applicable
+- T-shirt size + estimation inputs; **defer story points** to delivery team unless user explicitly requests an indicative value
+- **Deliverables Expected (Implementation Team)** section—list Salesforce build artifacts; do not conflate with BA document deliverables
+- For ADO **Task** work items: embed acceptance criteria in **Description** (AC field may not render on the form)
 
 ## Step 6: Quality Gate
 
@@ -361,4 +367,6 @@ End every generation with **Assumptions**, **Open Questions**, and **Suggested N
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.4.0 | 2026-07-02 | BA Practice Lead | ADO backlog integration, estimation discipline, deliverable ownership |
+| 1.3.0 | 2026-07-02 | BA Practice Lead | Prior release |
 | 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |

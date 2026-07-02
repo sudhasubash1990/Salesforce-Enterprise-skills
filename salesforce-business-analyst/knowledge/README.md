@@ -34,6 +34,7 @@ Sprint 2 canonical reference library for the Salesforce Business Analyst skill. 
 | Requirement types | [requirement-types.md](requirement-types.md) |
 | User stories | [user-stories.md](user-stories.md) |
 | Acceptance criteria | [acceptance-criteria.md](acceptance-criteria.md) |
+| Azure DevOps backlog | [ado-backlog-integration.md](ado-backlog-integration.md) |
 | Epic design | [epic-design.md](epic-design.md) |
 | Capability models | [capability-models.md](capability-models.md) |
 | Process mapping | [process-mapping.md](process-mapping.md) |
@@ -68,7 +69,7 @@ Sprint 2 canonical reference library for the Salesforce Business Analyst skill. 
 
 ## Version
 
-Knowledge base version: **0.3.0** (Sprint 2)
+Knowledge base version: **0.4.0** (Sprint 2 + ADO backlog guidance)
 
 ## Related Brain Modules
 

@@ -3,7 +3,7 @@ title: Checklists
 module: Salesforce Business Analyst
 category: Root
 document_type: Guide
-version: 1.1.0
+version: 1.2.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
@@ -42,12 +42,26 @@ Quality gates for Salesforce Business Analyst deliverables.
 
 - [ ] INVEST — story is splittable and valuable alone
 - [ ] Role, goal, benefit present
-- [ ] 3+ testable acceptance criteria
+- [ ] 3+ testable acceptance criteria (nested Given/When/Then bullets)
 - [ ] Negative and permission scenarios included
 - [ ] requirement_refs link to BR/FR
 - [ ] Data and integration notes when applicable
 - [ ] Not an epic (fits one sprint)
 - [ ] Definition of Done stated
+- [ ] T-shirt size and estimation inputs documented (story points deferred to team)
+- [ ] Deliverables Expected (Implementation Team) section present
+- [ ] BA deliverables distinguished from implementation build artifacts
+
+## Azure DevOps Story Publish Checklist
+
+- [ ] Work item type confirmed (User Story vs Task)
+- [ ] Acceptance criteria visible in Description (required for Task type)
+- [ ] Acceptance Criteria field populated when supported
+- [ ] Story Points empty or marked indicative pending refinement
+- [ ] Estimation section states points are not hours/days/months
+- [ ] Real work item ID returned or actual API error reported
+
+See [knowledge/ado-backlog-integration.md](knowledge/ado-backlog-integration.md).
 
 ## Fit-Gap Checklist
 
@@ -144,4 +158,5 @@ Quality gates for Salesforce Business Analyst deliverables.
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.2.0 | 2026-07-02 | BA Practice Lead | Estimation, deliverables, ADO publish checklist |
 | 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |

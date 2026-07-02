@@ -3,7 +3,7 @@ title: Acceptance Criteria
 module: Salesforce Business Analyst
 category: Knowledge
 document_type: Knowledge Article
-version: 0.3.0
+version: 0.4.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
@@ -57,6 +57,18 @@ When [action by actor]
 Then [observable outcome]
 ```
 
+**Readable format (preferred for ADO and stakeholder review):** use nested bullets per scenario—not dense paragraphs.
+
+```markdown
+- **AC1 — Happy path:**
+  - **Given** [context]
+  - **When** [action]
+  - **Then** [outcome]
+  - **And** [additional outcome]
+```
+
+For Azure DevOps HTML, use nested `<ul>` / `<li>` with **Given**, **When**, **Then**, **And** labels. See [ado-backlog-integration.md](ado-backlog-integration.md).
+
 **Scenario types:**
 
 | Type | Example |
@@ -93,6 +105,7 @@ Map AC to UAT scenarios via [../templates/traceability-matrix-template.md](../te
 - "Verify page loads" as sole AC
 - AC that describe implementation (Apex class names)
 - No negative path
+- Single-paragraph AC blocks that are hard to scan in ADO or backlog tools
 
 ## Anti-Patterns
 
@@ -169,4 +182,5 @@ Generate AC before closing story. Run [../brain/validation-framework.md](../brai
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 0.4.0 | 2026-07-02 | BA Practice Lead | Nested bullet AC format; ADO readability guidance |
 | 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |

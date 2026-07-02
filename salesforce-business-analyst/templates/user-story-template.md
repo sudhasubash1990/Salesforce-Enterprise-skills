@@ -3,7 +3,7 @@ title: User Story Template
 module: Salesforce Business Analyst
 category: Template
 document_type: Template
-version: 1.1.0
+version: 1.2.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
@@ -53,11 +53,42 @@ epic: EP-XXX
 
 **Priority:** Must / Should / Could
 
-**Acceptance criteria:**
+**Acceptance criteria:** (use nested bullets; one block per AC)
 
-1. Given [context], when [action], then [observable result].
-2. Given [negative context], when [action], then [expected handling].
-3. Given [permission context], when [action], then [access result].
+- **AC1 — [Scenario name]:**
+  - **Given** [context]
+  - **When** [action]
+  - **Then** [observable result]
+  - **And** [optional additional outcome]
+- **AC2 — [Validation / error path]:**
+  - **Given** …
+  - **When** …
+  - **Then** …
+- **AC3 — [Permission scenario]:**
+  - **Given** …
+  - **When** …
+  - **Then** …
+
+**Estimation (BA input — team confirms at refinement):**
+
+| Item | Value |
+|------|-------|
+| T-shirt size | S / M / L / XL |
+| Story points | Not finalized — team assigns at refinement |
+| Solution approach | Standard / Config / Extend (from fit-gap) |
+| Complexity | Low / Medium / High |
+| Key risks / TBC | [List] |
+
+**Note:** Story points are relative size—not hours, days, or months.
+
+**Deliverables expected (implementation team):**
+
+- [ ] Data model (objects, fields, record types)
+- [ ] Page layout / UX
+- [ ] Automation (Flows, email, defaults)
+- [ ] Reports / dashboards (if applicable)
+- [ ] Security (profiles, permission sets)
+- [ ] Sandbox test evidence against AC; release notes
 
 **Data considerations:** [Objects, fields, record types]
 
@@ -66,9 +97,11 @@ epic: EP-XXX
 **Definition of Done:**
 
 - [ ] Acceptance criteria met in target sandbox
+- [ ] Implementation deliverables deployed and tested
 - [ ] Security review for new fields/objects
 - [ ] Test scenarios TS-xxx linked
 - [ ] Release notes drafted
+- [ ] Story points assigned by delivery team at refinement (if not already done)
 
 **Notes / Open items:**
 
@@ -134,4 +167,5 @@ If story feels large, split by:
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.2.0 | 2026-07-02 | BA Practice Lead | Nested AC, estimation inputs, implementation deliverables |
 | 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |
