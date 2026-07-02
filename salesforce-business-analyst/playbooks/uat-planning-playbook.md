@@ -24,6 +24,8 @@ review-cycle: quarterly
 
 # UAT Planning
 
+> **Paired playbook:** UAT principles, scenario design, and execution guidance live in [uat-playbook.md](uat-playbook.md). This file adds the planning governance wrapper. Load both for a full UAT engagement.
+
 ## Purpose
 
 Repeatable consulting methodology for enterprise Salesforce programs.

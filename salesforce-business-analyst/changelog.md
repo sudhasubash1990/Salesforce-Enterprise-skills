@@ -26,6 +26,12 @@ tags: [changelog]
 Skill-specific version history.
 
 ## [Unreleased]
+## [1.5.0] - 2026-07-02
+
+### Changed
+
+- Sprint 10 pre-execution gate, Service Cloud patterns, validator exclusions, cross-link and playbook dedupe fixes
+
 
 ## [1.3.0] - 2026-07-02
 

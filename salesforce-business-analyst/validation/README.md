@@ -101,8 +101,8 @@ python scripts/validate_repository.py
 
 ## Navigation
 
-- **Previous:** [Readme](README.md)
-- **Next:** [Readme](README.md)
+- **Previous:** [Skill](../skill.md)
+- **Next:** [Enterprise Validation Framework](enterprise-validation-framework.md)
 - **See Also:** [skill.md](../skill.md)
 
 ## Version History

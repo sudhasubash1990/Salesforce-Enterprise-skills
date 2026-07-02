@@ -87,8 +87,8 @@ Brain modules version: **0.2.0** (Sprint 1). Skill orchestrator: see [../skill.m
 
 ## Navigation
 
-- **Previous:** [Readme](README.md)
-- **Next:** [Readme](README.md)
+- **Previous:** [Skill](../skill.md)
+- **Next:** [Identity](identity.md)
 - **See Also:** [skill.md](../skill.md)
 
 ## Version History

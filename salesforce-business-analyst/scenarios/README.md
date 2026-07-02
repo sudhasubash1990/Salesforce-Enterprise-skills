@@ -112,8 +112,8 @@ Version **0.6.0**.
 
 ## Navigation
 
-- **Previous:** [Readme](README.md)
-- **Next:** [Readme](README.md)
+- **Previous:** [Skill](../skill.md)
+- **Next:** [Financial Services](financial-services.md)
 - **See Also:** [skill.md](../skill.md)
 
 ## Version History

@@ -197,6 +197,29 @@ This ensures a recoverable local copy exists if the API fails and maintains the 
 
 - [User Story Template](../templates/user-story-template.md)
 
+## Related Playbooks
+
+- [Story Refinement Playbook](../playbooks/story-refinement-playbook.md)
+- [Backlog Grooming Playbook](../playbooks/backlog-grooming-playbook.md)
+
+## Related Industry Scenarios
+
+- [Readme](../scenarios/README.md)
+
+## Related Interview Topics
+
+- [User Stories](../interview-guide/user-stories.md)
+
+## Related Examples
+
+- [Service Cloud Complaint Story](../../examples/sample-user-story/service-cloud-complaint-story.md)
+- [Dealer Portal Stories](../../examples/sample-user-story/dealer-portal-stories.md)
+
+## Related Documents
+
+- [Skill](../skill.md)
+- [Readme](README.md)
+
 ## Version History
 
 | Version | Date | Author | Summary |

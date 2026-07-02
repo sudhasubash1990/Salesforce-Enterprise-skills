@@ -112,8 +112,8 @@ Knowledge base version: **0.4.0** (Sprint 2 + ADO backlog guidance)
 
 ## Navigation
 
-- **Previous:** [Readme](README.md)
-- **Next:** [Readme](README.md)
+- **Previous:** [Skill](../skill.md)
+- **Next:** [Requirement Types](requirement-types.md)
 - **See Also:** [skill.md](../skill.md)
 
 ## Version History

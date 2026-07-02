@@ -98,8 +98,8 @@ Version **0.4.0**. See specification in `zzz_ImplmentationGuide/Sprint 3 Specifi
 
 ## Navigation
 
-- **Previous:** [Readme](README.md)
-- **Next:** [Readme](README.md)
+- **Previous:** [Skill](../skill.md)
+- **Next:** [Brd Template](brd-template.md)
 - **See Also:** [skill.md](../skill.md)
 
 ## Version History

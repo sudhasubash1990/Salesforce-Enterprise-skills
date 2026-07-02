@@ -25,6 +25,18 @@ tags: [README]
 
 Version **0.5.0**.
 
+## Paired Playbooks (Entry Point + Extended Methodology)
+
+Three topics have two complementary playbooks. **Load the entry point first**; it banner-links to the extended Sprint 4 methodology when governance depth is needed. Do not treat these as duplicates.
+
+| Topic | Entry point (load first — contains the method) | Extended Sprint 4 methodology (governance wrapper) |
+|-------|------------------------------------------------|---------------------------------------------------|
+| Fit-gap | [fit-gap-analysis.md](fit-gap-analysis.md) | [gap-analysis-playbook.md](gap-analysis-playbook.md), [solution-recommendation-playbook.md](solution-recommendation-playbook.md) |
+| Discovery | [discovery-playbook.md](discovery-playbook.md) | [discovery-workshop-playbook.md](discovery-workshop-playbook.md) |
+| UAT | [uat-playbook.md](uat-playbook.md) | [uat-planning-playbook.md](uat-planning-playbook.md), [production-readiness-playbook.md](production-readiness-playbook.md) |
+
+## All Playbooks
+
 - [backlog-grooming-playbook.md](backlog-grooming-playbook.md)
 - [business-capability-assessment-playbook.md](business-capability-assessment-playbook.md)
 - [current-state-assessment-playbook.md](current-state-assessment-playbook.md)
@@ -85,8 +97,8 @@ Version **0.5.0**.
 
 ## Navigation
 
-- **Previous:** [Readme](README.md)
-- **Next:** [Readme](README.md)
+- **Previous:** [Skill](../skill.md)
+- **Next:** [Backlog Grooming Playbook](backlog-grooming-playbook.md)
 - **See Also:** [skill.md](../skill.md)
 
 ## Version History

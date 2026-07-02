@@ -8,6 +8,18 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 
 SKIP_PATH_PARTS = {".cursor/plans", ".git"}
+# Directories whose contents are generated, third-party, or internal-only —
+# the enterprise document schema does not apply to them.
+SKIP_DIRS = {
+    ".pytest_cache",
+    "outputs",
+    "output-engine",
+    "zzz_ImplmentationGuide",
+    "node_modules",
+    ".venv",
+    "venv",
+    "__pycache__",
+}
 SKIP_FULL = {"CHANGELOG.md", "changelog.md"}
 
 REQUIRED_YAML = {"title", "module", "category", "document_type", "version", "review_status", "last_updated"}
@@ -27,7 +39,11 @@ MANDATORY_SECTIONS = [
 
 
 def should_skip(path: Path) -> bool:
-    return any(p in path.as_posix() for p in SKIP_PATH_PARTS)
+    posix = path.as_posix()
+    if any(p in posix for p in SKIP_PATH_PARTS):
+        return True
+    rel_parts = path.relative_to(REPO).parts
+    return any(part in SKIP_DIRS for part in rel_parts)
 
 
 def parse_frontmatter(content: str) -> tuple[dict[str, str], str]:

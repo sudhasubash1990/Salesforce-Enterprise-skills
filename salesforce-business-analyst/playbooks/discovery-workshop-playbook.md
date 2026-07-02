@@ -24,6 +24,8 @@ review-cycle: quarterly
 
 # Discovery Workshop
 
+> **Paired playbook:** The discovery execution guide (objectives, stakeholder mapping, AS-IS capture) lives in [discovery-playbook.md](discovery-playbook.md). This file adds the workshop governance wrapper. Load both for a full discovery engagement.
+
 ## Purpose
 
 Repeatable consulting methodology for enterprise Salesforce programs.

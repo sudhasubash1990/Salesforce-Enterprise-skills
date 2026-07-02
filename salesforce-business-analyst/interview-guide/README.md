@@ -101,8 +101,8 @@ Stakeholder interview structure and hiring scorecards from the original `intervi
 
 ## Navigation
 
-- **Previous:** [Readme](README.md)
-- **Next:** [Readme](README.md)
+- **Previous:** [Skill](../skill.md)
+- **Next:** [Interview Index](interview-index.md)
 - **See Also:** [skill.md](../skill.md)
 
 ## Version History

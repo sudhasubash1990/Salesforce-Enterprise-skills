@@ -85,8 +85,8 @@ Governance and build standards for extending the Salesforce Business Analyst Ski
 
 ## Navigation
 
-- **Previous:** [Readme](README.md)
-- **Next:** [Readme](README.md)
+- **Previous:** [Skill](../skill.md)
+- **Next:** [Sprint Index](sprint-index.md)
 - **See Also:** [skill.md](../skill.md)
 
 ## Version History

@@ -118,8 +118,8 @@ Fictional enterprise project demonstrating repository artifact linkage.
 
 ## Navigation
 
-- **Previous:** [Readme](README.md)
-- **Next:** [Readme](README.md)
+- **Previous:** [Skill](../../salesforce-business-analyst/skill.md)
+- **Next:** —
 - **See Also:** [cross-linking-framework](../../docs/cross-linking-framework.md)
 
 ## Version History

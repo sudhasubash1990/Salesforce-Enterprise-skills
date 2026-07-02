@@ -34,7 +34,7 @@ salesforce-business-analyst/checklists.md
 salesforce-business-analyst/prompts.md
 shared/glossary.md
 shared/output-standards.md
-.cursor/routing.md
+.cursor/rules/routing.mdc
 ```
 
 ### Tier 2 — Brain, Playbooks, Templates, Interview
@@ -63,15 +63,15 @@ examples/*
 ```
 docs/*
 shared/*
-.cursor/instructions.md
-.cursor/rules.md
+.cursor/rules/instructions.mdc
+.cursor/rules/rules.mdc
 ```
 
 ## Cursor-Specific Setup
 
 1. Add this repository as the workspace root
 2. Enable codebase indexing for the full repository
-3. Optionally add a project rule pointing to `.cursor/instructions.md`
+3. Optionally add a project rule pointing to `.cursor/rules/instructions.mdc`
 4. For skill auto-discovery, symlink or copy `salesforce-business-analyst/skill.md` to `.cursor/skills/salesforce-business-analyst/SKILL.md` (planned in roadmap)
 
 ## Chunking Recommendations
@@ -141,7 +141,7 @@ N/A — no direct relationships for this document type.
 ## Navigation
 
 - **Previous:** —
-- **Next:** [Instructions](instructions.md)
+- **Next:** [Instructions](instructions.mdc)
 - **See Also:** [cross-linking-framework](../docs/cross-linking-framework.md)
 
 ## Version History

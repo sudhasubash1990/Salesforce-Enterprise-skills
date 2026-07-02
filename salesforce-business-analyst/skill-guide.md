@@ -247,7 +247,7 @@ For the best results:
 5. Extend canonical documents instead of duplicating content
 6. Review AI-generated updates before merging
 
-See [.cursor/instructions.md](../.cursor/instructions.md) and [.cursor/routing.md](../.cursor/routing.md).
+See [.cursor/rules/instructions.mdc](../.cursor/rules/instructions.mdc) and [.cursor/rules/routing.mdc](../.cursor/rules/routing.mdc).
 
 ## Recommended Workflow for Business Analysts
 

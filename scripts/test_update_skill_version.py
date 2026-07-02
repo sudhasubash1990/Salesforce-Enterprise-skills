@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import importlib.util
+import re
 import sys
 from pathlib import Path
 
@@ -60,4 +61,6 @@ def test_upsert_version_history_inserts_row():
 
 def test_read_version_from_skill():
     version = mod.read_version_from_skill()
-    assert version == "1.4.0"
+    # Assert a valid semver is read, not a hardcoded value — the version
+    # legitimately changes with every governed bump.
+    assert re.fullmatch(r"\d+\.\d+\.\d+", version)

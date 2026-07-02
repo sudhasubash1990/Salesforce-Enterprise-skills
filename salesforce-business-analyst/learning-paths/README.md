@@ -86,8 +86,8 @@ Learning path updates follow [docs/continuous-knowledge-management.md](../../doc
 
 ## Navigation
 
-- **Previous:** [Readme](README.md)
-- **Next:** [Readme](README.md)
+- **Previous:** [Ba Maturity Model](../ba-maturity-model.md)
+- **Next:** [Level 1 Associate](level-1-associate.md)
 - **See Also:** [skill.md](../skill.md)
 
 ## Version History

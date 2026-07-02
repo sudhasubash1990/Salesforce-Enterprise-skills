@@ -63,7 +63,7 @@ All examples must:
 
 1. Create folder at repository root: `<skill-name>/`
 2. Include minimum: `README.md`, `skill.md`, `checklists.md`
-3. Register in root `README.md` and `.cursor/routing.md`
+3. Register in root `README.md` and `.cursor/rules/routing.mdc`
 4. Add entry to `ROADMAP.md` and `CHANGELOG.md`
 5. Follow [metadata-schema.md](metadata-schema.md)
 

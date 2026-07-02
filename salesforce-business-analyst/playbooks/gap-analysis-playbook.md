@@ -24,6 +24,8 @@ review-cycle: quarterly
 
 # Gap Analysis
 
+> **Paired playbook:** The fit-gap classification method (matrix, decision rules, misclassifications) lives in [fit-gap-analysis.md](fit-gap-analysis.md). This file adds the governance wrapper (roles, gates, entry/exit criteria). Load both for a full fit-gap engagement.
+
 ## Purpose
 
 Repeatable consulting methodology for enterprise Salesforce programs.

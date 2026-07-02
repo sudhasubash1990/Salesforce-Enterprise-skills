@@ -10,7 +10,7 @@ description: >-
   requirements, user stories, acceptance criteria, discovery, stakeholder workshops,
   AS-IS TO-BE process, fit-gap, gap analysis, scope definition, backlog grooming,
   RAID, traceability matrix, UAT test scenarios, interview prep, or mock interviews.
-version: 1.4.0
+version: 1.5.0
 ---
 
 # Salesforce Business Analyst
@@ -54,7 +54,7 @@ Verify that ALL applicable brain modules from the loading order above are loaded
 
 | If the output contains... | You MUST have loaded... |
 |---------------------------|------------------------|
-| Fit-gap classification (Standard/Config/Extend/Gap/Defer) | `decision-framework.md` + `playbooks/gap-analysis-playbook.md` |
+| Fit-gap classification (Standard/Config/Extend/Gap/Defer) | `decision-framework.md` + `playbooks/fit-gap-analysis.md` (governance wrapper: `playbooks/gap-analysis-playbook.md`) |
 | Any generated artifact (story, BRD, FRD, etc.) | `output-framework.md` + `communication-framework.md` |
 | Permission/CRUD matrix or security analysis | `knowledge/security-model.md` |
 | Reference to a specific Salesforce Cloud | `knowledge/salesforce-clouds-overview.md` + relevant cloud knowledge (e.g., `knowledge/service-cloud-patterns.md`) |
@@ -186,12 +186,12 @@ Full detail: [brain/reasoning-framework.md](brain/reasoning-framework.md).
 |------|--------------|----------|----------|
 | 1 BRAIN | [brain/identity.md](brain/identity.md) → [reasoning-framework.md](brain/reasoning-framework.md) | — | — |
 | 2 CONTEXT | [reasoning-framework.md](brain/reasoning-framework.md) Stage 2 | [scenarios/](scenarios/) | — |
-| 3 DISCOVER | [enterprise-behaviors.md](brain/enterprise-behaviors.md) | [discovery-workshop-playbook.md](playbooks/discovery-workshop-playbook.md) | [workshop-agenda-template.md](templates/workshop-agenda-template.md) |
+| 3 DISCOVER | [enterprise-behaviors.md](brain/enterprise-behaviors.md) | [discovery-playbook.md](playbooks/discovery-playbook.md) + [discovery-workshop-playbook.md](playbooks/discovery-workshop-playbook.md) | [workshop-agenda-template.md](templates/workshop-agenda-template.md) |
 | 4 DOCUMENT | [output-framework.md](brain/output-framework.md) | [requirement-workshop-playbook.md](playbooks/requirement-workshop-playbook.md) | [brd-template.md](templates/brd-template.md), [frd-template.md](templates/frd-template.md) |
-| 5 ALIGN | [decision-framework.md](brain/decision-framework.md) | [gap-analysis-playbook.md](playbooks/gap-analysis-playbook.md) | Fit-gap in playbook |
+| 5 ALIGN | [decision-framework.md](brain/decision-framework.md) | [fit-gap-analysis.md](playbooks/fit-gap-analysis.md) + [gap-analysis-playbook.md](playbooks/gap-analysis-playbook.md) | Fit-gap in playbook |
 | 6 DECOMPOSE | [output-framework.md](brain/output-framework.md) | [story-refinement-playbook.md](playbooks/story-refinement-playbook.md) | [user-story-template.md](templates/user-story-template.md) |
 | 7 VALIDATE | [validation-framework.md](brain/validation-framework.md), [anti-hallucination.md](brain/anti-hallucination.md) | — | [checklists.md](checklists.md), [validation/README.md](validation/README.md) |
-| 8 TEST READY | [output-framework.md](brain/output-framework.md) | [uat-planning-playbook.md](playbooks/uat-planning-playbook.md) | [traceability-matrix-template.md](templates/traceability-matrix-template.md) |
+| 8 TEST READY | [output-framework.md](brain/output-framework.md) | [uat-playbook.md](playbooks/uat-playbook.md) + [uat-planning-playbook.md](playbooks/uat-planning-playbook.md) | [traceability-matrix-template.md](templates/traceability-matrix-template.md) |
 
 ## Core Workflow
 
@@ -427,6 +427,7 @@ Run tests: `python -m pytest scripts/test_update_skill_version.py -q`
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.5.0 | 2026-07-02 | BA Practice Lead | Sprint 10 pre-execution gate, Service Cloud patterns, validator exclusions, cross-link and playbook dedupe fixes |
 | 1.4.0 | 2026-07-02 | BA Practice Lead | ADO backlog integration, estimation discipline, deliverable ownership |
 | 1.3.0 | 2026-07-02 | BA Practice Lead | Prior release |
 | 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |

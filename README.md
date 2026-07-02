@@ -3,7 +3,7 @@ title: Readme
 module: Salesforce Business Analyst
 category: Root
 document_type: Guide
-version: 1.4.0
+version: 1.5.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
@@ -51,7 +51,7 @@ Salesforce programs fail more often from unclear requirements, weak traceability
 
 ### For AI Agents (Cursor)
 
-1. Load `.cursor/instructions.md` and `.cursor/routing.md`.
+1. Load `.cursor/rules/instructions.mdc` and `.cursor/rules/routing.mdc`.
 2. When the user asks for BA work (requirements, BRD, user stories, discovery, fit-gap, UAT), route to `salesforce-business-analyst/skill.md`.
 3. Follow [shared/output-standards.md](shared/output-standards.md) for all generated artifacts.
 
@@ -59,7 +59,7 @@ Salesforce programs fail more often from unclear requirements, weak traceability
 
 | Skill | Status | Description |
 |-------|--------|-------------|
-| Salesforce Business Analyst | Active (v1.4.0) | Brain, knowledge, templates, playbooks, scenarios, interview guide, validation, learning paths |
+| Salesforce Business Analyst | Active (v1.5.0) | Brain, knowledge, templates, playbooks, scenarios, interview guide, validation, learning paths |
 
 ## Contributing
 
@@ -108,14 +108,15 @@ MIT — see [LICENSE](LICENSE).
 
 ## Navigation
 
-- **Previous:** [Readme](README.md)
-- **Next:** [Readme](README.md)
+- **Previous:** —
+- **Next:** [Salesforce Business Analyst Readme](salesforce-business-analyst/README.md)
 - **See Also:** [cross-linking-framework](docs/cross-linking-framework.md)
 
 ## Version History
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.5.0 | 2026-07-02 | BA Practice Lead | Sprint 10 pre-execution gate, Service Cloud patterns, validator exclusions, cross-link and playbook dedupe fixes |
 | 1.4.0 | 2026-07-02 | BA Practice Lead | ADO backlog integration, estimation discipline, deliverable ownership, nested AC format |
 | 1.3.0 | 2026-07-02 | BA Practice Lead | Sprints 8–9 validation and continuous knowledge management |
 | 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |

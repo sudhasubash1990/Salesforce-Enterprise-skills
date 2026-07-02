@@ -37,7 +37,7 @@ User Request
     ├─ Validate output / review draft ──────────────► brain/validation-framework.md
     │       └─ brain/anti-hallucination.md + checklists.md
     │
-    ├─ UAT / test scenarios / sign-off ─────────────► playbooks/uat-playbook.md
+    ├─ UAT / test scenarios / sign-off ─────────────► playbooks/uat-playbook.md + uat-planning-playbook.md
     │
     ├─ Industry-specific context ───────────────────► scenarios/<industry>.md
     │
@@ -63,12 +63,12 @@ User Request
 | analyze requirement, recommend approach | `brain/reasoning-framework.md` + `brain/decision-framework.md` |
 | validate, review draft, quality check | `brain/validation-framework.md` + `checklists.md` |
 | workshop, discovery, kickoff, stakeholder map | `playbooks/discovery-workshop-playbook.md` |
-| fit-gap, gap analysis, standard vs custom | `playbooks/gap-analysis-playbook.md` |
+| fit-gap, gap analysis, standard vs custom | `playbooks/fit-gap-analysis.md` + `playbooks/gap-analysis-playbook.md` |
 | sprint planning, backlog grooming | `playbooks/sprint-planning-playbook.md`, `backlog-grooming-playbook.md` |
 | go-live, production readiness | `playbooks/production-readiness-playbook.md` |
 | utilities, retail, telecom, insurance, banking scenario | `scenarios/<industry>/` per [scenarios/README.md](../salesforce-business-analyst/scenarios/README.md) |
 | template, brd, frd, epic, rtm | `templates/README.md` |
-| UAT, test case, sign-off, defect | `playbooks/uat-playbook.md` |
+| UAT, test case, sign-off, defect | `playbooks/uat-playbook.md` + `playbooks/uat-planning-playbook.md` |
 | banking, insurance, healthcare, manufacturing, government | `scenarios/<matching-industry>.md` |
 | glossary, terminology, definition | `shared/glossary.md` |
 | prioritization, moscow, kano, wsjf | `knowledge/moscow-prioritization.md` or `knowledge/prioritization-techniques.md` |
@@ -108,7 +108,7 @@ These modules MUST be loaded automatically when the agent's output contains cert
 
 | If the output will contain... | Auto-load these modules |
 |-------------------------------|------------------------|
-| Fit-gap classification table (Standard/Config/Extend/Gap/Defer) | `brain/decision-framework.md` + `playbooks/gap-analysis-playbook.md` |
+| Fit-gap classification table (Standard/Config/Extend/Gap/Defer) | `brain/decision-framework.md` + `playbooks/fit-gap-analysis.md` (governance wrapper: `playbooks/gap-analysis-playbook.md`) |
 | Any generated deliverable (story, BRD, FRD, workshop notes) | `brain/output-framework.md` + `brain/communication-framework.md` |
 | Permission/CRUD matrix or security analysis | `knowledge/security-model.md` |
 | Reference to Service Cloud (Case, Entitlements, Knowledge, Omni-Channel) | `knowledge/service-cloud-patterns.md` |
@@ -170,8 +170,8 @@ N/A — no direct relationships for this document type.
 
 ## Navigation
 
-- **Previous:** [Instructions](instructions.md)
-- **Next:** [Rules](rules.md)
+- **Previous:** [Instructions](instructions.mdc)
+- **Next:** [Rules](rules.mdc)
 - **See Also:** [cross-linking-framework](../docs/cross-linking-framework.md)
 
 ## Version History

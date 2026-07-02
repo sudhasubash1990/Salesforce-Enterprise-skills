@@ -86,7 +86,7 @@ flowchart LR
 
 ## Agent Interaction Model
 
-1. **Route** — `.cursor/routing.md` selects skill, brain module, and playbook
+1. **Route** — `.cursor/rules/routing.mdc` selects skill, brain module, and playbook
 2. **Load** — `skill.md` + relevant brain modules + template
 3. **Enrich** — `knowledge/` and `scenarios/` as needed
 4. **Generate** — Apply `shared/output-standards.md`
@@ -98,7 +98,7 @@ New skills should:
 
 - Live as sibling folders to `salesforce-business-analyst/`
 - Reuse `shared/` assets (do not fork glossary)
-- Register routes in `.cursor/routing.md`
+- Register routes in `.cursor/rules/routing.mdc`
 - Document metadata schema compliance in `docs/metadata-schema.md`
 
 ## Versioning

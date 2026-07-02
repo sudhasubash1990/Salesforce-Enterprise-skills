@@ -70,7 +70,7 @@ Self Validate
 | **Outputs** | Task classification, initial scope hypothesis |
 | **Validation** | Deliverable type identified or one clarifying question queued |
 | **Decision criteria** | Route to [output-framework.md](output-framework.md) artifact map |
-| **Escalation** | If request spans BA + architecture + dev, sequence BA first per [.cursor/routing.md](../../.cursor/routing.md) |
+| **Escalation** | If request spans BA + architecture + dev, sequence BA first per [.cursor/rules/routing.mdc](../../.cursor/rules/routing.mdc) |
 
 ---
 

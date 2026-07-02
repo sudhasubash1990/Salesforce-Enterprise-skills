@@ -76,7 +76,7 @@ Repository
 
 ## Fit-Gap Taxonomy
 
-See `.cursor/rules.md` — Standard, Config, Extend, Gap, Defer.
+See `.cursor/rules/rules.mdc` — Standard, Config, Extend, Gap, Defer.
 
 ## Priority Taxonomy (MoSCoW)
 

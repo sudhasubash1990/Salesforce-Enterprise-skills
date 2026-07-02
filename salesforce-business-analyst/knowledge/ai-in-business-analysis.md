@@ -75,7 +75,7 @@ Agents load skill.md, brain modules, and knowledge base—must validate before c
 
 - [../brain/anti-hallucination.md](../brain/anti-hallucination.md)
 - [../brain/validation-framework.md](../brain/validation-framework.md)
-- [../../.cursor/instructions.md](../../.cursor/instructions.md)
+- [../../.cursor/rules/instructions.mdc](../../.cursor/rules/instructions.mdc)
 
 ## Enterprise Best Practices
 

@@ -3,7 +3,7 @@ title: Readme
 module: Salesforce Business Analyst
 category: Root
 document_type: Guide
-version: 1.4.0
+version: 1.5.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
@@ -58,7 +58,7 @@ Enterprise Business Analysis capability for Salesforce programs—discovery thro
 
 ## Version
 
-Current skill version: **1.4.0** — see [changelog.md](changelog.md)
+Current skill version: **1.5.0** — see [changelog.md](changelog.md)
 
 ## Related Brain Modules
 
@@ -99,13 +99,14 @@ Current skill version: **1.4.0** — see [changelog.md](changelog.md)
 
 ## Navigation
 
-- **Previous:** [Readme](README.md)
-- **Next:** [Readme](README.md)
+- **Previous:** [Readme](../README.md)
+- **Next:** [Skill](skill.md)
 - **See Also:** [skill.md](skill.md)
 
 ## Version History
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.5.0 | 2026-07-02 | BA Practice Lead | Sprint 10 pre-execution gate, Service Cloud patterns, validator exclusions, cross-link and playbook dedupe fixes |
 | 1.4.0 | 2026-07-02 | BA Practice Lead | ADO backlog integration, estimation discipline, deliverable ownership, nested AC format |
 | 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |
