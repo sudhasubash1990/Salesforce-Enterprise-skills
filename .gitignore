@@ -4,6 +4,7 @@ __pycache__/
 *.egg-info/
 .venv/
 venv/
+.pytest_cache/
 
 # OS / editor
 .DS_Store
@@ -11,8 +12,26 @@ Thumbs.db
 *.swp
 *~
 
-# Cursor (keep rules; ignore local plans/cache)
+# IDE user-local
+.vscode/
+.idea/
+
+# Environment & credentials (preventive — never commit secrets)
+.env
+.env.*
+!.env.example
+credentials.json
+**/credentials.json
+*.pem
+*.key
+
+# Dependencies
+node_modules/
+
+# Cursor (keep rules; ignore local plans/cache/user-local)
 .cursor/plans/
+*.canvas.tsx
+agent-transcripts/
 
 # Internal implementation specs (source docx / extracts — not for public repo)
 zzz_ImplmentationGuide/
@@ -25,14 +44,19 @@ zzz_ImplmentationGuide/
 *.extracted.txt
 *.docx.extracted.txt
 
-# output files
+# Output files (generated deliverables — do not push)
 outputs/
 
-# AI productive rules
+# Conversion logs
+conversion.log
+conversion_report.json
+
+# AI productivity rules (internal process)
 .cursor/rules/ai-productivity-ADO.mdc
 
-#mcp server
+# MCP server config (contains org URLs and auth references)
 .cursor/mcp.json
 
-#gitignore
+# Terminal output
+terminals/
 

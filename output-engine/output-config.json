@@ -19,6 +19,6 @@
   "generateTOC": true,
   "generateCoverPage": true,
   "theme": "Enterprise",
-  "companyName": "Accenture",
+  "companyName": "Your Company",
   "loggingLevel": "INFO"
 }
