@@ -1,25 +1,6 @@
 ---
-title: Routing
-module: Salesforce Business Analyst
-category: Governance
-document_type: Framework
-version: 1.1.0
-review_status: Approved
-owner: BA Practice Lead
-created_date: 2026-07-02
-last_updated: 2026-07-02
-review_cycle: quarterly
-related_knowledge: [salesforce-business-analyst/knowledge/README.md]
-related_templates: [salesforce-business-analyst/templates/README.md]
-related_playbooks: [salesforce-business-analyst/playbooks/README.md]
-related_scenarios: [salesforce-business-analyst/scenarios/README.md]
-related_interview_topics: [salesforce-business-analyst/interview-guide/interview-index.md]
-related_examples: [examples/sample-project/README.md]
-related_documents: [docs/metadata-schema.md, docs/cross-linking-framework.md]
-keywords: [routing]
-tags: [routing]
+alwaysApply: true
 ---
-
 # Agent Routing
 
 Decision tree for routing user requests to the correct skill, playbook, or template.

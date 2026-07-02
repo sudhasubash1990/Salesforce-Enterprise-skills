@@ -1,0 +1,278 @@
+---
+alwaysApply: true
+---
+---
+description: Generate Azure DevOps (ADO) compliant User Stories for Salesforce/Fusion projects
+globs:
+alwaysApply: true
+---
+
+# Purpose
+
+Generate complete and production-ready Azure DevOps (ADO) User Stories following Agile best practices.
+
+The generated user story must be ready for:
+- Sprint Planning
+- Backlog Refinement
+- Development
+- QA Test Case Design
+- UAT Execution
+
+Do not generate implementation details unless explicitly requested.
+
+# User Story Structure
+
+Always generate user stories using the following sections and order.
+
+## User Story Number
+
+If provided by the user, use it.
+
+If not provided:
+
+```
+TBD
+```
+
+## Title
+
+Format:
+
+```
+<Business Capability> - <Action>
+```
+
+Examples:
+
+- Billing - Create Invoice Adjustment
+- Contract Management - Amend Existing Contract
+- Account Management - Update Customer Status
+
+Title must be concise and business-focused.
+
+## As a
+
+Identify the persona.
+
+Examples:
+
+- Billing Specialist
+- Sales Representative
+- Contract Manager
+- Operations User
+- Customer Service Agent
+- System
+
+If persona is unclear, ask the user.
+
+## I want to
+
+Describe the goal from the user's perspective.
+
+Format:
+
+```
+I want to <action>
+```
+
+Examples:
+
+- I want to create invoice adjustments
+- I want to update contract details
+- I want to view customer billing history
+
+## So That
+
+Describe the business value.
+
+Examples:
+
+- So that billing records remain accurate.
+- So that customer information is up to date.
+- So that contract amendments are processed efficiently.
+
+Must focus on business outcome.
+
+## Description
+
+Provide detailed business requirements.
+
+Include:
+
+- Current process
+- Future process
+- Functional expectations
+- Business rules
+- Dependencies
+- Assumptions
+
+Use bullet points where possible.
+
+# Acceptance Criteria
+
+Generate acceptance criteria in Gherkin format.
+
+Use numbering.
+
+Format:
+
+### AC1
+
+```gherkin
+Given
+When
+Then
+```
+
+### AC2
+
+```gherkin
+Given
+When
+Then
+```
+
+Requirements:
+
+- Every acceptance criterion must be testable.
+- Avoid technical implementation details.
+- Cover happy path.
+- Cover validation scenarios.
+- Cover error scenarios.
+- Cover permission scenarios if applicable.
+
+# Business Rules
+
+Create separate section.
+
+Format:
+
+## Business Rules
+
+BR1:
+BR2:
+BR3:
+
+Examples:
+
+- BR1: Only active customers can create invoices.
+- BR2: Billing adjustments require manager approval.
+- BR3: Contract end date cannot precede start date.
+
+# Field Requirements
+
+If fields are mentioned, generate a table.
+
+| Field Name | Required | Type | Validation |
+|------------|----------|------|------------|
+
+# Object Impact Analysis
+
+For Salesforce/Fusion projects always identify impacted objects.
+
+Format:
+
+## Objects Impacted
+
+| Object | Action |
+|----------|----------|
+| Account | Update |
+| Contract | Create |
+| Invoice | Update |
+
+Actions:
+
+- Create
+- Update
+- Delete
+- Read
+
+# Security and Permissions
+
+Identify affected personas and permissions.
+
+Format:
+
+| Persona | Create | Read | Update | Delete |
+|----------|----------|----------|----------|----------|
+
+# Dependencies
+
+List:
+
+- Upstream dependencies
+- Downstream dependencies
+- Integration dependencies
+- Batch dependencies
+
+# Assumptions
+
+List assumptions separately.
+
+# Out of Scope
+
+Clearly identify items not included in the story.
+
+# Testability Review
+
+Before final output verify:
+
+- Every requirement has acceptance criteria.
+- Acceptance criteria are testable.
+- Business rules are defined.
+- Personas are identified.
+- Object impacts are identified.
+- Dependencies are documented.
+
+# Output Format
+
+Always generate in this exact sequence:
+
+1. User Story Number
+2. Title
+3. As a
+4. I want to
+5. So That
+6. Description
+7. Acceptance Criteria
+8. Business Rules
+9. Field Requirements
+10. Objects Impacted
+11. Security and Permissions
+12. Dependencies
+13. Assumptions
+14. Out of Scope
+15. Testability Review
+
+# Validation Rules
+
+Do not generate the user story if any of the following are missing:
+
+- Persona
+- Business objective
+- Expected outcome
+
+Instead ask clarification questions.
+
+# Salesforce/Fusion Specific Instructions
+
+Whenever Salesforce/Fusion requirements are detected:
+
+- Identify impacted standard objects.
+- Identify impacted custom objects.
+- Identify automation impacts.
+- Identify batch process impacts.
+- Identify integration impacts.
+- Identify security model impacts.
+- Identify reporting impacts.
+
+# Quality Gate
+
+A user story is considered complete only if:
+
+- INVEST principle is satisfied.
+- Acceptance criteria are testable.
+- Business value is clear.
+- No ambiguity exists.
+- QA can derive test cases directly from the story.
+- Development team can estimate effort without additional clarification.

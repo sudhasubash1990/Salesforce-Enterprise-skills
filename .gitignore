@@ -27,3 +27,6 @@ zzz_ImplmentationGuide/
 
 # output files
 outputs/
+
+# AI productive rules
+.cursor/rules/ai-productivity-ADO.mdc
