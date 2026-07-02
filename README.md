@@ -3,7 +3,7 @@ title: Readme
 module: Salesforce Business Analyst
 category: Root
 document_type: Guide
-version: 1.3.0
+version: 1.4.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
@@ -59,7 +59,7 @@ Salesforce programs fail more often from unclear requirements, weak traceability
 
 | Skill | Status | Description |
 |-------|--------|-------------|
-| Salesforce Business Analyst | Active (v1.3.0) | Brain, knowledge, templates, playbooks, scenarios, interview guide, validation, learning paths |
+| Salesforce Business Analyst | Active (v1.4.0) | Brain, knowledge, templates, playbooks, scenarios, interview guide, validation, learning paths |
 
 ## Contributing
 
@@ -116,5 +116,6 @@ MIT — see [LICENSE](LICENSE).
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.4.0 | 2026-07-02 | BA Practice Lead | ADO backlog integration, estimation discipline, deliverable ownership, nested AC format |
 | 1.3.0 | 2026-07-02 | BA Practice Lead | Sprints 8–9 validation and continuous knowledge management |
 | 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |

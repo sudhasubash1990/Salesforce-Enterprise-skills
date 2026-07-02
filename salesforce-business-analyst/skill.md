@@ -276,6 +276,35 @@ Routing is automatic (one office format per file). See [output-engine/README.md]
 
 End every generation with **Assumptions**, **Open Questions**, and **Suggested Next Steps**.
 
+## Skill Versioning (Repository Maintenance)
+
+When you change the Salesforce BA skill pack (`salesforce-business-analyst/`, `.cursor/rules/userstory-generation.mdc`), **sync version metadata before commit** using the commit message as the version-history summary.
+
+```powershell
+# After staging skill changes — bump semver from conventional commit message
+python scripts/update_skill_version.py --message "feat(ba): ADO backlog integration and estimation discipline"
+
+# Align root README/changelog to version already set in skill.md (no bump)
+python scripts/update_skill_version.py --sync-only --force
+
+# Preview changes
+python scripts/update_skill_version.py --dry-run --message "fix(ba): AC bullet formatting"
+```
+
+**Bump rules (semantic versioning):**
+
+| Commit prefix | Version bump |
+|---------------|--------------|
+| `feat!` or breaking | Major (X.0.0) |
+| `feat` / `feature` | Minor (x.Y.0) |
+| `fix`, `docs`, `chore`, `refactor`, etc. | Patch (x.y.Z) |
+
+**Files updated automatically:** `README.md` (root), `salesforce-business-analyst/skill.md`, `salesforce-business-analyst/README.md`, `salesforce-business-analyst/changelog.md`, `CHANGELOG.md`.
+
+**Source of truth:** `salesforce-business-analyst/skill.md` frontmatter `version`.
+
+Run tests: `python -m pytest scripts/test_update_skill_version.py -q`
+
 ## Brain Module Index
 
 | Module | Purpose |

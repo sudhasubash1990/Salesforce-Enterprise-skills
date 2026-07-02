@@ -52,6 +52,14 @@ docs: update metadata schema for skill frontmatter
 fix(templates): correct acceptance criteria format in user story template
 ```
 
+After **skill pack** changes (`salesforce-business-analyst/` or `.cursor/rules/userstory-generation.mdc`), run:
+
+```powershell
+python scripts/update_skill_version.py --message "<your commit subject line>"
+```
+
+This bumps semver from the commit type and updates `README.md` version history using the commit summary. Use `--sync-only --force` to align README to `skill.md` without bumping.
+
 ## Pull Request Checklist
 
 - [ ] Follows markdown and naming standards
@@ -59,7 +67,7 @@ fix(templates): correct acceptance criteria format in user story template
 - [ ] Links are relative and valid
 - [ ] Skill descriptions include WHAT and WHEN (third person)
 - [ ] Examples are realistic but anonymized
-- [ ] CHANGELOG.md updated under `[Unreleased]`
+- [ ] CHANGELOG.md updated under `[Unreleased]` (or run `python scripts/update_skill_version.py` for skill changes)
 
 ## Content Guidelines
 

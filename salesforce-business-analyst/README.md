@@ -3,7 +3,7 @@ title: Readme
 module: Salesforce Business Analyst
 category: Root
 document_type: Guide
-version: 1.1.0
+version: 1.4.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
@@ -58,7 +58,7 @@ Enterprise Business Analysis capability for Salesforce programs—discovery thro
 
 ## Version
 
-Current skill version: **1.3.0** — see [changelog.md](changelog.md)
+Current skill version: **1.4.0** — see [changelog.md](changelog.md)
 
 ## Related Brain Modules
 
@@ -107,4 +107,5 @@ Current skill version: **1.3.0** — see [changelog.md](changelog.md)
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.4.0 | 2026-07-02 | BA Practice Lead | ADO backlog integration, estimation discipline, deliverable ownership, nested AC format |
 | 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |
