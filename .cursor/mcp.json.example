@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "azure-devops": {
+      "command": "node",
+      "args": [
+        "<path-to>/node_modules/@tiberriver256/mcp-server-azure-devops/dist/index.js"
+      ],
+      "env": {
+        "AZURE_DEVOPS_AUTH_METHOD": "pat",
+        "AZURE_DEVOPS_ORG_URL": "https://dev.azure.com/<your-org>",
+        "AZURE_DEVOPS_DEFAULT_PROJECT": "<your-project>",
+        "AZURE_DEVOPS_PAT": "${env:AZURE_DEVOPS_PAT}"
+      }
+    }
+  }
+}
