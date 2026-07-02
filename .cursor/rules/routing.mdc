@@ -5,6 +5,20 @@ alwaysApply: true
 
 Decision tree for routing user requests to the correct skill, playbook, or template.
 
+## Layer 2 Retriever (Run First)
+
+**For any BA task, run the deterministic retriever BEFORE loading files manually:**
+
+```powershell
+python scripts/retrieve_context.py --query "<the user's request>"
+```
+
+It matches the request against this file's routing rules plus the frontmatter metadata graph and returns the exact context bundle (brain, knowledge, templates, playbooks, scenarios) to load. Read the files it lists — no more, no fewer — then proceed. Use `--json` for machine-readable output and `--list-tasks` to see supported routes.
+
+If the retriever reports *no task rule matched*, fall back to the manual decision tree below and ask one clarifying question about deliverable type and industry context.
+
+The keyword tables below remain the source of truth for maintaining the retriever: when adding a route here, add the same rule to `scripts/retrieve_context.py` (guarded by `scripts/test_retrieve_context.py`).
+
 ## Primary Router
 
 ```

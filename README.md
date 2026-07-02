@@ -3,7 +3,7 @@ title: Readme
 module: Salesforce Business Analyst
 category: Root
 document_type: Guide
-version: 1.5.0
+version: 1.6.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
@@ -38,7 +38,7 @@ Salesforce programs fail more often from unclear requirements, weak traceability
 | `shared/` | Cross-discipline glossary, taxonomy, and enterprise standards |
 | `examples/` | Reference artifacts (BRDs, user stories, workshops, projects) |
 | `salesforce-business-analyst/` | Primary BA skill, playbooks, templates, and scenarios |
-| `scripts/` | Metadata enrichment and repository validation |
+| `scripts/` | Context retriever, metadata enrichment, and repository validation |
 
 ## Installation (Cursor)
 
@@ -94,14 +94,15 @@ If you skip this, everything still works — deliverables are produced as Markdo
 ### For AI Agents (Cursor)
 
 1. Load `.cursor/rules/instructions.mdc` and `.cursor/rules/routing.mdc`.
-2. When the user asks for BA work (requirements, BRD, user stories, discovery, fit-gap, UAT), route to `salesforce-business-analyst/skill.md`.
-3. Follow [shared/output-standards.md](shared/output-standards.md) for all generated artifacts.
+2. For any BA request, run the Layer 2 retriever to get the exact context bundle: `python scripts/retrieve_context.py --query "<request>"`.
+3. When the user asks for BA work (requirements, BRD, user stories, discovery, fit-gap, UAT), route to `salesforce-business-analyst/skill.md`.
+4. Follow [shared/output-standards.md](shared/output-standards.md) for all generated artifacts.
 
 ## Current Skills
 
 | Skill | Status | Description |
 |-------|--------|-------------|
-| Salesforce Business Analyst | Active (v1.5.0) | Brain, knowledge, templates, playbooks, scenarios, interview guide, validation, learning paths |
+| Salesforce Business Analyst | Active (v1.6.0) | Brain, knowledge, templates, playbooks, scenarios, interview guide, validation, learning paths |
 
 ## Contributing
 
@@ -158,6 +159,7 @@ MIT — see [LICENSE](LICENSE).
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.6.0 | 2026-07-02 | BA Practice Lead | Layer 2 deterministic context retriever with routing rules and metadata-graph expansion |
 | 1.5.0 | 2026-07-02 | BA Practice Lead | Sprint 10 pre-execution gate, Service Cloud patterns, validator exclusions, cross-link and playbook dedupe fixes |
 | 1.4.0 | 2026-07-02 | BA Practice Lead | ADO backlog integration, estimation discipline, deliverable ownership, nested AC format |
 | 1.3.0 | 2026-07-02 | BA Practice Lead | Sprints 8–9 validation and continuous knowledge management |

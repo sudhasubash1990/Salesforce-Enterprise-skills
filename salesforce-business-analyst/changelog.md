@@ -26,6 +26,12 @@ tags: [changelog]
 Skill-specific version history.
 
 ## [Unreleased]
+## [1.6.0] - 2026-07-02
+
+### Changed
+
+- Layer 2 deterministic context retriever with routing rules and metadata-graph expansion
+
 ## [1.5.0] - 2026-07-02
 
 ### Changed

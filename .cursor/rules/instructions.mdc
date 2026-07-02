@@ -40,6 +40,16 @@ For onboarding, career progression, or competency tasks:
 3. Use [interview-guide/interview-index.md](../salesforce-business-analyst/interview-guide/interview-index.md) for assessments
 4. Full narrative: [skill-guide.md](../salesforce-business-analyst/skill-guide.md)
 
+## Context Retrieval (Layer 2 — Run First)
+
+For any BA task, run the deterministic retriever before loading context manually:
+
+```powershell
+python scripts/retrieve_context.py --query "<the user's request>"
+```
+
+Load exactly the file bundle it returns. This replaces ad-hoc file discovery and guarantees the brain, knowledge, template, playbook, and scenario files required by the Pre-Execution Gate are in context. See `.cursor/rules/routing.mdc` for details.
+
 ## Brain-Loading Enforcement (Sprint 10)
 
 **HARD RULE:** Before producing any deliverable, complete the Mandatory Pre-Execution Gate in `salesforce-business-analyst/skill.md`. This includes:

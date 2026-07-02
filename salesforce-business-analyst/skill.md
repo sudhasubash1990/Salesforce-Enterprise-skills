@@ -10,7 +10,7 @@ description: >-
   requirements, user stories, acceptance criteria, discovery, stakeholder workshops,
   AS-IS TO-BE process, fit-gap, gap analysis, scope definition, backlog grooming,
   RAID, traceability matrix, UAT test scenarios, interview prep, or mock interviews.
-version: 1.5.0
+version: 1.6.0
 ---
 
 # Salesforce Business Analyst
@@ -47,6 +47,14 @@ skill.md (this file — orchestrator)
 ## Mandatory Pre-Execution Gate (Sprint 10)
 
 **HARD RULE:** Before producing any deliverable, the agent MUST complete this checklist. Skipping steps caused 4 rework cycles on Task-9.
+
+### Step 0 — Run the Layer 2 Retriever
+
+```powershell
+python scripts/retrieve_context.py --query "<the user's request>"
+```
+
+Load the file bundle it returns. This deterministically satisfies Step 1 for all rule-covered content; Step 1 remains the manual verification net.
 
 ### Step 1 — Brain Loading Compliance
 
@@ -427,6 +435,7 @@ Run tests: `python -m pytest scripts/test_update_skill_version.py -q`
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.6.0 | 2026-07-02 | BA Practice Lead | Layer 2 deterministic context retriever with routing rules and metadata-graph expansion |
 | 1.5.0 | 2026-07-02 | BA Practice Lead | Sprint 10 pre-execution gate, Service Cloud patterns, validator exclusions, cross-link and playbook dedupe fixes |
 | 1.4.0 | 2026-07-02 | BA Practice Lead | ADO backlog integration, estimation discipline, deliverable ownership |
 | 1.3.0 | 2026-07-02 | BA Practice Lead | Prior release |
