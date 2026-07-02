@@ -44,6 +44,36 @@ skill.md (this file — orchestrator)
 | **Interview prep / mock / hiring** | + `communication-framework.md` | `interview-guide/interview-index.md` |
 | **Before every response** | `validation-framework.md` + `anti-hallucination.md` | `checklists.md` |
 
+## Mandatory Pre-Execution Gate (Sprint 10)
+
+**HARD RULE:** Before producing any deliverable, the agent MUST complete this checklist. Skipping steps caused 4 rework cycles on Task-9.
+
+### Step 1 — Brain Loading Compliance
+
+Verify that ALL applicable brain modules from the loading order above are loaded. Common violations:
+
+| If the output contains... | You MUST have loaded... |
+|---------------------------|------------------------|
+| Fit-gap classification (Standard/Config/Extend/Gap/Defer) | `decision-framework.md` + `playbooks/gap-analysis-playbook.md` |
+| Any generated artifact (story, BRD, FRD, etc.) | `output-framework.md` + `communication-framework.md` |
+| Permission/CRUD matrix or security analysis | `knowledge/security-model.md` |
+| Reference to a specific Salesforce Cloud | `knowledge/salesforce-clouds-overview.md` + relevant cloud knowledge (e.g., `knowledge/service-cloud-patterns.md`) |
+| AS-IS / TO-BE process analysis | `knowledge/process-mapping.md` or `knowledge/current-state-analysis.md` |
+| Terminology or definitions | `shared/glossary.md` |
+
+### Step 2 — Pre-Delivery Validation (run BEFORE first delivery)
+
+1. Run `brain/validation-framework.md` quality gate
+2. Run `brain/anti-hallucination.md` claim check
+3. Run `checklists.md` for artifact-specific gate (e.g., User Story Checklist, ADO Publish Checklist)
+4. Verify all 18 sections present (for user stories per `userstory-generation.mdc`)
+
+Do NOT deliver first, then validate — validate first, then deliver.
+
+### Step 3 — Local Artifact Save
+
+When publishing to ADO or any external system, save a local `.md` copy under `outputs/<project>/` BEFORE the API call. Then run the output engine conversion.
+
 ## Knowledge Base (Sprint 2)
 
 Canonical reference library: [knowledge/README.md](knowledge/README.md). Load topic articles when brain reasoning needs depth.
@@ -57,6 +87,7 @@ Canonical reference library: [knowledge/README.md](knowledge/README.md). Load to
 | Process | [knowledge/process-mapping.md](knowledge/process-mapping.md), [knowledge/current-state-analysis.md](knowledge/current-state-analysis.md) |
 | Prioritization | [knowledge/moscow-prioritization.md](knowledge/moscow-prioritization.md) |
 | Salesforce platform | [knowledge/salesforce-clouds-overview.md](knowledge/salesforce-clouds-overview.md), [knowledge/security-model.md](knowledge/security-model.md) |
+| Service Cloud patterns | [knowledge/service-cloud-patterns.md](knowledge/service-cloud-patterns.md) |
 | Integration & data | [knowledge/integration-patterns.md](knowledge/integration-patterns.md), [knowledge/data-migration.md](knowledge/data-migration.md) |
 | Governance & risk | [knowledge/governance-framework.md](knowledge/governance-framework.md), [knowledge/risk-management.md](knowledge/risk-management.md) |
 | AI-assisted BA | [knowledge/ai-in-business-analysis.md](knowledge/ai-in-business-analysis.md) |

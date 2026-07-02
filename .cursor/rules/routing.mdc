@@ -55,7 +55,9 @@ User Request
 |----------|----------|
 | BRD, business requirements, AS-IS, TO-BE, process | `skill.md` + `brain/output-framework.md` + `templates/brd-template.md` |
 | FRD, functional requirements, system behaviour | `brain/output-framework.md` + `templates/frd-template.md` |
-| user story, backlog, sprint, acceptance criteria | `skill.md` + `templates/user-story-template.md` |
+| user story, backlog, sprint, acceptance criteria | `skill.md` + `brain/output-framework.md` + `templates/user-story-template.md` + `knowledge/ado-backlog-integration.md` |
+| ADO, azure devops, work item, publish story | `knowledge/ado-backlog-integration.md` + `brain/anti-hallucination.md` + `checklists.md` (ADO Publish Checklist) |
+| complaint, case, service cloud, service agent | `knowledge/service-cloud-patterns.md` + `knowledge/salesforce-clouds-overview.md` |
 | RAID, risk, assumption, issue, dependency | `templates/raid-log-template.md` |
 | traceability, RTM, req to test mapping | `templates/traceability-matrix-template.md` |
 | analyze requirement, recommend approach | `brain/reasoning-framework.md` + `brain/decision-framework.md` |
@@ -99,6 +101,23 @@ User Request
 | insurance, fnol, underwriting | `scenarios/insurance/` |
 | banking, kyc, loan | `scenarios/banking/` |
 | constituent, grant, case management, FOIA | `scenarios/public-sector.md` |
+
+## Auto-Trigger Rules (Sprint 10)
+
+These modules MUST be loaded automatically when the agent's output contains certain content, regardless of whether the user explicitly requested them.
+
+| If the output will contain... | Auto-load these modules |
+|-------------------------------|------------------------|
+| Fit-gap classification table (Standard/Config/Extend/Gap/Defer) | `brain/decision-framework.md` + `playbooks/gap-analysis-playbook.md` |
+| Any generated deliverable (story, BRD, FRD, workshop notes) | `brain/output-framework.md` + `brain/communication-framework.md` |
+| Permission/CRUD matrix or security analysis | `knowledge/security-model.md` |
+| Reference to Service Cloud (Case, Entitlements, Knowledge, Omni-Channel) | `knowledge/service-cloud-patterns.md` |
+| Reference to any specific Salesforce Cloud | `knowledge/salesforce-clouds-overview.md` |
+| AS-IS / TO-BE process description | `knowledge/process-mapping.md` |
+| Publishing to Azure DevOps | `knowledge/ado-backlog-integration.md` + ADO Publish Checklist from `checklists.md` |
+| Estimation or story sizing | `brain/anti-hallucination.md` (estimation red flags) |
+
+These are **not optional**. The pre-execution gate in `skill.md` enforces compliance.
 
 ## Multi-Skill Requests
 

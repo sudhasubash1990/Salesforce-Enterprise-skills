@@ -40,6 +40,17 @@ For onboarding, career progression, or competency tasks:
 3. Use [interview-guide/interview-index.md](../salesforce-business-analyst/interview-guide/interview-index.md) for assessments
 4. Full narrative: [skill-guide.md](../salesforce-business-analyst/skill-guide.md)
 
+## Brain-Loading Enforcement (Sprint 10)
+
+**HARD RULE:** Before producing any deliverable, complete the Mandatory Pre-Execution Gate in `salesforce-business-analyst/skill.md`. This includes:
+
+1. **Brain Loading Compliance** — verify all applicable brain modules are loaded (not just the core 3). If you produce a fit-gap table without loading `decision-framework.md`, or a deliverable without `output-framework.md`, the output will fail quality review.
+2. **Salesforce Cloud Knowledge** — when any specific cloud is referenced (Service Cloud, Sales Cloud, etc.), load `knowledge/salesforce-clouds-overview.md` and the relevant cloud-specific knowledge article.
+3. **Pre-Delivery Validation** — run `validation-framework.md` + `anti-hallucination.md` + artifact-specific checklist from `checklists.md` **BEFORE** first delivery. Do not deliver then validate.
+4. **Local Artifact Save** — when publishing to ADO or any external system, save a local `.md` copy under `outputs/<project>/` first, then run the output engine.
+
+See [routing.mdc](routing.mdc) Auto-Trigger Rules for content-based module loading.
+
 ## Output Rules
 
 - Use templates from `salesforce-business-analyst/templates/` unless the user specifies otherwise

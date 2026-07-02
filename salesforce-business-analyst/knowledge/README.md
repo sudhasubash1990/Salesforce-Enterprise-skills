@@ -51,6 +51,7 @@ Sprint 2 canonical reference library for the Salesforce Business Analyst skill. 
 | Constraints | [constraints-management.md](constraints-management.md) |
 | Dependencies | [dependency-management.md](dependency-management.md) |
 | Salesforce clouds | [salesforce-clouds-overview.md](salesforce-clouds-overview.md) |
+| Service Cloud patterns | [service-cloud-patterns.md](service-cloud-patterns.md) |
 | Security model | [security-model.md](security-model.md) |
 | Integration | [integration-patterns.md](integration-patterns.md) |
 | Data migration | [data-migration.md](data-migration.md) |

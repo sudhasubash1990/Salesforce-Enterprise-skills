@@ -95,13 +95,36 @@ See [knowledge/ado-backlog-integration.md](knowledge/ado-backlog-integration.md)
 - [ ] Defect severity scale agreed
 - [ ] Sign-off template prepared
 
+## Brain-Loading Compliance Checklist (Sprint 10)
+
+Run this BEFORE any other checklist. Failure here caused 4 rework cycles on Task-9.
+
+- [ ] `identity.md` + `consulting-principles.md` loaded (any BA task)
+- [ ] `reasoning-framework.md` loaded (any analysis)
+- [ ] `decision-framework.md` loaded (if output contains fit-gap classification)
+- [ ] `output-framework.md` + `communication-framework.md` loaded (if generating any deliverable)
+- [ ] `validation-framework.md` + `anti-hallucination.md` loaded (before every response)
+- [ ] `checklists.md` loaded (for artifact-specific gate — this file)
+- [ ] Relevant Salesforce cloud knowledge loaded (e.g., `service-cloud-patterns.md` if Service Cloud mentioned)
+- [ ] `salesforce-clouds-overview.md` loaded (if any specific cloud is referenced)
+- [ ] `security-model.md` loaded (if permission/CRUD analysis is part of output)
+- [ ] `shared/glossary.md` loaded (if terminology could be ambiguous)
+- [ ] Relevant playbook loaded (e.g., `gap-analysis-playbook.md` if fit-gap produced)
+
 ## Agent Pre-Delivery Checklist
 
-- [ ] Loaded correct industry scenario
+Run BEFORE first delivery — not after rework.
+
+- [ ] Brain-Loading Compliance Checklist above is fully satisfied
+- [ ] Loaded correct industry scenario (if applicable)
 - [ ] Applied output standards
+- [ ] Ran `validation-framework.md` quality gate
+- [ ] Ran `anti-hallucination.md` claim check
 - [ ] Assumptions section populated
 - [ ] Open questions listed
 - [ ] Suggested next steps included
+- [ ] Local `.md` artifact saved under `outputs/<project>/` (if publishing externally)
+- [ ] Output engine conversion run on local artifact
 
 ## Story Refinement (Grooming) Checklist
 

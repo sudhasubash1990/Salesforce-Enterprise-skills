@@ -158,8 +158,22 @@ Story-level DoD includes:
 | No implementation deliverables listed | Add "Deliverables Expected (Implementation Team)" |
 | AC as dense paragraphs | Use nested Given/When/Then bullets |
 
+## Local Artifact Save (Mandatory Before API Call)
+
+Before calling the ADO API to create or update a work item:
+
+1. Save the complete story pack as a `.md` file under `outputs/<project-folder>/03-requirements/user-stories/`
+2. Run `python output-engine/convert.py --file <path-to.md>` to generate the office format
+3. Only then proceed with the ADO API call
+4. After successful creation, update the local `.md` with the ADO work item ID
+
+This ensures a recoverable local copy exists if the API fails and maintains the output pipeline per `output-generation.mdc`.
+
 ## AI Agent Checklist (ADO Publish)
 
+- [ ] Brain-Loading Compliance Checklist satisfied (see `checklists.md`)
+- [ ] Pre-delivery validation run (validation-framework + anti-hallucination + checklists)
+- [ ] Local `.md` artifact saved and output engine conversion run
 - [ ] Work item type confirmed (User Story vs Task)
 - [ ] Description includes full story pack + Estimation + Deliverables Expected
 - [ ] AC in nested bullet HTML in Description (required for Task)

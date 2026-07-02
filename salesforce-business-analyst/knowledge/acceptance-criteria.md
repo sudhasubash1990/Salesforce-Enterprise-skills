@@ -69,6 +69,42 @@ Then [observable outcome]
 
 For Azure DevOps HTML, use nested `<ul>` / `<li>` with **Given**, **When**, **Then**, **And** labels. See [ado-backlog-integration.md](ado-backlog-integration.md).
 
+### ADO HTML Rendering Example
+
+When publishing AC to ADO `System.Description` or `Microsoft.VSTS.Common.AcceptanceCriteria`, use this nested list structure:
+
+```html
+<h2>Acceptance Criteria</h2>
+<ul>
+  <li><b>AC1 — Happy path: create complaint</b>
+    <ul>
+      <li><b>Given</b> a Customer Service Agent is logged into Service Cloud</li>
+      <li><b>And</b> the agent has permission to create Cases</li>
+      <li><b>When</b> the agent creates a complaint with all required fields</li>
+      <li><b>Then</b> a Case record is saved successfully</li>
+      <li><b>And</b> Status defaults to "New"</li>
+    </ul>
+  </li>
+  <li><b>AC2 — Validation: missing required field</b>
+    <ul>
+      <li><b>Given</b> a Customer Service Agent is creating a complaint</li>
+      <li><b>When</b> any required field is missing</li>
+      <li><b>Then</b> the complaint cannot be saved</li>
+      <li><b>And</b> a clear validation message identifies the missing field(s)</li>
+    </ul>
+  </li>
+  <li><b>AC3 — Permission: agent cannot delete</b>
+    <ul>
+      <li><b>Given</b> a Customer Service Agent views an existing complaint</li>
+      <li><b>When</b> the agent attempts to delete the complaint</li>
+      <li><b>Then</b> the action is denied or unavailable</li>
+    </ul>
+  </li>
+</ul>
+```
+
+**Do NOT** use `<p>` with `<br/>` for Given/When/Then lines — this renders as dense paragraphs in ADO and is hard to scan. Always use nested `<ul><li>`.
+
 **Scenario types:**
 
 | Type | Example |

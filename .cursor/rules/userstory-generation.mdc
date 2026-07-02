@@ -10,12 +10,29 @@ Generate complete and production-ready Azure DevOps (ADO) User Stories following
 
 **Mandatory reads before generating:**
 
-- [salesforce-business-analyst/skill.md](../salesforce-business-analyst/skill.md) — Step 5 User Stories
+Brain modules (per loading order — do NOT skip):
+
+- [salesforce-business-analyst/brain/identity.md](../salesforce-business-analyst/brain/identity.md) — BA role and scope
+- [salesforce-business-analyst/brain/consulting-principles.md](../salesforce-business-analyst/brain/consulting-principles.md) — enterprise behaviour
+- [salesforce-business-analyst/brain/reasoning-framework.md](../salesforce-business-analyst/brain/reasoning-framework.md) — 13-stage reasoning
+- [salesforce-business-analyst/brain/output-framework.md](../salesforce-business-analyst/brain/output-framework.md) — artifact selection (required for deliverable generation)
+- [salesforce-business-analyst/brain/decision-framework.md](../salesforce-business-analyst/brain/decision-framework.md) — if fit-gap classification is produced
+- [salesforce-business-analyst/brain/validation-framework.md](../salesforce-business-analyst/brain/validation-framework.md) — pre-delivery validation
+- [salesforce-business-analyst/brain/anti-hallucination.md](../salesforce-business-analyst/brain/anti-hallucination.md) — estimation red flags
+
+Knowledge and templates:
+
+- [salesforce-business-analyst/skill.md](../salesforce-business-analyst/skill.md) — Step 5 User Stories + Pre-Execution Gate
 - [salesforce-business-analyst/knowledge/user-stories.md](../salesforce-business-analyst/knowledge/user-stories.md)
 - [salesforce-business-analyst/knowledge/acceptance-criteria.md](../salesforce-business-analyst/knowledge/acceptance-criteria.md)
 - [salesforce-business-analyst/knowledge/ado-backlog-integration.md](../salesforce-business-analyst/knowledge/ado-backlog-integration.md)
-- [salesforce-business-analyst/brain/anti-hallucination.md](../salesforce-business-analyst/brain/anti-hallucination.md) — estimation red flags
 - [salesforce-business-analyst/templates/user-story-template.md](../salesforce-business-analyst/templates/user-story-template.md)
+
+Salesforce Cloud knowledge (load when specific cloud is referenced):
+
+- [salesforce-business-analyst/knowledge/salesforce-clouds-overview.md](../salesforce-business-analyst/knowledge/salesforce-clouds-overview.md)
+- [salesforce-business-analyst/knowledge/service-cloud-patterns.md](../salesforce-business-analyst/knowledge/service-cloud-patterns.md) — if Service Cloud
+- [salesforce-business-analyst/knowledge/security-model.md](../salesforce-business-analyst/knowledge/security-model.md) — if permission/CRUD analysis needed
 
 The generated user story must be ready for:
 
@@ -242,6 +259,14 @@ List assumptions separately with IDs where helpful (A1, A2, …).
 
 Clearly identify items not included in the story.
 
+# Local Artifact Save (Before ADO Publish)
+
+Before calling any ADO API to create or update a work item:
+
+1. Save the complete user story as `.md` under `outputs/<project>/03-requirements/user-stories/`
+2. Run `python output-engine/convert.py --file <path-to.md>`
+3. Only then proceed with the ADO API call
+
 # Azure DevOps Publishing Rules
 
 When creating work items in ADO:
@@ -324,6 +349,8 @@ Whenever Salesforce/Fusion requirements are detected:
 
 A user story is considered complete only if:
 
+- Brain-Loading Compliance Checklist is satisfied (see `checklists.md`).
+- Pre-delivery validation run BEFORE first delivery (validation-framework + anti-hallucination + checklists).
 - INVEST principle is satisfied.
 - Acceptance criteria are testable (nested Given/When/Then bullets).
 - Business value is clear.
@@ -332,3 +359,5 @@ A user story is considered complete only if:
 - Development team can estimate effort from estimation inputs without additional BA clarification.
 - BA deliverables are distinguished from implementation deliverables.
 - Estimation follows anti-hallucination rules (no unsanctioned exact story points).
+- Local `.md` artifact saved under `outputs/` before ADO publish.
+- All 18 sections from Output Format are present.
