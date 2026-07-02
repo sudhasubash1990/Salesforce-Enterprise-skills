@@ -40,6 +40,48 @@ Salesforce programs fail more often from unclear requirements, weak traceability
 | `salesforce-business-analyst/` | Primary BA skill, playbooks, templates, and scenarios |
 | `scripts/` | Metadata enrichment and repository validation |
 
+## Installation (Cursor)
+
+The repository is designed to be opened directly as a Cursor workspace — the agent rules auto-load and route any BA request to the skill.
+
+### 1. Download the repository
+
+Using git:
+
+```bash
+git clone https://github.com/sudhasubash1990/Salesforce-Enterprise-skills.git
+```
+
+Or without git: on the GitHub page, click **Code → Download ZIP** and extract it.
+
+### 2. Open the folder in Cursor
+
+**File → Open Folder** → select the `Salesforce-Enterprise-skills` folder. Cursor automatically picks up the agent rules in `.cursor/rules/` (routing, instructions, user-story generation, output generation) and indexes the skill content.
+
+### 3. Start asking
+
+No further setup is required. Ask for any BA deliverable, for example:
+
+- *"Create a BRD for a Service Cloud complaint management process"*
+- *"Generate user stories for customer onboarding"*
+- *"Run a fit-gap analysis for these requirements"*
+
+The routing rules load the right brain modules, knowledge articles, playbooks, and templates automatically.
+
+### 4. Optional — Azure DevOps publishing
+
+To let the agent create User Stories and Tasks directly in Azure DevOps, copy `.cursor/mcp.json.example` to `.cursor/mcp.json` and fill in your ADO organization, project, and Personal Access Token. Never commit `.cursor/mcp.json` — it is git-ignored by design.
+
+### 5. Optional — Office file conversion
+
+To generate `.docx` / `.xlsx` / `.pptx` / `.pdf` files beside the Markdown deliverables, install [Pandoc](https://pandoc.org/installing.html) and run:
+
+```bash
+pip install -r output-engine/requirements.txt
+```
+
+If you skip this, everything still works — deliverables are produced as Markdown only.
+
 ## Getting Started
 
 ### For Human Practitioners
