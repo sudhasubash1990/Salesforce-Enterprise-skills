@@ -3,11 +3,11 @@ title: Readme
 module: Salesforce Business Analyst
 category: Playbook
 document_type: Consulting Methodology
-version: 1.1.0
+version: 1.2.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
-last_updated: 2026-07-02
+last_updated: 2026-07-03
 review_cycle: quarterly
 related_brain_modules: [salesforce-business-analyst/brain/reasoning-framework.md, salesforce-business-analyst/brain/enterprise-behaviors.md]
 related_knowledge: [salesforce-business-analyst/knowledge/README.md]
@@ -39,7 +39,9 @@ Three topics have two complementary playbooks. **Load the entry point first**; i
 
 - [backlog-grooming-playbook.md](backlog-grooming-playbook.md)
 - [business-capability-assessment-playbook.md](business-capability-assessment-playbook.md)
+- [change-management-playbook.md](change-management-playbook.md)
 - [current-state-assessment-playbook.md](current-state-assessment-playbook.md)
+- [digital-transformation-strategy-playbook.md](digital-transformation-strategy-playbook.md)
 - [discovery-workshop-playbook.md](discovery-workshop-playbook.md)
 - [executive-presentation-playbook.md](executive-presentation-playbook.md)
 - [gap-analysis-playbook.md](gap-analysis-playbook.md)
@@ -105,4 +107,5 @@ Three topics have two complementary playbooks. **Load the entry point first**; i
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.2.0 | 2026-07-03 | BA Practice Lead | Added change management and digital transformation strategy playbooks |
 | 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |

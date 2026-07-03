@@ -81,3 +81,25 @@ def test_no_expand_produces_subset():
 def test_missing_report_empty_for_known_queries():
     result = mod.retrieve("brd with fit-gap, raid log, uat plan and data migration")
     assert result["missing"] == []
+
+
+def test_kpi_baseline_query_routes_correctly():
+    result = mod.retrieve("define KPI baselines and target outcomes for downtime and reconciliation")
+    assert "kpi-baseline" in result["matched_tasks"]
+    assert "salesforce-business-analyst/templates/kpi-baseline-template.md" in result["files"]
+
+
+def test_change_management_query_routes_correctly():
+    result = mod.retrieve("change management strategy to handle resistance and upskilling of operations team")
+    assert "change-management" in result["matched_tasks"]
+    files = result["files"]
+    assert "salesforce-business-analyst/playbooks/change-management-playbook.md" in files
+    assert "salesforce-business-analyst/templates/comms-upskilling-plan-template.md" in files
+
+
+def test_digital_transformation_query_routes_correctly():
+    result = mod.retrieve("digital reinvention strategy with digital-first architecture and automation strategy")
+    assert "digital-transformation" in result["matched_tasks"]
+    files = result["files"]
+    assert "salesforce-business-analyst/playbooks/digital-transformation-strategy-playbook.md" in files
+    assert "salesforce-business-analyst/templates/kpi-baseline-template.md" in files

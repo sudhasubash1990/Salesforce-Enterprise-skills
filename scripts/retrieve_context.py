@@ -214,6 +214,55 @@ TASK_RULES: list[dict] = [
         ],
     },
     {
+        "task": "kpi-baseline",
+        "label": "KPI definition / baselines / target outcomes",
+        "keywords": [
+            r"\bkpi\b", r"baseline metric", r"target outcome", r"success metric",
+            r"benefit realiz?ation", r"metric baseline",
+        ],
+        "seeds": [
+            f"{SKILL}/brain/output-framework.md",
+            f"{SKILL}/templates/kpi-baseline-template.md",
+            f"{SKILL}/templates/business-case-template.md",
+            f"{SKILL}/knowledge/future-state-design.md",
+        ],
+    },
+    {
+        "task": "change-management",
+        "label": "Change management / adoption / upskilling (OCM)",
+        "keywords": [
+            r"change management", r"\bocm\b", r"resistance", r"upskill",
+            r"comms plan", r"communication plan", r"adoption plan",
+            r"role transition", r"training plan",
+        ],
+        "seeds": [
+            f"{SKILL}/brain/enterprise-behaviors.md",
+            f"{SKILL}/brain/communication-framework.md",
+            f"{SKILL}/playbooks/change-management-playbook.md",
+            f"{SKILL}/templates/comms-upskilling-plan-template.md",
+            f"{SKILL}/knowledge/stakeholder-analysis.md",
+        ],
+    },
+    {
+        "task": "digital-transformation",
+        "label": "Digital transformation / reinvention strategy",
+        "keywords": [
+            r"digital transformation", r"digital reinvention", r"digital[- ]first",
+            r"reinvention strateg", r"automation strateg",
+            r"process standardi[sz]ation", r"standardi[sz]e .*(process|region)",
+        ],
+        "seeds": [
+            f"{SKILL}/brain/decision-framework.md",
+            f"{SKILL}/playbooks/digital-transformation-strategy-playbook.md",
+            f"{SKILL}/playbooks/change-management-playbook.md",
+            f"{SKILL}/templates/kpi-baseline-template.md",
+            f"{SKILL}/templates/vision-document-template.md",
+            f"{SKILL}/knowledge/future-state-design.md",
+            f"{SKILL}/knowledge/capability-models.md",
+            "shared/salesforce-capability-map.md",
+        ],
+    },
+    {
         "task": "sprint-planning",
         "label": "Sprint planning / backlog grooming",
         "keywords": [r"sprint plan", r"backlog groom", r"refinement session"],

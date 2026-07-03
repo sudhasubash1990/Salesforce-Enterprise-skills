@@ -3,11 +3,11 @@ title: Readme
 module: Salesforce Business Analyst
 category: Template
 document_type: Template
-version: 1.1.0
+version: 1.2.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
-last_updated: 2026-07-02
+last_updated: 2026-07-03
 review_cycle: quarterly
 related_brain_modules: [salesforce-business-analyst/brain/output-framework.md, salesforce-business-analyst/brain/validation-framework.md]
 related_knowledge: [salesforce-business-analyst/knowledge/README.md]
@@ -30,6 +30,7 @@ Version **0.4.0**. See specification in `zzz_ImplmentationGuide/Sprint 3 Specifi
 - [assumption-log-template.md](assumption-log-template.md)
 - [business-case-template.md](business-case-template.md)
 - [business-rules-template.md](business-rules-template.md)
+- [comms-upskilling-plan-template.md](comms-upskilling-plan-template.md)
 - [current-state-template.md](current-state-template.md)
 - [data-dictionary-template.md](data-dictionary-template.md)
 - [decision-log-template.md](decision-log-template.md)
@@ -40,6 +41,7 @@ Version **0.4.0**. See specification in `zzz_ImplmentationGuide/Sprint 3 Specifi
 - [future-state-template.md](future-state-template.md)
 - [go-live-checklist-template.md](go-live-checklist-template.md)
 - [issue-log-template.md](issue-log-template.md)
+- [kpi-baseline-template.md](kpi-baseline-template.md)
 - [lessons-learned-template.md](lessons-learned-template.md)
 - [meeting-minutes-template.md](meeting-minutes-template.md)
 - [migration-plan-template.md](migration-plan-template.md)
@@ -106,4 +108,5 @@ Version **0.4.0**. See specification in `zzz_ImplmentationGuide/Sprint 3 Specifi
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.2.0 | 2026-07-03 | BA Practice Lead | Added KPI baseline and comms/upskilling plan templates |
 | 1.1.0 | 2026-07-02 | BA Practice Lead | Sprint 7 cross-linking and metadata enrichment |

@@ -3,11 +3,11 @@ title: Readme
 module: Salesforce Business Analyst
 category: Root
 document_type: Guide
-version: 1.6.0
+version: 1.7.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
-last_updated: 2026-07-02
+last_updated: 2026-07-03
 review_cycle: quarterly
 related_brain_modules: [salesforce-business-analyst/brain/README.md]
 related_knowledge: [salesforce-business-analyst/knowledge/README.md]
@@ -65,6 +65,9 @@ No further setup is required. Ask for any BA deliverable, for example:
 - *"Create a BRD for a Service Cloud complaint management process"*
 - *"Generate user stories for customer onboarding"*
 - *"Run a fit-gap analysis for these requirements"*
+- *"Define KPI baselines and target outcomes for the migration programme"*
+- *"Draft a change management strategy for the operations team"*
+- *"Outline a digital reinvention strategy with an automation roadmap"*
 
 The routing rules load the right brain modules, knowledge articles, playbooks, and templates automatically.
 
@@ -102,7 +105,7 @@ If you skip this, everything still works — deliverables are produced as Markdo
 
 | Skill | Status | Description |
 |-------|--------|-------------|
-| Salesforce Business Analyst | Active (v1.6.0) | Brain, knowledge, templates, playbooks, scenarios, interview guide, validation, learning paths |
+| Salesforce Business Analyst | Active (v1.7.0) | Brain, knowledge, templates, playbooks (incl. change management and digital transformation strategy), scenarios, interview guide, validation, learning paths |
 
 ## Contributing
 
@@ -159,6 +162,7 @@ MIT — see [LICENSE](LICENSE).
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.7.0 | 2026-07-03 | BA Practice Lead | Transformation coverage: KPI baseline and comms/upskilling templates, change management and digital transformation strategy playbooks, with retriever and routing support |
 | 1.6.0 | 2026-07-02 | BA Practice Lead | Layer 2 deterministic context retriever with routing rules and metadata-graph expansion |
 | 1.5.0 | 2026-07-02 | BA Practice Lead | Sprint 10 pre-execution gate, Service Cloud patterns, validator exclusions, cross-link and playbook dedupe fixes |
 | 1.4.0 | 2026-07-02 | BA Practice Lead | ADO backlog integration, estimation discipline, deliverable ownership, nested AC format |

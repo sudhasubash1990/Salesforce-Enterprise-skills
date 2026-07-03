@@ -3,11 +3,11 @@ title: Changelog
 module: Salesforce Business Analyst
 category: Root
 document_type: Guide
-version: 1.1.0
+version: 1.2.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
-last_updated: 2026-07-02
+last_updated: 2026-07-03
 review_cycle: quarterly
 related_brain_modules: [salesforce-business-analyst/brain/README.md]
 related_knowledge: [salesforce-business-analyst/knowledge/README.md]
@@ -26,6 +26,19 @@ tags: [changelog]
 Skill-specific version history.
 
 ## [Unreleased]
+## [1.7.0] - 2026-07-03
+
+### Added
+
+- `templates/kpi-baseline-template.md` — Current vs. Target KPI register (downtime, data accuracy, complaints, transaction processing, migration success, reconciliation, legacy run cost, release) with benefit realization mapping
+- `templates/comms-upskilling-plan-template.md` — audience segmentation, comms calendar, training matrix, role transition plan
+- `playbooks/change-management-playbook.md` — OCM methodology: resistance analysis, mitigation (early comms, upskilling, exception-management role transition), adoption tracking
+- `playbooks/digital-transformation-strategy-playbook.md` — digital-first architecture principles, regional process standardization, automation strategy, CX outcomes
+
+### Changed
+
+- Retriever routes added for `kpi-baseline`, `change-management`, `digital-transformation` in `scripts/retrieve_context.py` with guard tests; keyword triggers added to `.cursor/rules/routing.mdc`
+
 ## [1.6.0] - 2026-07-02
 
 ### Changed

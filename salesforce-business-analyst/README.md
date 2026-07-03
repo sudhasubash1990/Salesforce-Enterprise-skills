@@ -3,11 +3,11 @@ title: Readme
 module: Salesforce Business Analyst
 category: Root
 document_type: Guide
-version: 1.6.0
+version: 1.7.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
-last_updated: 2026-07-02
+last_updated: 2026-07-03
 review_cycle: quarterly
 related_brain_modules: [salesforce-business-analyst/brain/README.md]
 related_knowledge: [salesforce-business-analyst/knowledge/README.md]
@@ -31,8 +31,8 @@ Enterprise Business Analysis capability for Salesforce programs—discovery thro
 |----------|-------------|
 | [skill.md](skill.md) | **Start here** — orchestrator and core workflow |
 | [brain/](brain/) | **BA Brain (Sprint 1)** — [brain/README.md](brain/README.md) |
-| [playbooks/](playbooks/) | **Sprint 4** — 15 consulting playbooks + legacy guides |
-| [templates/](templates/) | **Sprint 3** — 31 enterprise templates |
+| [playbooks/](playbooks/) | **Sprint 4** — 17 consulting playbooks (incl. change management, digital transformation strategy) + legacy guides |
+| [templates/](templates/) | **Sprint 3** — 33 enterprise templates (incl. KPI baseline, comms/upskilling plan) |
 | [knowledge/](knowledge/) | **Enterprise Knowledge Base** — 27 Sprint 2 articles + hubs |
 | [scenarios/](scenarios/) | **Sprint 5** — 28 domain scenarios + legacy overviews |
 | [interview-guide/](interview-guide/) | **Sprint 6** — 670 interview items across 24 topic files |
@@ -58,7 +58,7 @@ Enterprise Business Analysis capability for Salesforce programs—discovery thro
 
 ## Version
 
-Current skill version: **1.6.0** — see [changelog.md](changelog.md)
+Current skill version: **1.7.0** — see [changelog.md](changelog.md)
 
 ## Related Brain Modules
 
@@ -107,6 +107,7 @@ Current skill version: **1.6.0** — see [changelog.md](changelog.md)
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.7.0 | 2026-07-03 | BA Practice Lead | Transformation coverage: KPI baseline and comms/upskilling templates, change management and digital transformation strategy playbooks |
 | 1.6.0 | 2026-07-02 | BA Practice Lead | Layer 2 deterministic context retriever with routing rules and metadata-graph expansion |
 | 1.5.0 | 2026-07-02 | BA Practice Lead | Sprint 10 pre-execution gate, Service Cloud patterns, validator exclusions, cross-link and playbook dedupe fixes |
 | 1.4.0 | 2026-07-02 | BA Practice Lead | ADO backlog integration, estimation discipline, deliverable ownership, nested AC format |
