@@ -7,6 +7,8 @@ tags: [production-support, sprint-9]
 
 # Production Support, Release Operations & Operational Excellence
 
+> **Module identity:** This folder is the **QE Sprint 9 ops pack** inside SEACF Module 2. It is **not** the planned standalone `salesforce-production-support/` module. See [framework-core/MODULE-INTEGRATION.md](../../framework-core/MODULE-INTEGRATION.md).
+
 ## Purpose
 
 Enable the AI to act as a **Production Support Lead / Release Manager / Service Delivery Consultant**: assess go-live readiness, run hypercare, manage incidents/problems/changes, operate releases, monitor health, apply **operations intelligence**, and drive operational excellence for Salesforce.
@@ -15,7 +17,7 @@ Enable the AI to act as a **Production Support Lead / Release Manager / Service 
 
 **In scope:** Go-live, hypercare, ITIL-aligned service practices, release operations, monitoring, environments, knowledge, operational excellence, runbooks, Salesforce production intelligence, operational analytics, executive reporting, **operations intelligence** (health, anomalies, predictions, decisions).
 
-**Out of scope:** Inventing SLA/MTTR/KPI values; replacing Sprint 7 defect RCA engine (reuse it); full Apex fix implementation.
+**Out of scope:** Inventing SLA/MTTR/KPI values; replacing Sprint 7 defect RCA engine (reuse it); full Apex fix implementation; acting as a substitute for the future standalone Production Support SEACF module.
 
 ## Engine entry
 

@@ -1,10 +1,15 @@
 """Deterministic context retriever for the Salesforce BA skill (Layer 2).
 
-Given a user request, returns the exact file bundle (brain, knowledge,
+BA-scoped by design. QE requests are detected early and redirected to the
+Quality Engineering skill + Enterprise Orchestrator (not expanded as BA tasks).
+
+Given a BA user request, returns the exact file bundle (brain, knowledge,
 templates, playbooks, scenarios) the agent must load before producing a
 deliverable. Replaces free-form file discovery with the routing rules from
 `.cursor/rules/routing.mdc` plus one-hop expansion of the frontmatter
 metadata graph (`related_*` fields).
+
+Tier-0 SEACF Framework Core files are always included for BA tasks.
 
 Usage:
   python scripts/retrieve_context.py --query "create user story for banking loan complaints"
@@ -22,9 +27,19 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 SKILL = "salesforce-business-analyst"
+QE_SKILL = "salesforce-quality-engineering"
+
+# SEACF Tier-0 — loaded for every BA task (and echoed on QE redirect).
+TIER0_CORE = [
+    "framework-core/README.md",
+    "framework-core/orchestration/request-router.md",
+    "framework-core/orchestration/context-manager.md",
+    "framework-core/governance/quality-standards.md",
+]
 
 # Files loaded for EVERY BA task (skill entry + identity + validation core).
 ALWAYS_LOAD = [
+    *TIER0_CORE,
     f"{SKILL}/skill.md",
     f"{SKILL}/brain/identity.md",
     f"{SKILL}/brain/reasoning-framework.md",
@@ -33,6 +48,36 @@ ALWAYS_LOAD = [
     f"{SKILL}/checklists.md",
     "shared/glossary.md",
     "shared/output-standards.md",
+]
+
+# Dominant QE signals — if matched (and not clearly BA-authored), redirect.
+QE_REDIRECT_KEYWORDS = [
+    r"\bqe\b",
+    r"quality engineering",
+    r"test strateg",
+    r"test design engine",
+    r"defect intelligence",
+    r"automation intelligence",
+    r"automation roi",
+    r"playwright.*(strateg|framework|feasib)",
+    r"\bsev\s*[1-3]\b",
+    r"hypercare",
+    r"production support",
+    r"incident triage",
+    r"enterprise orchestrator",
+    r"quality advisory",
+    r"certif(y|ication).*(framework|qe|module)",
+    r"regression suite.*(sprint|framework)",
+    r"coverage matrix",
+    r"requirement analysis engine",
+]
+
+QE_REDIRECT_BUNDLE = [
+    *TIER0_CORE,
+    f"{QE_SKILL}/skill.md",
+    f"{QE_SKILL}/enterprise-orchestrator/enterprise-orchestrator.md",
+    f"{QE_SKILL}/enterprise-orchestrator/capability-routing-table.md",
+    f"{QE_SKILL}/brain/README.md",
 ]
 
 # Task routing rules. Mirrors `.cursor/rules/routing.mdc` keyword triggers.
@@ -371,6 +416,7 @@ RELATED_FIELDS = [
 
 LAYER_ORDER = [
     ("Rules", ".cursor/rules/"),
+    ("Framework Core", "framework-core/"),
     ("Skill core", f"{SKILL}/skill.md"),
     ("Brain", f"{SKILL}/brain/"),
     ("Knowledge", f"{SKILL}/knowledge/"),
@@ -379,9 +425,23 @@ LAYER_ORDER = [
     ("Scenarios", f"{SKILL}/scenarios/"),
     ("Interview guide", f"{SKILL}/interview-guide/"),
     ("Validation", f"{SKILL}/validation/"),
+    ("QE redirect", f"{QE_SKILL}/"),
     ("Shared", "shared/"),
     ("Examples", "examples/"),
 ]
+
+
+def is_qe_redirect(query: str) -> bool:
+    """True when the request is clearly QE-dominated (not BA UAT / story work)."""
+    lowered = query.lower()
+    # BA-owned UAT / story / BRD wording should stay on BA path even if "test" appears.
+    ba_anchors = [
+        r"\bbrd\b", r"\bfrd\b", r"user stor", r"\binvest\b", r"fit-?gap",
+        r"workshop", r"acceptance criteria", r"\buat\b", r"moscow",
+    ]
+    if any(re.search(k, lowered) for k in ba_anchors):
+        return False
+    return any(re.search(k, lowered) for k in QE_REDIRECT_KEYWORDS)
 
 
 def parse_frontmatter(text: str) -> dict[str, str]:
@@ -448,6 +508,30 @@ def layer_of(repo_rel: str) -> str:
 
 
 def retrieve(query: str, expand: bool = True) -> dict:
+    if is_qe_redirect(query):
+        ordered = list(dict.fromkeys(QE_REDIRECT_BUNDLE))
+        missing = [f for f in ordered if not (REPO / f).is_file()]
+        files = [f for f in ordered if (REPO / f).is_file()]
+        grouped: dict[str, list[str]] = {}
+        for f in files:
+            grouped.setdefault(layer_of(f), []).append(f)
+        return {
+            "query": query,
+            "matched_tasks": ["qe-redirect"],
+            "matched_clouds": [],
+            "matched_industries": [],
+            "files": files,
+            "grouped": grouped,
+            "missing": missing,
+            "redirect": "salesforce-quality-engineering",
+            "redirect_message": (
+                "This request matches Quality Engineering. Load the QE redirect "
+                "bundle, then follow salesforce-quality-engineering/skill.md "
+                "Pre-Execution Gate and enterprise-orchestrator/. Do not continue "
+                "as a BA deliverable path."
+            ),
+        }
+
     tasks = match_rules(query, TASK_RULES)
     clouds = match_rules(query, CLOUD_RULES)
     industries = match_rules(query, INDUSTRY_RULES)
@@ -474,7 +558,7 @@ def retrieve(query: str, expand: bool = True) -> dict:
     missing = [f for f in ordered if not (REPO / f).is_file()]
     files = [f for f in ordered if (REPO / f).is_file()]
 
-    grouped: dict[str, list[str]] = {}
+    grouped = {}
     for f in files:
         grouped.setdefault(layer_of(f), []).append(f)
 
@@ -486,11 +570,15 @@ def retrieve(query: str, expand: bool = True) -> dict:
         "files": files,
         "grouped": grouped,
         "missing": missing,
+        "redirect": None,
     }
 
 
 def print_report(result: dict) -> None:
     print(f"Query: {result['query']}")
+    if result.get("redirect"):
+        print(f"REDIRECT → {result['redirect']}")
+        print(result.get("redirect_message", ""))
     print(f"Matched tasks: {', '.join(result['matched_tasks']) or '(none — fallback bundle)'}")
     if result["matched_clouds"]:
         print(f"Matched clouds: {', '.join(result['matched_clouds'])}")
@@ -512,7 +600,7 @@ def print_report(result: dict) -> None:
             print(f"    ! {f}")
     if not result["matched_tasks"]:
         print(
-            "\nNo task rule matched. Loaded the core bundle only; "
+            "\nNo task rule matched. Loaded the Tier-0 + BA core bundle only; "
             "read salesforce-business-analyst/skill.md and ask the user to "
             "clarify deliverable type and industry context."
         )
@@ -527,6 +615,7 @@ def main() -> int:
     args = parser.parse_args()
 
     if args.list_tasks:
+        print(f"{'qe-redirect':<18} Quality Engineering redirect (not a BA task)")
         for rule in TASK_RULES:
             print(f"{rule['task']:<18} {rule['label']}")
         return 0

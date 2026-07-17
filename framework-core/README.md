@@ -8,6 +8,8 @@ last_updated: 2026-07-18
 
 # SEACF Framework Core
 
+**Status:** v0.1.0 **scaffold** — authoritative for Tier-0 loading, cross-module routing contracts, and shared pointers. Canonical deep content stays in `shared/`, `docs/`, and Active module packs (BA, QE). Thin Core files are intentional contracts, not incomplete copies of module engines.
+
 ## Purpose
 
 Reusable **Framework Core** for the Salesforce Enterprise AI Consulting Framework (SEACF). Every present and future module—Business Analyst, Quality Engineering, Solution Architect, Developer, DevOps, Production Support—loads this core for orchestration, shared knowledge pointers, governance, and evaluation.

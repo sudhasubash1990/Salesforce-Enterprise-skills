@@ -10,14 +10,14 @@ description: >-
   requirements, user stories, acceptance criteria, discovery, stakeholder workshops,
   AS-IS TO-BE process, fit-gap, gap analysis, scope definition, backlog grooming,
   RAID, traceability matrix, UAT test scenarios, interview prep, or mock interviews.
-version: 1.6.0
+version: 1.7.1
 ---
 
 # Salesforce Business Analyst
 
 Senior Salesforce BA workflow: **BA Brain** (Sprint 1), **Knowledge Base** (Sprint 2), **Template Library** (Sprint 3), **Playbooks** (Sprint 4), **Industry Scenarios** (Sprint 5), **Interview Intelligence** (Sprint 6), **Enterprise Validation** (Sprint 8), **Continuous KM** (Sprint 9).
 
-**SEACF Framework Core:** Cross-module orchestration, shared-knowledge indexes, governance, and evaluation contracts live in [`framework-core/`](../framework-core/README.md). BA routing remains in `.cursor/rules` + this skill; do not fork glossary or output standards—use Core → `shared/`.
+**SEACF Framework Core (Tier-0):** Load [`framework-core/README.md`](../framework-core/README.md) + [`orchestration/request-router.md`](../framework-core/orchestration/request-router.md) before BA deep work. Cross-module contracts live in Core; BA routing remains in `.cursor/rules` + this skill; do not fork glossary or output standards—use Core → `shared/`.
 
 ## BA Brain Architecture
 
@@ -50,7 +50,15 @@ skill.md (this file — orchestrator)
 
 **HARD RULE:** Before producing any deliverable, the agent MUST complete this checklist. Skipping steps caused 4 rework cycles on Task-9.
 
-### Step 0 — Run the Layer 2 Retriever
+### Step 0 — Tier-0 Framework Core + Layer 2 Retriever
+
+1. Load SEACF Tier-0 contracts (minimum):
+   - [`framework-core/README.md`](../framework-core/README.md)
+   - [`framework-core/orchestration/request-router.md`](../framework-core/orchestration/request-router.md)
+   - [`framework-core/orchestration/context-manager.md`](../framework-core/orchestration/context-manager.md)
+   - [`framework-core/governance/quality-standards.md`](../framework-core/governance/quality-standards.md)
+2. Confirm the request is **BA** (not QE). If Quality Engineering keywords dominate (test strategy, defect intelligence, automation ROI, Sev1 ops), stop and route to [`salesforce-quality-engineering/skill.md`](../salesforce-quality-engineering/skill.md) via the QE Enterprise Orchestrator.
+3. Run the BA Layer 2 retriever (includes Tier-0 in `ALWAYS_LOAD`):
 
 ```powershell
 python scripts/retrieve_context.py --query "<the user's request>"
@@ -437,6 +445,8 @@ Run tests: `python -m pytest scripts/test_update_skill_version.py -q`
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.7.1 | 2026-07-18 | BA Practice Lead | Tier-0 Framework Core enforced in Pre-Execution Gate; QE handoff clarified |
+| 1.7.0 | 2026-07-03 | BA Practice Lead | KPI/OCM/digital-transformation templates & playbooks |
 | 1.6.0 | 2026-07-02 | BA Practice Lead | Layer 2 deterministic context retriever with routing rules and metadata-graph expansion |
 | 1.5.0 | 2026-07-02 | BA Practice Lead | Sprint 10 pre-execution gate, Service Cloud patterns, validator exclusions, cross-link and playbook dedupe fixes |
 | 1.4.0 | 2026-07-02 | BA Practice Lead | ADO backlog integration, estimation discipline, deliverable ownership |

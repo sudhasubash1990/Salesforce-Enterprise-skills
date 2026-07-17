@@ -3,66 +3,61 @@ title: Anti-Patterns
 module: Salesforce Quality Engineering
 category: Root
 document_type: Guide
-version: 0.1.0
-review_status: Draft
+version: 0.14.0
+review_status: Approved
 owner: QE Practice Lead
 created_date: 2026-07-17
-last_updated: 2026-07-17
+last_updated: 2026-07-18
 review_cycle: quarterly
 related_documents:
   - salesforce-quality-engineering/knowledge/best-practices.md
   - salesforce-quality-engineering/README.md
+  - salesforce-quality-engineering/brain/anti-hallucination.md
 keywords: [anti-patterns]
-tags: [anti-patterns, foundation]
+tags: [anti-patterns]
 ---
 
 # Anti-Patterns
 
-**Purpose:** Category index for Salesforce Quality Engineering anti-patterns to avoid.
+**Purpose:** Anti-patterns to avoid in Salesforce Quality Engineering engagements.
 
-**Scope:** Category headings only in Sprint 0. Anti-pattern descriptions will be added in later sprints.
-
-**Owner:** QE Practice Lead
-
-**Version:** 0.1.0
-
-**Status:** Draft (Sprint 0 Foundation)
+**Status:** Active index (Sprint 11 alignment)
 
 ---
 
 ## Incomplete Requirement Analysis
 
-## Poor Test Coverage
+Jumping to detailed test cases or automation without Sprint 2 analysis, gaps, and quality score. Fix: load [requirement-analysis.md](requirement-analysis.md) first.
 
-## Weak Test Design
+## Poor Test Coverage / Weak Test Design
 
-## Duplicate Test Cases
+Equivalence and risk ignored; only happy-path cases. Fix: [test-design-engine.md](test-design-engine.md) + coverage matrix.
 
-## Poor Defect Reporting
+## Duplicate Test Cases / Knowledge Forks
 
-## Weak Regression
+Copying BA stories or Core glossary into QE articles. Fix: multi-lens pointers; canonical content in BA/`shared`/`framework-core`.
 
-## Automation Misuse
+## Skipping the Enterprise Orchestrator
 
-## Documentation Gaps
+Loading an unrelated sprint pack because the prompt mentioned a keyword. Fix: [../enterprise-orchestrator/enterprise-orchestrator.md](../enterprise-orchestrator/enterprise-orchestrator.md).
 
-## Release Risks
+## Invented Metrics
 
----
+Maturity scores, SLA/MTTR, ROI %, certification levels, or compliance attestations without evidence. Fix: [../brain/anti-hallucination.md](../brain/anti-hallucination.md).
 
-## Related Documents
+## Full Automation Scripts by Default
+
+Generating Playwright/Selenium suites when the ask was strategy or feasibility. Fix: Sprint 8 advisory only unless scripts are explicitly requested.
+
+## Sev1 Diverted to Advisory
+
+Portfolio health or maturity scoring while production is down. Fix: Sprint 9 restore-service-first.
+
+## Conflating QE Production Support with Standalone PS Module
+
+Treating `production-support/` (QE Sprint 9) as the future `salesforce-production-support/` module. Fix: [../../framework-core/MODULE-INTEGRATION.md](../../framework-core/MODULE-INTEGRATION.md).
+
+## Related
 
 - [best-practices.md](best-practices.md)
-- [quality-gates.md](quality-gates.md)
-- [README.md](README.md)
-
-## Future Enhancements
-
-- Document symptoms, impact, and remediation per anti-pattern
-- Link to related checklists and gates
-
-## Navigation
-
-- **Previous:** [best-practices.md](best-practices.md)
-- **Next:** [interview-guide.md](interview-guide.md)
-- **See Also:** [metrics.md](metrics.md)
+- [../skill.md](../skill.md)

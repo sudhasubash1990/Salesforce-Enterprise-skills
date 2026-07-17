@@ -39,6 +39,14 @@ tags: [changelog]
 
 ## [Unreleased]
 
+### Changed
+
+- Pre-Execution Gate Step 0 enforces Tier-0 `framework-core/` load before Enterprise Orchestrator
+- Enterprise Orchestrator architecture diagram includes Sprint 11 Validation/Certification
+- Production Support README clarifies QE Sprint 9 pack vs planned standalone PS module
+- Fixed 18 broken E2E validation relative links after Sprint 11 folder move
+- Cursor stub lists Framework Core; best-practices / anti-patterns indexes point to live packs
+
 ## [0.14.0] - 2026-07-18
 
 ### Added

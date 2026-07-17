@@ -33,7 +33,7 @@ Industry benchmark scenarios for framework behavioural validation.
 ## Related Documents
 
 - [../golden-datasets/](../golden-datasets/README.md)
-- [../../scenarios/README.md](../../scenarios/README.md)
+- [../../../scenarios/README.md](../../../scenarios/README.md)
 
 ## Industries
 

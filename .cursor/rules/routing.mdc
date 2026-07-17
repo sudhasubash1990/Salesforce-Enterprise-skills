@@ -5,7 +5,24 @@ alwaysApply: true
 
 Decision tree for routing user requests to the correct skill, playbook, or template.
 
-## Layer 2 Retriever (Run First)
+## Layer 0 — Framework Core (All SEACF Modules)
+
+Before BA or QE deep work, load Tier-0 contracts from [`framework-core/`](../../framework-core/README.md):
+
+- `framework-core/README.md`
+- `framework-core/orchestration/request-router.md`
+- `framework-core/orchestration/context-manager.md`
+- `framework-core/governance/quality-standards.md`
+
+**Router separation:**
+
+| Layer | Owner | Role |
+|-------|-------|------|
+| `framework-core/orchestration/` | SEACF Core | Cross-module contracts (which module, loading tiers) |
+| `.cursor/rules/routing.mdc` + `scripts/retrieve_context.py` | BA | BA Layer 2 file-bundle retriever (BA-scoped; QE keywords redirect) |
+| `salesforce-quality-engineering/enterprise-orchestrator/` | QE Module 2 | Intra-QE sprint capability routing |
+
+## Layer 2 Retriever (BA — Run First for BA Tasks)
 
 **For any BA task, run the deterministic retriever BEFORE loading files manually:**
 
@@ -13,61 +30,66 @@ Decision tree for routing user requests to the correct skill, playbook, or templ
 python scripts/retrieve_context.py --query "<the user's request>"
 ```
 
-It matches the request against this file's routing rules plus the frontmatter metadata graph and returns the exact context bundle (brain, knowledge, templates, playbooks, scenarios) to load. Read the files it lists — no more, no fewer — then proceed. Use `--json` for machine-readable output and `--list-tasks` to see supported routes.
+It always includes Tier-0 Framework Core. It matches BA routing rules plus the frontmatter metadata graph and returns the exact context bundle to load. If the query is QE-dominated, it returns a **qe-redirect** bundle pointing at `salesforce-quality-engineering/` — do not continue on the BA path. Use `--json` for machine-readable output and `--list-tasks` to see supported routes.
 
 If the retriever reports *no task rule matched*, fall back to the manual decision tree below and ask one clarifying question about deliverable type and industry context.
 
-The keyword tables below remain the source of truth for maintaining the retriever: when adding a route here, add the same rule to `scripts/retrieve_context.py` (guarded by `scripts/test_retrieve_context.py`).
+The keyword tables below remain the source of truth for maintaining the BA retriever: when adding a BA route here, add the same rule to `scripts/retrieve_context.py` (guarded by `scripts/test_retrieve_context.py`).
 
 ## Primary Router
 
 ```
 User Request
-    │
-    ├─ Any BA task (start) ─────────────────────────► skill.md + brain/identity.md
-    │
-    ├─ Analyze requirement / recommend solution ────► brain/reasoning-framework.md
-    │       └─ brain/decision-framework.md + playbooks/fit-gap-analysis.md
-    │
-    ├─ Requirements / BRD / business needs ──────────► skill.md + brain/output-framework.md
-    │       └─ templates/brd-template.md
-    │
-    ├─ Functional requirements / FRD ───────────────► brain/output-framework.md
-    │       └─ templates/frd-template.md
-    │
-    ├─ User stories / backlog / acceptance criteria ► skill.md + brain/output-framework.md
-    │       └─ templates/user-story-template.md
-    │
-    ├─ RAID / risks / assumptions / dependencies ───► templates/raid-log-template.md
-    │
-    ├─ Traceability / RTM ──────────────────────────► templates/traceability-matrix-template.md
-    │
-    ├─ Discovery / workshops / stakeholder interviews ► brain/enterprise-behaviors.md
-    │       └─ playbooks/discovery-workshop-playbook.md + templates/workshop-agenda-template.md
-    │
-    ├─ Fit-gap / solution options / build vs buy ───► brain/decision-framework.md
-    │       └─ playbooks/gap-analysis-playbook.md + solution-recommendation-playbook.md
-    │
-    ├─ Validate output / review draft ──────────────► brain/validation-framework.md
-    │       └─ brain/anti-hallucination.md + checklists.md
-    │
-    ├─ UAT / test scenarios / sign-off ─────────────► playbooks/uat-playbook.md + uat-planning-playbook.md
-    │
-    ├─ KPI definition / baselines / target outcomes ► templates/kpi-baseline-template.md
-    │
-    ├─ Change management / adoption / upskilling ───► playbooks/change-management-playbook.md
-    │       └─ templates/comms-upskilling-plan-template.md
-    │
-    ├─ Digital transformation / reinvention strategy ► playbooks/digital-transformation-strategy-playbook.md
-    │
-    ├─ Industry-specific context ───────────────────► scenarios/<industry>.md
-    │
-    ├─ Interview prep / hiring / mock interview / capability assessment ► interview-guide/interview-index.md
-    │       └─ interview-guide/<topic>.md per round type
-    │
-    ├─ Prompt engineering for BA tasks ─────────────► prompts.md
-    │
-    └─ Repository / governance / standards ─────────► docs/ or shared/
+ │
+ ├─ Tier-0 Framework Core (all SEACF) ───────────► framework-core/README.md + request-router.md
+ │
+ ├─ QE / test strategy / defect / automation / Sev1 / hypercare / CQO advisory
+ │     └─► salesforce-quality-engineering/skill.md + enterprise-orchestrator/
+ │
+ ├─ Any BA task (start) ─────────────────────────► skill.md + brain/identity.md
+ │
+ ├─ Analyze requirement / recommend solution ────► brain/reasoning-framework.md
+ │       └─ brain/decision-framework.md + playbooks/fit-gap-analysis.md
+ │
+ ├─ Requirements / BRD / business needs ──────────► skill.md + brain/output-framework.md
+ │       └─ templates/brd-template.md
+ │
+ ├─ Functional requirements / FRD ───────────────► brain/output-framework.md
+ │       └─ templates/frd-template.md
+ │
+ ├─ User stories / backlog / acceptance criteria ► skill.md + brain/output-framework.md
+ │       └─ templates/user-story-template.md
+ │
+ ├─ RAID / risks / assumptions / dependencies ───► templates/raid-log-template.md
+ │
+ ├─ Traceability / RTM ──────────────────────────► templates/traceability-matrix-template.md
+ │
+ ├─ Discovery / workshops / stakeholder interviews ► brain/enterprise-behaviors.md
+ │       └─ playbooks/discovery-workshop-playbook.md + templates/workshop-agenda-template.md
+ │
+ ├─ Fit-gap / solution options / build vs buy ───► brain/decision-framework.md
+ │       └─ playbooks/gap-analysis-playbook.md + solution-recommendation-playbook.md
+ │
+ ├─ Validate BA draft / review BA artifact ──────► brain/validation-framework.md
+ │       └─ brain/anti-hallucination.md + checklists.md
+ │
+ ├─ UAT / BA test scenarios / sign-off ──────────► playbooks/uat-playbook.md + uat-planning-playbook.md
+ │
+ ├─ KPI definition / baselines / target outcomes ► templates/kpi-baseline-template.md
+ │
+ ├─ Change management / adoption / upskilling ───► playbooks/change-management-playbook.md
+ │       └─ templates/comms-upskilling-plan-template.md
+ │
+ ├─ Digital transformation / reinvention strategy ► playbooks/digital-transformation-strategy-playbook.md
+ │
+ ├─ Industry-specific context ───────────────────► scenarios/<industry>.md
+ │
+ ├─ Interview prep / hiring / mock interview / capability assessment ► interview-guide/interview-index.md
+ │       └─ interview-guide/<topic>.md per round type
+ │
+ ├─ Prompt engineering for BA tasks ─────────────► prompts.md
+ │
+ └─ Repository / governance / standards ─────────► docs/ or shared/
 ```
 
 ## Keyword Triggers
@@ -82,11 +104,13 @@ User Request
 | RAID, risk, assumption, issue, dependency | `templates/raid-log-template.md` |
 | traceability, RTM, req to test mapping | `templates/traceability-matrix-template.md` |
 | analyze requirement, recommend approach | `brain/reasoning-framework.md` + `brain/decision-framework.md` |
-| validate, review draft, quality check | `brain/validation-framework.md` + `checklists.md` |
+| validate BA draft, review BRD/story draft | `brain/validation-framework.md` + `checklists.md` |
+| QE, quality engineering, test strategy, defect intelligence, automation intelligence, Sev1, hypercare, CQO advisory, enterprise orchestrator | `salesforce-quality-engineering/skill.md` + `enterprise-orchestrator/` (not BA retriever expansion) |
 | workshop, discovery, kickoff, stakeholder map | `playbooks/discovery-workshop-playbook.md` |
 | fit-gap, gap analysis, standard vs custom | `playbooks/fit-gap-analysis.md` + `playbooks/gap-analysis-playbook.md` |
 | sprint planning, backlog grooming | `playbooks/sprint-planning-playbook.md`, `backlog-grooming-playbook.md` |
-| go-live, production readiness | `playbooks/production-readiness-playbook.md` |
+| go-live, production readiness (BA change cutover) | `playbooks/production-readiness-playbook.md` |
+| go-live, hypercare, Sev1 incident (QE ops) | `salesforce-quality-engineering/production-support/` |
 | utilities, retail, telecom, insurance, banking scenario | `scenarios/<industry>/` per [scenarios/README.md](../../salesforce-business-analyst/scenarios/README.md) |
 | template, brd, frd, epic, rtm | `templates/README.md` |
 | UAT, test case, sign-off, defect | `playbooks/uat-playbook.md` + `playbooks/uat-planning-playbook.md` |

@@ -14,6 +14,7 @@ Files listed first should receive higher retrieval weight.
 ```
 framework-core/README.md
 framework-core/orchestration/request-router.md
+framework-core/orchestration/context-manager.md
 framework-core/governance/quality-standards.md
 framework-core/evaluation/certification-engine.md
 salesforce-business-analyst/skill.md
@@ -36,6 +37,12 @@ salesforce-business-analyst/ba-maturity-model.md
 salesforce-business-analyst/learning-paths/README.md
 salesforce-business-analyst/checklists.md
 salesforce-business-analyst/prompts.md
+salesforce-quality-engineering/skill.md
+salesforce-quality-engineering/enterprise-orchestrator/enterprise-orchestrator.md
+salesforce-quality-engineering/enterprise-orchestrator/capability-routing-table.md
+salesforce-quality-engineering/brain/README.md
+salesforce-quality-engineering/validation/README.md
+salesforce-quality-engineering/prompts.md
 shared/glossary.md
 shared/output-standards.md
 .cursor/rules/routing.mdc
@@ -52,6 +59,17 @@ salesforce-business-analyst/interview-guide/*
 salesforce-business-analyst/validation/*
 salesforce-business-analyst/learning-paths/*
 salesforce-business-analyst/implementation/*
+salesforce-quality-engineering/brain/*
+salesforce-quality-engineering/knowledge/*
+salesforce-quality-engineering/templates/*
+salesforce-quality-engineering/playbooks/*
+salesforce-quality-engineering/ado/*
+salesforce-quality-engineering/quality-intelligence/*
+salesforce-quality-engineering/automation-intelligence/*
+salesforce-quality-engineering/production-support/*
+salesforce-quality-engineering/enterprise-quality/*
+salesforce-quality-engineering/validation/*
+salesforce-quality-engineering/enterprise-orchestrator/*
 ```
 
 ### Tier 3 — Scenarios and Examples
@@ -59,6 +77,7 @@ salesforce-business-analyst/implementation/*
 ```
 salesforce-business-analyst/scenarios/*
 salesforce-business-analyst/examples/*
+salesforce-quality-engineering/scenarios/*
 examples/*
 ```
 
@@ -77,7 +96,7 @@ shared/*
 1. Add this repository as the workspace root
 2. Enable codebase indexing for the full repository
 3. Optionally add a project rule pointing to `.cursor/rules/instructions.mdc`
-4. For skill auto-discovery, symlink or copy `salesforce-business-analyst/skill.md` to `.cursor/skills/salesforce-business-analyst/SKILL.md` (planned in roadmap)
+4. Cursor discovery stubs exist at `.cursor/skills/salesforce-business-analyst/SKILL.md` and `.cursor/skills/salesforce-quality-engineering/SKILL.md` (point to canonical module `skill.md` files)
 
 ## Chunking Recommendations
 

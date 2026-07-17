@@ -3,11 +3,11 @@ title: Readme
 module: Salesforce Business Analyst
 category: Root
 document_type: Guide
-version: 1.7.0
+version: 1.7.1
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
-last_updated: 2026-07-03
+last_updated: 2026-07-18
 review_cycle: quarterly
 related_brain_modules: [salesforce-business-analyst/brain/README.md]
 related_knowledge: [salesforce-business-analyst/knowledge/README.md]
@@ -58,7 +58,7 @@ Enterprise Business Analysis capability for Salesforce programs—discovery thro
 
 ## Version
 
-Current skill version: **1.7.0** — see [CHANGELOG.md](CHANGELOG.md)
+Current skill version: **1.7.1** — see [CHANGELOG.md](CHANGELOG.md)
 
 ## Related Brain Modules
 
@@ -107,6 +107,7 @@ Current skill version: **1.7.0** — see [CHANGELOG.md](CHANGELOG.md)
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.7.1 | 2026-07-18 | BA Practice Lead | Tier-0 Framework Core in Pre-Execution Gate; version alignment across skill/README/stub |
 | 1.7.0 | 2026-07-03 | BA Practice Lead | Transformation coverage: KPI baseline and comms/upskilling templates, change management and digital transformation strategy playbooks |
 | 1.6.0 | 2026-07-02 | BA Practice Lead | Layer 2 deterministic context retriever with routing rules and metadata-graph expansion |
 | 1.5.0 | 2026-07-02 | BA Practice Lead | Sprint 10 pre-execution gate, Service Cloud patterns, validator exclusions, cross-link and playbook dedupe fixes |

@@ -26,7 +26,7 @@ QE industry knowledge: `salesforce-quality-engineering/knowledge/industry/` (if 
 2. Prompt: generate scenarios → confirm Sprint 3 design engine before cases.  
 3. Prompt: production incident → confirm Sprint 9 first.  
 4. Prompt: portfolio/exec health → confirm Sprint 10 advisory sink.  
-5. Record Route lines and gaps in parent [benchmark-scorecard.md](../benchmark-scorecard.md).
+5. Record Route lines and gaps in parent [benchmark-scorecard.md](../../benchmark-scorecard.md).
 
 ## Pass criteria
 
@@ -38,5 +38,5 @@ QE industry knowledge: `salesforce-quality-engineering/knowledge/industry/` (if 
 ## Related
 
 - [../README.md](../README.md)
-- [../../scenarios/README.md](../../scenarios/README.md)
-- [../../../salesforce-business-analyst/scenarios/](../../../salesforce-business-analyst/scenarios/)
+- [../../../scenarios/README.md](../../../scenarios/README.md)
+- [../../../../salesforce-business-analyst/scenarios/README.md](../../../../salesforce-business-analyst/scenarios/README.md)

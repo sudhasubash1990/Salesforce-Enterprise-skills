@@ -56,8 +56,8 @@ Become the authoritative, agent-ready knowledge base for Salesforce consulting d
 - [ ] Expand knowledge base: CPQ, Revenue Cloud, Service Cloud Voice (Sprint 2 core complete)
 - [ ] Add integration and data migration playbooks
 - [ ] Release formal user story quality rubric with automated lint rules
-- [x] Add `.cursor/skills/` discovery stub for Quality Engineering (BA symlink still planned)
-- [ ] Add `.cursor/skills/` symlink for Business Analyst native Cursor skill discovery
+- [x] Add `.cursor/skills/` discovery stub for Quality Engineering
+- [x] Add `.cursor/skills/` discovery stub for Business Analyst
 
 ## Phase 3 — Adjacent Disciplines (Q4 2026)
 
@@ -65,9 +65,13 @@ Become the authoritative, agent-ready knowledge base for Salesforce consulting d
 
 Canonical path: [framework-core/](framework-core/README.md)
 
+**Status:** v0.1.0 **scaffold** — contracts and indexes are authoritative for loading order; deepen per-module engines as SA/DEV/DO/PS packs land. Canonical deep content remains in `shared/` and `docs/`.
+
 - [x] v0.1.0 — Orchestration, shared-knowledge indexes, governance, evaluation contracts for all modules
-- [ ] Wire `scripts/retrieve_context.py` to always include framework-core tier-0
-- [ ] Scaffold SA / Developer / DevOps / Production Support modules against core contribution guide
+- [x] Wire `scripts/retrieve_context.py` to always include framework-core tier-0 (+ QE redirect)
+- [x] Enforce Tier-0 in BA and QE Pre-Execution Gates
+- [ ] Deepen thin core contracts beyond scaffold language as next modules adopt Core
+- [ ] Scaffold SA / Developer / DevOps / standalone Production Support modules against core contribution guide
 
 ### Salesforce Quality Engineering (SEACF Module 2)
 
@@ -84,18 +88,24 @@ Canonical path: [salesforce-quality-engineering/](salesforce-quality-engineering
 - [x] Sprint 6 — Azure DevOps Delivery Intelligence (v0.8.0): work items, test plans, traceability, dashboards (not API)
 - [x] Sprint 7 — Defect Intelligence & Quality Analytics (v0.9.0 / v0.9.1 Rules Engine)
 - [x] Sprint 8 — Automation Intelligence (v0.10.0 / v0.10.1 Review Engine)
-- [x] Sprint 9 — Production Support & Operational Excellence (v0.11.0 / v0.11.1 Ops Intelligence)
+- [x] Sprint 9 — Production Support & Operational Excellence (v0.11.0 / v0.11.1 Ops Intelligence) — **QE ops pack** (not the planned standalone PS module)
 - [x] Sprint 10 — Enterprise Quality Advisory Platform (v0.12.0): maturity, portfolio, exec decisions, roadmaps
-- [x] Enterprise Orchestrator (v0.12.1): routes requests across Sprints 2–9 into Sprint 10 executive recommendations
+- [x] Enterprise Orchestrator (v0.12.1): routes requests across Sprints 2–11 into Sprint 10 executive recommendations
 - [x] Repo quality remediation (v0.12.2): link fixes, multi-lens pointers, missing READMEs, BA Cursor stub, archive legacy guide
 - [x] QE Validation hub (v0.13.0): checklists, industry E2E, benchmark scorecard, skill regression suite
 - [x] QE Sprint 11 (v0.14.0): Enterprise Validation, Certification & Continuous Improvement
 - [ ] Optional — Regression Intelligence deep-pack / continuous evolution
 
-### Other adjacent skills
+### Other adjacent skills (planned modules — folders not yet created)
 
-- [ ] Salesforce Solution Architect skill
-- [ ] Salesforce Project Manager / Scrum Master skill
+| Planned module | Folder (target) | Notes |
+|----------------|-----------------|-------|
+| Salesforce Solution Architect | `salesforce-solution-architect/` | Scaffold against [framework-core/governance/contribution-guide.md](framework-core/governance/contribution-guide.md) |
+| Salesforce Developer | `salesforce-developer/` | Build standards; not started |
+| Salesforce DevOps | `salesforce-devops/` | Pipeline intelligence; not started |
+| Salesforce Production Support (standalone) | `salesforce-production-support/` | Distinct from **QE Sprint 9** `production-support/` ops pack |
+| Salesforce Project Manager / Scrum Master | TBD | Listed for portfolio completeness; lower priority than SA/DEV/DO |
+
 - [ ] Cross-skill traceability matrix (requirement → design → test)
 
 ## Phase 4 — Enterprise Scale (2027)
@@ -118,23 +128,24 @@ Canonical path: [salesforce-quality-engineering/](salesforce-quality-engineering
 
 ## Related Knowledge
 
-- [Readme](salesforce-business-analyst/knowledge/README.md)
-- [QE Knowledge (placeholder)](salesforce-quality-engineering/knowledge/README.md)
+- [BA Knowledge](salesforce-business-analyst/knowledge/README.md)
+- [QE Knowledge](salesforce-quality-engineering/knowledge/README.md)
+- [Framework Core shared-knowledge](framework-core/shared-knowledge/README.md)
 
 ## Related Templates
 
-- [Readme](salesforce-business-analyst/templates/README.md)
-- [QE Templates (placeholder)](salesforce-quality-engineering/templates/README.md)
+- [BA Templates](salesforce-business-analyst/templates/README.md)
+- [QE Templates](salesforce-quality-engineering/templates/README.md)
 
 ## Related Playbooks
 
-- [Readme](salesforce-business-analyst/playbooks/README.md)
-- [QE Playbooks (placeholder)](salesforce-quality-engineering/playbooks/README.md)
+- [BA Playbooks](salesforce-business-analyst/playbooks/README.md)
+- [QE Playbooks](salesforce-quality-engineering/playbooks/README.md)
 
 ## Related Industry Scenarios
 
-- [Readme](salesforce-business-analyst/scenarios/README.md)
-- [QE Scenarios (placeholder)](salesforce-quality-engineering/scenarios/README.md)
+- [BA Scenarios](salesforce-business-analyst/scenarios/README.md)
+- [QE Scenarios index](salesforce-quality-engineering/scenarios/README.md)
 
 ## Related Interview Topics
 

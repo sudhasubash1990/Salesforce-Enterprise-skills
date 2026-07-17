@@ -40,15 +40,16 @@ For onboarding, career progression, or competency tasks:
 3. Use [interview-guide/interview-index.md](../../salesforce-business-analyst/interview-guide/interview-index.md) for assessments
 4. Full narrative: [skill-guide.md](../../salesforce-business-analyst/skill-guide.md)
 
-## Context Retrieval (Layer 2 — Run First)
+## Context Retrieval (Tier-0 + Layer 2 — Run First)
 
-For any BA task, run the deterministic retriever before loading context manually:
+1. Load SEACF **Tier-0** contracts from `framework-core/` (README, request-router, context-manager, quality-standards) for any BA or QE task.
+2. For BA tasks, run the deterministic retriever before loading context manually:
 
 ```powershell
 python scripts/retrieve_context.py --query "<the user's request>"
 ```
 
-Load exactly the file bundle it returns. This replaces ad-hoc file discovery and guarantees the brain, knowledge, template, playbook, and scenario files required by the Pre-Execution Gate are in context. See `.cursor/rules/routing.mdc` for details.
+Load exactly the file bundle it returns (includes Tier-0). If it reports **qe-redirect**, switch to `salesforce-quality-engineering/skill.md` and the Enterprise Orchestrator — do not continue on the BA path. See `.cursor/rules/routing.mdc` for router separation.
 
 ## Brain-Loading Enforcement (Sprint 10)
 

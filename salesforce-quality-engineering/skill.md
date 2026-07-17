@@ -127,6 +127,7 @@ User Request → Enterprise Orchestrator
 
 **HARD RULE:** Do not jump to detailed deliverables without the right upstream work:
 
+0. **Tier-0 Framework Core** loaded (minimum): [`framework-core/README.md`](../framework-core/README.md), [`orchestration/request-router.md`](../framework-core/orchestration/request-router.md), [`orchestration/context-manager.md`](../framework-core/orchestration/context-manager.md), [`governance/quality-standards.md`](../framework-core/governance/quality-standards.md). Confirm request is QE (not BA story authorship). Core is the cross-module contract; **QE Enterprise Orchestrator** remains the Module 2 router.
 1. Brain modules loaded for the task type
 2. **Enterprise Orchestrator** route plan selected ([enterprise-orchestrator.md](enterprise-orchestrator/enterprise-orchestrator.md)) — primary + supporting sprint capabilities; do not preload unrelated packs
 3. [brain/thinking-model.md](brain/thinking-model.md) stages considered

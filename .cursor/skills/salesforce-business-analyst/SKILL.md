@@ -2,10 +2,11 @@
 name: salesforce-business-analyst
 description: >-
   Salesforce Business Analyst skill for discovery, BRD/FRD, user stories,
-  fit-gap, workshops, RTM, RAID, and ADO backlog guidance. Load
-  salesforce-business-analyst/skill.md and brain modules. Prefer platform-native
-  solutions; never invent regulatory requirements or bypass security.
-version: 1.1.0
+  fit-gap, workshops, RTM, RAID, and ADO backlog guidance. Load Tier-0
+  framework-core then salesforce-business-analyst/skill.md and brain modules.
+  Prefer platform-native solutions; never invent regulatory requirements or
+  bypass security.
+version: 1.7.1
 ---
 
 # Salesforce Business Analyst (Cursor Discovery Stub)
@@ -16,6 +17,7 @@ version: 1.1.0
 
 | Priority | Path |
 |----------|------|
+| **Tier-0 Framework Core** | [`framework-core/`](../../../framework-core/README.md) |
 | Skill entry | [`skill.md`](../../../salesforce-business-analyst/skill.md) |
 | Brain | [`brain/`](../../../salesforce-business-analyst/brain/README.md) |
 | Knowledge | [`knowledge/`](../../../salesforce-business-analyst/knowledge/README.md) |
@@ -27,8 +29,9 @@ version: 1.1.0
 
 ## Hard rules
 
-1. Complete Pre-Execution Gate in skill.md before deliverables.
+1. Load Tier-0 `framework-core/` then complete Pre-Execution Gate in skill.md before deliverables.
 2. Traceable requirement IDs; INVEST stories; Given/When/Then AC.
 3. Never invent regulatory requirements — cite or mark TBC with Legal/Compliance.
 4. Prefer standard Salesforce features before custom build.
 5. Save outputs under `outputs/<project>/` and run the output engine when publishing artifacts.
+6. QE-dominated requests → route to `salesforce-quality-engineering/skill.md`.

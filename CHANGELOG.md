@@ -1,22 +1,22 @@
 ---
 title: Changelog
-module: Salesforce Business Analyst
+module: Salesforce Enterprise Skills (repository)
 category: Root
 document_type: Guide
-version: 1.1.0
+version: 1.3.0
 review_status: Approved
-owner: BA Practice Lead
+owner: SEACF Practice Lead
 created_date: 2026-07-02
-last_updated: 2026-07-02
+last_updated: 2026-07-18
 review_cycle: quarterly
 related_brain_modules: [salesforce-business-analyst/brain/README.md]
-related_knowledge: [salesforce-business-analyst/knowledge/README.md]
+related_knowledge: [salesforce-business-analyst/knowledge/README.md, salesforce-quality-engineering/knowledge/README.md]
 related_templates: [salesforce-business-analyst/templates/README.md]
 related_playbooks: [salesforce-business-analyst/playbooks/README.md]
 related_scenarios: [salesforce-business-analyst/scenarios/README.md]
 related_interview_topics: [salesforce-business-analyst/interview-guide/interview-index.md]
 related_examples: [examples/sample-project/README.md]
-related_documents: [docs/cross-linking-framework.md, ROADMAP.md]
+related_documents: [docs/cross-linking-framework.md, ROADMAP.md, framework-core/README.md]
 keywords: [CHANGELOG]
 tags: [CHANGELOG]
 ---
@@ -27,7 +27,31 @@ All notable changes to this repository are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+Module-specific history also lives in `salesforce-business-analyst/CHANGELOG.md` and `salesforce-quality-engineering/CHANGELOG.md`.
+
 ## [Unreleased]
+
+## [1.8.0] - 2026-07-18
+
+### Added
+
+- SEACF Framework Core v0.1.0 under `framework-core/` (orchestration, shared-knowledge indexes, governance, evaluation contracts)
+- Salesforce Quality Engineering Module 2 through Sprint 11 (v0.14.0): Enterprise Orchestrator, validation/certification/benchmarking
+- Tier-0 Framework Core enforcement in BA and QE Pre-Execution Gates
+- BA Layer 2 retriever QE redirect + Tier-0 `ALWAYS_LOAD`
+
+### Changed
+
+- Root README Current Skills lists Framework Core, BA (v1.7.1), and QE (v0.14.0)
+- `routing.mdc` / `indexing.mdc` updated for multi-module SEACF
+- Fixed legacy E2E validation relative links after Sprint 11 folder move
+
+## [1.7.0] - 2026-07-03
+
+### Changed
+
+- Salesforce Business Analyst skill 1.7.0: KPI baseline, change management, digital transformation templates and playbooks
+
 ## [1.6.0] - 2026-07-02
 
 ### Changed

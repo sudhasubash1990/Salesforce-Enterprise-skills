@@ -56,8 +56,23 @@ def test_unmatched_query_returns_fallback():
     result = mod.retrieve("what is the weather today")
     assert result["matched_tasks"] == []
     assert set(result["files"]) >= set(mod.ALWAYS_LOAD)
-    # Fallback should stay small — core bundle plus at most a few graph hops.
-    assert len(result["files"]) < 15
+    # Fallback should stay small — Tier-0 + BA core plus at most a few graph hops.
+    assert len(result["files"]) < 25
+
+
+def test_qe_redirect_for_quality_engineering():
+    result = mod.retrieve("draft a Salesforce test strategy using the QE enterprise orchestrator")
+    assert result["matched_tasks"] == ["qe-redirect"]
+    assert result.get("redirect") == "salesforce-quality-engineering"
+    assert "salesforce-quality-engineering/skill.md" in result["files"]
+    assert "framework-core/README.md" in result["files"]
+    assert "salesforce-business-analyst/templates/user-story-template.md" not in result["files"]
+
+
+def test_ba_uat_not_redirected_to_qe():
+    result = mod.retrieve("create UAT test scenarios for the billing user story")
+    assert "qe-redirect" not in result["matched_tasks"]
+    assert result.get("redirect") is None
 
 
 def test_no_duplicates_in_bundle():

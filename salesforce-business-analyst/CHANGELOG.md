@@ -26,6 +26,14 @@ tags: [changelog]
 Skill-specific version history.
 
 ## [Unreleased]
+
+## [1.7.1] - 2026-07-18
+
+### Changed
+
+- Pre-Execution Gate Step 0 enforces SEACF Tier-0 `framework-core/` load + QE handoff
+- `skill.md` version aligned to 1.7.x (matches README); Cursor stub updated to 1.7.0 with Framework Core pointer
+
 ## [1.7.0] - 2026-07-03
 
 ### Added

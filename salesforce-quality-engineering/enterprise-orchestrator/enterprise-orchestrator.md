@@ -64,19 +64,19 @@ After Sprints 1–10, the module contains many specialist engines. Without an or
 User Request
       │
       ▼
-Enterprise Orchestrator
-      │
- ┌────┼───────────────────────────┐
- │    │    │    │    │    │       │
- ▼    ▼    ▼    ▼    ▼    ▼       ▼
-Sprint 2  Sprint 3  Sprint 5  Sprint 6  Sprint 7  Sprint 8  Sprint 9
-Requirements → Test Design → Documents → ADO → Defects → Automation → Production
+Tier-0 framework-core (contracts)
       │
       ▼
-Sprint 10 Advisory Engine
+Enterprise Orchestrator (Module 2)
+      │
+ ┌────┼────────────────────────────────────────┐
+ │    │    │    │    │    │    │    │          │
+ ▼    ▼    ▼    ▼    ▼    ▼    ▼    ▼          ▼
+S2   S3   S5   S6   S7   S8   S9   S10        S11
+Req → Design → Docs → ADO → Defects → Auto → Ops → Advisory → Validation/Cert
       │
       ▼
-Executive Recommendations
+Unified response (facts vs assumptions; no invented scores)
 ```
 
 ## Decision Framework

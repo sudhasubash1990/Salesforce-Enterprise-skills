@@ -56,7 +56,7 @@ Do not case-collide filenames on Windows (`CHANGELOG.md` vs `changelog.md`).
 ## Navigation
 
 - **Up:** [README.md](../README.md) or parent folder README
-- **Core root:** [../../README.md](../../README.md) (adjust depth as needed)
+- **Core root:** [../README.md](../README.md) 
 
 ## Related Documents
 
