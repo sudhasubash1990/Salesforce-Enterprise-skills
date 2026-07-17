@@ -1,0 +1,62 @@
+---
+alwaysApply: true
+---
+# Prompt Used field update on ADO
+
+1. The prompt updated in prompt field should be exactly same as what user typed and if there is any rework prompts that also to be captured in "Prompt Used" field on 
+
+2. Also add how the user can reshape that prompt in better way next time (Cursor suggesting prompt) so that other user can use that as reference to input better prompt next time. 
+
+3. Also suggest user which AI model they can use next time for similar kind of prompt.
+
+4. suggest the mode they can use that prompt out of given (Plan, Agent, Debug, multi task, Ask ) 
+
+5. If they can use multiple prompt one for plan and one for agent also mention those details which would be better or if user can try single mode of prompt
+
+# Plan Used
+
+1. summarise all technical and functional, configuration details used to implement the prompt.
+
+# Lessons Learned
+
+1. Whatever lessons learned by cursor has to be given as detailed instructions to user on this field. so that if user manually do that next time, they should make sure all these are considered. 
+
+# AI Productivity Calculation Rules
+
+Before updating AI Productivity fields:
+
+1. Ask user to input Traditional Effort based on task complexity as this varies from person to person
+
+2. Calculate Actual Effort based on:
+   - Prompt creation time
+   - AI review time
+   - Validation time
+   - Rework time
+
+3. Actual Effort = Prompt Time + Review Time + Validation Time + Rework Time
+
+4. Hours Saved = Traditional Effort - Actual Effort
+
+4. AI Contribution % =
+(Hours Saved / Traditional Effort) * 100
+
+5. Confidence Rating:
+   1 = Low
+   2 = Moderate
+   3 = Good
+   4 = Strong
+   5 = Very Strong
+
+6. Rework Required:
+   None - if user doesnt ask to change anything once job completes
+   Minor - if there is rework done by cursor on re-prompt is 25%
+   Moderate - if there is rework done by cursor on re-prompt is 40%
+   Major - if there is rework done by cursor on re-prompt is 60%
+
+Provide reasoning before updating fields.
+
+# Discussion section on ADO:
+
+## Whenever a Task or Work item is created in ADO by cursor then do below.
+
+1.Suggest a prompt to implemented via cursor in below section on which model  and on which mode in discussion/comment section. 

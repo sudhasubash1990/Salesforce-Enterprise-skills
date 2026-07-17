@@ -51,17 +51,18 @@ outputs/
 conversion.log
 conversion_report.json
 
-# AI productivity rules (internal process)
-.cursor/rules/ai-productivity-ADO.mdc
-
 # MCP server config (contains org URLs and auth references)
 .cursor/mcp.json
 
 # Terminal output
 terminals/
 
-# Legacy internal specs (moved from zzz_*) — large DOCX, not needed by consumers
-archive/
+# Legacy internal specs (moved from zzz_*) — keep archive README; exclude bulky binaries/extracts
+archive/**
+!archive/README.md
+archive/**/*.docx
+archive/**/*-extract.txt
+archive/**/*.extracted.txt
 
 # OneDrive / Office junk
 desktop.ini
