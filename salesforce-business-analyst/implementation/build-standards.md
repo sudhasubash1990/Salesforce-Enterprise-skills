@@ -98,7 +98,7 @@ Follow [docs/naming-conventions.md](../../docs/naming-conventions.md) — lowerc
 - Minor: new articles, templates, scenarios within existing sprints
 - Major: new sprint modules, breaking structural changes
 
-Update [skill.md](../skill.md) version, [changelog.md](../changelog.md), and root [CHANGELOG.md](../../CHANGELOG.md).
+Update [skill.md](../skill.md) version, [CHANGELOG.md](../CHANGELOG.md), and root [CHANGELOG.md](../../CHANGELOG.md).
 
 ## Related Brain Modules
 

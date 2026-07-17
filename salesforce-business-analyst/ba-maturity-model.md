@@ -343,7 +343,7 @@ This maturity model is complete when:
 ## Navigation
 
 - **Previous:** [Readme](README.md)
-- **Next:** [Changelog](changelog.md)
+- **Next:** [Changelog](CHANGELOG.md)
 - **See Also:** [skill.md](skill.md)
 
 ## Version History

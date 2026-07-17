@@ -17,6 +17,8 @@ version: 1.6.0
 
 Senior Salesforce BA workflow: **BA Brain** (Sprint 1), **Knowledge Base** (Sprint 2), **Template Library** (Sprint 3), **Playbooks** (Sprint 4), **Industry Scenarios** (Sprint 5), **Interview Intelligence** (Sprint 6), **Enterprise Validation** (Sprint 8), **Continuous KM** (Sprint 9).
 
+**SEACF Framework Core:** Cross-module orchestration, shared-knowledge indexes, governance, and evaluation contracts live in [`framework-core/`](../framework-core/README.md). BA routing remains in `.cursor/rules` + this skill; do not fork glossary or output standards—use Core → `shared/`.
+
 ## BA Brain Architecture
 
 ```
@@ -338,7 +340,7 @@ python scripts/update_skill_version.py --dry-run --message "fix(ba): AC bullet f
 | `feat` / `feature` | Minor (x.Y.0) |
 | `fix`, `docs`, `chore`, `refactor`, etc. | Patch (x.y.Z) |
 
-**Files updated automatically:** `README.md` (root), `salesforce-business-analyst/skill.md`, `salesforce-business-analyst/README.md`, `salesforce-business-analyst/changelog.md`, `CHANGELOG.md`.
+**Files updated automatically:** `README.md` (root), `salesforce-business-analyst/skill.md`, `salesforce-business-analyst/README.md`, `salesforce-business-analyst/CHANGELOG.md`, `CHANGELOG.md`.
 
 **Source of truth:** `salesforce-business-analyst/skill.md` frontmatter `version`.
 

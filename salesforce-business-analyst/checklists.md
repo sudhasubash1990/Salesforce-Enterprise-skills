@@ -173,7 +173,7 @@ Run BEFORE first delivery — not after rework.
 
 ## Navigation
 
-- **Previous:** [Changelog](changelog.md)
+- **Previous:** [Changelog](CHANGELOG.md)
 - **Next:** [Interview Guide](interview-guide.md)
 - **See Also:** [skill.md](skill.md)
 

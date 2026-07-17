@@ -23,7 +23,7 @@ tags: [README]
 
 # Salesforce Enterprise Skills
 
-A curated, enterprise-grade knowledge repository for Salesforce consulting disciplines—designed for **Cursor**, **Claude**, and human practitioners. Packages delivery experience into reusable skills, playbooks, templates, and governance artifacts for requirements documentation, process mapping, gap analysis, and stakeholder analysis.
+A curated, enterprise-grade knowledge repository for Salesforce consulting disciplines—designed for **Cursor**, **Claude**, and human practitioners. Packages delivery experience into reusable skills, playbooks, templates, and governance artifacts. Cross-module contracts live in **[`framework-core/`](framework-core/README.md)** so Business Analyst, Quality Engineering, and future Architect / Developer / DevOps / Production Support packs share one orchestration, governance, and evaluation model.
 
 ## Purpose
 
@@ -33,12 +33,16 @@ Salesforce programs fail more often from unclear requirements, weak traceability
 
 | Path | Purpose |
 |------|---------|
+| [`framework-core/`](framework-core/README.md) | **SEACF Framework Core** — orchestration, shared-knowledge indexes, governance, evaluation |
 | `.cursor/` | Agent routing, indexing, and instruction rules for Cursor |
 | `docs/` | Repository governance, architecture, and quality standards |
-| `shared/` | Cross-discipline glossary, taxonomy, and enterprise standards |
+| `shared/` | Cross-discipline glossary, taxonomy, and enterprise standards (canonical files) |
 | `examples/` | Reference artifacts (BRDs, user stories, workshops, projects) |
-| `salesforce-business-analyst/` | Primary BA skill, playbooks, templates, and scenarios |
+| `salesforce-business-analyst/` | BA skill, playbooks, templates, and scenarios |
+| `salesforce-quality-engineering/` | QE skill — analysis through advisory, validation & certification |
 | `scripts/` | Context retriever, metadata enrichment, and repository validation |
+| `output-engine/` | Markdown → office format conversion |
+| `archive/` | Legacy materials (not on the active skill path) |
 
 ## Installation (Cursor)
 

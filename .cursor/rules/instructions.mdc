@@ -25,20 +25,20 @@ When operating in this repository, adopt the posture of a **senior Salesforce Bu
 | 5 | `shared/output-standards.md` | Before generating any deliverable |
 | 6 | `shared/glossary.md` | When terminology is ambiguous |
 | 7 | `.cursor/rules/routing.mdc` | To select the correct skill, brain module, knowledge article, or playbook |
-| 8 | Document **Related** sections | Before generating deliverables, load linked artifacts per [docs/cross-linking-framework.md](../docs/cross-linking-framework.md) |
+| 8 | Document **Related** sections | Before generating deliverables, load linked artifacts per [docs/cross-linking-framework.md](../../docs/cross-linking-framework.md) |
 
 ## Cross-Linking (Sprint 7)
 
-When working on any topic, load related artifacts from the current document's **Related Brain Modules**, **Related Knowledge**, **Related Templates**, and **Related Playbooks** sections. Use [docs/metadata-schema.md](../docs/metadata-schema.md) for retrieval fields.
+When working on any topic, load related artifacts from the current document's **Related Brain Modules**, **Related Knowledge**, **Related Templates**, and **Related Playbooks** sections. Use [docs/metadata-schema.md](../../docs/metadata-schema.md) for retrieval fields.
 
 ## Onboarding and Maturity (Sprint 9)
 
 For onboarding, career progression, or competency tasks:
 
-1. Check candidate level via [ba-maturity-model.md](../salesforce-business-analyst/ba-maturity-model.md)
-2. Load the matching [learning-paths/](../salesforce-business-analyst/learning-paths/) file
-3. Use [interview-guide/interview-index.md](../salesforce-business-analyst/interview-guide/interview-index.md) for assessments
-4. Full narrative: [skill-guide.md](../salesforce-business-analyst/skill-guide.md)
+1. Check candidate level via [ba-maturity-model.md](../../salesforce-business-analyst/ba-maturity-model.md)
+2. Load the matching [learning-paths/](../../salesforce-business-analyst/learning-paths/) file
+3. Use [interview-guide/interview-index.md](../../salesforce-business-analyst/interview-guide/interview-index.md) for assessments
+4. Full narrative: [skill-guide.md](../../salesforce-business-analyst/skill-guide.md)
 
 ## Context Retrieval (Layer 2 — Run First)
 
@@ -78,7 +78,7 @@ After writing or updating any deliverable under `outputs/`, run:
 python output-engine/convert.py --file <path-to.md>
 ```
 
-Confirm the converted office file exists beside the Markdown source. See [output-generation.mdc](output-generation.mdc) and [output-engine/README.md](../output-engine/README.md).
+Confirm the converted office file exists beside the Markdown source. See [output-generation.mdc](output-generation.mdc) and [output-engine/README.md](../../output-engine/README.md).
 
 ## Salesforce-Specific Defaults
 
@@ -108,32 +108,32 @@ N/A — no direct relationships for this document type.
 
 ## Related Knowledge
 
-- [Readme](../salesforce-business-analyst/knowledge/README.md)
+- [Readme](../../salesforce-business-analyst/knowledge/README.md)
 
 ## Related Templates
 
-- [Readme](../salesforce-business-analyst/templates/README.md)
+- [Readme](../../salesforce-business-analyst/templates/README.md)
 
 ## Related Playbooks
 
-- [Readme](../salesforce-business-analyst/playbooks/README.md)
+- [Readme](../../salesforce-business-analyst/playbooks/README.md)
 
 ## Related Industry Scenarios
 
-- [Readme](../salesforce-business-analyst/scenarios/README.md)
+- [Readme](../../salesforce-business-analyst/scenarios/README.md)
 
 ## Related Interview Topics
 
-- [Interview Index](../salesforce-business-analyst/interview-guide/interview-index.md)
+- [Interview Index](../../salesforce-business-analyst/interview-guide/interview-index.md)
 
 ## Related Examples
 
-- [Readme](../examples/sample-project/README.md)
+- [Readme](../../examples/sample-project/README.md)
 
 ## Related Documents
 
-- [Metadata Schema](../docs/metadata-schema.md)
-- [Cross Linking Framework](../docs/cross-linking-framework.md)
+- [Metadata Schema](../../docs/metadata-schema.md)
+- [Cross Linking Framework](../../docs/cross-linking-framework.md)
 
 ## Traceability
 
@@ -143,7 +143,7 @@ N/A — no direct relationships for this document type.
 
 - **Previous:** [Indexing](indexing.mdc)
 - **Next:** [Routing](routing.mdc)
-- **See Also:** [cross-linking-framework](../docs/cross-linking-framework.md)
+- **See Also:** [cross-linking-framework](../../docs/cross-linking-framework.md)
 
 ## Version History
 

@@ -23,7 +23,7 @@ tags: [consulting-principles]
 
 # Consulting Principles
 
-Enterprise consulting principles applied across all Salesforce skills.
+**Canonical** enterprise consulting principles for all Salesforce skills. Module brains (`salesforce-business-analyst/brain/consulting-principles.md`, `salesforce-quality-engineering/brain/consulting-principles.md`) hold role-specific deltas only.
 
 ## 1. Client Value First
 

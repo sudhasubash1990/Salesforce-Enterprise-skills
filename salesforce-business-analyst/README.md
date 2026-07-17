@@ -58,7 +58,7 @@ Enterprise Business Analysis capability for Salesforce programs—discovery thro
 
 ## Version
 
-Current skill version: **1.7.0** — see [changelog.md](changelog.md)
+Current skill version: **1.7.0** — see [CHANGELOG.md](CHANGELOG.md)
 
 ## Related Brain Modules
 

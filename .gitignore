@@ -60,3 +60,23 @@ conversion_report.json
 # Terminal output
 terminals/
 
+# Legacy internal specs (moved from zzz_*) — large DOCX, not needed by consumers
+archive/
+
+# OneDrive / Office junk
+desktop.ini
+~$*
+*.tmp
+
+# Local Python tooling
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Optional: local scratch under scripts
+scripts/_*.py
+scripts/**/__pycache__/
+
+#ignore .docx files
+*.docx

@@ -12,6 +12,10 @@ Files listed first should receive higher retrieval weight.
 ### Tier 1 — Core Skill (always index)
 
 ```
+framework-core/README.md
+framework-core/orchestration/request-router.md
+framework-core/governance/quality-standards.md
+framework-core/evaluation/certification-engine.md
 salesforce-business-analyst/skill.md
 salesforce-business-analyst/brain/README.md
 salesforce-business-analyst/brain/reasoning-framework.md
@@ -61,6 +65,7 @@ examples/*
 ### Tier 4 — Governance (reference)
 
 ```
+framework-core/*
 docs/*
 shared/*
 .cursor/rules/instructions.mdc
@@ -82,7 +87,7 @@ shared/*
 
 ## Metadata Tags for Search
 
-When adding new content, include searchable tags in frontmatter per [docs/metadata-schema.md](../docs/metadata-schema.md):
+When adding new content, include searchable tags in frontmatter per [docs/metadata-schema.md](../../docs/metadata-schema.md):
 
 ```yaml
 tags: [salesforce, business-analyst, discovery, financial-services, service-cloud]
@@ -107,32 +112,32 @@ N/A — no direct relationships for this document type.
 
 ## Related Knowledge
 
-- [Readme](../salesforce-business-analyst/knowledge/README.md)
+- [Readme](../../salesforce-business-analyst/knowledge/README.md)
 
 ## Related Templates
 
-- [Readme](../salesforce-business-analyst/templates/README.md)
+- [Readme](../../salesforce-business-analyst/templates/README.md)
 
 ## Related Playbooks
 
-- [Readme](../salesforce-business-analyst/playbooks/README.md)
+- [Readme](../../salesforce-business-analyst/playbooks/README.md)
 
 ## Related Industry Scenarios
 
-- [Readme](../salesforce-business-analyst/scenarios/README.md)
+- [Readme](../../salesforce-business-analyst/scenarios/README.md)
 
 ## Related Interview Topics
 
-- [Interview Index](../salesforce-business-analyst/interview-guide/interview-index.md)
+- [Interview Index](../../salesforce-business-analyst/interview-guide/interview-index.md)
 
 ## Related Examples
 
-- [Readme](../examples/sample-project/README.md)
+- [Readme](../../examples/sample-project/README.md)
 
 ## Related Documents
 
-- [Metadata Schema](../docs/metadata-schema.md)
-- [Cross Linking Framework](../docs/cross-linking-framework.md)
+- [Metadata Schema](../../docs/metadata-schema.md)
+- [Cross Linking Framework](../../docs/cross-linking-framework.md)
 
 ## Traceability
 
@@ -142,7 +147,7 @@ N/A — no direct relationships for this document type.
 
 - **Previous:** —
 - **Next:** [Instructions](instructions.mdc)
-- **See Also:** [cross-linking-framework](../docs/cross-linking-framework.md)
+- **See Also:** [cross-linking-framework](../../docs/cross-linking-framework.md)
 
 ## Version History
 

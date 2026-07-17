@@ -12,27 +12,27 @@ Generate complete and production-ready Azure DevOps (ADO) User Stories following
 
 Brain modules (per loading order — do NOT skip):
 
-- [salesforce-business-analyst/brain/identity.md](../salesforce-business-analyst/brain/identity.md) — BA role and scope
-- [salesforce-business-analyst/brain/consulting-principles.md](../salesforce-business-analyst/brain/consulting-principles.md) — enterprise behaviour
-- [salesforce-business-analyst/brain/reasoning-framework.md](../salesforce-business-analyst/brain/reasoning-framework.md) — 13-stage reasoning
-- [salesforce-business-analyst/brain/output-framework.md](../salesforce-business-analyst/brain/output-framework.md) — artifact selection (required for deliverable generation)
-- [salesforce-business-analyst/brain/decision-framework.md](../salesforce-business-analyst/brain/decision-framework.md) — if fit-gap classification is produced
-- [salesforce-business-analyst/brain/validation-framework.md](../salesforce-business-analyst/brain/validation-framework.md) — pre-delivery validation
-- [salesforce-business-analyst/brain/anti-hallucination.md](../salesforce-business-analyst/brain/anti-hallucination.md) — estimation red flags
+- [salesforce-business-analyst/brain/identity.md](../../salesforce-business-analyst/brain/identity.md) — BA role and scope
+- [salesforce-business-analyst/brain/consulting-principles.md](../../salesforce-business-analyst/brain/consulting-principles.md) — enterprise behaviour
+- [salesforce-business-analyst/brain/reasoning-framework.md](../../salesforce-business-analyst/brain/reasoning-framework.md) — 13-stage reasoning
+- [salesforce-business-analyst/brain/output-framework.md](../../salesforce-business-analyst/brain/output-framework.md) — artifact selection (required for deliverable generation)
+- [salesforce-business-analyst/brain/decision-framework.md](../../salesforce-business-analyst/brain/decision-framework.md) — if fit-gap classification is produced
+- [salesforce-business-analyst/brain/validation-framework.md](../../salesforce-business-analyst/brain/validation-framework.md) — pre-delivery validation
+- [salesforce-business-analyst/brain/anti-hallucination.md](../../salesforce-business-analyst/brain/anti-hallucination.md) — estimation red flags
 
 Knowledge and templates:
 
-- [salesforce-business-analyst/skill.md](../salesforce-business-analyst/skill.md) — Step 5 User Stories + Pre-Execution Gate
-- [salesforce-business-analyst/knowledge/user-stories.md](../salesforce-business-analyst/knowledge/user-stories.md)
-- [salesforce-business-analyst/knowledge/acceptance-criteria.md](../salesforce-business-analyst/knowledge/acceptance-criteria.md)
-- [salesforce-business-analyst/knowledge/ado-backlog-integration.md](../salesforce-business-analyst/knowledge/ado-backlog-integration.md)
-- [salesforce-business-analyst/templates/user-story-template.md](../salesforce-business-analyst/templates/user-story-template.md)
+- [salesforce-business-analyst/skill.md](../../salesforce-business-analyst/skill.md) — Step 5 User Stories + Pre-Execution Gate
+- [salesforce-business-analyst/knowledge/user-stories.md](../../salesforce-business-analyst/knowledge/user-stories.md)
+- [salesforce-business-analyst/knowledge/acceptance-criteria.md](../../salesforce-business-analyst/knowledge/acceptance-criteria.md)
+- [salesforce-business-analyst/knowledge/ado-backlog-integration.md](../../salesforce-business-analyst/knowledge/ado-backlog-integration.md)
+- [salesforce-business-analyst/templates/user-story-template.md](../../salesforce-business-analyst/templates/user-story-template.md)
 
 Salesforce Cloud knowledge (load when specific cloud is referenced):
 
-- [salesforce-business-analyst/knowledge/salesforce-clouds-overview.md](../salesforce-business-analyst/knowledge/salesforce-clouds-overview.md)
-- [salesforce-business-analyst/knowledge/service-cloud-patterns.md](../salesforce-business-analyst/knowledge/service-cloud-patterns.md) — if Service Cloud
-- [salesforce-business-analyst/knowledge/security-model.md](../salesforce-business-analyst/knowledge/security-model.md) — if permission/CRUD analysis needed
+- [salesforce-business-analyst/knowledge/salesforce-clouds-overview.md](../../salesforce-business-analyst/knowledge/salesforce-clouds-overview.md)
+- [salesforce-business-analyst/knowledge/service-cloud-patterns.md](../../salesforce-business-analyst/knowledge/service-cloud-patterns.md) — if Service Cloud
+- [salesforce-business-analyst/knowledge/security-model.md](../../salesforce-business-analyst/knowledge/security-model.md) — if permission/CRUD analysis needed
 
 The generated user story must be ready for:
 
@@ -236,7 +236,7 @@ Every story must include a section listing what the **implementation team** will
 - Security (profiles, permission sets)
 - Sandbox test evidence against AC; release notes
 
-Do not conflate BA artifact authorship with dev/admin build work. See [brain/identity.md](../salesforce-business-analyst/brain/identity.md) scope table.
+Do not conflate BA artifact authorship with dev/admin build work. See [brain/identity.md](../../salesforce-business-analyst/brain/identity.md) scope table.
 
 # Definition of Done
 
