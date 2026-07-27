@@ -161,3 +161,7 @@ Provide a repeatable impact model from metadata diff to test scope.
 
 - Deepen industry examples in Sprint 4B where cloud-specific
 - Link Sprint 5 case templates to scenario objectives herein
+
+## Specialized Skill Entry
+
+For agent-driven pre-deployment analysis with 16-section output schema, load [../../skills/metadata-impact-analyzer/SKILL.md](../../skills/metadata-impact-analyzer/SKILL.md). This article remains the Sprint 4A canonical impact model; the specialized skill adds orchestration, playbooks, templates, and quality gates.

@@ -68,6 +68,10 @@ Advise synthetic vs masked data, referential integrity, and persona packs.
 - Cover happy path, negative, boundary, and persona/permission paths
 - Evidence: persona, data, environment, expected vs actual
 
+## Specialized Skill Entry
+
+For enterprise test data generation (synthetic, relationship-aware, VR-compliant seed packs) with **14-section** TDM output, use **[Test Data Generator](../../skills/test-data-generator/SKILL.md)**. This article remains the Sprint 4A canonical TDM encyclopedia.
+
 ## Functional Testing
 
 - Observable outcomes match acceptance criteria for in-scope personas

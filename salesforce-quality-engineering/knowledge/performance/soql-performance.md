@@ -157,3 +157,7 @@ Validate query volume/cost risks in automation and integrations.
 
 - Deepen org-edition notes and industry scenario packs under `scenarios/`
 - Link Sprint 5 documentation templates to scenario objectives herein
+
+## Specialized Skill Entry
+
+For agent-driven validation SOQL with 14-section output (objective before query, security, performance), use **[SOQL Validation Assistant](../../skills/soql-validation-assistant/SKILL.md)**. This article remains Sprint 4B canonical performance reference; the capability adds validation reasoning and deliverable schema.

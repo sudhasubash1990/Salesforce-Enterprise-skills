@@ -1,0 +1,67 @@
+# Salesforce Quality Engineering — module skill registry
+name: salesforce-quality-engineering
+version: 0.24.0
+entry: SKILL.md  # same as skill.md on Windows case-insensitive FS
+orchestrator: enterprise-orchestrator/enterprise-orchestrator.md
+routing_table: enterprise-orchestrator/capability-routing-table.md
+
+skills:
+  - id: MIA
+    name: metadata-impact-analyzer
+    path: skills/metadata-impact-analyzer/
+    entry: SKILL.md
+  - id: SOVA
+    name: soql-validation-assistant
+    path: skills/soql-validation-assistant/
+    entry: SKILL.md
+  - id: PTA
+    name: permission-testing-agent
+    path: skills/permission-testing-agent/
+    entry: SKILL.md
+  - id: AFT
+    name: agentforce-testing
+    path: skills/agentforce-testing/
+    entry: SKILL.md
+  - id: PWR
+    name: playwright-review
+    path: skills/playwright-review/
+    entry: SKILL.md
+  - id: OSQA
+    name: omnistudio-qa
+    path: skills/omnistudio-qa/
+    entry: SKILL.md
+  - id: DMQA
+    name: data-migration-qa
+    path: skills/data-migration-qa/
+    entry: SKILL.md
+  - id: TDG
+    name: test-data-generator
+    path: skills/test-data-generator/
+    entry: SKILL.md
+  - id: FSQA
+    name: field-service-testing
+    path: skills/field-service-testing/
+    entry: SKILL.md
+  - id: PRCA
+    name: production-rca
+    path: skills/production-rca/
+    entry: SKILL.md
+    status: scaffold
+  - id: RBRR
+    name: risk-based-regression
+    path: skills/risk-based-regression/
+    entry: SKILL.md
+    status: scaffold
+
+preserved_sprint_engines:
+  - brain/
+  - knowledge/
+  - templates/
+  - playbooks/
+  - ado/
+  - quality-intelligence/
+  - automation-intelligence/
+  - production-support/
+  - enterprise-quality/
+  - validation/
+  - enterprise-orchestrator/

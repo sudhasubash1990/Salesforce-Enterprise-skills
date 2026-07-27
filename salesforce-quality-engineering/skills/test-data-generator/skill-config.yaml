@@ -1,0 +1,95 @@
+name: test-data-generator
+short_id: TDG
+version: 0.20.0
+architecture_release: 0.24.0
+parent_module: salesforce-quality-engineering
+entry: SKILL.md
+
+routing:
+  keywords:
+    - Test Data
+    - Sample Data
+    - Test Records
+    - Seed Data
+    - Salesforce Data
+    - Data Factory
+    - Test Setup
+    - QA Environment
+    - UAT Data
+    - SIT Data
+    - Regression Data
+    - Data Creation
+    - Mock Data
+    - Bulk Test Data
+    - Data Masking
+    - Synthetic Data
+    - Sandbox Refresh
+    - External ID
+    - Data Loader
+    - Bulk API
+    - Apex Test Factory
+    - Apex Test Data Factory
+    - Test Data Factory
+    - CSV Test Data
+    - Seed Pack
+  primary_support:
+    - knowledge/data/
+    - templates/test-data-strategy.md
+    - automation-intelligence/test-data/
+  upstream_skills:
+    - skills/metadata-impact-analyzer
+  downstream_capabilities:
+    - skills/soql-validation-assistant
+    - skills/permission-testing-agent
+    - skills/agentforce-testing
+    - skills/field-service-testing
+  downstream_after_analysis:
+    - knowledge/test-design-engine.md
+
+output_schema:
+  sections:
+    - id: executive_summary
+      title: "Executive Summary"
+    - id: business_scenario
+      title: "Business Scenario"
+    - id: data_requirements
+      title: "Data Requirements"
+    - id: objects_involved
+      title: "Objects Involved"
+    - id: relationship_diagram_logical
+      title: "Relationship Diagram (logical)"
+    - id: generated_test_data_structure
+      title: "Generated Test Data Structure"
+    - id: validation_rule_considerations
+      title: "Validation Rule Considerations"
+    - id: security_considerations
+      title: "Security Considerations"
+    - id: data_volume_strategy
+      title: "Data Volume Strategy"
+    - id: automation_opportunities
+      title: "Automation Opportunities"
+    - id: recommended_soql_validation
+      title: "Recommended SOQL Validation"
+    - id: cleanup_strategy
+      title: "Cleanup Strategy"
+    - id: risks
+      title: "Risks"
+    - id: qa_recommendations
+      title: "QA Recommendations"
+
+quality_gates:
+  - business_and_objects_before_payloads
+  - synthetic_by_default_no_real_pii
+  - referential_integrity_documented
+  - validation_rules_respected_unless_negative
+  - soql_stubs_for_sova_expansion
+  - cleanup_required_for_bulk_ldv
+  - volume_assumptions_labeled
+
+escalation:
+  - signal: real_pii_or_production_data_requested
+    to: Security / Data Governance
+  - signal: ldv_without_capacity_evidence
+    to: Performance / Solution Architect
+  - signal: bulk_without_cleanup_owner
+    to: Release Manager

@@ -1,0 +1,115 @@
+# Metadata Impact Analyzer — skill configuration
+name: metadata-impact-analyzer
+short_id: MIA
+version: 0.15.0
+architecture_release: 0.24.0
+parent_module: salesforce-quality-engineering
+entry: SKILL.md
+
+routing:
+  keywords:
+    - metadata
+    - deployment
+    - deploy
+    - package.xml
+    - change set
+    - changeset
+    - dependency
+    - dependency analysis
+    - impact analysis
+    - metadata impact
+    - regression impact
+    - deployment review
+    - field
+    - object
+    - flow
+    - validation rule
+    - page layout
+    - record type
+    - profile
+    - permission set
+    - permission set group
+    - apex
+    - trigger
+    - lightning
+    - lwc
+    - aura
+    - omnistudio
+    - integration
+    - named credential
+    - connected app
+    - platform event
+    - change data capture
+    - sharing rule
+    - approval process
+    - compact layout
+    - flexipage
+    - queue
+    - custom metadata type
+  primary_support:
+    - knowledge/metadata/
+    - knowledge/platform/
+    - knowledge/automation/
+    - knowledge/security/
+    - knowledge/integration/
+  downstream_after_analysis:
+  - knowledge/test-design-engine.md
+  - playbooks/regression-planning.md
+
+output_schema:
+  sections:
+    - id: executive_summary
+      title: "Executive Summary"
+    - id: metadata_changed
+      title: "Metadata Changed"
+    - id: dependency_analysis
+      title: "Dependency Analysis"
+    - id: business_impact
+      title: "Business Impact"
+    - id: technical_impact
+      title: "Technical Impact"
+    - id: security_impact
+      title: "Security Impact"
+    - id: integration_impact
+      title: "Integration Impact"
+    - id: automation_impact
+      title: "Automation Impact"
+    - id: reporting_impact
+      title: "Reporting Impact"
+    - id: regression_scope
+      title: "Regression Scope"
+    - id: deployment_risk
+      title: "Deployment Risk"
+    - id: risk_rating
+      title: "Risk Rating"
+    - id: automation_candidates
+      title: "Automation Candidates"
+    - id: recommended_soql_validations
+      title: "Recommended SOQL Validations"
+    - id: recommended_manual_tests
+      title: "Recommended Manual Tests"
+    - id: go___no-go_recommendation
+      title: "Go / No-Go Recommendation"
+
+risk_rating:
+  scale: [Low, Medium, High, Critical]
+  rules:
+    - Require evidence paths for every rating
+    - Never invent numeric probability or coverage percentages
+    - Escalate Critical to Release Manager and Solution Architect
+
+quality_gates:
+  - dependency_analysis_before_tests
+  - all_sixteen_sections_present
+  - assumptions_labeled
+  - cross_links_to_sprint_4a_when_deep_dive_needed
+
+escalation:
+  - signal: security_model_change
+    to: Security Architect
+  - signal: integration_breaking_change
+    to: Integration Architect
+  - signal: production_deploy_high_risk
+    to: Release Manager
+  - signal: data_model_breaking_change
+    to: Solution Architect

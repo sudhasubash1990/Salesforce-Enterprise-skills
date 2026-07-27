@@ -3,11 +3,11 @@ title: Readme
 module: Salesforce Enterprise Skills
 category: Root
 document_type: Guide
-version: 1.8.0
+version: 1.9.0
 review_status: Approved
 owner: SEACF Practice Lead
 created_date: 2026-07-02
-last_updated: 2026-07-18
+last_updated: 2026-07-28
 review_cycle: quarterly
 related_brain_modules:
   - salesforce-business-analyst/brain/README.md
@@ -33,6 +33,7 @@ related_documents:
   - ROADMAP.md
   - framework-core/README.md
   - CHANGELOG.md
+  - salesforce-quality-engineering/skills/README.md
 keywords: [README, SEACF]
 tags: [README, SEACF]
 ---
@@ -76,7 +77,7 @@ framework-core/          ← Tier-0 contracts (always load)
 | [`shared/`](shared/README.md) | Canonical cross-discipline glossary, taxonomy, consulting principles |
 | [`examples/`](examples/README.md) | Reference artifacts (BRDs, user stories, workshops, projects) |
 | [`salesforce-business-analyst/`](salesforce-business-analyst/README.md) | **Module 1** — BA skill, brain, knowledge, templates, playbooks, scenarios |
-| [`salesforce-quality-engineering/`](salesforce-quality-engineering/README.md) | **Module 2** — QE skill through Sprint 11 validation & certification |
+| [`salesforce-quality-engineering/`](salesforce-quality-engineering/README.md) | **Module 2** — QE skill through Sprint 11 + unified [`skills/`](salesforce-quality-engineering/skills/README.md) specialized packs |
 | [`scripts/`](scripts/README.md) | Context retriever, metadata enrichment, repository validation |
 | [`output-engine/`](output-engine/README.md) | Markdown → office format conversion |
 | `archive/` | Legacy materials (not on the active skill path) |
@@ -87,7 +88,7 @@ framework-core/          ← Tier-0 contracts (always load)
 |-------|--------|-------------|
 | SEACF Framework Core | Active (v0.1.0) | Tier-0 contracts: orchestration, shared-knowledge indexes, governance, evaluation ([`framework-core/`](framework-core/README.md)) |
 | Salesforce Business Analyst | Active (v1.7.1) | Discovery → BRD/FRD/stories, fit-gap, OCM/digital transformation, interview guide, validation; Cursor stub [`.cursor/skills/salesforce-business-analyst/`](.cursor/skills/salesforce-business-analyst/SKILL.md) |
-| Salesforce Quality Engineering | Active (v0.14.0) | Enterprise Orchestrator; requirement analysis → Sprint 11 validation/certification; Cursor stub [`.cursor/skills/salesforce-quality-engineering/`](.cursor/skills/salesforce-quality-engineering/SKILL.md) |
+| Salesforce Quality Engineering | Active (v0.24.0) | Enterprise Orchestrator; Sprint 1–11 engines; unified [`skills/`](salesforce-quality-engineering/skills/README.md) specialized packs (MIA, SOVA, PTA, AFT, FSQA, TDG, PWR, OSQA, DMQA, PRCA, RBRR); Cursor stub [`.cursor/skills/salesforce-quality-engineering/`](.cursor/skills/salesforce-quality-engineering/SKILL.md) |
 
 ### Planned modules (not yet scaffolded)
 
@@ -126,6 +127,9 @@ Or: GitHub **Code → Download ZIP** and extract.
 - *"Triage a Sev1 production incident for meter readings"*
 - *"Assess project quality health for the steering committee"*
 - *"Run Sprint 11 validation against the QE framework"*
+- *"Analyze metadata impact for this package.xml"*
+- *"Validate OmniScript / DataRaptor journey for Move-In"*
+- *"Review Playwright locators for Salesforce login POM"*
 
 Routing loads the right Framework Core contracts, brain modules, knowledge, and templates automatically.
 
@@ -150,7 +154,7 @@ Deliverables still work as Markdown if you skip this.
 1. Read [docs/vision.md](docs/vision.md) for strategic intent.
 2. Skim [framework-core/README.md](framework-core/README.md) for Tier-0 contracts.
 3. **BA:** [skill-guide.md](salesforce-business-analyst/skill-guide.md) → [skill.md](salesforce-business-analyst/skill.md).
-4. **QE:** [salesforce-quality-engineering/README.md](salesforce-quality-engineering/README.md) → [skill.md](salesforce-quality-engineering/skill.md) → [enterprise-orchestrator/](salesforce-quality-engineering/enterprise-orchestrator/README.md).
+4. **QE:** [salesforce-quality-engineering/README.md](salesforce-quality-engineering/README.md) → [skill.md](salesforce-quality-engineering/skill.md) → [enterprise-orchestrator/](salesforce-quality-engineering/enterprise-orchestrator/README.md) → [skills/](salesforce-quality-engineering/skills/README.md) for specialized packs.
 5. Check [ROADMAP.md](ROADMAP.md) and [CHANGELOG.md](CHANGELOG.md) for current scope.
 
 ### For AI Agents (Cursor)
@@ -232,6 +236,7 @@ MIT — see [LICENSE](LICENSE).
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.9.0 | 2026-07-28 | SEACF Practice Lead | QE unified skills/ (v0.24.0), registry, specialized-pack examples, CONTRIBUTING/ROADMAP/.gitignore alignment |
 | 1.8.0 | 2026-07-18 | SEACF Practice Lead | Multi-module SEACF README: Framework Core + BA + QE, Tier-0 routing, planned modules, agent getting-started |
 | 1.7.0 | 2026-07-03 | BA Practice Lead | Transformation coverage: KPI/OCM/digital transformation; retriever and routing support |
 | 1.6.0 | 2026-07-02 | BA Practice Lead | Layer 2 deterministic context retriever |

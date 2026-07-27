@@ -1,6 +1,6 @@
 ---
 title: Multi-Capability Composition Patterns
-version: 0.12.1
+version: 0.24.0
 tags: [enterprise-orchestrator, composition]
 ---
 
@@ -30,6 +30,8 @@ Real requests rarely map to one sprint. Composition patterns encode proven hando
 | COMP-04 | Release evidence pack | Ops + decision |
 | COMP-05 | Portfolio / maturity ask | Advisory (+ evidence pulls) |
 | COMP-06 | Automation estate | Review + roadmap |
+| COMP-07 | Sev1 / production incident | Ops first + RCA |
+| COMP-08 | Specialized skill request | skills/ chain (MIA→…) |
 
 ## Evaluation Method
 
@@ -99,11 +101,44 @@ Sprint 9 FIRST (restore / triage)
     → Sprint 10 only for post-incident exec briefing
 ```
 
+### COMP-08 — Specialized skill chains (skills/)
+
+```
+MIA (metadata deploy impact)
+    → PTA | SOVA | TDG | PWR | OSQA | DMQA | FSQA | AFT (as signals require)
+```
+
+```
+DMQA (migration lifecycle)
+    → SOVA (reconciliation queries) → PTA (persona FLS) → TDG (synthetic dry-run)
+```
+
+```
+OSQA (OmniStudio journey)
+    → SOVA | PTA | PWR | AFT | TDG
+```
+
+```
+Production defect / Sev1
+    → Sprint 9 (+ Sprint 7) primary
+    → PRCA scaffold only for structured RCA outline (do not replace 7/9)
+```
+
+```
+Regression scope
+    → Sprint 3 primary (+ MIA if deploy-driven)
+    → RBRR scaffold only for explicit risk-ranking deliverable
+```
+
+**Hard rule:** Scaffold skills (PRCA, RBRR) compose as support — Sprint engines remain primary until packs are fully built.
+
 ## Examples
 
 **“Write scenarios and a Test Plan, then map to ADO.”** → COMP-01 then COMP-02.  
 **“Friday release: go or no-go for steering?”** → COMP-04.  
-**“Assess TMMi-style maturity across the CoE.”** → COMP-05.
+**“Assess TMMi-style maturity across the CoE.”** → COMP-05.  
+**“Impact of this package.xml then SOQL validations.”** → COMP-08 (MIA → SOVA).  
+**“Production RCA after Sev1 restore.”** → COMP-07 then PRCA outline.
 
 ## Best Practices
 

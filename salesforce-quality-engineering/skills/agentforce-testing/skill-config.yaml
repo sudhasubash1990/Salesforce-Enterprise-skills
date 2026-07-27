@@ -1,0 +1,101 @@
+name: agentforce-testing
+short_id: AFT
+version: 0.18.0
+architecture_release: 0.24.0
+parent_module: salesforce-quality-engineering
+entry: SKILL.md
+
+routing:
+  keywords:
+    - Agentforce
+    - agentforce
+    - AI agent
+    - AI Agent
+    - prompt
+    - prompt template
+    - topic
+    - action
+    - guardrails
+    - guardrail
+    - grounding
+    - knowledge grounding
+    - AI response
+    - agent conversation
+    - Copilot
+    - Einstein
+    - AI automation
+    - LLM
+    - RAG
+    - agent testing
+    - AI validation
+    - prompt evaluation
+    - tool invocation
+    - hallucination
+    - human handoff
+    - escalation
+    - multi-turn
+    - conversation test
+  primary_support:
+    - knowledge/clouds/agentforce.md
+    - enterprise-quality/ai-governance/
+  upstream_skills:
+    - skills/metadata-impact-analyzer
+  downstream_capabilities:
+    - skills/soql-validation-assistant
+    - skills/permission-testing-agent
+  downstream_after_analysis:
+    - knowledge/test-design-engine.md
+
+output_schema:
+  sections:
+    - id: executive_summary
+      title: "Executive Summary"
+    - id: business_scenario
+      title: "Business Scenario"
+    - id: agent_configuration_reviewed
+      title: "Agent Configuration Reviewed"
+    - id: prompt_analysis
+      title: "Prompt Analysis"
+    - id: topic_classification_validation
+      title: "Topic Classification Validation"
+    - id: knowledge_grounding_assessment
+      title: "Knowledge Grounding Assessment"
+    - id: tool_invocation_validation
+      title: "Tool Invocation Validation"
+    - id: ai_response_evaluation
+      title: "AI Response Evaluation"
+    - id: guardrail_assessment
+      title: "Guardrail Assessment"
+    - id: hallucination_risk
+      title: "Hallucination Risk"
+    - id: security_assessment
+      title: "Security Assessment"
+    - id: negative_test_scenarios
+      title: "Negative Test Scenarios"
+    - id: edge_case_scenarios
+      title: "Edge Case Scenarios"
+    - id: regression_scope
+      title: "Regression Scope"
+    - id: automation_opportunities
+      title: "Automation Opportunities"
+    - id: deployment_readiness
+      title: "Deployment Readiness"
+    - id: risks
+      title: "Risks"
+    - id: recommendations
+      title: "Recommendations"
+
+quality_gates:
+  - business_and_config_before_conversation_scripts
+  - ai_evaluation_criteria_applied
+  - grounding_and_guardrail_sections_required
+  - no_invented_confidence_or_accuracy_percent
+  - chain_mia_sova_pta_when_actions_mutate_or_expose_data
+
+escalation:
+  - signal: hallucination_in_regulated_domain
+    to: Solution Architect + Compliance advisory
+  - signal: guardrail_bypass
+    to: Security Architect
+  - signal: agent_action_writes_production_data
+    to: Release Manager + MIA

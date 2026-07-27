@@ -158,3 +158,7 @@ Validate agent actions, grounding, guardrails, escalation, and auditability.
 
 - Deepen org-edition notes and industry scenario packs under `scenarios/`
 - Link Sprint 5 documentation templates to scenario objectives herein
+
+## Specialized Skill Entry
+
+For agent-driven Agentforce AI QA (prompt, grounding, tools, guardrails, hallucination) with 18-section output, use **[Agentforce Testing](../../skills/agentforce-testing/SKILL.md)**. This article remains the Sprint 4B canonical product overview.

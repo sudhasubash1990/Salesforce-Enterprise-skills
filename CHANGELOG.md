@@ -3,11 +3,11 @@ title: Changelog
 module: Salesforce Enterprise Skills (repository)
 category: Root
 document_type: Guide
-version: 1.3.0
+version: 1.9.0
 review_status: Approved
 owner: SEACF Practice Lead
 created_date: 2026-07-02
-last_updated: 2026-07-18
+last_updated: 2026-07-28
 review_cycle: quarterly
 related_brain_modules: [salesforce-business-analyst/brain/README.md]
 related_knowledge: [salesforce-business-analyst/knowledge/README.md, salesforce-quality-engineering/knowledge/README.md]
@@ -16,7 +16,7 @@ related_playbooks: [salesforce-business-analyst/playbooks/README.md]
 related_scenarios: [salesforce-business-analyst/scenarios/README.md]
 related_interview_topics: [salesforce-business-analyst/interview-guide/interview-index.md]
 related_examples: [examples/sample-project/README.md]
-related_documents: [docs/cross-linking-framework.md, ROADMAP.md, framework-core/README.md]
+related_documents: [docs/cross-linking-framework.md, ROADMAP.md, framework-core/README.md, salesforce-quality-engineering/skills/README.md]
 keywords: [CHANGELOG]
 tags: [CHANGELOG]
 ---
@@ -30,6 +30,31 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 Module-specific history also lives in `salesforce-business-analyst/CHANGELOG.md` and `salesforce-quality-engineering/CHANGELOG.md`.
 
 ## [Unreleased]
+
+## [1.9.0] - 2026-07-28
+
+### Added
+
+- QE Module 2 **unified specialized skills** under [`salesforce-quality-engineering/skills/`](salesforce-quality-engineering/skills/README.md) (v0.24.0): MIA, SOVA, PTA, AFT, FSQA (`field-service-testing`), TDG, PWR, OSQA, DMQA, plus PRCA/RBRR scaffolds
+- Module skill registry [`salesforce-quality-engineering/skill-config.yaml`](salesforce-quality-engineering/skill-config.yaml)
+- Root indexes [`salesforce-quality-engineering/prompts/`](salesforce-quality-engineering/prompts/README.md) and [`examples/`](salesforce-quality-engineering/examples/README.md)
+- Orchestrator composition pattern **COMP-08** for specialized skill chains
+
+### Changed
+
+- Retired QE `capabilities/` namespace — all packs live under `skills/` with `SKILL.md` + `skill-config.yaml`
+- Root README Current Skills: QE **v0.24.0**; ROADMAP Phase 3 QE skills unification marked complete
+- CONTRIBUTING updated for multi-module SEACF (BA + QE specialized skills)
+- `.gitignore` expanded for OneDrive/Office junk, agent transcripts, local scratch, conversion logs, and credential patterns
+
+### Fixed
+
+- Broken sibling/MIA relative links under QE skill packs; PRCA/RBRR routing disambiguated vs Sprint 7/9/3
+- Terminology: “QE Capability” → “Specialized Skill” in active QE content (module CHANGELOG retains history)
+
+### Removed
+
+- One-shot `migrate_capabilities_to_skills.py` (migration complete)
 
 ## [1.8.0] - 2026-07-18
 

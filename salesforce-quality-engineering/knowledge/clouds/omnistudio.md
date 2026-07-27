@@ -64,6 +64,7 @@ Test Omniscript paths, DataRaptor transforms, and Integration Procedure contract
 
 ## Testing Considerations
 
+- **Specialized Skill Entry:** For OmniStudio / Industries journey testing and validation, load [OmniStudio QA (OSQA)](../../skills/omnistudio-qa/SKILL.md) — Business Scenario + Components Reviewed before detailed cases; 17-section output. Prefer OSQA over this encyclopedia when testing intent is clear.
 - Use [../test-design-engine.md](../test-design-engine.md) for scenario objectives and coverage matrix
 - Ground platform impact in [../platform/README.md](../platform/README.md) / [../automation/README.md](../automation/README.md) / [../security/README.md](../security/README.md)
 - Cover happy path, negative, persona/permission, data, and integration paths as applicable

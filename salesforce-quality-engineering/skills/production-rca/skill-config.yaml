@@ -1,0 +1,33 @@
+# Production RCA — skill configuration
+name: production-rca
+short_id: PRCA
+version: 0.24.0
+architecture_release: 0.24.0
+parent_module: salesforce-quality-engineering
+entry: SKILL.md
+status: scaffold
+
+routing:
+  keywords:
+    - production RCA
+    - root cause
+    - RCA
+    - incident RCA
+    - defect RCA
+    - production defect
+    - postmortem
+    - 5 whys
+    - fishbone
+  primary_support:
+    - knowledge/
+  downstream_after_analysis:
+    - knowledge/test-design-engine.md
+
+quality_gates:
+  - context_before_detailed_output
+  - assumptions_labeled
+  - cross_links_to_sprint_engines
+
+escalation:
+  - signal: sev1_production
+    to: Release Manager

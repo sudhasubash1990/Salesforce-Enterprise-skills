@@ -15,12 +15,12 @@ description: >-
   advisory, enterprise-orchestrator/ to route requests to the correct
   sprint capability, and validation/ for Sprint 11 certification, benchmarking,
   regression, and continuous improvement of the framework itself.
-version: 0.14.0
+version: 0.24.0
 ---
 
 # Salesforce Quality Engineering
 
-Skill entry for SEACF Module 2. **Cross-module contracts** live in [`framework-core/`](../framework-core/README.md); **QE request routing** in [`enterprise-orchestrator/`](enterprise-orchestrator/README.md); **how the AI thinks** in [`brain/`](brain/README.md); **engines** in [`knowledge/`](knowledge/README.md); **docs** in [`templates/`](templates/README.md) / [`guidelines/`](guidelines/README.md) / [`document-generation/`](document-generation/README.md) / [`playbooks/`](playbooks/README.md); **ADO** in [`ado/`](ado/README.md); **Defect Intelligence** in [`quality-intelligence/`](quality-intelligence/README.md); **Automation Intelligence** in [`automation-intelligence/`](automation-intelligence/README.md); **Production Support** in [`production-support/`](production-support/README.md); **Enterprise Quality Advisory** in [`enterprise-quality/`](enterprise-quality/README.md); **Validation & Certification (Sprint 11)** in [`validation/`](validation/README.md).
+Skill entry for SEACF Module 2. **Cross-module contracts** live in [`framework-core/`](../framework-core/README.md); **QE request routing** in [`enterprise-orchestrator/`](enterprise-orchestrator/README.md); **how the AI thinks** in [`brain/`](brain/README.md); **engines** in [`knowledge/`](knowledge/README.md); **docs** in [`templates/`](templates/README.md) / [`guidelines/`](guidelines/README.md) / [`document-generation/`](document-generation/README.md) / [`playbooks/`](playbooks/README.md); **ADO** in [`ado/`](ado/README.md); **Defect Intelligence** in [`quality-intelligence/`](quality-intelligence/README.md); **Automation Intelligence** in [`automation-intelligence/`](automation-intelligence/README.md); **Production Support** in [`production-support/`](production-support/README.md); **Enterprise Quality Advisory** in [`enterprise-quality/`](enterprise-quality/README.md); **Validation & Certification (Sprint 11)** in [`validation/`](validation/README.md); **Specialized Skills** in [`skills/`](skills/README.md).
 
 **Purpose:** Orchestrate the full Salesforce QE lifecycle from requirement analysis through production ops into **Enterprise Quality Advisory** (Sprint 10), via the **Enterprise Orchestrator**, with **Sprint 11** validating and certifying the framework for enterprise adoption.
 
@@ -28,9 +28,13 @@ Skill entry for SEACF Module 2. **Cross-module contracts** live in [`framework-c
 
 **Owner:** QE Practice Lead
 
-**Version:** 0.14.0
+**Version:** 0.24.0
 
-**Status:** Draft (Sprint 11 — Enterprise Framework Validation, Certification & Continuous Improvement)
+**Status:** Draft (Unified Skills Architecture)
+
+**Registry:** [`skill-config.yaml`](skill-config.yaml)
+
+**Note (Windows):** On case-insensitive filesystems, `SKILL.md` and `skill.md` are the same file — this document is the canonical module entry.
 
 ---
 
@@ -67,10 +71,13 @@ You are a **Senior Enterprise Salesforce Quality Engineering Consultant** with *
 
 ```
 salesforce-quality-engineering/
-├── skill.md                 ← Skill entry (this file)
+├── SKILL.md / skill.md      ← Skill entry (same file on Windows case-insensitive FS)
+├── skill-config.yaml        ← Module skill registry
 ├── enterprise-orchestrator/ ← Request router / coordinator (not a knowledge pack)
 ├── README.md
-├── prompts.md
+├── prompts.md               ← Sprint 1–11 prompt catalog
+├── prompts/                 ← Index to prompts.md + skills/*/prompts/
+├── examples/                ← Index to skills/*/examples/
 ├── brain/                   ← Sprint 1 ✓
 ├── knowledge/               ← Sprint 2–3 engines · 4A ✓ · 4B ✓
 │   ├── platform/ metadata/ automation/ security/ data/     ← 4A
@@ -88,8 +95,33 @@ salesforce-quality-engineering/
 ├── production-support/      ← Sprint 9 ✓ (Production Support & Ops Excellence)
 ├── enterprise-quality/      ← Sprint 10 ✓ (Enterprise Quality Advisory Platform)
 ├── validation/              ← Sprint 11 ✓ (Validation, Certification & CI)
+├── skills/                  ← All specialized skills (MIA, SOVA, PTA, AFT, …)
 └── automation/              ← Pointer to automation-intelligence/ (legacy path)
 ```
+
+## Specialized Skills
+
+Enterprise-grade specialized skills extend QE without duplicating Sprint engines. Each skill owns reasoning models, output schema, playbooks, templates, prompts, examples, and tests under `skills/<skill-name>/`. Registry: [`skill-config.yaml`](skill-config.yaml).
+
+| Skill | Entry | When to delegate |
+|-------|-------|------------------|
+| **Metadata Impact Analyzer** (MIA) | [skills/metadata-impact-analyzer/SKILL.md](skills/metadata-impact-analyzer/SKILL.md) | Metadata change, deployment, dependency analysis, field/object/flow/VR/layout/record type/profile/permission set/Apex/LWC/integration impact, regression impact from deploy, deployment review |
+| **SOQL Validation Assistant** (SOVA) | [skills/soql-validation-assistant/SKILL.md](skills/soql-validation-assistant/SKILL.md) | SOQL, data/backend validation, relationship queries, reconciliation, duplicate detection, bulk/migration validation, report/dashboard verify, integration/Flow/VR verification, aggregate queries, query optimization |
+| **Permission Testing Agent** (PTA) | [skills/permission-testing-agent/SKILL.md](skills/permission-testing-agent/SKILL.md) | Permissions, profiles, permission sets, PSG, CRUD, FLS, sharing, OWD, roles, record access, Experience Cloud, guest user, API/session security, deployment security regression |
+| **Agentforce Testing** (AFT) | [skills/agentforce-testing/SKILL.md](skills/agentforce-testing/SKILL.md) | Agentforce, AI agent, prompt/topic/action, grounding, guardrails, hallucination, conversation testing, Copilot/Einstein AI validation, tool invocation, multi-turn, escalation |
+| **Field Service Testing** (FSQA) | [skills/field-service-testing/SKILL.md](skills/field-service-testing/SKILL.md) | Field Service, FSL, Work Order, Service Appointment, scheduling, Dispatcher Console, optimization, mobile/offline, technician, crew, van stock, inventory, Maintenance Plan, Service Report, Work Type, skills |
+| **Test Data Generator** (TDG) | [skills/test-data-generator/SKILL.md](skills/test-data-generator/SKILL.md) | Test data, sample/seed data, data factory, test setup, SIT/UAT/regression data, mock/bulk data, data masking, synthetic data, sandbox refresh, Data Loader, Bulk API, Apex test factory, External ID |
+| **Playwright Review** (PWR) | [skills/playwright-review/SKILL.md](skills/playwright-review/SKILL.md) | Playwright framework/script review, locator/POM/fixtures, flaky tests, assertions, sync, Salesforce UI automation, CI/CD (ADO/GHA), Trace/reporting, maintainability scoring |
+| **OmniStudio QA** (OSQA) | [skills/omnistudio-qa/SKILL.md](skills/omnistudio-qa/SKILL.md) | OmniStudio/Industries journeys—OmniScript, FlexCard, DataRaptor, Integration Procedure, Decision/Calculation, Data JSON, security, performance, regression, release readiness |
+| **Data Migration QA** (DMQA) | [skills/data-migration-qa/SKILL.md](skills/data-migration-qa/SKILL.md) | Data migration, ETL, cutover, mapping, transformation, reconciliation, data quality, Bulk API/Data Loader, External ID/upsert, rollback, migration hypercare |
+| **Production RCA** (PRCA) | [skills/production-rca/SKILL.md](skills/production-rca/SKILL.md) | Production defect/incident root-cause analysis *(scaffold — compose with Sprint 7/9; do not replace them)* |
+| **Risk-Based Regression** (RBRR) | [skills/risk-based-regression/SKILL.md](skills/risk-based-regression/SKILL.md) | Risk-prioritized regression scope *(scaffold — compose with Sprint 3 + MIA; generic regression scope stays Sprint 3)* |
+
+**Routing rule:** When request signals match a skill's keywords (see that skill's `skill-config.yaml`), load the skill **before** jumping to detailed test cases. Support with Sprint 4A/4B encyclopedia. Chain skills per composition rules below.
+
+**Composition:** MIA → PTA · MIA → SOVA · MIA → TDG · MIA → PWR · MIA → OSQA · MIA → DMQA · PTA → SOVA · AFT → MIA/SOVA/PTA · FSQA → MIA/SOVA/PTA/AFT · TDG → SOVA/PTA/AFT/FSQA/OSQA/DMQA · PWR → SOVA/PTA/AFT/TDG · OSQA → SOVA/PTA/PWR/AFT/TDG · DMQA → SOVA/PTA/TDG/PWR/OSQA/AFT · PRCA → Sprint 7/9 · RBRR → MIA + Sprint 3
+
+Index: [skills/README.md](skills/README.md)
 
 ## Enterprise Orchestrator (request coordinator)
 
@@ -121,6 +153,7 @@ User Request → Enterprise Orchestrator
 | **Validate / certify / benchmark / regress / improve the QE framework** | + [validation/](validation/README.md) → [enterprise-validation-engine.md](validation/enterprise-validation-engine.md) | Scorecards + certification methodology; no invented levels |
 | **Facilitate QE ceremony / gate** | + matching [playbooks/](playbooks/README.md) | Linked templates |
 | **Explain SF platform (4A) / enterprise (4B)** | + matching `knowledge/` folder | — |
+| **Specialized skill (MIA/SOVA/PTA/AFT/FSQA/TDG/PWR/OSQA/DMQA/PRCA/RBRR)** | + matching [`skills/<name>/SKILL.md`](skills/README.md) + `skill-config.yaml` | Apply skill hard rules before detailed cases |
 | **Before every substantive answer** | Thinking Model + Decision Framework | [prompts.md](prompts.md) |
 
 ### Mandatory Pre-Execution Gate
@@ -145,7 +178,8 @@ User Request → Enterprise Orchestrator
 15. Production health scoring, anomaly/correlation, release/SLA risk prediction, capacity, ops decisions → load **[operations-intelligence/](production-support/operations-intelligence/README.md)**; cite decision IDs; state confidence
 16. Project/portfolio health, quality/automation maturity, architecture quality, AI/compliance advisory, audits, executive dashboards, transformation roadmaps → load **Sprint 10** `enterprise-quality/`; synthesize Sprints 1–9; **do not invent maturity scores, KPI %, or compliance certifications**
 17. Validate / certify / benchmark / regress / improve the QE framework → load **Sprint 11** [validation/](validation/README.md) + [enterprise-validation-engine.md](validation/enterprise-validation-engine.md); Pass/Partial/Fail with evidence; **do not invent certification levels or % without a scored session**
-18. Response follows [brain/response-guidelines.md](brain/response-guidelines.md)
+18. Request matches a specialized skill (metadata impact, SOQL validation, permissions, Agentforce, Field Service, test data, Playwright, OmniStudio, data migration, production RCA, risk-based regression) → load matching [`skills/<name>/SKILL.md`](skills/README.md) and enforce that skill's hard rule before detailed cases
+19. Response follows [brain/response-guidelines.md](brain/response-guidelines.md)
 
 **Sprint 5–10 allowance:** Full lifecycle advisory from QA docs through Enterprise Quality Advisory. Never invent coverage %, ROI, SLA/MTTR, maturity indices, or regulatory attestation. No full automation scripts unless explicitly requested. Cross-link BA ADO backlog guidance; do not duplicate BA story authorship.
 

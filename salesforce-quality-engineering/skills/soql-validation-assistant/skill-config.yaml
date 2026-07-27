@@ -1,0 +1,95 @@
+# SOQL Validation Assistant — skill configuration
+name: soql-validation-assistant
+short_id: SOVA
+version: 0.16.0
+architecture_release: 0.24.0
+parent_module: salesforce-quality-engineering
+entry: SKILL.md
+
+routing:
+  keywords:
+    - SOQL
+    - soql
+    - data validation
+    - backend validation
+    - data verification
+    - record verification
+    - relationship query
+    - parent child
+    - child parent
+    - aggregate query
+    - COUNT
+    - GROUP BY
+    - duplicate detection
+    - data reconciliation
+    - bulk validation
+    - migration validation
+    - integration validation
+    - flow validation
+    - validation rule verification
+    - report validation
+    - dashboard validation
+    - regression validation
+    - release validation
+    - smoke testing
+    - sanity testing
+    - production verification
+    - query optimization
+    - query review
+  primary_support:
+    - knowledge/performance/
+    - knowledge/data/
+    - knowledge/security/
+  upstream_skills:
+    - skills/metadata-impact-analyzer
+  downstream_after_queries:
+    - knowledge/test-design-engine.md
+
+output_schema:
+  sections:
+    - id: validation_objective
+      title: "Validation Objective"
+    - id: business_context
+      title: "Business Context"
+    - id: recommended_soql
+      title: "Recommended SOQL"
+    - id: query_explanation
+      title: "Query Explanation"
+    - id: expected_result
+      title: "Expected Result"
+    - id: backend_validation_steps
+      title: "Backend Validation Steps"
+    - id: security_considerations
+      title: "Security Considerations"
+    - id: performance_considerations
+      title: "Performance Considerations"
+    - id: automation_opportunities
+      title: "Automation Opportunities"
+    - id: related_metadata
+      title: "Related Metadata"
+    - id: negative_validation
+      title: "Negative Validation"
+    - id: edge_cases
+      title: "Edge Cases"
+    - id: alternative_queries
+      title: "Alternative Queries"
+    - id: qa_recommendations
+      title: "QA Recommendations"
+
+performance_risk:
+  scale: [Low, Medium, High]
+  rules:
+    - Assess selectivity and relationship depth before recommending query
+    - Flag non-selective filters and missing LIMIT on large objects
+    - Cross-link knowledge/performance/query-selectivity.md for depth
+
+security_warnings:
+  - FLS may hide fields — state run-as user context
+  - Sharing may exclude records — warn on misleading zero-row results
+  - API-only users may differ from UI personas
+
+quality_gates:
+  - validation_objective_before_soql
+  - all_fourteen_sections_present
+  - security_and_performance_sections_required
+  - assumptions_labeled

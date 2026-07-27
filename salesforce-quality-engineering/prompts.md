@@ -429,6 +429,226 @@ Change / release context:
 
 ---
 
+## Standard Prompts (Specialized Skills — Metadata Impact Analyzer)
+
+Load [skills/metadata-impact-analyzer/SKILL.md](skills/metadata-impact-analyzer/SKILL.md) first. Full prompt library: [skills/metadata-impact-analyzer/prompts/README.md](skills/metadata-impact-analyzer/prompts/README.md).
+
+### Metadata Impact Analysis (16 sections)
+
+```
+Analyze this Salesforce metadata deployment. Perform complete dependency analysis BEFORE
+any test recommendations. Produce all 16 Metadata Impact Analyzer sections per SKILL.md.
+Label assumptions. Do not invent coverage % or SLA values.
+
+Change manifest:
+[paste package.xml, change set list, or diff]
+
+Personas: [list]
+Target path: [e.g. UAT → Production]
+```
+
+### Deployment Review
+
+```
+Review deployment readiness for this package. Use Metadata Impact Analyzer playbooks and
+templates/deployment-risk-report.md. Dependency graph and ordering risks required before Go/No-Go.
+
+Package / evidence:
+[paste]
+```
+
+---
+
+## Standard Prompts (Specialized Skills — SOQL Validation Assistant)
+
+Load [skills/soql-validation-assistant/SKILL.md](skills/soql-validation-assistant/SKILL.md) first. Full library: [skills/soql-validation-assistant/prompts/README.md](skills/soql-validation-assistant/prompts/README.md).
+
+### Generate Validation SOQL (14 sections)
+
+```
+State Validation Objective and Business Context BEFORE any SOQL.
+Produce all 14 SOQL Validation Assistant sections per SKILL.md.
+Include Security and Performance Considerations. Label assumptions.
+
+Validation need:
+[paste AC, business rule, or MIA SOQL stub]
+
+Run-as persona: [e.g. Standard Sales User]
+Environment: [sandbox name]
+```
+
+### Review / Optimize Existing SOQL
+
+```
+Review this SOQL for validation objective, selectivity, FLS/sharing risks, and governor impact.
+Suggest Alternative Queries if needed.
+
+Query:
+[paste SOQL]
+Context:
+[paste]
+```
+
+---
+
+## Standard Prompts (Specialized Skills — Permission Testing Agent)
+
+Load [skills/permission-testing-agent/SKILL.md](skills/permission-testing-agent/SKILL.md) first. Full library: [skills/permission-testing-agent/prompts/README.md](skills/permission-testing-agent/prompts/README.md).
+
+### Permission Validation (19 sections)
+
+```
+State Security Context and Business Requirement BEFORE test scenarios.
+Produce all 19 Permission Testing Agent sections per SKILL.md.
+Include CRUD, FLS, Sharing matrices and Negative Test Scenarios.
+Chain to SOQL Validation Assistant for expanded section 17 SOQL packs.
+
+Security change / requirement:
+[paste]
+
+Personas: [list]
+Environment: [sandbox]
+```
+
+---
+
+## Standard Prompts (Specialized Skills — Agentforce Testing)
+
+Load [skills/agentforce-testing/SKILL.md](skills/agentforce-testing/SKILL.md) first. Full library: [skills/agentforce-testing/prompts/README.md](skills/agentforce-testing/prompts/README.md).
+
+### Agentforce AI QA (18 sections)
+
+```
+Provide Business Scenario and Agent Configuration Reviewed BEFORE conversation scripts.
+Produce all 18 Agentforce Testing sections per SKILL.md.
+Evaluate grounding, guardrails, hallucination risk, and tool invocation.
+Label assumptions; do not invent confidence or accuracy percentages.
+Chain MIA/SOVA/PTA when actions mutate data or expose sensitive fields.
+
+Agent / prompt / topic context:
+[paste]
+
+Personas / channel: [list]
+Environment: [sandbox]
+```
+
+---
+
+## Standard Prompts (Specialized Skills — Field Service Testing)
+
+Load [skills/field-service-testing/SKILL.md](skills/field-service-testing/SKILL.md) first. Full library: [skills/field-service-testing/prompts/README.md](skills/field-service-testing/prompts/README.md).
+
+### Field Service Testing (18 sections)
+
+```
+Provide Business Scenario and FSL Components Reviewed BEFORE detailed test cases.
+Produce all 18 Field Service QA sections per SKILL.md.
+Cover scheduling, dispatcher, mobile/offline, and inventory when in scope.
+Label assumptions; do not invent optimization scores or SLA percentages.
+Chain MIA/SOVA/PTA/AFT when metadata, backend proof, access, or agent booking applies.
+
+FSL / Work Order / scheduling context:
+[paste]
+
+Personas (dispatcher, technician, crew): [list]
+Environment: [sandbox]
+```
+
+---
+
+## Standard Prompts (Specialized Skills — Test Data Generator)
+
+Load [skills/test-data-generator/SKILL.md](skills/test-data-generator/SKILL.md) first. Full library: [skills/test-data-generator/prompts/README.md](skills/test-data-generator/prompts/README.md).
+
+### Test Data Generator TDM (14 sections)
+
+```
+Provide Business Scenario, Data Requirements, and Objects/Relationships BEFORE record payloads.
+Produce all 14 Test Data Generator sections per SKILL.md.
+Use synthetic data only; never real PII.
+Include Cleanup Strategy and SOQL stubs; label volume assumptions.
+Chain MIA/SOVA/PTA/AFT/FSQA when metadata, proof, access, or agent/FSL seed applies.
+
+Test data / seed / environment context:
+[paste]
+
+Personas / test phase: [list]
+Environment: [sandbox]
+```
+
+---
+
+## Standard Prompts (Specialized Skills — Playwright Review)
+
+Load [skills/playwright-review/SKILL.md](skills/playwright-review/SKILL.md) first. Full library: [skills/playwright-review/prompts/README.md](skills/playwright-review/prompts/README.md).
+
+### Playwright Review (18 sections)
+
+```
+Provide Framework Assessment context BEFORE line-by-line script critique.
+Produce all 18 Playwright Review sections per SKILL.md.
+Score 1–5 with evidence or N/A; do not invent coverage or flake percentages.
+Refactoring suggestions as snippets only unless full rewrite requested.
+Chain MIA/SOVA/PTA/AFT/TDG when UI metadata, backend proof, access, Agentforce UI, or data gaps apply.
+
+Playwright framework / script / CI context:
+[paste]
+
+Scope (framework | scripts | locators | CI): [list]
+Salesforce UI surfaces: [LEX | Experience | Console | Agentforce | N/A]
+```
+
+---
+
+## Standard Prompts (Specialized Skills — OmniStudio QA)
+
+Load [skills/omnistudio-qa/SKILL.md](skills/omnistudio-qa/SKILL.md) first. Full library: [skills/omnistudio-qa/prompts/README.md](skills/omnistudio-qa/prompts/README.md).
+
+### OmniStudio QA (17 sections)
+
+```
+Provide Business Scenario + OmniStudio Components Reviewed BEFORE detailed test cases.
+Produce all 17 OmniStudio QA sections per SKILL.md.
+Label assumptions; do not invent latency, throughput, or SLA percentages.
+Chain MIA/SOVA/PTA/PWR/AFT/TDG when Omni metadata, CRM/JSON proof, FLS/Experience, UI automation, agent journeys, or seed data apply.
+
+Business scenario:
+[paste]
+
+OmniStudio components (OmniScript / FlexCard / DataRaptor / IP / decision/calc):
+[list]
+
+Personas / channel (LEX | Experience): [list]
+```
+
+---
+
+## Standard Prompts (Specialized Skills — Data Migration QA)
+
+Load [skills/data-migration-qa/SKILL.md](skills/data-migration-qa/SKILL.md) first. Full library: [skills/data-migration-qa/prompts/README.md](skills/data-migration-qa/prompts/README.md).
+
+### Data Migration QA (20 sections)
+
+```
+Provide Migration Scope + Source/Target Assessment BEFORE detailed validation cases.
+Produce all 20 Data Migration QA sections per SKILL.md.
+Label assumptions; do not invent throughput, duration, or SLA percentages.
+Do not claim GDPR certification — flag Legal/Compliance when needed.
+Chain MIA/SOVA/PTA/TDG/PWR/OSQA/AFT when metadata, SOQL reconcile, FLS/PII, synthetic dry-run, journey regression, Industries data, or agent-touched records apply.
+Pure SOQL-only reconcile → prefer SOVA. Synthetic seed-only → prefer TDG. Ops Sev1 hypercare → Sprint 9.
+
+Migration scope (objects / waves / volumes):
+[paste]
+
+Source system / Target Salesforce model:
+[list]
+
+Mapping / External ID / load order (sanitized):
+[list]
+```
+
+---
+
 ## Standard Prompts (Sprint 5 — Documentation Generator)
 
 ### Generate Test Strategy

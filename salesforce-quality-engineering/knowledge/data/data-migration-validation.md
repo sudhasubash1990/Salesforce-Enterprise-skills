@@ -64,6 +64,7 @@ Reconcile volumes, keys, relationships, and sample journeys post-migration.
 
 ## Testing Considerations
 
+- **Specialized Skill Entry:** For full migration lifecycle QA (mapping, transform, reconcile, cutover, rollback, hypercare), load [Data Migration QA (DMQA)](../../skills/data-migration-qa/SKILL.md) — Migration Scope + Source/Target Assessment before detailed cases; 20-section output. Prefer DMQA over this encyclopedia when migration/ETL/cutover validation intent is clear. Pure SOQL reconciliation expands via [SOQL Validation Assistant](../../skills/soql-validation-assistant/SKILL.md).
 - Design scenario objectives via [../test-design-engine.md](../test-design-engine.md) before detailed cases
 - Cover happy path, negative, boundary, and persona/permission paths
 - Evidence: persona, data, environment, expected vs actual

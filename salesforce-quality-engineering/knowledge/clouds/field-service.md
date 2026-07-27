@@ -68,6 +68,10 @@ Validate work orders, scheduling, mobile/offline, and inventory impacts.
 - Ground platform impact in [../platform/README.md](../platform/README.md) / [../automation/README.md](../automation/README.md) / [../security/README.md](../security/README.md)
 - Cover happy path, negative, persona/permission, data, and integration paths as applicable
 
+## Specialized Skill Entry
+
+For end-to-end Field Service QA (scheduling, dispatch, mobile/offline, inventory, security, performance) with **18-section** output, use **[Field Service QA](../../skills/field-service-testing/SKILL.md)**. This article remains the Sprint 4B canonical product overview.
+
 ## Functional Testing
 
 - Business process outcomes match acceptance criteria for in-scope personas

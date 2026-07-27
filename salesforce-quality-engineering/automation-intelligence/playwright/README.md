@@ -23,6 +23,10 @@ Architecture, locators, fixtures, POM, API, auth, visual, CI/CD, SF practices, f
 
 **Hard rule:** Do **not** generate full automation scripts in this sprint—architecture, strategy, and decisions only.
 
+## Specialized Skill Entry
+
+For enterprise **Playwright Review** (framework/script/locator/flake/CI with 18-section output), use **[Playwright Review](../../skills/playwright-review/SKILL.md)**. This folder remains the Sprint 8 Playwright design encyclopedia.
+
 ## Available Documents
 
 | Document | Focus |

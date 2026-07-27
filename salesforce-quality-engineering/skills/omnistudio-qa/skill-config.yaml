@@ -1,0 +1,78 @@
+name: omnistudio-qa
+id: omnistudio-qa
+short_id: OSQA
+display_name: OmniStudio QA
+version: 0.22.0
+architecture_release: 0.24.0
+parent_module: salesforce-quality-engineering
+path: skills/omnistudio-qa
+entry: SKILL.md
+
+routing:
+  primary_keywords:
+    - OmniStudio
+    - OmniScript
+    - FlexCard
+    - Integration Procedure
+    - DataRaptor
+    - Calculation Procedure
+    - Calculation Matrix
+    - Decision Matrix
+    - Decision Table
+    - Expression Set
+    - Industries
+    - Vlocity
+    - Guided Flow
+    - Service Process
+    - Digital Journey
+    - CPQ
+    - EPC
+    - Product Configuration
+    - Remote Action
+    - HTTP Action
+    - Data JSON
+    - Context Variables
+  intent_keywords:
+    - test
+    - validate
+    - review
+    - journey
+    - QA
+    - regression
+    - deployment readiness
+    - DataRaptor mapping
+    - FlexCard
+  prefer_over:
+    - sprint_4b_omnistudio_encyclopedia
+  prefer_when: "OmniStudio/Industries + (test OR validate OR journey OR DataRaptor OR FlexCard OR OmniScript)"
+
+composition:
+  upstream:
+    - metadata-impact-analyzer
+  downstream:
+    - soql-validation
+    - permission-testing
+    - playwright-review
+    - agentforce-testing
+    - test-data-generator
+  support:
+    - knowledge/clouds/omnistudio.md
+    - automation-intelligence/salesforce/omnistudio.md
+    - enterprise-quality/salesforce/omnistudio.md
+
+output:
+  schema_sections: 17
+  primary_template: templates/omniscript-test-report.md
+  strategy_template: templates/omnistudio-test-strategy.md
+  hard_rules:
+    - "Business Scenario + OmniStudio Components Reviewed before detailed test cases"
+    - "Do not invent latency, throughput, or SLA percentages"
+    - "Do not duplicate knowledge/clouds/omnistudio.md encyclopedia body"
+
+folders:
+  knowledge: 16
+  playbooks: 8
+  templates: 8
+  prompts: 10
+  examples: 10
+  tests: 11

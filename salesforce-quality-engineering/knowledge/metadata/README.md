@@ -47,6 +47,10 @@ Metadata types, dependencies, comparison, migration, validation, and risk—excl
 | [Metadata Best Practices](metadata-best-practices.md) | Enterprise metadata hygiene for quality |
 | [Metadata Risks](metadata-risks.md) | Metadata risk catalog |
 
+## Specialized Skill
+
+For pre-deployment dependency analysis and 16-section impact reports, use the **Metadata Impact Analyzer** specialized skill: [../../skills/metadata-impact-analyzer/SKILL.md](../../skills/metadata-impact-analyzer/SKILL.md). Sprint 4A articles above remain the canonical reference depth.
+
 ## Navigation
 
 - **Previous:** [platform/](../platform/README.md)

@@ -3,16 +3,18 @@ title: Roadmap
 module: Salesforce Quality Engineering
 category: Root
 document_type: Guide
-version: 0.14.0
+version: 0.24.0
 review_status: Draft
 owner: QE Practice Lead
 created_date: 2026-07-17
-last_updated: 2026-07-18
+last_updated: 2026-07-28
 review_cycle: quarterly
 related_documents:
   - salesforce-quality-engineering/CHANGELOG.md
   - salesforce-quality-engineering/README.md
   - salesforce-quality-engineering/skill.md
+  - salesforce-quality-engineering/skill-config.yaml
+  - salesforce-quality-engineering/skills/README.md
   - salesforce-quality-engineering/validation/README.md
   - salesforce-quality-engineering/enterprise-quality/README.md
   - salesforce-quality-engineering/production-support/README.md
@@ -20,7 +22,7 @@ related_documents:
   - salesforce-quality-engineering/quality-intelligence/README.md
   - ROADMAP.md
 keywords: [roadmap]
-tags: [roadmap, sprint-11]
+tags: [roadmap, sprint-11, specialized-skills]
 ---
 
 # Salesforce Quality Engineering — Roadmap
@@ -31,9 +33,9 @@ tags: [roadmap, sprint-11]
 
 **Owner:** QE Practice Lead
 
-**Version:** 0.14.0
+**Version:** 0.24.0
 
-**Status:** Draft (Sprint 11 — Validation, Certification & Continuous Improvement)
+**Status:** Draft (Unified Skills Architecture)
 
 ---
 
@@ -208,9 +210,17 @@ tags: [roadmap, sprint-11]
 - [x] skill.md / prompts.md / README updates; generator `scripts/generate_sprint11_validation.py`
 - [x] Framework ready for enterprise adoption validation process (open-source hardening optional)
 
-## Optional – Continuous Evolution
+## Optional – Continuous Evolution / Specialized Skills
 
-_Placeholder — Regression Intelligence deep-pack, CI JSON exports, machine-readable route plans._
+**Complete (v0.24.0)** — Unified `skills/` architecture (former `capabilities/` migrated).
+
+- [x] All specialized packs under [`skills/`](skills/README.md) with `SKILL.md` + `skill-config.yaml`
+- [x] Module registry [`skill-config.yaml`](skill-config.yaml); root `prompts/` + `examples/` indexes
+- [x] Field Service pack renamed to `field-service-testing`
+- [x] Production RCA + Risk-Based Regression scaffolds (compose with Sprint 7/9 and Sprint 3)
+- [x] Cross-link repair + Specialized Skill terminology alignment (post-migration hardening)
+
+_Placeholder — full PRCA/RBRR content packs; Regression Intelligence deep-pack; CI JSON exports; machine-readable route plans._
 
 ---
 

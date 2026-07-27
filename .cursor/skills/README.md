@@ -1,28 +1,22 @@
 ---
 title: Cursor Skills
-last_updated: 2026-07-18
+last_updated: 2026-07-28
 ---
 
 # Cursor Skills
 
 ## Purpose
 
-Thin discovery stubs. Canonical skills live under module folders.
+Thin discovery stubs. Canonical skills live under module folders (`salesforce-business-analyst/`, `salesforce-quality-engineering/`).
 
-## Scope
+## Stubs
 
-Navigation and ownership for this folder. Content files in this directory are authoritative for their topics.
-
-## Inputs / Outputs
-
-- **Inputs:** Linked skill, brain, and knowledge modules
-- **Outputs:** Documents and guidance contained in this folder
+| Stub | Canonical module |
+|------|------------------|
+| [salesforce-business-analyst/](salesforce-business-analyst/SKILL.md) | [`salesforce-business-analyst/skill.md`](../../salesforce-business-analyst/skill.md) |
+| [salesforce-quality-engineering/](salesforce-quality-engineering/SKILL.md) | [`salesforce-quality-engineering/skill.md`](../../salesforce-quality-engineering/skill.md) · [`skills/`](../../salesforce-quality-engineering/skills/README.md) |
 
 ## Navigation
 
 - **Up:** [../README.md](../README.md)
 - **Repo root:** [README.md](../../README.md)
-
-## Related Documents
-
-See parent module README. Multi-lens topics: docs/multi-lens-policy.md.

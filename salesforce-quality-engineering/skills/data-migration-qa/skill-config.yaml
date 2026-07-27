@@ -1,0 +1,91 @@
+name: data-migration-qa
+id: data-migration-qa
+short_id: DMQA
+display_name: Data Migration QA
+version: 0.23.0
+architecture_release: 0.24.0
+parent_module: salesforce-quality-engineering
+path: skills/data-migration-qa
+entry: SKILL.md
+
+routing:
+  primary_keywords:
+    - Data Migration
+    - ETL
+    - Data Conversion
+    - Legacy System
+    - Cutover
+    - Data Load
+    - Bulk API
+    - Data Loader
+    - Migration Validation
+    - Data Quality
+    - Reconciliation
+    - Data Mapping
+    - Transformation
+    - Duplicate Records
+    - Record Counts
+    - Data Integrity
+    - Data Cleansing
+    - Post Migration Validation
+    - Hypercare
+    - External ID
+    - Upsert
+    - Lookup Resolution
+    - Referential Integrity
+    - Incremental Load
+    - Delta Migration
+    - Rollback
+  intent_keywords:
+    - validate
+    - review
+    - reconcile
+    - mapping
+    - transformation
+    - cutover readiness
+    - rollback
+    - migration QA
+  prefer_over:
+    - sprint_4a_data_encyclopedia
+    - sova_when_full_migration_lifecycle
+  prefer_when: "migration OR ETL OR cutover OR mapping OR transformation + (validate OR reconcile OR readiness)"
+  defer_to_sova_when: "pure SOQL reconciliation / write queries only without mapping-cutover lifecycle"
+  defer_to_tdg_when: "synthetic seed / factory generation without migration validation intent"
+  defer_to_sprint9_when: "general ops Sev1 / non-migration hypercare"
+
+composition:
+  upstream:
+    - metadata-impact-analyzer
+  downstream:
+    - soql-validation
+    - permission-testing
+    - test-data-generator
+    - playwright-review
+    - omnistudio-qa
+    - agentforce-testing
+  support:
+    - knowledge/data/data-migration-validation.md
+    - knowledge/data/data-reconciliation.md
+    - knowledge/data/data-quality.md
+    - knowledge/data/data-loader.md
+    - knowledge/data/referential-integrity.md
+    - knowledge/data/pii-considerations.md
+    - production-support/
+
+output:
+  schema_sections: 20
+  primary_template: templates/reconciliation-report.md
+  strategy_template: templates/data-migration-test-strategy.md
+  hard_rules:
+    - "Migration Scope + Source/Target Assessment before detailed validation cases"
+    - "Do not invent throughput, duration, or SLA percentages"
+    - "Do not claim GDPR certification; flag Legal/Compliance"
+    - "Do not duplicate knowledge/data encyclopedia body"
+
+folders:
+  knowledge: 19
+  playbooks: 8
+  templates: 9
+  prompts: 10
+  examples: 10
+  tests: 12

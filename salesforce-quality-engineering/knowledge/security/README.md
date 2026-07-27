@@ -52,6 +52,10 @@ Profiles through MFA, sharing model, territory overview, audit/login/field histo
 | [Login History](login-history.md) | Login History monitoring |
 | [Field History Tracking](field-history-tracking.md) | Field history for security/audit |
 
+## Specialized Skill Entry
+
+For agent-driven permission testing with 19-section output (security context before scenarios, CRUD/FLS/sharing matrices), use **[Permission Testing Agent](../../skills/permission-testing-agent/SKILL.md)**. This folder remains the Sprint 4A canonical security encyclopedia.
+
 ## Navigation
 
 - **Previous:** [automation/](../automation/README.md)

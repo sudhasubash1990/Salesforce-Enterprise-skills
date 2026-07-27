@@ -32,6 +32,10 @@ Apply Playwright-specific expectations when reviewing existing Playwright estate
 - Disabling isolation to “make tests pass”.  
 - Committing `storageState` with session cookies to git.  
 
+## Specialized Skill Entry
+
+For structured Playwright estate reviews (18-section report, 1–5 scores, Salesforce UI sync, CI/CD), use **[Playwright Review](../../skills/playwright-review/SKILL.md)**. This article remains the Sprint 8 Playwright lens within the Automation Review Engine.
+
 ## Related Documents
 
 - [../playwright/README.md](../playwright/README.md)

@@ -3,11 +3,11 @@ title: Changelog
 module: Salesforce Quality Engineering
 category: Root
 document_type: Guide
-version: 0.14.0
+version: 0.24.0
 review_status: Draft
 owner: QE Practice Lead
 created_date: 2026-07-17
-last_updated: 2026-07-18
+last_updated: 2026-07-28
 review_cycle: quarterly
 related_documents:
   - salesforce-quality-engineering/ROADMAP.md
@@ -31,21 +31,227 @@ tags: [changelog]
 
 **Owner:** QE Practice Lead
 
-**Version:** 0.14.0
+**Version:** 0.24.0
 
-**Status:** Draft (Sprint 11)
+**Status:** Draft (Unified Skills Architecture)
 
 ---
 
-## [Unreleased]
+## [0.24.0] - 2026-07-28
+
+### Changed (breaking paths)
+
+- **Unified specialized skills under `skills/`** — retired `capabilities/` namespace
+- Module entry remains `skill.md` / `SKILL.md` (same file on Windows case-insensitive FS) + new [`skill-config.yaml`](skill-config.yaml) registry
+- Added root [`prompts/README.md`](prompts/README.md) and [`examples/README.md`](examples/README.md) indexes
+
+### Migration map
+
+| Short ID | Old path | New path |
+|----------|----------|----------|
+| SOVA | `capabilities/soql-validation/` | `skills/soql-validation-assistant/` |
+| PTA | `capabilities/permission-testing/` | `skills/permission-testing-agent/` |
+| AFT | `capabilities/agentforce-testing/` | `skills/agentforce-testing/` |
+| PWR | `capabilities/playwright-review/` | `skills/playwright-review/` |
+| OSQA | `capabilities/omnistudio-qa/` | `skills/omnistudio-qa/` |
+| DMQA | `capabilities/data-migration-qa/` | `skills/data-migration-qa/` |
+| TDG | `capabilities/test-data-generator/` | `skills/test-data-generator/` |
+| FSQA | `capabilities/field-service-qa/` | `skills/field-service-testing/` |
+| MIA | `skills/metadata-impact-analyzer/` | *(unchanged)* |
+
+- Per-skill entry rename: `CAPABILITY.md` → `SKILL.md`; `capability-config.yaml` → `skill-config.yaml`
+- Standard knowledge indexes added: `concepts.md`, `best-practices.md`, `salesforce-reference.md`, `glossary.md` (pointer/index only)
+
+### Added
+
+- **Production RCA (PRCA)** scaffold under `skills/production-rca/`
+- **Risk-Based Regression (RBRR)** scaffold under `skills/risk-based-regression/`
+- Enterprise Orchestrator routing rows for PRCA/RBRR
+- Generator scripts updated to target `skills/` paths
+
+### Removed
+
+- `capabilities/` directory (content migrated)
+- One-shot `scripts/migrate_capabilities_to_skills.py` (migration complete; not required for framework consumers)
+
+### Fixed (architecture hardening)
+
+- Repaired broken sibling/MIA relative links under `skills/*/knowledge|playbooks|...`
+- Disambiguated PRCA/RBRR routing: Sprint 7/9 and Sprint 3 remain primary; scaffolds compose as support (COMP-08)
+- Normalized all `skill-config.yaml` files to top-level `name`/`short_id`/`version`/`entry` (+ `architecture_release: 0.24.0`)
+- Replaced residual "QE Capability" frontmatter/category labels with "QE Specialized Skill" / "Specialized Skills"
+- Updated root README QE version to 0.24.0; QE ROADMAP; composition-patterns COMP-08
+
+---
+
+## [0.23.0] - 2026-07-27
+
+### Added
+
+- **Data Migration QA (DMQA)** capability under `skills/data-migration-qa/`:
+  - `SKILL.md` — Migration lifecycle QA, 20-section output schema
+  - `skill-config.yaml` — routing keywords, MIA/SOVA/PTA/TDG/PWR/OSQA/AFT chain rules
+  - 19 knowledge articles, 8 playbooks, 9 templates, 10 prompts, 10 examples, 12 test scenarios
+  - Generator: `scripts/generate_data_migration_qa_capability.py`
+- Parent `skill.md` — DMQA registration, Brain Loading row, Pre-Execution Gate step 26 (response-guidelines → 27)
+- Enterprise Orchestrator — DMQA routing + priority boost over generic Sprint 4A; SOVA remains primary for pure SOQL reconciliation
+- Cross-links: MIA, SOVA, PTA, TDG, PWR, OSQA, AFT, `knowledge/data/data-migration-validation.md`
 
 ### Changed
 
-- Pre-Execution Gate Step 0 enforces Tier-0 `framework-core/` load before Enterprise Orchestrator
-- Enterprise Orchestrator architecture diagram includes Sprint 11 Validation/Certification
-- Production Support README clarifies QE Sprint 9 pack vs planned standalone PS module
-- Fixed 18 broken E2E validation relative links after Sprint 11 folder move
-- Cursor stub lists Framework Core; best-practices / anti-patterns indexes point to live packs
+- Module version 0.22.0 → 0.23.0
+- `capabilities/README.md` — DMQA registered; removed Data Migration QA from Future
+- Sibling pointers (TDG, OSQA, PWR) updated to reference DMQA
+
+## [0.22.0] - 2026-07-27
+
+### Added
+
+- **OmniStudio QA (OSQA)** capability under `skills/omnistudio-qa/`:
+  - `SKILL.md` — Industries/OmniStudio journey QA, 17-section output schema
+  - `skill-config.yaml` — routing keywords, MIA/SOVA/PTA/PWR/AFT/TDG chain rules
+  - 16 knowledge articles, 8 playbooks, 8 templates, 10 prompts, 10 examples, 11 test scenarios
+  - Generator: `scripts/generate_omnistudio_qa_capability.py`
+- Parent `skill.md` — OSQA registration, Brain Loading row, Pre-Execution Gate step 25 (response-guidelines → 26)
+- Enterprise Orchestrator — OSQA routing + priority boost over generic Sprint 4B when testing intent
+- Cross-links: MIA, SOVA, PTA, PWR, AFT, TDG, `knowledge/clouds/omnistudio.md`
+
+### Changed
+
+- Module version 0.21.0 → 0.22.0
+- `capabilities/README.md` — OSQA registered; removed OmniStudio QA from Future
+- Sibling pointers (FSQA, PWR, TDG) updated to reference OSQA
+
+## [0.21.0] - 2026-07-27
+
+### Added
+
+- **Playwright Review (PWR)** capability under `skills/playwright-review/`:
+  - `SKILL.md` — Playwright review reasoning, 18-section output schema
+  - `skill-config.yaml` — routing keywords, MIA/SOVA/PTA/AFT/TDG chain rules
+  - 22 knowledge articles, 8 playbooks, 8 templates, 10 prompts, 10 examples, 12 test scenarios
+  - Generator: `scripts/generate_playwright_review_capability.py`
+- Parent `skill.md` — PWR registration, Brain Loading row, Pre-Execution Gate steps 13/24
+- Enterprise Orchestrator — PWR routing + priority boost over generic Sprint 8 when Playwright review intent
+- Cross-links: MIA, SOVA, PTA, AFT, TDG, Sprint 8 `playwright/` and `review-engine/playwright-framework-review.md`
+
+### Changed
+
+- Module version 0.20.0 → 0.21.0
+- `capabilities/README.md` — PWR registered
+- Sprint 8 Playwright/review-engine — QE Capability Entry pointers to PWR
+
+## [0.20.0] - 2026-07-27
+
+### Added
+
+- **Test Data Generator (TDG)** capability under `skills/test-data-generator/`:
+  - `SKILL.md` — TDM reasoning, 14-section output schema
+  - `skill-config.yaml` — routing keywords, MIA/SOVA/PTA/AFT/FSQA chain rules
+  - 16 knowledge articles, 8 playbooks, 8 templates, 10 prompts, 12 examples, 11 test scenarios
+  - Generator: `scripts/generate_test_data_generator_capability.py`
+- Parent `skill.md` — TDG registration, Brain Loading row, Pre-Execution Gate step 23
+- Enterprise Orchestrator — TDG routing + priority boost over generic 4A when generation intent
+- Cross-links: MIA, SOVA, PTA, AFT, FSQA, `knowledge/data/test-data-management.md`
+
+### Changed
+
+- Module version 0.19.0 → 0.20.0
+- `capabilities/README.md` — TDG registered; removed "Test Data Generation (extended)" from Future
+- FSQA limitations — point to TDG for seed data
+
+## [0.19.0] - 2026-07-27
+
+### Added
+
+- **Field Service (FSL) QA** capability under `skills/field-service-testing/`:
+  - `SKILL.md` — FSL QA reasoning, 18-section output schema
+  - `skill-config.yaml` — routing keywords, MIA/SOVA/PTA/AFT chain rules
+  - 17 knowledge articles, 9 playbooks, 9 templates, 10 prompts, 10 examples, 12 test scenarios
+  - Generator: `scripts/generate_field_service_qa_capability.py`
+- Parent `skill.md` — FSQA registration, Brain Loading row, Pre-Execution Gate step 22
+- Enterprise Orchestrator — FSQA routing + priority boost over generic 4B when testing intent
+- Cross-links: MIA, SOVA, PTA, AFT, `knowledge/clouds/field-service.md`
+
+### Changed
+
+- Module version 0.18.0 → 0.19.0
+- `capabilities/README.md` — FSQA registered
+
+## [0.18.0] - 2026-07-27
+
+### Added
+
+- **Agentforce Testing** capability under `skills/agentforce-testing/`:
+  - `SKILL.md` — AI QA reasoning, 18-section output schema
+  - `skill-config.yaml` — routing keywords, MIA/SOVA/PTA chain rules
+  - 20 knowledge articles, 9 playbooks, 9 templates, 10 prompts, 10 examples, 15 test scenarios
+  - Generator: `scripts/generate_agentforce_testing_capability.py`
+- Parent `skill.md` — AFT registration, Brain Loading row, Pre-Execution Gate step 21
+- Enterprise Orchestrator — AFT routing + priority boost over generic 4B when testing intent
+- Cross-links: MIA, SOVA, PTA, `knowledge/clouds/agentforce.md`
+
+### Changed
+
+- Module version 0.17.0 → 0.18.0
+- `capabilities/README.md` — AFT registered
+
+## [0.17.0] - 2026-07-27
+
+### Added
+
+- **Permission Testing Agent** capability under `skills/permission-testing-agent/`:
+  - `SKILL.md` — security reasoning, 19-section output schema
+  - `skill-config.yaml` — routing keywords, MIA/SOVA chain rules
+  - 21 knowledge articles, 7 playbooks, 8 templates, 10 prompts, 14 examples, 12 test scenarios
+  - Generator: `scripts/generate_permission_testing_capability.py`
+- Parent `skill.md` — PTA registration, Brain Loading row, Pre-Execution Gate step 20
+- Enterprise Orchestrator — PTA routing + MIA→PTA composition
+- MIA + SOVA cross-links to PTA; `knowledge/security/README.md` capability entry
+
+### Changed
+
+- Module version 0.16.0 → 0.17.0
+- `capabilities/README.md` — PTA registered; removed from future list
+
+## [0.16.0] - 2026-07-27
+
+### Added
+
+- **QE Capabilities** architecture under `capabilities/`
+- **SOQL Validation Assistant** capability:
+  - `skills/soql-validation-assistant/SKILL.md` — validation reasoning, 14-section output schema
+  - `skill-config.yaml` — routing keywords, performance/security gates
+  - 15 knowledge articles, 6 playbooks, 6 templates, 10 prompts, 13 examples, 9 test scenarios
+  - Generator: `scripts/generate_soql_validation_capability.py`
+- Parent `skill.md` — QE Capabilities section, Brain Loading row, Pre-Execution Gate step 19
+- Enterprise Orchestrator — SOVA routing + MIA→SOVA composition
+- MIA integration cross-links; MIA `soql-validation-report` template → capability pointer
+- `knowledge/performance/soql-performance.md` — capability entry link
+
+### Changed
+
+- Module version 0.15.0 → 0.16.0
+- `skills/README.md` — points to `capabilities/` namespace
+
+## [0.15.0] - 2026-07-27
+
+### Added
+
+- **Specialized Skills** architecture under `skills/`
+- **Metadata Impact Analyzer** specialized skill:
+  - `skills/metadata-impact-analyzer/SKILL.md` — identity, reasoning models, 16-section output schema, quality gates
+  - `skill-config.yaml` — routing keywords, risk scale, escalation rules
+  - 13 skill knowledge articles (cross-link Sprint 4A — no encyclopedia duplication)
+  - 5 playbooks, 7 templates, 8 prompts, 10 examples, 6 validation test scenarios
+  - Generator: `scripts/generate_metadata_impact_analyzer.py`
+- Parent `skill.md` — Specialized Skills section, Brain Loading row, Pre-Execution Gate step 18
+- Enterprise Orchestrator — MIA routing row and keyword boost
+- Metadata knowledge README + `metadata-impact-analysis.md` — upward link to specialized skill
+
+### Changed
+
+- Module version 0.14.0 → 0.15.0
 
 ## [0.14.0] - 2026-07-18
 

@@ -1,0 +1,101 @@
+name: field-service-testing
+short_id: FSQA
+version: 0.19.0
+architecture_release: 0.24.0
+parent_module: salesforce-quality-engineering
+entry: SKILL.md
+
+routing:
+  keywords:
+    - Field Service
+    - FSL
+    - Work Order
+    - Work Order Line Item
+    - Service Appointment
+    - Service Resource
+    - Service Territory
+    - Operating Hours
+    - Scheduling
+    - Dispatcher Console
+    - Optimization
+    - Mobile App
+    - Technician
+    - Crew
+    - Van Stock
+    - Inventory
+    - Parts
+    - Maintenance Plan
+    - Service Report
+    - Offline
+    - Field Service Mobile
+    - Appointment Booking
+    - Work Type
+    - Skills
+    - Skill Requirements
+    - Product Request
+    - Product Transfer
+  primary_support:
+    - knowledge/clouds/field-service.md
+    - automation-intelligence/mobile-testing/
+  upstream_skills:
+    - skills/metadata-impact-analyzer
+  downstream_capabilities:
+    - skills/soql-validation-assistant
+    - skills/permission-testing-agent
+    - skills/agentforce-testing
+  downstream_after_analysis:
+    - knowledge/test-design-engine.md
+
+output_schema:
+  sections:
+    - id: executive_summary
+      title: "Executive Summary"
+    - id: business_scenario
+      title: "Business Scenario"
+    - id: fsl_components_reviewed
+      title: "FSL Components Reviewed"
+    - id: scheduling_assessment
+      title: "Scheduling Assessment"
+    - id: dispatcher_assessment
+      title: "Dispatcher Assessment"
+    - id: mobile_assessment
+      title: "Mobile Assessment"
+    - id: inventory_assessment
+      title: "Inventory Assessment"
+    - id: security_assessment
+      title: "Security Assessment"
+    - id: performance_assessment
+      title: "Performance Assessment"
+    - id: offline_validation
+      title: "Offline Validation"
+    - id: negative_test_scenarios
+      title: "Negative Test Scenarios"
+    - id: edge_case_testing
+      title: "Edge Case Testing"
+    - id: regression_scope
+      title: "Regression Scope"
+    - id: automation_opportunities
+      title: "Automation Opportunities"
+    - id: recommended_soql_validation
+      title: "Recommended SOQL Validation"
+    - id: deployment_readiness
+      title: "Deployment Readiness"
+    - id: risks
+      title: "Risks"
+    - id: recommendations
+      title: "Recommendations"
+
+quality_gates:
+  - business_and_components_before_detailed_cases
+  - scheduling_mobile_inventory_when_in_scope
+  - soql_stubs_for_sova_expansion
+  - no_invented_optimization_or_sla_percent
+  - chain_mia_sova_pta_aft_when_applicable
+
+escalation:
+  - signal: double_booking_or_sla_breach_in_prod
+    to: Release Manager + FSL Architect
+  - signal: offline_data_loss
+    to: Mobile Architect + Security Architect
+  - signal: optimization_timeout_ldv
+    to: Performance / Solution Architect

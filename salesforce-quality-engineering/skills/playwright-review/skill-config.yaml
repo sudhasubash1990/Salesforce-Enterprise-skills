@@ -1,0 +1,104 @@
+name: playwright-review
+short_id: PWR
+version: 0.21.0
+architecture_release: 0.24.0
+parent_module: salesforce-quality-engineering
+entry: SKILL.md
+
+routing:
+  keywords:
+    - Playwright
+    - Playwright Test
+    - Automation Review
+    - Test Script
+    - Test Framework
+    - Locator
+    - Selector
+    - POM
+    - Page Object
+    - Fixtures
+    - Assertions
+    - Retry
+    - Timeout
+    - Parallel Execution
+    - CI/CD
+    - Azure DevOps
+    - GitHub Actions
+    - Code Review
+    - Test Stability
+    - Flaky Tests
+    - Flake
+    - Reporting
+    - Trace Viewer
+    - storageState
+    - playwright.config
+    - getByRole
+    - Auto Waiting
+  primary_support:
+    - automation-intelligence/review-engine/
+    - automation-intelligence/playwright/
+  upstream_skills:
+    - skills/metadata-impact-analyzer
+  downstream_capabilities:
+    - skills/soql-validation-assistant
+    - skills/permission-testing-agent
+    - skills/agentforce-testing
+    - skills/test-data-generator
+  downstream_after_analysis:
+    - knowledge/test-design-engine.md
+
+output_schema:
+  sections:
+    - id: executive_summary
+      title: "Executive Summary"
+    - id: framework_assessment
+      title: "Framework Assessment"
+    - id: architecture_review
+      title: "Architecture Review"
+    - id: code_quality_review
+      title: "Code Quality Review"
+    - id: locator_review
+      title: "Locator Review"
+    - id: assertion_review
+      title: "Assertion Review"
+    - id: synchronization_review
+      title: "Synchronization Review"
+    - id: salesforce_compatibility_review
+      title: "Salesforce Compatibility Review"
+    - id: maintainability_assessment
+      title: "Maintainability Assessment"
+    - id: performance_analysis
+      title: "Performance Analysis"
+    - id: ci_cd_readiness
+      title: "CI/CD Readiness"
+    - id: security_considerations
+      title: "Security Considerations"
+    - id: flaky_test_analysis
+      title: "Flaky Test Analysis"
+    - id: risks
+      title: "Risks"
+    - id: recommendations
+      title: "Recommendations"
+    - id: refactoring_suggestions
+      title: "Refactoring Suggestions"
+    - id: best_practices
+      title: "Best Practices"
+    - id: overall_quality_score
+      title: "Overall Quality Score"
+
+quality_gates:
+  - framework_context_before_script_critique
+  - eighteen_sections_labeled
+  - scores_1_to_5_with_evidence_or_na
+  - no_invented_coverage_or_flake_percent
+  - salesforce_sync_when_ui_in_scope
+  - secrets_and_flake_before_cosmetic
+  - refactor_snippets_not_full_suite_unless_requested
+
+escalation:
+  - signal: secrets_or_storage_state_in_git
+    to: Security Architect
+  - signal: systemic_flake_blocking_release
+    to: Automation Lead + Release Manager
+  - signal: no_ci_for_critical_smoke
+    to: DevOps / Release Manager

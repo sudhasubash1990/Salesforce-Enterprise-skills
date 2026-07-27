@@ -3,18 +3,29 @@ title: Roadmap
 module: Salesforce Enterprise Skills
 category: Root
 document_type: Guide
-version: 1.2.3
+version: 1.3.0
 review_status: Approved
-owner: BA Practice Lead
+owner: SEACF Practice Lead
 created_date: 2026-07-02
-last_updated: 2026-07-17
+last_updated: 2026-07-28
 review_cycle: quarterly
-related_brain_modules: [salesforce-business-analyst/brain/README.md]
-related_knowledge: [salesforce-business-analyst/knowledge/README.md]
-related_templates: [salesforce-business-analyst/templates/README.md]
-related_playbooks: [salesforce-business-analyst/playbooks/README.md]
-related_scenarios: [salesforce-business-analyst/scenarios/README.md]
-related_interview_topics: [salesforce-business-analyst/interview-guide/interview-index.md]
+related_brain_modules:
+  - salesforce-business-analyst/brain/README.md
+  - salesforce-quality-engineering/brain/README.md
+related_knowledge:
+  - salesforce-business-analyst/knowledge/README.md
+  - salesforce-quality-engineering/knowledge/README.md
+related_templates:
+  - salesforce-business-analyst/templates/README.md
+  - salesforce-quality-engineering/templates/README.md
+related_playbooks:
+  - salesforce-business-analyst/playbooks/README.md
+  - salesforce-quality-engineering/playbooks/README.md
+related_scenarios:
+  - salesforce-business-analyst/scenarios/README.md
+  - salesforce-quality-engineering/scenarios/README.md
+related_interview_topics:
+  - salesforce-business-analyst/interview-guide/interview-index.md
 related_examples: [examples/sample-project/README.md]
 related_documents:
   - docs/cross-linking-framework.md
@@ -22,8 +33,9 @@ related_documents:
   - salesforce-business-analyst/README.md
   - salesforce-quality-engineering/README.md
   - salesforce-quality-engineering/ROADMAP.md
+  - salesforce-quality-engineering/skills/README.md
 keywords: [ROADMAP]
-tags: [ROADMAP]
+tags: [ROADMAP, SEACF]
 ---
 
 # Roadmap
@@ -94,7 +106,8 @@ Canonical path: [salesforce-quality-engineering/](salesforce-quality-engineering
 - [x] Repo quality remediation (v0.12.2): link fixes, multi-lens pointers, missing READMEs, BA Cursor stub, archive legacy guide
 - [x] QE Validation hub (v0.13.0): checklists, industry E2E, benchmark scorecard, skill regression suite
 - [x] QE Sprint 11 (v0.14.0): Enterprise Validation, Certification & Continuous Improvement
-- [ ] Optional — Regression Intelligence deep-pack / continuous evolution
+- [x] QE specialized skills unification (v0.24.0): all packs under [`skills/`](salesforce-quality-engineering/skills/README.md) (MIA, SOVA, PTA, AFT, FSQA, TDG, PWR, OSQA, DMQA); PRCA/RBRR scaffolds; `capabilities/` retired
+- [ ] Optional — Expand PRCA / RBRR full content packs; Regression Intelligence deep-pack / continuous evolution
 
 ### Other adjacent skills (planned modules — folders not yet created)
 
@@ -178,6 +191,7 @@ Canonical path: [salesforce-quality-engineering/](salesforce-quality-engineering
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.3.0 | 2026-07-28 | SEACF Practice Lead | QE skills/ unification (v0.24.0); owner/metadata SEACF alignment |
 | 1.2.17 | 2026-07-18 | Framework Lead | SEACF Framework Core v0.1.0 — reusable orchestration, governance, evaluation |
 | 1.2.16 | 2026-07-18 | QE Practice Lead | QE Module 2 Sprint 11 — Validation, Certification & CI (v0.14.0) |
 | 1.2.15 | 2026-07-18 | QE Practice Lead | QE Validation hub (v0.13.0) — checklists, E2E, benchmark, regression suite |

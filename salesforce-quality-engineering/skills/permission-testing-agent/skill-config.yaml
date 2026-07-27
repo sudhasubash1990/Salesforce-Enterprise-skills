@@ -1,0 +1,103 @@
+name: permission-testing-agent
+short_id: PTA
+version: 0.17.0
+architecture_release: 0.24.0
+parent_module: salesforce-quality-engineering
+entry: SKILL.md
+
+routing:
+  keywords:
+    - permission
+    - permissions
+    - profile
+    - permission set
+    - permission set group
+    - CRUD
+    - FLS
+    - field level security
+    - record access
+    - sharing
+    - OWD
+    - organization wide default
+    - role hierarchy
+    - manual sharing
+    - experience cloud
+    - community user
+    - guest user
+    - security testing
+    - access control
+    - login
+    - session
+    - MFA
+    - API access
+    - restriction rule
+    - scoping rule
+    - user visibility
+    - deployment security
+    - segregation of duties
+    - least privilege
+  primary_support:
+    - knowledge/security/
+    - knowledge/sharing-security-testing.md
+    - knowledge/permission-set-testing.md
+  upstream_skills:
+    - skills/metadata-impact-analyzer
+  downstream_capabilities:
+    - skills/soql-validation-assistant
+  downstream_after_analysis:
+    - knowledge/test-design-engine.md
+
+output_schema:
+  sections:
+    - id: executive_summary
+      title: "Executive Summary"
+    - id: security_context
+      title: "Security Context"
+    - id: business_requirement
+      title: "Business Requirement"
+    - id: security_components_impacted
+      title: "Security Components Impacted"
+    - id: crud_validation_matrix
+      title: "CRUD Validation Matrix"
+    - id: field_level_security_validation
+      title: "Field Level Security Validation"
+    - id: record_access_validation
+      title: "Record Access Validation"
+    - id: sharing_validation
+      title: "Sharing Validation"
+    - id: profile_validation
+      title: "Profile Validation"
+    - id: permission_set_validation
+      title: "Permission Set Validation"
+    - id: permission_set_group_validation
+      title: "Permission Set Group Validation"
+    - id: api_security_validation
+      title: "API Security Validation"
+    - id: experience_cloud_validation
+      title: "Experience Cloud Validation"
+    - id: negative_test_scenarios
+      title: "Negative Test Scenarios"
+    - id: regression_scope
+      title: "Regression Scope"
+    - id: automation_candidates
+      title: "Automation Candidates"
+    - id: recommended_soql_validation
+      title: "Recommended SOQL Validation"
+    - id: deployment_risks
+      title: "Deployment Risks"
+    - id: security_recommendations
+      title: "Security Recommendations"
+
+quality_gates:
+  - security_context_before_scenarios
+  - crud_fls_sharing_sections_required
+  - negative_scenarios_required
+  - soql_delegated_to_sova_when_expanded
+
+escalation:
+  - signal: guest_user_or_experience_cloud
+    to: Security Architect
+  - signal: view_all_modify_all
+    to: Security Architect + Release Manager
+  - signal: production_profile_change
+    to: Release Manager

@@ -1,28 +1,25 @@
 ---
 title: QE Cursor Skill Stub
-last_updated: 2026-07-18
+last_updated: 2026-07-28
 ---
 
 # QE Cursor Skill Stub
 
 ## Purpose
 
-Discovery stub → `salesforce-quality-engineering/skill.md`.
+Discovery stub → [`salesforce-quality-engineering/skill.md`](../../../salesforce-quality-engineering/skill.md) (alias `SKILL.md` on case-insensitive FS).
 
 ## Scope
 
-Navigation and ownership for this folder. Content files in this directory are authoritative for their topics.
+Thin Cursor discovery only. Canonical content:
 
-## Inputs / Outputs
-
-- **Inputs:** Linked skill, brain, and knowledge modules
-- **Outputs:** Documents and guidance contained in this folder
+- Module entry: [`skill.md`](../../../salesforce-quality-engineering/skill.md)
+- Registry: [`skill-config.yaml`](../../../salesforce-quality-engineering/skill-config.yaml)
+- Specialized skills: [`skills/`](../../../salesforce-quality-engineering/skills/README.md)
+- Orchestrator: [`enterprise-orchestrator/`](../../../salesforce-quality-engineering/enterprise-orchestrator/README.md)
 
 ## Navigation
 
-- **Up:** [../../../salesforce-quality-engineering/skill.md](../../../salesforce-quality-engineering/skill.md)
+- **Up:** [../README.md](../README.md)
 - **Repo root:** [README.md](../../../README.md)
-
-## Related Documents
-
-See parent module README. Multi-lens topics: docs/multi-lens-policy.md.
+- **Stub detail:** [SKILL.md](SKILL.md)
