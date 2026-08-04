@@ -7,11 +7,15 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 
-SKIP_PATH_PARTS = {".cursor/plans", ".git"}
-# Directories whose contents are generated, third-party, or internal-only —
-# the enterprise document schema does not apply to them.
+# `.cursor/skills/` holds thin discovery stubs that intentionally do not
+# carry the full enterprise document schema — validate the canonical
+# module skill.md files instead.
+SKIP_PATH_PARTS = {".cursor/plans", ".cursor/skills", ".git"}
+# Directories whose contents are generated, third-party, archived, or
+# internal-only — the enterprise document schema does not apply to them.
 SKIP_DIRS = {
     ".pytest_cache",
+    "archive",
     "outputs",
     "output-engine",
     "zzz_ImplmentationGuide",
@@ -24,6 +28,18 @@ SKIP_FULL = {"CHANGELOG.md", "changelog.md"}
 
 REQUIRED_YAML = {"title", "module", "category", "document_type", "version", "review_status", "last_updated"}
 SKILL_REQUIRED = {"name", "description", "version"}
+
+# Entry-point documents that use the lightweight name/description/version
+# frontmatter contract instead of the full document schema.
+SKILL_STYLE_FILES = {"skill.md", "SKILL.md", "CAPABILITY.md"}
+
+# Modules with their own lighter document schema: minimal frontmatter
+# (title/version) plus link integrity — not the BA nine-section Sprint 7
+# cross-linking contract. The QE module (Sprints 6-11 + capability packs)
+# and the Tier-0 framework-core ("thin intentional contracts") were never
+# authored to the BA schema; applying it produced ~19,800 false failures.
+LIGHT_SCHEMA_ROOTS = {"salesforce-quality-engineering", "framework-core"}
+LIGHT_REQUIRED_YAML = {"title", "version"}
 
 MANDATORY_SECTIONS = [
     "Related Brain Modules",
@@ -76,22 +92,25 @@ def validate_file(path: Path) -> list[str]:
 
     meta, body = parse_frontmatter(content)
 
-    if path.name == "skill.md":
+    if path.name in SKILL_STYLE_FILES:
         for f in SKILL_REQUIRED:
             if f not in meta:
                 errors.append(f"{rel}: missing skill field `{f}`")
     elif path.name not in SKIP_FULL:
+        light = rel.parts[0] in LIGHT_SCHEMA_ROOTS
+        required = LIGHT_REQUIRED_YAML if light else REQUIRED_YAML
         # title can be from name for skill only
-        for f in REQUIRED_YAML:
+        for f in required:
             alt = f.replace("_", "-")
             if f not in meta and alt not in meta and f != "title":
                 errors.append(f"{rel}: missing metadata `{f}`")
             elif f == "title" and "title" not in meta and "name" not in meta:
                 errors.append(f"{rel}: missing title or name")
 
-        for section in MANDATORY_SECTIONS:
-            if not re.search(rf"^## {re.escape(section)}\s*$", body, re.MULTILINE):
-                errors.append(f"{rel}: missing section `## {section}`")
+        if not light:
+            for section in MANDATORY_SECTIONS:
+                if not re.search(rf"^## {re.escape(section)}\s*$", body, re.MULTILINE):
+                    errors.append(f"{rel}: missing section `## {section}`")
 
     for link in extract_links(body):
         if link.startswith("http") or link.startswith("#"):

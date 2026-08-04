@@ -577,7 +577,7 @@ def retrieve(query: str, expand: bool = True) -> dict:
 def print_report(result: dict) -> None:
     print(f"Query: {result['query']}")
     if result.get("redirect"):
-        print(f"REDIRECT → {result['redirect']}")
+        print(f"REDIRECT -> {result['redirect']}")
         print(result.get("redirect_message", ""))
     print(f"Matched tasks: {', '.join(result['matched_tasks']) or '(none — fallback bundle)'}")
     if result["matched_clouds"]:
@@ -607,6 +607,13 @@ def print_report(result: dict) -> None:
 
 
 def main() -> int:
+    # Windows consoles often default to cp1252, which cannot encode every
+    # character in report output (em dashes, arrows). Force UTF-8 so the
+    # QE redirect and bundle report never crash the retriever.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
+
     parser = argparse.ArgumentParser(description="Retrieve the exact skill file bundle for a BA request")
     parser.add_argument("--query", "-q", help="The user's request, verbatim or paraphrased")
     parser.add_argument("--json", action="store_true", help="Emit machine-readable JSON")
