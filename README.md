@@ -3,11 +3,11 @@ title: Readme
 module: Salesforce Enterprise Skills
 category: Root
 document_type: Guide
-version: 1.9.0
+version: 1.10.0
 review_status: Approved
 owner: SEACF Practice Lead
 created_date: 2026-07-02
-last_updated: 2026-07-28
+last_updated: 2026-08-04
 review_cycle: quarterly
 related_brain_modules:
   - salesforce-business-analyst/brain/README.md
@@ -30,6 +30,7 @@ related_interview_topics:
 related_examples: [examples/sample-project/README.md]
 related_documents:
   - docs/cross-linking-framework.md
+  - docs/workspace-integration.md
   - ROADMAP.md
   - framework-core/README.md
   - CHANGELOG.md
@@ -43,6 +44,15 @@ tags: [README, SEACF]
 Enterprise-grade knowledge repository for Salesforce consulting disciplines—designed for **Cursor**, **Claude**, and human practitioners. Packages delivery experience into reusable skills, playbooks, templates, and governance artifacts under the **Salesforce Enterprise AI Consulting Framework (SEACF)**.
 
 Cross-module contracts live in **[`framework-core/`](framework-core/README.md)** so Business Analyst, Quality Engineering, and future Architect / Developer / DevOps / Production Support packs share one orchestration, governance, and evaluation model.
+
+## What's New (v1.10.0 — 2026-08-04)
+
+Assessment-feedback hardening and workspace activation guidance:
+
+- **[Workspace Integration Guide](docs/workspace-integration.md)** — how to activate SEACF skill routing when this repository is **not** your workspace root: open as own workspace, multi-root workspace (recommended), a copy-paste **bridge rule** for permanently nested clones, or user-level skill stubs. Includes an option comparison and a verification checklist.
+- **BA retriever Windows fix** — `scripts/retrieve_context.py` no longer crashes on default Windows (cp1252) consoles when printing the QE redirect; output streams are forced to UTF-8.
+- **Module-scoped validation schemas** — `scripts/validate_metadata.py` now applies the BA nine-section cross-linking contract only where it was authored (BA module, docs, shared, examples) and validates QE + `framework-core/` against their own lighter frontmatter contract; `archive/` and `.cursor/skills/` stubs are excluded. Validator findings dropped from ~20,000 false failures to a genuine, actionable backlog.
+- **Output engine** — Word conversion now resolves relative image paths against the Markdown source directory, so embedded diagrams render in generated `.docx` files.
 
 ## Purpose
 
@@ -111,6 +121,8 @@ Or: GitHub **Code → Download ZIP** and extract.
 ### 2. Open the folder in Cursor
 
 **File → Open Folder** → select the `Salesforce-Enterprise-skills` folder. Cursor picks up `.cursor/rules/` (routing, instructions, user-story generation, output generation) and discovery stubs under `.cursor/skills/`.
+
+> **Using this repo inside another workspace?** Rules only auto-load when this folder is a workspace root. See the **[Workspace Integration Guide](docs/workspace-integration.md)** for activating skill routing from any workspace root — multi-root workspaces, the bridge rule for nested clones, and user-level skill stubs.
 
 ### 3. Start asking
 
@@ -219,6 +231,7 @@ MIT — see [LICENSE](LICENSE).
 - [Framework Core](framework-core/README.md)
 - [Module Integration](framework-core/MODULE-INTEGRATION.md)
 - [Cross Linking Framework](docs/cross-linking-framework.md)
+- [Workspace Integration Guide](docs/workspace-integration.md) — activate skill routing from any workspace root
 - [Roadmap](ROADMAP.md)
 - [Changelog](CHANGELOG.md)
 
@@ -236,6 +249,7 @@ MIT — see [LICENSE](LICENSE).
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 1.10.0 | 2026-08-04 | SEACF Practice Lead | Workspace integration guide (skill routing from any workspace root), retriever Windows console fix, module-scoped validator schemas, Word image-path resolution |
 | 1.9.0 | 2026-07-28 | SEACF Practice Lead | QE unified skills/ (v0.24.0), registry, specialized-pack examples, CONTRIBUTING/ROADMAP/.gitignore alignment |
 | 1.8.0 | 2026-07-18 | SEACF Practice Lead | Multi-module SEACF README: Framework Core + BA + QE, Tier-0 routing, planned modules, agent getting-started |
 | 1.7.0 | 2026-07-03 | BA Practice Lead | Transformation coverage: KPI/OCM/digital transformation; retriever and routing support |
