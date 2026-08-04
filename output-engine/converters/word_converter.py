@@ -2,6 +2,10 @@
 
 from __future__ import annotations
 
+import os
+import re
+from pathlib import Path
+
 try:
     import pypandoc
 except ImportError:
@@ -23,7 +27,32 @@ class WordConverter(DocumentConverter):
         content = job.body
         if job.config.get("generateCoverPage", True):
             content = build_cover_md(job.meta) + job.body
-        extra_args = ["--standalone"]
+
+        # Resolve relative image paths against the markdown source directory
+        source_dir = job.source_path.parent.resolve()
+
+        def _abs_img(match: re.Match[str]) -> str:
+            alt, src = match.group(1), match.group(2)
+            if src.startswith(("http://", "https://", "data:")):
+                return match.group(0)
+            candidate = Path(src)
+            if not candidate.is_absolute():
+                candidate = (source_dir / src).resolve()
+            if candidate.exists():
+                return f"![{alt}]({candidate.as_posix()})"
+            return match.group(0)
+
+        content = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", _abs_img, content)
+
+        resource_path = os.pathsep.join(
+            [
+                str(source_dir),
+                str(job.root_path.resolve()),
+                str((job.root_path / "diagrams").resolve()),
+                str((job.root_path / "diagrams" / "png").resolve()),
+            ]
+        )
+        extra_args = ["--standalone", f"--resource-path={resource_path}"]
         if job.config.get("generateTOC", True):
             extra_args.append("--toc")
 

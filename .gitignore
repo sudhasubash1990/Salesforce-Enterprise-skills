@@ -95,6 +95,10 @@ archive/**/*.extracted.txt
 *.old
 Conflicted copy*
 
+# Whitepaper generation scripts and artifacts (local one-off builds — do not push;
+# generated deliverables under outputs/ are already ignored)
+*whitepaper*
+
 # Optional: local scratch under scripts (one-shot / personal experiments)
 scripts/_*.py
 scripts/**/__pycache__/
