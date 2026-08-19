@@ -112,3 +112,7 @@ salesforce-quality-engineering/scripts/_local/
 
 # Local pytest / tooling noise at repo root
 # (.pytest_cache/ already listed under Python)
+
+#project context
+.cursor/rules/project-context.mdc
+PROJECT_CONTEXT.md
