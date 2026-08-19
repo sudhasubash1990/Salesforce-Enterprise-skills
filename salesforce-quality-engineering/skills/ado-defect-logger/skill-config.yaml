@@ -1,0 +1,79 @@
+name: ado-defect-logger
+short_id: ADL
+version: 0.25.0
+architecture_release: 0.25.0
+parent_module: salesforce-quality-engineering
+entry: SKILL.md
+
+routing:
+  keywords:
+    - defect
+    - bug
+    - log defect
+    - log bug
+    - ADO bug
+    - ADO defect
+    - Azure DevOps bug
+    - Azure DevOps defect
+    - create bug
+    - create defect
+    - Salesforce issue
+    - Salesforce defect
+    - Salesforce bug
+    - defect analysis
+    - defect triage
+    - severity assessment
+    - priority assessment
+    - repro steps
+    - reproduction steps
+    - root cause
+    - defect logging
+    - bug report
+    - issue logging
+  primary_support:
+    - ado/
+    - quality-intelligence/
+  upstream_skills:
+    - skills/salesforce-functional-testing
+    - skills/lwc-flow-ui-testing
+    - skills/salesforce-uat-po-testing
+    - skills/ado-test-case-designer
+  downstream_capabilities: []
+
+output_schema:
+  sections:
+    - id: intent
+      title: "Intent"
+    - id: context
+      title: "Context"
+    - id: defect_analysis
+      title: "Defect Analysis"
+    - id: ado_defect
+      title: "ADO Defect"
+    - id: root_cause_hypothesis
+      title: "Root Cause Hypothesis"
+    - id: regression_impact
+      title: "Regression Impact"
+    - id: quality_gates
+      title: "Quality Gates"
+    - id: dependencies
+      title: "Dependencies"
+    - id: recommended_next_actions
+      title: "Recommended Next Actions"
+
+quality_gates:
+  - defect_is_valid_not_duplicate
+  - repro_steps_numbered_and_reproducible
+  - expected_vs_actual_clear
+  - severity_priority_justified
+  - no_vague_defect_descriptions
+  - ado_creation_only_when_explicitly_requested
+  - do_not_pretend_creation_without_api
+
+escalation:
+  - signal: sev1_production_defect
+    to: Release Manager + Sprint 9
+  - signal: security_vulnerability
+    to: Security Architect + PTA
+  - signal: data_corruption
+    to: Data Architect + DMQA

@@ -1,0 +1,86 @@
+name: salesforce-uat-po-testing
+short_id: SPUAT
+version: 0.25.0
+architecture_release: 0.25.0
+parent_module: salesforce-quality-engineering
+entry: SKILL.md
+
+routing:
+  keywords:
+    - UAT
+    - user acceptance testing
+    - product owner testing
+    - PO testing
+    - business acceptance
+    - business validation
+    - UAT planning
+    - UAT scenarios
+    - business sign-off
+    - go-live readiness
+    - production readiness UAT
+    - UAT scope
+    - UAT strategy
+    - acceptance criteria validation
+    - business process validation
+    - PO validation
+    - business user testing
+    - UAT test cases
+    - UAT defect triage
+    - business scenario testing
+    - end user testing
+    - UAT sign-off
+    - go no-go
+  primary_support:
+    - knowledge/requirement-analysis.md
+  upstream_skills: []
+  downstream_capabilities:
+    - skills/salesforce-functional-testing
+    - skills/ado-test-case-designer
+    - skills/ado-defect-logger
+    - skills/permission-testing-agent
+    - skills/test-data-generator
+
+output_schema:
+  sections:
+    - id: intent
+      title: "Intent"
+    - id: context
+      title: "Context"
+    - id: assumptions
+      title: "Assumptions"
+    - id: uat_scope
+      title: "UAT Scope"
+    - id: business_risk_assessment
+      title: "Business Risk Assessment"
+    - id: reasoning
+      title: "Reasoning"
+    - id: business_scenarios
+      title: "Business Scenarios"
+    - id: acceptance_criteria_validation
+      title: "Acceptance Criteria Validation"
+    - id: persona_coverage
+      title: "Persona Coverage"
+    - id: uat_test_cases
+      title: "UAT Test Cases"
+    - id: entry_exit_criteria
+      title: "Entry / Exit Criteria"
+    - id: signoff_recommendation
+      title: "Sign-off Recommendation"
+    - id: dependencies
+      title: "Dependencies"
+    - id: recommended_next_actions
+      title: "Recommended Next Actions"
+
+quality_gates:
+  - business_perspective_not_technical
+  - po_questions_applied
+  - measurable_expected_outcomes
+  - no_technical_jargon_in_uat_cases
+  - assumptions_labeled
+  - no_invented_acceptance_rates
+
+escalation:
+  - signal: regulatory_compliance_uat
+    to: Compliance + Legal
+  - signal: business_process_gap
+    to: Business Analyst + Solution Architect

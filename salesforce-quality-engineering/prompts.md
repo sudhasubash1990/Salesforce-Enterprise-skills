@@ -649,6 +649,38 @@ Mapping / External ID / load order (sanitized):
 
 ---
 
+## Standard Prompts (Specialized Skills — Salesforce Functional Testing)
+
+Load [`skills/salesforce-functional-testing/SKILL.md`](skills/salesforce-functional-testing/SKILL.md). Provide business scenario, cloud context, and personas. Produce all output sections per SKILL.md. Chain PTA / SOVA / TDG / PWR as applicable. Label assumptions; do not invent coverage %. Context:
+[paste requirement / scenario]
+
+## Standard Prompts (Specialized Skills — LWC & Flow UI Testing)
+
+Load [`skills/lwc-flow-ui-testing/SKILL.md`](skills/lwc-flow-ui-testing/SKILL.md). Provide component/flow context and user interaction scenario. Produce all output sections per SKILL.md. Chain PWR for Playwright automation. Prefer semantic locators; no brittle XPath. Context:
+[paste LWC/Flow details]
+
+## Standard Prompts (Specialized Skills — Salesforce PO/UAT Testing)
+
+Load [`skills/salesforce-uat-po-testing/SKILL.md`](skills/salesforce-uat-po-testing/SKILL.md). Act as Product Owner. Apply all 12 PO testing questions. Use business language, not technical jargon. Produce UAT scenarios in PO-friendly format. Context:
+[paste business process / requirement]
+
+## Standard Prompts (Specialized Skills — ADO Test Case Designer)
+
+Load [`skills/ado-test-case-designer/SKILL.md`](skills/ado-test-case-designer/SKILL.md). Generate test cases in ADO format by default; use user template if provided. Ensure measurable expected results. No vague outcomes. Maintain requirement-to-test traceability. Context:
+[paste user story / requirement]
+
+## Standard Prompts (Specialized Skills — ADO Defect Logger)
+
+Load [`skills/ado-defect-logger/SKILL.md`](skills/ado-defect-logger/SKILL.md). Analyze the issue and structure as ADO-ready defect. Numbered repro steps. Reject vague descriptions. Create ADO work item only when explicitly requested and API available. Context:
+[paste error / failure / complaint]
+
+## Standard Prompts (Specialized Skills — Salesforce Specialized Testing)
+
+Load [`skills/salesforce-specialized-testing/SKILL.md`](skills/salesforce-specialized-testing/SKILL.md). Assess which testing dimensions are required. Chain PTA for security, DMQA/TDG for data, MIA for release, RBRR for regression. Never invent performance metrics. Context:
+[paste implementation / release details]
+
+---
+
 ## Standard Prompts (Sprint 5 — Documentation Generator)
 
 ### Generate Test Strategy

@@ -1,0 +1,79 @@
+name: ado-test-case-designer
+short_id: ATCD
+version: 0.25.0
+architecture_release: 0.25.0
+parent_module: salesforce-quality-engineering
+entry: SKILL.md
+
+routing:
+  keywords:
+    - test case
+    - test cases
+    - ADO test case
+    - Azure DevOps test case
+    - generate test cases
+    - test case design
+    - test case generation
+    - test suite
+    - test plan ADO
+    - requirement to test
+    - acceptance criteria to test
+    - user story to test
+    - bulk test cases
+    - test case template
+    - custom test template
+    - Salesforce test cases
+    - functional test cases
+    - regression test cases
+    - test step
+    - expected result
+    - test design
+    - traceability
+  primary_support:
+    - ado/
+    - knowledge/test-design-engine.md
+  upstream_skills:
+    - skills/salesforce-functional-testing
+    - skills/salesforce-uat-po-testing
+    - skills/lwc-flow-ui-testing
+  downstream_capabilities:
+    - skills/ado-defect-logger
+
+output_schema:
+  sections:
+    - id: intent
+      title: "Intent"
+    - id: context
+      title: "Context"
+    - id: assumptions
+      title: "Assumptions"
+    - id: requirement_analysis
+      title: "Requirement Analysis"
+    - id: test_design_approach
+      title: "Test Design Approach"
+    - id: test_cases
+      title: "Test Cases"
+    - id: traceability_matrix
+      title: "Traceability Matrix"
+    - id: quality_gates
+      title: "Quality Gates"
+    - id: dependencies
+      title: "Dependencies"
+    - id: recommended_next_actions
+      title: "Recommended Next Actions"
+
+quality_gates:
+  - requirement_understandable
+  - acceptance_criteria_available_or_assumed
+  - assumptions_labeled
+  - test_data_requirements_identified
+  - persona_identified
+  - expected_result_testable_and_measurable
+  - no_vague_expected_results
+  - ado_format_default_unless_user_overrides
+
+escalation:
+  - signal: ambiguous_requirement
+    to: Business Analyst
+  - signal: missing_acceptance_criteria
+    to: Product Owner

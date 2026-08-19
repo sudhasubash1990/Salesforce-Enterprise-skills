@@ -15,7 +15,7 @@ description: >-
   advisory, enterprise-orchestrator/ to route requests to the correct
   sprint capability, and validation/ for Sprint 11 certification, benchmarking,
   regression, and continuous improvement of the framework itself.
-version: 0.24.0
+version: 0.25.0
 ---
 
 # Salesforce Quality Engineering
@@ -28,7 +28,7 @@ Skill entry for SEACF Module 2. **Cross-module contracts** live in [`framework-c
 
 **Owner:** QE Practice Lead
 
-**Version:** 0.24.0
+**Version:** 0.25.0
 
 **Status:** Draft (Unified Skills Architecture)
 
@@ -95,7 +95,7 @@ salesforce-quality-engineering/
 ├── production-support/      ← Sprint 9 ✓ (Production Support & Ops Excellence)
 ├── enterprise-quality/      ← Sprint 10 ✓ (Enterprise Quality Advisory Platform)
 ├── validation/              ← Sprint 11 ✓ (Validation, Certification & CI)
-├── skills/                  ← All specialized skills (MIA, SOVA, PTA, AFT, …)
+├── skills/                  ← All specialized skills (MIA, SOVA, PTA, AFT, SFT, LFUT, SPUAT, ATCD, ADL, SST, …)
 └── automation/              ← Pointer to automation-intelligence/ (legacy path)
 ```
 
@@ -116,10 +116,16 @@ Enterprise-grade specialized skills extend QE without duplicating Sprint engines
 | **Data Migration QA** (DMQA) | [skills/data-migration-qa/SKILL.md](skills/data-migration-qa/SKILL.md) | Data migration, ETL, cutover, mapping, transformation, reconciliation, data quality, Bulk API/Data Loader, External ID/upsert, rollback, migration hypercare |
 | **Production RCA** (PRCA) | [skills/production-rca/SKILL.md](skills/production-rca/SKILL.md) | Production defect/incident root-cause analysis *(scaffold — compose with Sprint 7/9; do not replace them)* |
 | **Risk-Based Regression** (RBRR) | [skills/risk-based-regression/SKILL.md](skills/risk-based-regression/SKILL.md) | Risk-prioritized regression scope *(scaffold — compose with Sprint 3 + MIA; generic regression scope stays Sprint 3)* |
+| **Salesforce Functional Testing** (SFT) | [skills/salesforce-functional-testing/SKILL.md](skills/salesforce-functional-testing/SKILL.md) | Service Cloud, Sales Cloud, Experience Cloud functional testing, E2E journey testing, case lifecycle, lead conversion, opportunity lifecycle, cross-cloud testing, persona testing |
+| **LWC & Flow UI Testing** (LFUT) | [skills/lwc-flow-ui-testing/SKILL.md](skills/lwc-flow-ui-testing/SKILL.md) | LWC rendering, interaction, validation, Shadow DOM, Screen Flow UI, flow navigation, conditional visibility, accessibility, Lightning components |
+| **Salesforce PO/UAT Testing** (SPUAT) | [skills/salesforce-uat-po-testing/SKILL.md](skills/salesforce-uat-po-testing/SKILL.md) | Product Owner testing, UAT planning, business acceptance, business process validation, sign-off readiness, Go/No-Go |
+| **ADO Test Case Designer** (ATCD) | [skills/ado-test-case-designer/SKILL.md](skills/ado-test-case-designer/SKILL.md) | ADO-default test case generation, custom template override, requirement-to-test traceability, Salesforce-aware test design |
+| **ADO Defect Logger** (ADL) | [skills/ado-defect-logger/SKILL.md](skills/ado-defect-logger/SKILL.md) | Salesforce defect analysis, ADO-ready defect creation, repro steps, severity/priority assessment, root cause hypothesis |
+| **Salesforce Specialized Testing** (SST) | [skills/salesforce-specialized-testing/SKILL.md](skills/salesforce-specialized-testing/SKILL.md) | Testing dimension orchestrator—security, integration, API, performance, accessibility, mobile, compatibility, regression, release/deployment |
 
 **Routing rule:** When request signals match a skill's keywords (see that skill's `skill-config.yaml`), load the skill **before** jumping to detailed test cases. Support with Sprint 4A/4B encyclopedia. Chain skills per composition rules below.
 
-**Composition:** MIA → PTA · MIA → SOVA · MIA → TDG · MIA → PWR · MIA → OSQA · MIA → DMQA · PTA → SOVA · AFT → MIA/SOVA/PTA · FSQA → MIA/SOVA/PTA/AFT · TDG → SOVA/PTA/AFT/FSQA/OSQA/DMQA · PWR → SOVA/PTA/AFT/TDG · OSQA → SOVA/PTA/PWR/AFT/TDG · DMQA → SOVA/PTA/TDG/PWR/OSQA/AFT · PRCA → Sprint 7/9 · RBRR → MIA + Sprint 3
+**Composition:** MIA → PTA · MIA → SOVA · MIA → TDG · MIA → PWR · MIA → OSQA · MIA → DMQA · PTA → SOVA · AFT → MIA/SOVA/PTA · FSQA → MIA/SOVA/PTA/AFT · TDG → SOVA/PTA/AFT/FSQA/OSQA/DMQA · PWR → SOVA/PTA/AFT/TDG · OSQA → SOVA/PTA/PWR/AFT/TDG · DMQA → SOVA/PTA/TDG/PWR/OSQA/AFT · PRCA → Sprint 7/9 · RBRR → MIA + Sprint 3 · SFT → PTA/SOVA/TDG/PWR · LFUT → PWR/PTA · SPUAT → SFT/ATCD/ADL/PTA/TDG · ATCD → ADL · SST → PTA/DMQA/TDG/MIA/RBRR/PWR/SFT/LFUT
 
 Index: [skills/README.md](skills/README.md)
 
@@ -153,7 +159,7 @@ User Request → Enterprise Orchestrator
 | **Validate / certify / benchmark / regress / improve the QE framework** | + [validation/](validation/README.md) → [enterprise-validation-engine.md](validation/enterprise-validation-engine.md) | Scorecards + certification methodology; no invented levels |
 | **Facilitate QE ceremony / gate** | + matching [playbooks/](playbooks/README.md) | Linked templates |
 | **Explain SF platform (4A) / enterprise (4B)** | + matching `knowledge/` folder | — |
-| **Specialized skill (MIA/SOVA/PTA/AFT/FSQA/TDG/PWR/OSQA/DMQA/PRCA/RBRR)** | + matching [`skills/<name>/SKILL.md`](skills/README.md) + `skill-config.yaml` | Apply skill hard rules before detailed cases |
+| **Specialized skill (MIA/SOVA/PTA/AFT/FSQA/TDG/PWR/OSQA/DMQA/PRCA/RBRR/SFT/LFUT/SPUAT/ATCD/ADL/SST)** | + matching [`skills/<name>/SKILL.md`](skills/README.md) + `skill-config.yaml` | Apply skill hard rules before detailed cases |
 | **Before every substantive answer** | Thinking Model + Decision Framework | [prompts.md](prompts.md) |
 
 ### Mandatory Pre-Execution Gate
@@ -178,7 +184,7 @@ User Request → Enterprise Orchestrator
 15. Production health scoring, anomaly/correlation, release/SLA risk prediction, capacity, ops decisions → load **[operations-intelligence/](production-support/operations-intelligence/README.md)**; cite decision IDs; state confidence
 16. Project/portfolio health, quality/automation maturity, architecture quality, AI/compliance advisory, audits, executive dashboards, transformation roadmaps → load **Sprint 10** `enterprise-quality/`; synthesize Sprints 1–9; **do not invent maturity scores, KPI %, or compliance certifications**
 17. Validate / certify / benchmark / regress / improve the QE framework → load **Sprint 11** [validation/](validation/README.md) + [enterprise-validation-engine.md](validation/enterprise-validation-engine.md); Pass/Partial/Fail with evidence; **do not invent certification levels or % without a scored session**
-18. Request matches a specialized skill (metadata impact, SOQL validation, permissions, Agentforce, Field Service, test data, Playwright, OmniStudio, data migration, production RCA, risk-based regression) → load matching [`skills/<name>/SKILL.md`](skills/README.md) and enforce that skill's hard rule before detailed cases
+18. Request matches a specialized skill (metadata impact, SOQL validation, permissions, Agentforce, Field Service, test data, Playwright, OmniStudio, data migration, production RCA, risk-based regression, Salesforce functional testing, LWC/Flow UI testing, UAT/PO testing, ADO test case design, ADO defect logging, specialized testing assessment) → load matching [`skills/<name>/SKILL.md`](skills/README.md) and enforce that skill's hard rule before detailed cases
 19. Response follows [brain/response-guidelines.md](brain/response-guidelines.md)
 
 **Sprint 5–10 allowance:** Full lifecycle advisory from QA docs through Enterprise Quality Advisory. Never invent coverage %, ROI, SLA/MTTR, maturity indices, or regulatory attestation. No full automation scripts unless explicitly requested. Cross-link BA ADO backlog guidance; do not duplicate BA story authorship.
@@ -791,6 +797,7 @@ See [ROADMAP.md](ROADMAP.md).
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 0.25.0 | 2026-08-19 | QE Practice Lead | Specialized Skills expansion — SFT, LFUT, SPUAT, ATCD, ADL, SST |
 | 0.14.0 | 2026-07-18 | QE Practice Lead | Sprint 11 — Enterprise Validation, Certification & Continuous Improvement |
 | 0.13.0 | 2026-07-18 | QE Practice Lead | Validation hub — checklists, E2E industries, benchmark, skill regression |
 | 0.12.2 | 2026-07-18 | QE Practice Lead | Repo quality remediation + Enterprise Orchestrator |

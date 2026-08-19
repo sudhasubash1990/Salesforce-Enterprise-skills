@@ -3,11 +3,11 @@ title: Roadmap
 module: Salesforce Quality Engineering
 category: Root
 document_type: Guide
-version: 0.24.0
+version: 0.25.0
 review_status: Draft
 owner: QE Practice Lead
 created_date: 2026-07-17
-last_updated: 2026-07-28
+last_updated: 2026-08-19
 review_cycle: quarterly
 related_documents:
   - salesforce-quality-engineering/CHANGELOG.md
@@ -33,7 +33,7 @@ tags: [roadmap, sprint-11, specialized-skills]
 
 **Owner:** QE Practice Lead
 
-**Version:** 0.24.0
+**Version:** 0.25.0
 
 **Status:** Draft (Unified Skills Architecture)
 
@@ -212,13 +212,19 @@ tags: [roadmap, sprint-11, specialized-skills]
 
 ## Optional – Continuous Evolution / Specialized Skills
 
-**Complete (v0.24.0)** — Unified `skills/` architecture (former `capabilities/` migrated).
+**Complete (v0.25.0)** — Unified `skills/` architecture (former `capabilities/` migrated).
 
 - [x] All specialized packs under [`skills/`](skills/README.md) with `SKILL.md` + `skill-config.yaml`
 - [x] Module registry [`skill-config.yaml`](skill-config.yaml); root `prompts/` + `examples/` indexes
 - [x] Field Service pack renamed to `field-service-testing`
 - [x] Production RCA + Risk-Based Regression scaffolds (compose with Sprint 7/9 and Sprint 3)
 - [x] Cross-link repair + Specialized Skill terminology alignment (post-migration hardening)
+- [x] Salesforce Functional Testing (SFT) — Service/Sales/Experience Cloud functional & E2E testing
+- [x] LWC & Flow UI Testing (LFUT) — LWC/Flow/Shadow DOM/accessibility UI testing
+- [x] Salesforce PO/UAT Testing (SPUAT) — Product Owner / UAT / business acceptance validation
+- [x] ADO Test Case Designer (ATCD) — ADO-default test case generation with custom template override
+- [x] ADO Defect Logger (ADL) — Salesforce defect analysis and ADO-ready bug creation
+- [x] Salesforce Specialized Testing (SST) — Testing dimension orchestrator (security/integration/API/performance/accessibility/mobile/compatibility)
 
 _Placeholder — full PRCA/RBRR content packs; Regression Intelligence deep-pack; CI JSON exports; machine-readable route plans._
 

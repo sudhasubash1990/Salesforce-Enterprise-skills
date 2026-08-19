@@ -3,11 +3,11 @@ title: Specialized Skills — README
 module: Salesforce Quality Engineering
 category: Specialized Skills
 document_type: Guide
-version: 0.24.0
+version: 0.25.0
 review_status: Draft
 owner: QE Practice Lead
 created_date: 2026-07-27
-last_updated: 2026-07-28
+last_updated: 2026-08-19
 review_cycle: quarterly
 tags: [specialized-skills, skills]
 ---
@@ -56,6 +56,12 @@ Each specialized skill:
 | **Field Service Testing** (FSQA) | [field-service-testing/](field-service-testing/SKILL.md) | FSL scheduling, dispatch, mobile/offline, inventory, security |
 | **Production RCA** (PRCA) | [production-rca/](production-rca/SKILL.md) | Production defect/incident root-cause analysis *(scaffold)* |
 | **Risk-Based Regression** (RBRR) | [risk-based-regression/](risk-based-regression/SKILL.md) | Risk-prioritized regression scope *(scaffold)* |
+| **Salesforce Functional Testing** (SFT) | [salesforce-functional-testing/](salesforce-functional-testing/SKILL.md) | Service, Sales, Experience Cloud functional/E2E testing |
+| **LWC & Flow UI Testing** (LFUT) | [lwc-flow-ui-testing/](lwc-flow-ui-testing/SKILL.md) | Salesforce UI testing for LWC and Flow |
+| **Salesforce PO/UAT Testing** (SPUAT) | [salesforce-uat-po-testing/](salesforce-uat-po-testing/SKILL.md) | Business/UAT/Product Owner validation |
+| **ADO Test Case Designer** (ATCD) | [ado-test-case-designer/](ado-test-case-designer/SKILL.md) | ADO-first intelligent test case generation |
+| **ADO Defect Logger** (ADL) | [ado-defect-logger/](ado-defect-logger/SKILL.md) | Salesforce defect analysis and ADO-ready logging |
+| **Salesforce Specialized Testing** (SST) | [salesforce-specialized-testing/](salesforce-specialized-testing/SKILL.md) | Security, integration, API, performance, accessibility, mobile, compatibility |
 
 ## Integration Patterns
 
@@ -73,6 +79,20 @@ Each specialized skill:
 | Permission Testing Agent | SOQL Validation Assistant | Security-aware SOQL |
 | Data Migration QA | SOQL Validation Assistant | Expand reconciliation query stubs |
 | OmniStudio QA | Playwright Review | OmniScript/FlexCard UI automation |
+| Salesforce Functional Testing | Permission Testing Agent | Permission/security validation scenarios |
+| Salesforce Functional Testing | SOQL Validation Assistant | Backend data validation |
+| Salesforce Functional Testing | Test Data Generator | Test data for functional scenarios |
+| Salesforce Functional Testing | Playwright Review | UI automation for functional tests |
+| LWC & Flow UI Testing | Playwright Review | LWC/Flow Playwright automation |
+| LWC & Flow UI Testing | Permission Testing Agent | Persona-specific UI behavior |
+| Salesforce PO/UAT Testing | Salesforce Functional Testing | Technical test design from UAT scenarios |
+| Salesforce PO/UAT Testing | ADO Test Case Designer | ADO test cases from UAT scenarios |
+| Salesforce PO/UAT Testing | ADO Defect Logger | UAT defect logging |
+| ADO Test Case Designer | ADO Defect Logger | Defect from failed test case |
+| Salesforce Specialized Testing | Permission Testing Agent | Security dimension |
+| Salesforce Specialized Testing | Data Migration QA | Data dimension |
+| Salesforce Specialized Testing | Metadata Impact Analyzer | Release/deployment dimension |
+| Salesforce Specialized Testing | Risk-Based Regression | Regression dimension |
 
 ## Routing
 
@@ -88,5 +108,6 @@ Parent [`SKILL.md`](../SKILL.md) and [`enterprise-orchestrator/capability-routin
 
 | Version | Date | Author | Summary |
 |---------|------|--------|---------|
+| 0.25.0 | 2026-08-19 | QE Practice Lead | Added 6 new skills: SFT, LFUT, SPUAT, ATCD, ADL, SST |
 | 0.24.0 | 2026-07-28 | QE Practice Lead | Unified skills/ namespace — migrated all capabilities; added PRCA/RBRR scaffolds |
 | 0.15.0 | 2026-07-27 | QE Practice Lead | Initial specialized skills architecture + Metadata Impact Analyzer |

@@ -1,6 +1,6 @@
 ---
 title: Capability Routing Table
-version: 0.24.0
+version: 0.25.0
 tags: [enterprise-orchestrator, routing]
 ---
 
@@ -56,6 +56,12 @@ Match the **strongest** primary intent; add supporting capabilities only when si
 | go-live, hypercare, incident, problem, change, runbook, monitoring, SLA (program-set), ops health | **9** | `production-support/` (+ `operations-intelligence/`) |
 | project health, portfolio, maturity, TMMi, audit scorecard, CIO/CTO/CQO dashboard, Proceed/Hold/Escalate, transformation roadmap, architecture quality (exec), AI governance, compliance overview | **10** | `enterprise-quality/enterprise-quality-advisory-engine.md` |
 | validate module, certification, benchmark scorecard, skill regression suite, repository validation, golden dataset, improvement backlog, enterprise certified, bronze/silver/gold/platinum | **11 / Validation** | `validation/enterprise-validation-engine.md` |
+| Service Cloud functional testing, Sales Cloud functional testing, Experience Cloud testing, case lifecycle, lead conversion, opportunity testing, account testing, contact testing, case assignment, omni-channel, email-to-case, web-to-case, case escalation, opportunity stages, campaign testing, persona testing, cross-cloud testing, experience builder, guest user testing, validation rule testing, approval process testing, business rule testing, smoke testing Salesforce, sanity testing, E2E testing Salesforce, end-to-end journey | **SFT** (Specialized Skill) | `skills/salesforce-functional-testing/SKILL.md` (+ `knowledge/clouds/`; PTA/SOVA/TDG/PWR chain) |
+| LWC, Lightning Web Component, Flow UI, Screen Flow, flow testing, lightning component, LWC testing, UI testing Salesforce, component rendering, Shadow DOM, toast message, modal dialog, lightning input, lightning combobox, lightning lookup, lightning record form, conditional rendering, dynamic component, Lightning Message Service, flow navigation, flow input screen, flow validation, flow fault path, flow cancel, flow resume, responsive LWC, accessibility LWC, datatable, record edit form | **LFUT** (Specialized Skill) | `skills/lwc-flow-ui-testing/SKILL.md` (+ `knowledge/platform/`; PWR/PTA chain) |
+| UAT, user acceptance testing, product owner testing, PO testing, business acceptance, business validation, UAT planning, UAT scenarios, business sign-off, go-live readiness UAT, production readiness UAT, UAT scope, UAT strategy, acceptance criteria validation, business process validation, PO validation, business user testing, UAT test cases, UAT defect triage, business scenario testing, end user testing, UAT sign-off, go no-go | **SPUAT** (Specialized Skill) | `skills/salesforce-uat-po-testing/SKILL.md` (+ SFT/ATCD/ADL/PTA/TDG chain) |
+| test case, test cases, ADO test case, Azure DevOps test case, generate test cases, test case design, test case generation, test suite, test plan ADO, requirement to test, acceptance criteria to test, user story to test, bulk test cases, test case template, custom test template, Salesforce test cases, functional test cases, regression test cases, test step, expected result, test design, traceability | **ATCD** (Specialized Skill) | `skills/ado-test-case-designer/SKILL.md` (+ `ado/`, `knowledge/test-design-engine.md`; SFT/SPUAT/LFUT upstream; ADL downstream) |
+| log defect, log bug, ADO bug, ADO defect, Azure DevOps bug, Azure DevOps defect, create bug, create defect, Salesforce issue, Salesforce defect, Salesforce bug, defect analysis, defect triage, severity assessment, priority assessment, repro steps, reproduction steps, defect logging, bug report, issue logging | **ADL** (Specialized Skill) | `skills/ado-defect-logger/SKILL.md` (+ `ado/`, `quality-intelligence/`; SFT/LFUT/SPUAT/ATCD upstream) |
+| specialized testing, security testing Salesforce, integration testing Salesforce, API testing Salesforce, performance testing Salesforce, accessibility testing Salesforce, mobile testing Salesforce, compatibility testing, browser testing Salesforce, regression assessment, deployment testing, release testing, data testing, contract testing, what testing do we need, testing strategy assessment, testing dimensions, non-functional testing Salesforce, WCAG Salesforce, governor limit testing | **SST** (Specialized Skill) | `skills/salesforce-specialized-testing/SKILL.md` (+ PTA/DMQA/TDG/MIA/RBRR/PWR/SFT/LFUT chain) |
 
 ### Priority boosts
 
@@ -96,11 +102,37 @@ Match the **strongest** primary intent; add supporting capabilities only when si
 | DMQA needs reconciliation queries / persona FLS / synthetic dry-run / journey regression / Industries data | **DMQA** then chain **SOVA** / **PTA** / **TDG** / **PWR** / **OSQA** / **AFT** as applicable |
 | Synthetic seed / factory without migration validation intent | **TDG** (not DMQA) |
 | General ops Sev1 / non-migration hypercare | Sprint **9** primary (DMQA support only if data-migration caused) |
-
 | "production RCA", "incident RCA", "defect RCA", "postmortem" | Prefer Sprint **7**/**9** primary; chain **PRCA** scaffold for structured RCA report outline only |
 | "risk-based regression", "prioritized regression scope" | Prefer Sprint **3** (+ MIA if deploy-driven); chain **RBRR** scaffold when explicit risk-ranking deliverable requested |
 | Generic "RCA" / "root cause" without production/postmortem framing | Sprint **7** primary (not PRCA) |
 | Generic "regression scope" without risk-based framing | Sprint **3** primary (not RBRR) |
+| Service Cloud / Sales Cloud / Experience Cloud + (functional test OR system test OR E2E OR case OR lead OR opportunity OR account OR contact) | **SFT** primary over Sprint **4B** |
+| "test Service Cloud cases", "test lead conversion", "test opportunity lifecycle", "Experience Cloud case creation test", "cross-cloud journey test" | **SFT** primary → `skills/salesforce-functional-testing/SKILL.md` |
+| SFT needs permission scenarios / backend SOQL / test data / UI automation | **SFT** then chain **PTA** / **SOVA** / **TDG** / **PWR** as applicable |
+| LWC + (test OR validate OR render OR component OR UI) | **LFUT** primary over Sprint **4A** |
+| Screen Flow + (test OR validate OR UI OR navigation OR input) | **LFUT** primary over Sprint **4A** |
+| "test this LWC", "validate Screen Flow UI", "LWC accessibility test", "flow input validation" | **LFUT** primary → `skills/lwc-flow-ui-testing/SKILL.md` |
+| LFUT + Playwright automation request | **LFUT** then chain **PWR** for Playwright scripts |
+| UAT + (plan OR scenario OR sign-off OR readiness OR PO OR product owner OR business acceptance) | **SPUAT** primary |
+| "act as Product Owner", "prepare UAT", "business acceptance testing", "UAT sign-off readiness" | **SPUAT** primary → `skills/salesforce-uat-po-testing/SKILL.md` |
+| SPUAT UAT scenarios ready for ADO | **SPUAT** then chain **ATCD** for ADO test cases |
+| "generate test cases", "create test cases from story", "ADO test case", "test case from requirement" | **ATCD** primary → `skills/ado-test-case-designer/SKILL.md` |
+| User provides custom test template | **ATCD** uses user template instead of ADO default |
+| "log this defect", "create ADO bug", "log Salesforce issue", "analyze this defect" | **ADL** primary → `skills/ado-defect-logger/SKILL.md` |
+| ADL + ADO MCP/API available + user explicitly requests creation | **ADL** creates work item via API |
+| ADL + no ADO integration | **ADL** generates ADO-ready template only; does not pretend creation |
+| "what testing do we need", "specialized testing for this release", "testing dimensions", "non-functional testing" | **SST** primary → `skills/salesforce-specialized-testing/SKILL.md` |
+| SST security dimension | **SST** then chain **PTA** |
+| SST data dimension | **SST** then chain **DMQA** / **TDG** |
+| SST regression dimension | **SST** then chain **RBRR** |
+| SST release/deployment dimension | **SST** then chain **MIA** |
+| Generic "defect" / "bug" without ADO/log intent | Sprint **7** primary (not ADL) |
+| Generic "test case" within document generation context | Sprint **5** primary (not ATCD) |
+| "defect analysis" / "defect triage" / "severity assessment" without ADO/log/create intent | Sprint **7** primary (not ADL); ADL requires explicit log/create/ADO action |
+| "test suite" / "traceability" within document/template context | Sprint **5** or **6** primary (not ATCD); ATCD requires explicit test-case generation intent |
+| UAT + (data OR seed OR generate) | **TDG** primary (not SPUAT); SPUAT requires planning/scenario/sign-off intent |
+| "guest user" / "Experience Cloud" + pure permission/access validation | **PTA** primary; SFT only when functional journey testing |
+| "security testing" alone (pure CRUD/FLS/sharing) | **PTA** primary; **SST** only for multi-dimension assessment |
 
 ## Examples
 
@@ -123,6 +155,16 @@ Match the **strongest** primary intent; add supporting capabilities only when si
 | “Generate UAT seed data for Account–Contact–Opportunity with sharing personas” | TDG (+ data knowledge; PTA for sharing) |
 | “Hypercare week-1 incident pack” | 9 |
 | “Portfolio quality heat map for steering” | 10 (evidence from 7–9) |
+| "Test Service Cloud case creation" | SFT (+ PTA/SOVA/TDG chain) |
+| "Test this LWC customer search component" | LFUT (+ PWR chain if automation) |
+| "Test this Screen Flow from the Salesforce UI" | LFUT |
+| "Act as Product Owner and prepare UAT for opportunity approval" | SPUAT (+ ATCD for ADO cases) |
+| "Create test cases from this user story" | ATCD (ADO format default) |
+| "Generate test cases using my attached Excel template" | ATCD (user template override) |
+| "Log this Salesforce issue as an Azure DevOps bug" | ADL |
+| "What specialized testing should we perform for this release?" | SST (+ PTA/DMQA/MIA/RBRR chain) |
+| "Test Experience Cloud case creation end-to-end" | SFT (+ PTA for guest/auth; LFUT for LWC) |
+| "Create UAT test cases for opportunity approval" | SPUAT → ATCD |
 
 ## Best Practices
 

@@ -1,0 +1,102 @@
+name: salesforce-functional-testing
+short_id: SFT
+version: 0.25.0
+architecture_release: 0.25.0
+parent_module: salesforce-quality-engineering
+entry: SKILL.md
+
+routing:
+  keywords:
+    - Service Cloud
+    - Sales Cloud
+    - Experience Cloud
+    - functional testing
+    - system testing
+    - case testing
+    - lead conversion
+    - opportunity testing
+    - account testing
+    - contact testing
+    - community testing
+    - portal testing
+    - E2E testing
+    - end-to-end testing
+    - case lifecycle
+    - case assignment
+    - omni-channel
+    - email-to-case
+    - web-to-case
+    - case escalation
+    - opportunity stages
+    - campaign testing
+    - persona testing
+    - cross-cloud testing
+    - experience builder
+    - guest user testing
+    - validation rule testing
+    - approval process testing
+    - record type testing
+    - page layout testing
+    - business rule testing
+    - smoke testing
+    - sanity testing
+    - regression testing Salesforce
+  primary_support:
+    - knowledge/clouds/
+  upstream_skills:
+    - skills/metadata-impact-analyzer
+  downstream_capabilities:
+    - skills/soql-validation-assistant
+    - skills/permission-testing-agent
+    - skills/test-data-generator
+    - skills/playwright-review
+
+output_schema:
+  sections:
+    - id: intent
+      title: "Intent"
+    - id: context
+      title: "Context"
+    - id: assumptions
+      title: "Assumptions"
+    - id: scope
+      title: "Scope"
+    - id: risk_assessment
+      title: "Risk Assessment"
+    - id: reasoning
+      title: "Reasoning"
+    - id: cloud_analysis
+      title: "Cloud Analysis"
+    - id: object_feature_coverage
+      title: "Object/Feature Coverage"
+    - id: test_strategy
+      title: "Test Strategy"
+    - id: test_scenarios
+      title: "Test Scenarios"
+    - id: business_rule_validation
+      title: "Business Rule Validation"
+    - id: persona_matrix
+      title: "Persona Matrix"
+    - id: quality_gates
+      title: "Quality Gates"
+    - id: dependencies
+      title: "Dependencies"
+    - id: recommended_next_actions
+      title: "Recommended Next Actions"
+
+quality_gates:
+  - cloud_scope_confirmed_before_scenarios
+  - persona_identified
+  - positive_negative_boundary_covered
+  - no_vague_expected_results
+  - assumptions_labeled
+  - no_invented_coverage_percentages
+  - chain_pta_sova_tdg_pwr_when_applicable
+
+escalation:
+  - signal: cross_cloud_journey_without_clear_scope
+    to: Solution Architect
+  - signal: regulatory_compliance_implied
+    to: Compliance + Legal advisory
+  - signal: experience_cloud_guest_user_security
+    to: Security Architect + PTA

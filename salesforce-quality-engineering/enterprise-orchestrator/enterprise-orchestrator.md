@@ -1,6 +1,6 @@
 ---
 title: Enterprise Orchestrator — Routing Coordinator
-version: 0.12.1
+version: 0.25.0
 tags: [enterprise-orchestrator, coordinator, routing]
 ---
 
@@ -95,6 +95,12 @@ Unified response (facts vs assumptions; no invented scores)
 | Automation strategy / framework / CI/CD / review | **8** | [automation-intelligence-engine.md](../automation-intelligence/automation-intelligence-engine.md) |
 | Go-live / incident / change / runbooks / ops intelligence | **9** | [production-support-engine.md](../production-support/production-support-engine.md) |
 | Project/portfolio health, maturity, audits, exec dashboards, roadmaps, Proceed/Hold | **10** | [enterprise-quality-advisory-engine.md](../enterprise-quality/enterprise-quality-advisory-engine.md) |
+| Salesforce functional / cloud testing (Service/Sales/Experience) | **SFT** | [skills/salesforce-functional-testing/SKILL.md](../skills/salesforce-functional-testing/SKILL.md) |
+| LWC / Flow UI testing | **LFUT** | [skills/lwc-flow-ui-testing/SKILL.md](../skills/lwc-flow-ui-testing/SKILL.md) |
+| UAT / Product Owner / business acceptance | **SPUAT** | [skills/salesforce-uat-po-testing/SKILL.md](../skills/salesforce-uat-po-testing/SKILL.md) |
+| ADO test case generation / traceability | **ATCD** | [skills/ado-test-case-designer/SKILL.md](../skills/ado-test-case-designer/SKILL.md) |
+| Defect logging / ADO bug creation | **ADL** | [skills/ado-defect-logger/SKILL.md](../skills/ado-defect-logger/SKILL.md) |
+| Specialized testing assessment (multi-dimension) | **SST** | [skills/salesforce-specialized-testing/SKILL.md](../skills/salesforce-specialized-testing/SKILL.md) |
 
 ### Routing rules (priority)
 

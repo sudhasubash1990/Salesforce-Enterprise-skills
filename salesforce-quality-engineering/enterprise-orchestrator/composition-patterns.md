@@ -1,6 +1,6 @@
 ---
 title: Multi-Capability Composition Patterns
-version: 0.24.0
+version: 0.25.0
 tags: [enterprise-orchestrator, composition]
 ---
 
@@ -32,6 +32,11 @@ Real requests rarely map to one sprint. Composition patterns encode proven hando
 | COMP-06 | Automation estate | Review + roadmap |
 | COMP-07 | Sev1 / production incident | Ops first + RCA |
 | COMP-08 | Specialized skill request | skills/ chain (MIA→…) |
+| COMP-09 | SF cloud functional test request | SFT → PTA/SOVA/TDG/PWR |
+| COMP-10 | LWC/Flow UI + Playwright | LFUT → PWR |
+| COMP-11 | UAT/PO validation + ADO | SPUAT → SFT/ATCD/ADL |
+| COMP-12 | Requirement → ADO test cases | Sprint 2 → 3 → ATCD |
+| COMP-13 | Specialized testing assessment | SST → PTA/DMQA/MIA/RBRR/SFT/LFUT |
 
 ## Evaluation Method
 
@@ -130,6 +135,51 @@ Regression scope
     → RBRR scaffold only for explicit risk-ranking deliverable
 ```
 
+
+### COMP-09 — Salesforce functional cloud testing
+
+```
+SFT Salesforce Functional Testing (primary)
+    → PTA (permission scenarios) → SOVA (backend validation) → TDG (test data)
+    → PWR (UI automation if requested)
+```
+
+### COMP-10 — LWC/Flow UI to Playwright
+
+```
+LFUT LWC & Flow UI Testing (primary)
+    → PWR (Playwright automation scripts)
+    → PTA (persona-specific UI behavior)
+```
+
+### COMP-11 — UAT to ADO test cases
+
+```
+SPUAT Salesforce PO/UAT Testing (primary)
+    → SFT (technical functional scenarios)
+    → ATCD (ADO test case generation)
+    → ADL (defect logging from UAT)
+```
+
+### COMP-12 — Requirement to ADO test case
+
+```
+Sprint 2 Requirement Analysis
+    → Sprint 3 Test Design Engine
+    → ATCD ADO Test Case Designer
+    → (optional) ADL for defect linkage
+```
+
+### COMP-13 — Specialized testing assessment
+
+```
+SST Salesforce Specialized Testing (primary — dimension assessment)
+    → PTA (security dimension)
+    → DMQA / TDG (data dimension)
+    → MIA (release/deployment dimension)
+    → RBRR (regression dimension)
+    → SFT / LFUT (functional/UI dimension)
+```
 **Hard rule:** Scaffold skills (PRCA, RBRR) compose as support — Sprint engines remain primary until packs are fully built.
 
 ## Examples
@@ -140,6 +190,12 @@ Regression scope
 **“Impact of this package.xml then SOQL validations.”** → COMP-08 (MIA → SOVA).  
 **“Production RCA after Sev1 restore.”** → COMP-07 then PRCA outline.
 
+**"Test Service Cloud case creation with permission and data validation."** → COMP-09 (SFT → PTA → SOVA → TDG).
+**"Test this LWC using Playwright."** → COMP-10 (LFUT → PWR).
+**"Create UAT test cases for opportunity approval."** → COMP-11 (SPUAT → ATCD).
+**"Create ADO test cases from this user story."** → COMP-12 (Sprint 2 → 3 → ATCD).
+**"What specialized testing do we need for this Salesforce release?"** → COMP-13 (SST → PTA/DMQA/MIA/RBRR).
+**"Log this Salesforce issue in ADO."** → ADL direct (no composition needed).
 ## Best Practices
 
 - Name the pattern ID in the Route line when multi-hop.  

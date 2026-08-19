@@ -3,11 +3,11 @@ title: Salesforce Quality Engineering — README
 module: Salesforce Quality Engineering
 category: Root
 document_type: Guide
-version: 0.24.0
+version: 0.25.0
 review_status: Draft
 owner: QE Practice Lead
 created_date: 2026-07-17
-last_updated: 2026-07-28
+last_updated: 2026-08-19
 tags: [README, sprint-11]
 ---
 
@@ -19,7 +19,7 @@ Enterprise Quality Engineering for Salesforce—from requirement testability thr
 
 **Owner:** QE Practice Lead
 
-**Version:** 0.24.0
+**Version:** 0.25.0
 
 **Status:** Draft (Unified Skills Architecture)
 
@@ -104,7 +104,7 @@ salesforce-quality-engineering/
 ├── ado/ · quality-intelligence/ · automation-intelligence/
 ├── production-support/      ← Sprint 9 ✓
 ├── enterprise-quality/      ← Sprint 10 ✓
-└── skills/                  ← All specialized skills (MIA, SOVA, PTA, AFT, …)
+└── skills/                  ← All specialized skills (MIA, SOVA, PTA, AFT, SFT, LFUT, SPUAT, ATCD, ADL, SST, …)
 `
 salesforce-quality-engineering/
 ├── skill.md · README.md · prompts.md · CHANGELOG.md · ROADMAP.md
@@ -131,6 +131,12 @@ salesforce-quality-engineering/
 | Data Migration QA (DMQA) | [skills/data-migration-qa/SKILL.md](skills/data-migration-qa/SKILL.md) |
 | Production RCA (PRCA) | [skills/production-rca/SKILL.md](skills/production-rca/SKILL.md) *(scaffold)* |
 | Risk-Based Regression (RBRR) | [skills/risk-based-regression/SKILL.md](skills/risk-based-regression/SKILL.md) *(scaffold)* |
+| Salesforce Functional Testing (SFT) | [skills/salesforce-functional-testing/SKILL.md](skills/salesforce-functional-testing/SKILL.md) |
+| LWC & Flow UI Testing (LFUT) | [skills/lwc-flow-ui-testing/SKILL.md](skills/lwc-flow-ui-testing/SKILL.md) |
+| Salesforce PO/UAT Testing (SPUAT) | [skills/salesforce-uat-po-testing/SKILL.md](skills/salesforce-uat-po-testing/SKILL.md) |
+| ADO Test Case Designer (ATCD) | [skills/ado-test-case-designer/SKILL.md](skills/ado-test-case-designer/SKILL.md) |
+| ADO Defect Logger (ADL) | [skills/ado-defect-logger/SKILL.md](skills/ado-defect-logger/SKILL.md) |
+| Salesforce Specialized Testing (SST) | [skills/salesforce-specialized-testing/SKILL.md](skills/salesforce-specialized-testing/SKILL.md) |
 
 Index: [skills/README.md](skills/README.md) · Registry: [skill-config.yaml](skill-config.yaml)
 

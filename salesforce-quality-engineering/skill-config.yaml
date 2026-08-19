@@ -1,6 +1,6 @@
 # Salesforce Quality Engineering — module skill registry
 name: salesforce-quality-engineering
-version: 0.24.0
+version: 0.25.0
 entry: SKILL.md  # same as skill.md on Windows case-insensitive FS
 orchestrator: enterprise-orchestrator/enterprise-orchestrator.md
 routing_table: enterprise-orchestrator/capability-routing-table.md
@@ -52,6 +52,30 @@ skills:
     path: skills/risk-based-regression/
     entry: SKILL.md
     status: scaffold
+  - id: SFT
+    name: salesforce-functional-testing
+    path: skills/salesforce-functional-testing/
+    entry: SKILL.md
+  - id: LFUT
+    name: lwc-flow-ui-testing
+    path: skills/lwc-flow-ui-testing/
+    entry: SKILL.md
+  - id: SPUAT
+    name: salesforce-uat-po-testing
+    path: skills/salesforce-uat-po-testing/
+    entry: SKILL.md
+  - id: ATCD
+    name: ado-test-case-designer
+    path: skills/ado-test-case-designer/
+    entry: SKILL.md
+  - id: ADL
+    name: ado-defect-logger
+    path: skills/ado-defect-logger/
+    entry: SKILL.md
+  - id: SST
+    name: salesforce-specialized-testing
+    path: skills/salesforce-specialized-testing/
+    entry: SKILL.md
 
 preserved_sprint_engines:
   - brain/

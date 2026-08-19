@@ -1,0 +1,91 @@
+name: lwc-flow-ui-testing
+short_id: LFUT
+version: 0.25.0
+architecture_release: 0.25.0
+parent_module: salesforce-quality-engineering
+entry: SKILL.md
+
+routing:
+  keywords:
+    - LWC
+    - Lightning Web Component
+    - lightning web component
+    - Flow UI
+    - Screen Flow
+    - flow testing
+    - lightning component
+    - LWC testing
+    - UI testing Salesforce
+    - component rendering
+    - Shadow DOM
+    - toast message
+    - modal dialog
+    - lightning input
+    - lightning combobox
+    - lightning lookup
+    - lightning record form
+    - lightning button
+    - conditional rendering
+    - dynamic component
+    - Lightning Message Service
+    - flow navigation
+    - flow input screen
+    - flow validation
+    - flow fault path
+    - flow cancel
+    - flow resume
+    - responsive LWC
+    - accessibility LWC
+    - datatable
+    - record edit form
+  primary_support:
+    - knowledge/platform/
+  upstream_skills:
+    - skills/metadata-impact-analyzer
+  downstream_capabilities:
+    - skills/playwright-review
+    - skills/permission-testing-agent
+
+output_schema:
+  sections:
+    - id: intent
+      title: "Intent"
+    - id: context
+      title: "Context"
+    - id: assumptions
+      title: "Assumptions"
+    - id: scope
+      title: "Scope"
+    - id: component_analysis
+      title: "Component Analysis"
+    - id: rendering_validation
+      title: "Rendering Validation"
+    - id: interaction_testing
+      title: "Interaction Testing"
+    - id: accessibility_assessment
+      title: "Accessibility Assessment"
+    - id: flow_navigation_testing
+      title: "Flow Navigation Testing"
+    - id: error_edge_cases
+      title: "Error & Edge Cases"
+    - id: quality_gates
+      title: "Quality Gates"
+    - id: dependencies
+      title: "Dependencies"
+    - id: recommended_next_actions
+      title: "Recommended Next Actions"
+
+quality_gates:
+  - component_or_flow_identified
+  - rendering_and_interaction_covered
+  - accessibility_assessed
+  - semantic_locators_preferred
+  - no_brittle_xpath_or_hard_waits
+  - chain_pwr_for_playwright_automation
+  - no_invented_accessibility_scores
+
+escalation:
+  - signal: wcag_compliance_regulatory
+    to: Accessibility Lead + Compliance
+  - signal: shadow_dom_breaking_changes
+    to: LWC Platform Architect

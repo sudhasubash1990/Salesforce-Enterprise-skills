@@ -1,0 +1,98 @@
+name: salesforce-specialized-testing
+short_id: SST
+version: 0.25.0
+architecture_release: 0.25.0
+parent_module: salesforce-quality-engineering
+entry: SKILL.md
+
+routing:
+  keywords:
+    - specialized testing
+    - security testing Salesforce
+    - integration testing Salesforce
+    - API testing Salesforce
+    - performance testing Salesforce
+    - accessibility testing Salesforce
+    - mobile testing Salesforce
+    - compatibility testing
+    - browser testing Salesforce
+    - regression assessment
+    - deployment testing
+    - release testing
+    - data testing
+    - contract testing
+    - what testing do we need
+    - testing strategy assessment
+    - testing dimensions
+    - non-functional testing Salesforce
+    - WCAG Salesforce
+    - governor limit testing
+  primary_support:
+    - knowledge/security/
+    - knowledge/integration/
+    - knowledge/performance/
+  upstream_skills: []
+  downstream_capabilities:
+    - skills/permission-testing-agent
+    - skills/data-migration-qa
+    - skills/test-data-generator
+    - skills/metadata-impact-analyzer
+    - skills/risk-based-regression
+    - skills/playwright-review
+    - skills/salesforce-functional-testing
+    - skills/lwc-flow-ui-testing
+
+output_schema:
+  sections:
+    - id: intent
+      title: "Intent"
+    - id: context
+      title: "Context"
+    - id: assumptions
+      title: "Assumptions"
+    - id: implementation_analysis
+      title: "Implementation Analysis"
+    - id: testing_dimension_assessment
+      title: "Testing Dimension Assessment"
+    - id: security_assessment
+      title: "Security Assessment"
+    - id: integration_assessment
+      title: "Integration Assessment"
+    - id: data_assessment
+      title: "Data Assessment"
+    - id: api_assessment
+      title: "API Assessment"
+    - id: performance_advisory
+      title: "Performance Advisory"
+    - id: accessibility_assessment
+      title: "Accessibility Assessment"
+    - id: mobile_assessment
+      title: "Mobile Assessment"
+    - id: compatibility_assessment
+      title: "Compatibility Assessment"
+    - id: regression_assessment
+      title: "Regression Assessment"
+    - id: release_assessment
+      title: "Release Assessment"
+    - id: quality_gates
+      title: "Quality Gates"
+    - id: dependencies
+      title: "Dependencies"
+    - id: recommended_next_actions
+      title: "Recommended Next Actions"
+
+quality_gates:
+  - dimension_assessment_before_detail
+  - chain_existing_skills_not_duplicate
+  - no_invented_performance_metrics
+  - performance_evidence_required_or_stated_missing
+  - assumptions_labeled
+  - no_invented_coverage_percentages
+
+escalation:
+  - signal: regulatory_compliance_security
+    to: Security Architect + Compliance
+  - signal: performance_sla_breach
+    to: Performance Engineering Lead
+  - signal: accessibility_legal_requirement
+    to: Accessibility Lead + Legal

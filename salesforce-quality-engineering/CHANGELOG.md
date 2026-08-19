@@ -3,11 +3,11 @@ title: Changelog
 module: Salesforce Quality Engineering
 category: Root
 document_type: Guide
-version: 0.24.0
+version: 0.25.0
 review_status: Draft
 owner: QE Practice Lead
 created_date: 2026-07-17
-last_updated: 2026-07-28
+last_updated: 2026-08-19
 review_cycle: quarterly
 related_documents:
   - salesforce-quality-engineering/ROADMAP.md
@@ -31,9 +31,51 @@ tags: [changelog]
 
 **Owner:** QE Practice Lead
 
-**Version:** 0.24.0
+**Version:** 0.25.0
 
 **Status:** Draft (Unified Skills Architecture)
+
+---
+
+## [0.25.0] - 2026-08-19
+
+### Added
+
+- **Salesforce Functional Testing (SFT)** under `skills/salesforce-functional-testing/`:
+  - SKILL.md, README.md, skill-config.yaml
+  - 6 knowledge articles, 6 playbooks, 5 templates, 5 prompts, 6 examples, 7 test scenarios
+  - Service Cloud, Sales Cloud, Experience Cloud functional/E2E testing; chains PTA/SOVA/TDG/PWR
+- **LWC & Flow UI Testing (LFUT)** under `skills/lwc-flow-ui-testing/`:
+  - SKILL.md, README.md, skill-config.yaml
+  - 5 knowledge articles, 5 playbooks, 4 templates, 4 prompts, 5 examples, 6 test scenarios
+  - LWC rendering/interaction, Screen Flow UI, Shadow DOM, accessibility; chains PWR/PTA
+- **Salesforce PO/UAT Testing (SPUAT)** under `skills/salesforce-uat-po-testing/`:
+  - SKILL.md, README.md, skill-config.yaml
+  - 4 knowledge articles, 5 playbooks, 4 templates, 4 prompts, 4 examples, 5 test scenarios
+  - Product Owner / UAT / business acceptance testing; chains SFT/ATCD/ADL/PTA/TDG
+- **ADO Test Case Designer (ATCD)** under `skills/ado-test-case-designer/`:
+  - SKILL.md, README.md, skill-config.yaml
+  - 4 knowledge articles, 5 playbooks, 4 templates, 4 prompts, 4 examples, 5 test scenarios
+  - ADO-default test case generation; custom user template override; traceability chain
+- **ADO Defect Logger (ADL)** under `skills/ado-defect-logger/`:
+  - SKILL.md, README.md, skill-config.yaml
+  - 4 knowledge articles, 5 playbooks, 4 templates, 4 prompts, 4 examples, 5 test scenarios
+  - Salesforce defect analysis and ADO-ready bug creation; repro quality gates
+- **Salesforce Specialized Testing (SST)** under `skills/salesforce-specialized-testing/`:
+  - SKILL.md, README.md, skill-config.yaml
+  - 8 knowledge articles, 7 playbooks, 4 templates, 5 prompts, 5 examples, 6 test scenarios
+  - Testing dimension orchestrator (security/integration/API/performance/accessibility/mobile/compatibility/regression/release); chains PTA/DMQA/TDG/MIA/RBRR/PWR/SFT/LFUT
+- Enterprise Orchestrator — 6 new skill routing rows + priority boosts + examples; COMP-09 through COMP-13 composition patterns
+- `skill-config.yaml` — 6 new skill registrations (SFT, LFUT, SPUAT, ATCD, ADL, SST)
+- `skills/README.md` — 6 new skill table rows + 15 integration patterns
+
+### Changed
+
+- Module version 0.24.0 → 0.25.0
+- `skill.md` — Specialized Skills table, composition, brain loading order, Pre-Execution Gate extended for 6 new skills
+- `README.md` — Specialized Skills table, repo tree, version
+- `prompts.md` — 6 new specialized-skill prompt sections
+- `ROADMAP.md` — Specialized Skills expansion recorded as complete
 
 ---
 
