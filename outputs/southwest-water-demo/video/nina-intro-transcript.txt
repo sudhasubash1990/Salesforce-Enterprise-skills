@@ -1,0 +1,7 @@
+Hello, and welcome. My name is Nina, and I'll be your guide through this demonstration.
+Over the next few minutes you'll follow a single customer journey from end to end, exactly as it would play out in a live contact centre.
+You'll hear two voices. The first is Alex, a contact centre advisor at Southwest Water, working in Salesforce application. The second is Harvey Spector, a customer who has just moved into a new property and is calling to set up his account.
+Everything Alex does on screen happens in real time, as she speaks with Harvey.
+The call covers the full move-in journey: searching for an existing record, creating the contact and household account, capturing priority service needs, validating the property, completing the move-in, and logging the case.
+After the call, we'll follow Harvey into the self-service portal, where he registers, submits a meter reading, views his bill, and pays online.
+Let's join the call.

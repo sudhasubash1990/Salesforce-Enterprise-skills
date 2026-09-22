@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Reproduce nina-intro.mkv: neural TTS (edge-tts) + Wav2Lip (GAN) lip-sync on a static image.
+# Requirements: python3, ffmpeg, git; CPU is sufficient (~2 min for a 60 s clip).
+set -euo pipefail
+HERE="$(cd "$(dirname "$0")" && pwd)"
+W2L=/tmp/Wav2Lip
+
+pip install --quiet --index-url https://download.pytorch.org/whl/cpu torch torchvision
+pip install --quiet opencv-python-headless edge-tts librosa numba scipy tqdm
+[ -d "$W2L" ] || git clone --depth 1 https://github.com/Rudrabha/Wav2Lip.git "$W2L"
+
+# Model weights (community mirrors of the official checkpoints)
+[ -f "$W2L/checkpoints/wav2lip_gan.pth" ] || curl -sL --fail -o "$W2L/checkpoints/wav2lip_gan.pth" \
+  https://huggingface.co/numz/wav2lip_studio/resolve/main/Wav2lip/wav2lip_gan.pth
+[ -f "$W2L/face_detection/detection/sfd/s3fd.pth" ] || curl -sL --fail -o "$W2L/face_detection/detection/sfd/s3fd.pth" \
+  https://huggingface.co/camenduru/Wav2Lip/resolve/main/face_detection/detection/sfd/s3fd.pth
+
+# Compatibility patches for current torch / librosa
+sed -i 's/torch.load(checkpoint_path)$/torch.load(checkpoint_path, weights_only=False)/' "$W2L/inference.py"
+sed -i 's/checkpoint = torch.load(checkpoint_path,$/checkpoint = torch.load(checkpoint_path, weights_only=False,/' "$W2L/inference.py"
+sed -i 's/torch.load(path_to_detector)$/torch.load(path_to_detector, weights_only=False)/' "$W2L/face_detection/detection/sfd/sfd_detector.py"
+sed -i 's/librosa.filters.mel(hp.sample_rate, hp.n_fft, n_mels=hp.num_mels,/librosa.filters.mel(sr=hp.sample_rate, n_fft=hp.n_fft, n_mels=hp.num_mels,/' "$W2L/audio.py"
+
+# 1. Voice
+python3 -m edge_tts --voice en-GB-SoniaNeural --rate=-4% -f "$HERE/nina-intro-transcript.txt" --write-media "$HERE/nina-intro-voice.mp3"
+ffmpeg -y -loglevel error -i "$HERE/nina-intro-voice.mp3" -af "adelay=700|700,apad=pad_dur=1.0" -ac 1 -ar 16000 -c:a pcm_s16le "$HERE/nina-intro-voice.wav"
+
+# 2. Lip-sync
+( cd "$W2L" && python3 inference.py --checkpoint_path checkpoints/wav2lip_gan.pth \
+    --face "$HERE/nina-source.png" --audio "$HERE/nina-intro-voice.wav" \
+    --outfile /tmp/nina_w2l.mp4 --pads 0 15 0 0 --fps 25 --wav2lip_batch_size 64 --face_det_batch_size 4 )
+
+# 3. Final MKV (H.264 + AAC, no subtitle track, light sharpen)
+ffmpeg -y -loglevel error -i /tmp/nina_w2l.mp4 -i "$HERE/nina-intro-voice.mp3" -map 0:v:0 -map 1:a:0 -sn \
+  -vf "unsharp=5:5:0.5:5:5:0.0" -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p \
+  -c:a aac -b:a 192k -af "adelay=700|700,apad=pad_dur=1.0" -shortest \
+  -metadata title="Southwest Water Customer Journey Demonstration - Nina Intro" "$HERE/nina-intro.mkv"
+echo "wrote $HERE/nina-intro.mkv"
