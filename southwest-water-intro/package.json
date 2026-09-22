@@ -1,0 +1,22 @@
+{
+  "name": "southwest-water-talking-intro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Provider-agnostic talking-avatar pipeline for the Southwest Water Salesforce customer-journey introduction.",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "preview": "node src/index.js preview",
+    "generate": "node src/index.js generate",
+    "validate": "node src/index.js validate",
+    "render": "node src/index.js render",
+    "compose-scene": "node src/video/sceneComposer.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "sharp": "^0.33.5"
+  }
+}
