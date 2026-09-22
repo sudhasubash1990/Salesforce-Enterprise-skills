@@ -55,7 +55,7 @@ const config = {
   tts: {
     provider: env('TTS_PROVIDER', 'edge').toLowerCase(),
     edgeVoice: env('EDGE_TTS_VOICE', 'en-GB-SoniaNeural'),
-    edgeRate: env('EDGE_TTS_RATE', '+6%'),
+    edgeRate: env('EDGE_TTS_RATE', '-10%'),
     elevenKey: env('ELEVENLABS_API_KEY'),
     elevenVoice: env('ELEVENLABS_VOICE_ID'),
     azureKey: env('AZURE_SPEECH_KEY'),

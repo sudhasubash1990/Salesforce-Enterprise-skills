@@ -37,7 +37,7 @@ async function runPreview() {
   const ninaVideo = path.join(config.tempDir, 'nina-talking-preview.mp4');
   const composited = path.join(config.tempDir, 'preview-composited.mp4');
 
-  await generateAudio(PREVIEW_TRANSCRIPT, { outputPath: audioPath });
+  await generateAudio(PREVIEW_TRANSCRIPT, { outputPath: audioPath, padToSeconds: config.previewSeconds });
   const duration = await probeDuration(audioPath);
   logger.info('Preview audio duration', { duration });
 

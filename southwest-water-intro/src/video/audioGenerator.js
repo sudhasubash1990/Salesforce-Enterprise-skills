@@ -40,6 +40,27 @@ async function ffmpegToWav48k(input, output) {
   ]);
 }
 
+async function padWavToSeconds(wavPath, seconds) {
+  const duration = await probeDuration(wavPath);
+  if (duration >= seconds) return wavPath;
+  const pad = seconds - duration;
+  const padded = wavPath.replace(/\.wav$/, '-padded.wav');
+  await spawnCapture('ffmpeg', [
+    '-y',
+    '-i',
+    wavPath,
+    '-af',
+    `apad=pad_dur=${pad.toFixed(3)}`,
+    '-ar',
+    String(config.video.sampleRate),
+    '-ac',
+    '2',
+    padded,
+  ]);
+  fs.copyFileSync(padded, wavPath);
+  return wavPath;
+}
+
 function wrapSsml(transcript, voice) {
   const paragraphs = transcript
     .split(/\n\s*\n/)
@@ -59,8 +80,7 @@ async function generateEdgeTts(transcript, wavPath) {
     script,
     '--voice',
     config.tts.edgeVoice,
-    '--rate',
-    config.tts.edgeRate,
+    '--rate=' + config.tts.edgeRate,
     '--ssml',
     ssmlPath,
     '--out',
@@ -105,12 +125,17 @@ async function generateElevenLabs(transcript, wavPath) {
   return wavPath;
 }
 
-async function generateAudio(transcript, { outputPath = config.audioPath } = {}) {
+async function generateAudio(transcript, { outputPath = config.audioPath, padToSeconds } = {}) {
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-  if (config.tts.provider === 'elevenlabs') {
-    return withRetry(() => generateElevenLabs(transcript, outputPath), { label: 'elevenlabs-tts' });
+  const generate = async () => {
+    if (config.tts.provider === 'elevenlabs') return generateElevenLabs(transcript, outputPath);
+    return generateEdgeTts(transcript, outputPath);
+  };
+  await withRetry(generate, { label: `${config.tts.provider}-tts` });
+  if (padToSeconds) {
+    await padWavToSeconds(outputPath, padToSeconds);
   }
-  return withRetry(() => generateEdgeTts(transcript, outputPath), { label: 'edge-tts' });
+  return outputPath;
 }
 
 async function probeDuration(filePath) {

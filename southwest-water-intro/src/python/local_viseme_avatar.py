@@ -118,8 +118,8 @@ def warp_mouth(frame, roi, open_amt: float):
     if mw < 8 or mh < 8:
         return frame
     patch = frame[my : my + mh, mx : mx + mw].copy()
-    scale_y = 1.0 + 0.38 * open_amt
-    scale_x = 1.0 + 0.08 * open_amt
+    scale_y = 1.0 + 0.22 * open_amt
+    scale_x = 1.0 + 0.04 * open_amt
     new_w = max(8, int(mw * scale_x))
     new_h = max(8, int(mh * scale_y))
     stretched = cv2.resize(patch, (new_w, new_h), interpolation=cv2.INTER_CUBIC)

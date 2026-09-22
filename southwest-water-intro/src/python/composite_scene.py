@@ -44,7 +44,7 @@ def camera_rect(layout, scene, t, width, height):
         return {"x": x, "y": y, "w": w, "h": h, "zoom": zoom}
 
     full = box(0, 0, width, height, 1.0)
-    nina_focus = box(max(0, nina["x"] - 36), max(0, nina["y"] - 16), min(width, nina["w"] + 420), height, 1.05)
+    nina_focus = box(0, 0, min(width, nina["w"] + 980), height, 1.04)
     journey = box(380, 60, width - 400, height - 70, 1.07)
     alex_f = box(max(0, alex["x"] - 70), max(0, alex["y"] - 30), min(width, alex["w"] + 240), min(height, alex["h"] + 140), 1.1)
     harvey_f = box(max(0, harvey["x"] - 70), max(0, harvey["y"] - 30), min(width, harvey["w"] + 240), min(height, harvey["h"] + 160), 1.1)
@@ -77,19 +77,24 @@ def camera_rect(layout, scene, t, width, height):
 
 def crop_zoom(frame, cam, out_w, out_h):
     h, w = frame.shape[:2]
-    x = int(clamp(cam["x"], 0, w - 2))
-    y = int(clamp(cam["y"], 0, h - 2))
-    cw = int(clamp(cam["w"], 64, w - x))
-    ch = int(clamp(cam["h"], 64, h - y))
-    # Keep 16:9 crop window.
     target_aspect = out_w / out_h
-    if cw / ch > target_aspect:
-        cw = int(ch * target_aspect)
+    cx = cam["x"] + cam["w"] / 2.0
+    cy = cam["y"] + cam["h"] / 2.0
+    cw = float(max(64, cam["w"]))
+    ch = float(max(64, cam["h"]))
+    if cw / ch < target_aspect:
+        cw = ch * target_aspect
     else:
-        ch = int(cw / target_aspect)
-    x = int(clamp(x, 0, w - cw))
-    y = int(clamp(y, 0, h - ch))
-    cropped = frame[y : y + ch, x : x + cw]
+        ch = cw / target_aspect
+    if cw > w:
+        cw = float(w)
+        ch = cw / target_aspect
+    if ch > h:
+        ch = float(h)
+        cw = ch * target_aspect
+    x = int(clamp(cx - cw / 2.0, 0, w - cw))
+    y = int(clamp(cy - ch / 2.0, 0, h - ch))
+    cropped = frame[y : y + int(ch), x : x + int(cw)]
     return cv2.resize(cropped, (out_w, out_h), interpolation=cv2.INTER_CUBIC)
 
 

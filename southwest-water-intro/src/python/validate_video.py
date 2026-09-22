@@ -12,6 +12,12 @@ import cv2
 import numpy as np
 
 
+def _json_default(value):
+    if isinstance(value, np.generic):
+        return value.item()
+    raise TypeError(f"Object of type {type(value)} is not JSON serializable")
+
+
 def probe(path: str) -> dict:
     cmd = [
         "ffprobe",
@@ -91,7 +97,7 @@ def main() -> None:
     audio_stream = streams.get("audio", {})
 
     def add(name, ok, detail):
-        report["checks"].append({"name": name, "ok": ok, "detail": detail})
+        report["checks"].append({"name": name, "ok": bool(ok), "detail": detail})
         if not ok:
             report["passed"] = False
 
@@ -164,12 +170,12 @@ def main() -> None:
             corr = float(np.corrcoef(m, r)[0, 1])
         else:
             corr = 0.0
-        add("lip_audio_correlation", corr >= 0.05 or r.mean() < 0.02, {"correlation": corr})
+        add("lip_audio_correlation", bool(corr >= 0.05 or r.mean() < 0.02), {"correlation": float(corr)})
     else:
         add("lip_audio_correlation", True, {"note": "insufficient samples; skipped strict fail"})
 
-    Path(args.out).write_text(json.dumps(report, indent=2), encoding="utf-8")
-    print(json.dumps(report))
+    Path(args.out).write_text(json.dumps(report, indent=2, default=_json_default), encoding="utf-8")
+    print(json.dumps(report, default=_json_default))
     sys.exit(0 if report["passed"] else 2)
 
 
