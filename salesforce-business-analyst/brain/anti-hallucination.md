@@ -150,6 +150,10 @@ Before delivery, verify:
 
 - [Skill](../skill.md)
 - [Readme](README.md)
+- [Tier-0 Grounding Policy](../../framework-core/grounding/grounding-policy.md)
+- [Tier-0 Evidence Schema](../../framework-core/grounding/evidence-schema.md)
+
+**Module note:** BA anti-hallucination specializes Tier-0 grounding. For material claims, apply [claim-validation.md](../../framework-core/grounding/claim-validation.md) (evidence_confidence vs model_confidence; fail closed if `verified` lacks eligible evidence); **MUST NOT** promote examples/templates to project facts.
 
 ## Traceability
 

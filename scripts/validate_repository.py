@@ -1,4 +1,4 @@
-"""Sprint 8 — full repository validation (structure + metadata)."""
+"""Sprint 8 — full repository validation (structure + metadata + Core contracts)."""
 from __future__ import annotations
 
 import subprocess
@@ -55,6 +55,25 @@ def run_metadata_validation() -> tuple[int, str]:
     return result.returncode, output
 
 
+def run_pytest_contracts() -> tuple[int, str]:
+    """Run Framework Core contract tests and BA retriever tests."""
+    tests = [
+        REPO / "scripts" / "test_framework_core_contracts.py",
+        REPO / "scripts" / "test_retrieve_context.py",
+    ]
+    existing = [str(t) for t in tests if t.is_file()]
+    if not existing:
+        return 1, "No contract/retriever tests found"
+    result = subprocess.run(
+        [sys.executable, "-m", "pytest", *existing, "-q"],
+        capture_output=True,
+        text=True,
+        cwd=str(REPO),
+    )
+    output = (result.stdout or "") + (result.stderr or "")
+    return result.returncode, output
+
+
 def main() -> int:
     print("Sprint 8 Enterprise Repository Validation")
     print("=" * 40)
@@ -74,8 +93,18 @@ def main() -> int:
     meta_ok = meta_code == 0
 
     print()
+    print("Running Framework Core contract + retriever tests...")
+    pytest_code, pytest_out = run_pytest_contracts()
+    print(pytest_out.rstrip())
+    pytest_ok = pytest_code == 0
+    if pytest_ok:
+        print("CONTRACTS: PASS")
+    else:
+        print("CONTRACTS: FAIL")
+
+    print()
     print("=" * 40)
-    if struct_errors or not meta_ok:
+    if struct_errors or not meta_ok or not pytest_ok:
         print("OVERALL: FAIL — repository not enterprise-ready")
         return 1
     print("OVERALL: PASS — repository enterprise-ready")

@@ -22,6 +22,8 @@ tags: [prompts, SEACF]
 
 Copy-paste prompts that only make sense **after you clone this repository**. Each prompt tells the AI to load SEACF skills, templates, playbooks, and validation gates—not invent a generic consulting answer.
 
+**Prompt contract:** New and revised prompts SHOULD follow [`framework-core/governance/prompt-contract.md`](../framework-core/governance/prompt-contract.md) (ROLE → … → HUMAN REVIEW), including grounding, assumption, validation, and tool/approval sections. Existing short-form prompts remain valid; upgrade gradually.
+
 ## How to use
 
 1. Open this repo as your Cursor workspace root (see [GETTING_STARTED.md](../GETTING_STARTED.md)).
@@ -29,6 +31,7 @@ Copy-paste prompts that only make sense **after you clone this repository**. Eac
 3. Replace bracketed placeholders (`[industry]`, `[clouds]`, paste blocks).
 4. Run in **Agent** mode (or Claude with this repo in context).
 5. Expect outputs under `outputs/<project>/` when the prompt asks to save artifacts.
+6. Apply assumption policy and claim validation — do not invent SLAs, compliance, or coverage %.
 
 ## Catalogs
 

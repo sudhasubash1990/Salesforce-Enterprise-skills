@@ -22,7 +22,8 @@ version: 0.24.0
 |----------|------|
 | **Tier-0 Framework Core** | [`framework-core/`](../../../framework-core/README.md) |
 | Skill entry | [`skill.md`](../../../salesforce-quality-engineering/skill.md) (alias `SKILL.md` on case-insensitive FS) |
-| **Module skill registry** | [`skill-config.yaml`](../../../salesforce-quality-engineering/skill-config.yaml) |
+| Skill contract (thin) | [`skill-contract.yaml`](../../../salesforce-quality-engineering/skill-contract.yaml) |
+| **Module skill registry** | [`skill-config.yaml`](../../../salesforce-quality-engineering/skill-config.yaml)
 | **Enterprise Orchestrator** | [`enterprise-orchestrator/`](../../../salesforce-quality-engineering/enterprise-orchestrator/README.md) |
 | Brain | [`brain/`](../../../salesforce-quality-engineering/brain/README.md) |
 | Engines (1–4) | [`knowledge/`](../../../salesforce-quality-engineering/knowledge/README.md) |

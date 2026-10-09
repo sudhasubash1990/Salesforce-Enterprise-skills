@@ -46,6 +46,7 @@ Answer each item. **Fail any critical item → revise before delivery.**
 | 10 | Is the output complete per template/artifact type? | Yes |
 | 11 | Is the language suitable for the intended audience? | Yes |
 | 12 | Are unsupported claims avoided? (see [anti-hallucination.md](anti-hallucination.md)) | Yes |
+| 12a | Are material claims classified and claim-validated per [claim-validation.md](../../framework-core/grounding/claim-validation.md) / [grounding-policy.md](../../framework-core/grounding/grounding-policy.md) / [evidence-schema.md](../../framework-core/grounding/evidence-schema.md)? Checklist: claim identified; classification assigned; eligible source linked; source supports claim; conflicts checked; assumption/recommendation labelled; human review flagged when required. **Fail** if `verified` without eligible evidence. | Yes |
 | 13 | Has the response been checked for internal consistency? | Yes |
 
 ## Artifact-Specific Gates

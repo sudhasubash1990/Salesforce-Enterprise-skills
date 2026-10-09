@@ -1,0 +1,224 @@
+# Machine-testable registry for SEACF Framework Core P0+P1 contracts.
+# Each entry: path relative to repo root, min_must_count, required_substrings and/or required_patterns.
+
+version: "0.3.0"
+
+contracts:
+  - path: framework-core/governance/instruction-precedence.md
+    min_must_count: 2
+    required_substrings:
+      - "Priority 1"
+      - "Priority 2"
+      - "Priority 3"
+      - "Priority 4"
+      - "Priority 5"
+      - "Priority 6"
+      - "Priority 7"
+      - "MUST NOT"
+    required_patterns:
+      - "(?i)retrieved.*MUST NOT|MUST NOT.*redefine priorit"
+
+  - path: framework-core/grounding/grounding-policy.md
+    min_must_count: 4
+    required_substrings:
+      - "MUST"
+      - "MUST NOT"
+      - "assumption"
+      - "source class"
+    required_patterns:
+      - "(?i)MUST NOT.*(template|example|model knowledge|historical)"
+
+  - path: framework-core/grounding/source-authority.md
+    min_must_count: 1
+    required_substrings:
+      - "project-approved"
+      - "official-product"
+      - "seacf-approved"
+      - "historical-example"
+      - "model-knowledge"
+
+  - path: framework-core/grounding/evidence-schema.md
+    min_must_count: 0
+    required_substrings:
+      - "claim_id"
+      - "classification"
+      - "source_class"
+      - "conflict_status"
+      - "verified"
+      - "assumption"
+      - "recommendation"
+      - "evidence_confidence"
+      - "model_confidence"
+      - "claim_family"
+
+  - path: framework-core/grounding/claim-validation.md
+    min_must_count: 3
+    required_substrings:
+      - "MUST"
+      - "evidence_confidence"
+      - "model_confidence"
+      - "verified"
+      - "Important claim identified"
+    required_patterns:
+      - "(?i)MUST fail|fail validation"
+
+  - path: framework-core/orchestration/context-policy.md
+    min_must_count: 3
+    required_substrings:
+      - "MUST NOT"
+      - "assumption"
+      - "Tier-0"
+      - "Untrusted"
+      - "persist"
+    required_patterns:
+      - "(?i)Class \\*\\*A\\*\\*|\\*\\*A\\*\\*.*Tier-0|\\| \\*\\*A\\*\\*"
+
+  - path: framework-core/orchestration/execution-state-model.md
+    min_must_count: 3
+    required_substrings:
+      - "INTAKE"
+      - "EXECUTING_ACTION"
+      - "COMPLETED"
+      - "FAILED_SAFELY"
+      - "VALIDATING"
+      - "MUST NOT"
+
+  - path: framework-core/observability/trace-contract.md
+    min_must_count: 2
+    required_substrings:
+      - "trace_id"
+      - "selected_skills"
+      - "evidence_ids"
+      - "MUST NOT"
+      - "chain-of-thought"
+      - "redact"
+
+  - path: framework-core/evaluation/red-team-suite.md
+    min_must_count: 0
+    required_substrings:
+      - "Grounding"
+      - "Injection"
+      - "Context"
+      - "Tool safety"
+      - "Hallucination"
+      - "Conflict"
+      - "Privacy"
+      - "Routing"
+      - "Regression"
+
+  - path: framework-core/governance/skill-contract.md
+    min_must_count: 2
+    required_substrings:
+      - "triggers"
+      - "non_triggers"
+      - "max_action_risk"
+      - "grounding_policy"
+      - "MUST NOT"
+
+  - path: framework-core/governance/prompt-contract.md
+    min_must_count: 2
+    required_substrings:
+      - "ROLE"
+      - "OBJECTIVE"
+      - "AUTHORITATIVE SOURCES"
+      - "ASSUMPTION POLICY"
+      - "VALIDATION"
+      - "HUMAN REVIEW"
+
+  - path: framework-core/governance/hardening-program.md
+    min_must_count: 0
+    required_substrings:
+      - "Definition of Done"
+      - "Cursor implementation checklist"
+      - "Repository change plan"
+      - "Suggested final report format"
+
+  - path: framework-core/grounding/conflict-resolution.md
+    min_must_count: 2
+    required_substrings:
+      - "MUST"
+      - "escalat"
+      - "conflict"
+
+  - path: framework-core/security/prompt-injection-defence.md
+    min_must_count: 3
+    required_substrings:
+      - "MUST NOT"
+      - "untrusted"
+      - "ADV-"
+
+  - path: framework-core/security/untrusted-content-policy.md
+    min_must_count: 2
+    required_substrings:
+      - "MUST"
+      - "untrusted"
+      - "DATA"
+
+  - path: framework-core/security/secrets-and-data-handling.md
+    min_must_count: 2
+    required_substrings:
+      - "MUST NOT"
+      - "credential"
+      - "secret"
+
+  - path: framework-core/tools/tool-governance.md
+    min_must_count: 2
+    required_substrings:
+      - "MUST"
+      - "risk"
+      - "approval"
+
+  - path: framework-core/tools/action-risk-model.md
+    min_must_count: 1
+    required_substrings:
+      - "T0"
+      - "T1"
+      - "T2"
+      - "T3"
+      - "T4"
+
+  - path: framework-core/tools/failure-and-retry-policy.md
+    min_must_count: 1
+    required_substrings:
+      - "idempotency"
+      - "retry"
+      - "timeout"
+
+  - path: framework-core/responsible-ai/principles.md
+    min_must_count: 2
+    required_substrings:
+      - "MUST"
+      - "human"
+      - "transparency"
+
+  - path: framework-core/responsible-ai/prohibited-use-cases.md
+    min_must_count: 2
+    required_substrings:
+      - "MUST NOT"
+      - "prohibited"
+
+  - path: framework-core/responsible-ai/privacy-and-data-handling.md
+    min_must_count: 2
+    required_substrings:
+      - "MUST"
+      - "minimization"
+      - "purpose"
+
+  - path: framework-core/responsible-ai/human-oversight.md
+    min_must_count: 1
+    required_substrings:
+      - "MUST"
+      - "approval"
+      - "recommendation"
+
+adversarial_scenarios_path: framework-core/security/adversarial-scenarios.yaml
+tool_manifest_schema_path: framework-core/tools/tool-manifest-schema.yaml
+tier0_manifest_path: framework-core/tier-0-manifest.yaml
+execution_states_path: framework-core/orchestration/execution-states.yaml
+trace_schema_path: framework-core/observability/trace-schema.yaml
+ai_reliability_scenarios_path: framework-core/evaluation/ai-reliability-scenarios.yaml
+claim_negative_fixture_path: framework-core/grounding/examples/verified-sla-no-source.yaml
+skill_contract_schema_path: framework-core/governance/skill-contract-schema.yaml
+module_skill_contracts:
+  - salesforce-business-analyst/skill-contract.yaml
+  - salesforce-quality-engineering/skill-contract.yaml

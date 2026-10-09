@@ -1,9 +1,9 @@
 ---
 title: Request Router
-version: 0.1.0
+version: 0.3.0
 tags: [framework-core]
 status: draft
-last_updated: 2026-07-18
+last_updated: 2026-10-09
 ---
 
 # Request Router
@@ -24,10 +24,13 @@ SEACF modules must share one orchestration, governance, and evaluation language 
 
 ## Evaluation Method
 
-1. Detect **discipline** (BA / QE / SA / DEV / DO / PS).  
-2. Detect **capability** within module (e.g. BRD vs user story; requirement analysis vs advisory).  
-3. Emit Route line: `Module · Primary capability · Support · Advisory/Validation`.  
-4. Hand off to module skill Pre-Execution Gate.
+1. Apply [../governance/instruction-precedence.md](../governance/instruction-precedence.md) and Priority 1 security/RAI before routing.  
+2. Begin execution at `INTAKE` per [execution-state-model.md](execution-state-model.md); assemble context per [context-policy.md](context-policy.md) (classes A–H) before the module gate — do not dump the repository.  
+3. Detect **discipline** (BA / QE / SA / DEV / DO / PS).  
+4. Detect **capability** within module (e.g. BRD vs user story; requirement analysis vs advisory).  
+5. Emit Route line: `Module · Primary capability · Support · Advisory/Validation`.  
+6. Hand off to module skill Pre-Execution Gate.  
+7. ADO/MCP writes and other mutations are **T3+** under [../tools/tool-governance.md](../tools/tool-governance.md) unless the user goal and tool policy authorize them; **MUST NOT** enter `EXECUTING_ACTION` without risk tier and approval gates.
 
 ## Decision Framework
 
@@ -70,6 +73,8 @@ If discipline unclear → ask **one** clarifying question. Prefer BA for require
 ## Related Documents
 
 - [context-manager.md](context-manager.md)
+- [context-policy.md](context-policy.md)
+- [execution-state-model.md](execution-state-model.md)
 - [workflow-engine.md](workflow-engine.md)
 - [../README.md](../README.md)
 

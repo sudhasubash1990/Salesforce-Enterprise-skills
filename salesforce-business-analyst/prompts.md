@@ -25,6 +25,8 @@ tags: [prompts]
 
 Reusable prompts for human practitioners and AI agents.
 
+**Contract:** Prefer the Standard Prompt Contract in [`framework-core/governance/prompt-contract.md`](../framework-core/governance/prompt-contract.md) (ROLE, OBJECTIVE, BUSINESS CONTEXT, INPUTS, AUTHORITATIVE SOURCES, TASK, CONSTRAINTS, TOOLS / ACTIONS, OUTPUT FORMAT, ASSUMPTION POLICY, VALIDATION, HUMAN REVIEW). Short-form prompts below remain usable; new prompts SHOULD include grounding, assumption, and validation rules.
+
 ## Discovery
 
 ```

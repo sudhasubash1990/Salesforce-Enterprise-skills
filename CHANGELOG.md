@@ -31,6 +31,27 @@ Module-specific history also lives in `salesforce-business-analyst/CHANGELOG.md`
 
 ## [Unreleased]
 
+### Added
+
+- Standard **skill contract** + **prompt contract** + hardening program (change plan, DoD, Cursor checklist, report format): [`framework-core/governance/skill-contract.md`](framework-core/governance/skill-contract.md), [`prompt-contract.md`](framework-core/governance/prompt-contract.md), [`hardening-program.md`](framework-core/governance/hardening-program.md)
+- Thin BA/QE [`skill-contract.yaml`](salesforce-business-analyst/skill-contract.yaml) alignment (discovery stubs unchanged)
+- Consolidated report: [`docs/implementation-reports/seacf-ai-hardening-implementation-report.md`](docs/implementation-reports/seacf-ai-hardening-implementation-report.md)
+- SEACF Framework Core **v0.3.0 P1 hardening**: context policy (classes A–H), claim validation, execution state model, observability traces, AI reliability/red-team suite under [`framework-core/`](framework-core/README.md)
+- [`scripts/validate_claim_records.py`](scripts/validate_claim_records.py) deterministic claim checker
+- Implementation report: [`docs/implementation-reports/seacf-p1-hardening-report.md`](docs/implementation-reports/seacf-p1-hardening-report.md)
+- SEACF Framework Core **v0.2.0 P0 hardening**: grounding, instruction precedence, security (prompt-injection / untrusted content), tool governance, Responsible AI packs under [`framework-core/`](framework-core/README.md)
+- [`framework-core/tier-0-manifest.yaml`](framework-core/tier-0-manifest.yaml) as single source of truth for Tier-0 `always_load`
+- Contract registry + tests: [`scripts/framework_core_contract_registry.yaml`](scripts/framework_core_contract_registry.yaml), [`scripts/test_framework_core_contracts.py`](scripts/test_framework_core_contracts.py)
+- Adversarial fixtures under [`framework-core/security/fixtures/`](framework-core/security/fixtures/)
+- Implementation report: [`docs/implementation-reports/seacf-p0-hardening-report.md`](docs/implementation-reports/seacf-p0-hardening-report.md)
+
+### Changed
+
+- Root [`README.md`](README.md) **v1.11.0** — public What's New and agent getting-started for Framework Core v0.3.0 AI hardening; QE skill version corrected to 0.25.0
+- [`scripts/retrieve_context.py`](scripts/retrieve_context.py) loads Tier-0 from manifest (fallback to classic four-file list)
+- [`scripts/validate_repository.py`](scripts/validate_repository.py) runs Core contract + retriever pytest
+- BA/QE Pre-Execution Gates and `.cursor/rules` cite Tier-0 manifest, instruction precedence, context-policy, and execution-state-model
+
 ## [1.9.0] - 2026-07-28
 
 ### Added

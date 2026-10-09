@@ -34,6 +34,8 @@ Skill entry for SEACF Module 2. **Cross-module contracts** live in [`framework-c
 
 **Registry:** [`skill-config.yaml`](skill-config.yaml)
 
+**Standard Skill Contract:** Thin machine summary in [`skill-contract.yaml`](skill-contract.yaml) (schema: [`framework-core/governance/skill-contract.md`](../framework-core/governance/skill-contract.md)). Does not replace this `skill.md`, Enterprise Orchestrator, or Cursor discovery.
+
 **Note (Windows):** On case-insensitive filesystems, `SKILL.md` and `skill.md` are the same file — this document is the canonical module entry.
 
 ---
@@ -166,7 +168,7 @@ User Request → Enterprise Orchestrator
 
 **HARD RULE:** Do not jump to detailed deliverables without the right upstream work:
 
-0. **Tier-0 Framework Core** loaded (minimum): [`framework-core/README.md`](../framework-core/README.md), [`orchestration/request-router.md`](../framework-core/orchestration/request-router.md), [`orchestration/context-manager.md`](../framework-core/orchestration/context-manager.md), [`governance/quality-standards.md`](../framework-core/governance/quality-standards.md). Confirm request is QE (not BA story authorship). Core is the cross-module contract; **QE Enterprise Orchestrator** remains the Module 2 router.
+0. **Tier-0 Framework Core** loaded from [`framework-core/tier-0-manifest.yaml`](../framework-core/tier-0-manifest.yaml) `always_load` (includes classic four plus [context-policy.md](../framework-core/orchestration/context-policy.md), [execution-state-model.md](../framework-core/orchestration/execution-state-model.md), [instruction-precedence.md](../framework-core/governance/instruction-precedence.md), grounding, security, tools, and Responsible AI spine). Apply context-policy; begin at `INTAKE`; material claims use [claim-validation.md](../framework-core/grounding/claim-validation.md). Confirm request is QE (not BA story authorship). Core is the cross-module contract; **QE Enterprise Orchestrator** remains the Module 2 router.
 1. Brain modules loaded for the task type
 2. **Enterprise Orchestrator** route plan selected ([enterprise-orchestrator.md](enterprise-orchestrator/enterprise-orchestrator.md)) — primary + supporting sprint capabilities; do not preload unrelated packs
 3. [brain/thinking-model.md](brain/thinking-model.md) stages considered

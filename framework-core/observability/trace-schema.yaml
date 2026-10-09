@@ -1,0 +1,61 @@
+# SEACF decision/audit trace schema (P1).
+# Runtime collectors optional; CI validates required keys exist in this schema doc.
+
+version: "0.3.0"
+last_updated: "2026-10-09"
+
+required_fields:
+  - trace_id
+  - request_class
+  - selected_skills
+  - evidence_ids
+  - assumptions
+  - policy_decisions
+  - tool_events
+  - approval_events
+  - validation_results
+  - output_artifacts
+  - status
+
+field_types:
+  trace_id: string
+  request_class: string
+  selected_skills: list
+  evidence_ids: list
+  assumptions: list
+  policy_decisions: list
+  tool_events: list
+  approval_events: list
+  validation_results: list
+  output_artifacts: list
+  status: string
+
+status_enum:
+  - COMPLETED
+  - FAILED_SAFELY
+  # Intermediate states MAY appear in live traces; terminal statuses preferred for closed runs.
+  - INTAKE
+  - CONTEXT_REQUIRED
+  - READY
+  - RETRIEVING
+  - ANALYZING
+  - CLARIFICATION_REQUIRED
+  - PLANNING
+  - GENERATING
+  - VALIDATING
+  - HUMAN_APPROVAL_REQUIRED
+  - EXECUTING_ACTION
+
+prohibited:
+  - hidden_chain_of_thought
+  - full_private_reasoning_trace
+  - unnecessary_sensitive_task_content
+
+redaction:
+  strategy: redact_or_omit
+  marker: redacted
+
+retention:
+  default: session_only
+  persist_audit_copy: requires_user_or_project_policy
+  audit_path_pattern: outputs/<project>/

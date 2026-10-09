@@ -1,0 +1,52 @@
+# SEACF Standard Skill Contract schema (machine-checkable field list).
+# New skills MUST include these keys under a top-level `skill:` mapping.
+
+version: "0.3.0"
+last_updated: "2026-10-09"
+
+required_fields:
+  - name
+  - version
+  - purpose
+  - triggers
+  - non_triggers
+  - required_inputs
+  - optional_inputs
+  - context_required
+  - authoritative_sources
+  - grounding_policy
+  - allowed_tools
+  - max_action_risk
+  - human_approval_conditions
+  - outputs
+  - assumptions_policy
+  - validation_checks
+  - failure_conditions
+  - related_skills
+
+field_types:
+  name: string
+  version: string
+  purpose: string
+  triggers: list
+  non_triggers: list
+  required_inputs: list
+  optional_inputs: list
+  context_required: list
+  authoritative_sources: list
+  grounding_policy: string
+  allowed_tools: list
+  max_action_risk: string  # T0 | T1 | T2 | T3 | T4
+  human_approval_conditions: list
+  outputs: list
+  assumptions_policy: string
+  validation_checks: list
+  failure_conditions: list
+  related_skills: list
+
+max_action_risk_enum:
+  - T0
+  - T1
+  - T2
+  - T3
+  - T4

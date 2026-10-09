@@ -39,7 +39,8 @@ Reuse Sprints 1–9 engines—do not duplicate Requirement Analysis, Defect Inte
 
 | Document | Focus |
 |----------|-------|
-| [Responsible Ai](responsible-ai.md) | Responsible AI |
+| [Tier-0 Responsible AI](../../../framework-core/responsible-ai/README.md) | Cross-module RAI contracts (load first) |
+| [Responsible Ai](responsible-ai.md) | QE executive advisory specialization |
 | [Ai Assisted Testing](ai-assisted-testing.md) | AI-assisted testing |
 | [Ai Risk Assessment](ai-risk-assessment.md) | AI risk assessment |
 | [Prompt Governance](prompt-governance.md) | Prompt governance |

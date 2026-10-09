@@ -29,6 +29,8 @@ tags: [prompts, sprint-10]
 
 **Purpose:** Prompting standards through Sprint 11 Validation, Certification & Continuous Improvement.
 
+**Contract:** Prefer [`framework-core/governance/prompt-contract.md`](../framework-core/governance/prompt-contract.md) (ROLE → HUMAN REVIEW). Include AUTHORITATIVE SOURCES, ASSUMPTION POLICY, VALIDATION, and TOOLS / ACTIONS with risk/approval when side effects are implied.
+
 **Scope:** Behaviour + Sprint 2–11 prompts. Never invent metrics, maturity scores, SLA/MTTR, ROI, flake %, coverage %, compliance certifications, or certification levels without evidence.
 
 **Owner:** QE Practice Lead

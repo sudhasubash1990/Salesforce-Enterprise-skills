@@ -1,0 +1,15 @@
+# Negative fixture — MUST fail claim validation (verified without eligible evidence).
+# Fictional project; not authoritative.
+
+claims:
+  - claim_id: CLM-NEG-001
+    claim: "The solution guarantees 99.9% uptime SLA."
+    classification: verified
+    claim_family: quantitative
+    source_id: null
+    source_class: model-knowledge
+    evidence_excerpt_or_locator: null
+    evidence_confidence: high
+    model_confidence: high
+    conflict_status: none
+    review_required: false

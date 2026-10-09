@@ -19,6 +19,7 @@ version: 1.7.1
 |----------|------|
 | **Tier-0 Framework Core** | [`framework-core/`](../../../framework-core/README.md) |
 | Skill entry | [`skill.md`](../../../salesforce-business-analyst/skill.md) |
+| Skill contract (thin) | [`skill-contract.yaml`](../../../salesforce-business-analyst/skill-contract.yaml) |
 | Brain | [`brain/`](../../../salesforce-business-analyst/brain/README.md) |
 | Knowledge | [`knowledge/`](../../../salesforce-business-analyst/knowledge/README.md) |
 | Templates | [`templates/`](../../../salesforce-business-analyst/templates/README.md) |

@@ -1,0 +1,71 @@
+# SEACF tool manifest schema — minimum fields for governed tools.
+# Implementations MAY add fields; they MUST include these required_fields.
+
+version: "0.2.0"
+schema_id: seacf-tool-manifest
+last_updated: "2026-10-09"
+
+required_fields:
+  name:
+    type: string
+    description: Unique tool identifier
+  description:
+    type: string
+    description: Human-readable purpose
+  risk_tier:
+    type: string
+    enum: [T0, T1, T2, T3, T4]
+  allowed_skills:
+    type: array
+    items: string
+    description: Skill packs permitted to invoke (empty = none)
+  required_inputs:
+    type: array
+    items: string
+  data_classes_allowed:
+    type: array
+    items: string
+    description: e.g. public, internal, project-approved, no-secrets
+  approval_required:
+    type: boolean
+  side_effects:
+    type: string
+    description: none | read | write-local | write-external | high-impact
+  idempotency:
+    type: string
+    description: idempotent | conditional | non-idempotent | unknown
+  retry_policy:
+    type: string
+    description: Reference or inline retry rule
+  timeout_or_failure_behavior:
+    type: string
+  audit_fields:
+    type: array
+    items: string
+
+example:
+  name: ado.create_work_item
+  description: Create an Azure DevOps work item
+  risk_tier: T3
+  allowed_skills:
+    - salesforce-business-analyst
+    - salesforce-quality-engineering
+  required_inputs:
+    - title
+    - work_item_type
+    - project
+  data_classes_allowed:
+    - project-approved
+    - no-secrets
+  approval_required: true
+  side_effects: write-external
+  idempotency: conditional
+  retry_policy: no-auto-retry-on-unknown-success
+  timeout_or_failure_behavior: surface API error; do not invent work item IDs
+  audit_fields:
+    - tool_name
+    - risk_tier
+    - actor
+    - timestamp
+    - input_summary
+    - result_id_or_error

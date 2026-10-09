@@ -29,13 +29,34 @@ REPO = Path(__file__).resolve().parent.parent
 SKILL = "salesforce-business-analyst"
 QE_SKILL = "salesforce-quality-engineering"
 
-# SEACF Tier-0 — loaded for every BA task (and echoed on QE redirect).
-TIER0_CORE = [
+# Fallback when framework-core/tier-0-manifest.yaml is absent (pre-P0 compatibility).
+_TIER0_FALLBACK = [
     "framework-core/README.md",
     "framework-core/orchestration/request-router.md",
     "framework-core/orchestration/context-manager.md",
     "framework-core/governance/quality-standards.md",
 ]
+
+
+def _load_tier0_always_load() -> list[str]:
+    """Load always_load from Tier-0 manifest; fall back to baseline four-file list."""
+    manifest_path = REPO / "framework-core" / "tier-0-manifest.yaml"
+    if not manifest_path.is_file():
+        return list(_TIER0_FALLBACK)
+    try:
+        import yaml  # deferred: keep retriever usable without PyYAML in emergency
+
+        data = yaml.safe_load(manifest_path.read_text(encoding="utf-8")) or {}
+        always = data.get("always_load")
+        if isinstance(always, list) and always:
+            return [str(p) for p in always]
+    except Exception:
+        pass
+    return list(_TIER0_FALLBACK)
+
+
+# SEACF Tier-0 — loaded for every BA task (and echoed on QE redirect).
+TIER0_CORE = _load_tier0_always_load()
 
 # Files loaded for EVERY BA task (skill entry + identity + validation core).
 ALWAYS_LOAD = [

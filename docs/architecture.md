@@ -7,7 +7,7 @@ version: 1.1.0
 review_status: Approved
 owner: BA Practice Lead
 created_date: 2026-07-02
-last_updated: 2026-07-02
+last_updated: 2026-10-09
 review_cycle: quarterly
 related_knowledge: [salesforce-business-analyst/knowledge/README.md]
 related_templates: [salesforce-business-analyst/templates/README.md]
@@ -25,6 +25,8 @@ tags: [architecture]
 Repository architecture for Salesforce Enterprise Skills.
 
 ## Conceptual Layers
+
+SEACF **Tier-0** contracts live in [`framework-core/`](../framework-core/README.md) (see [`tier-0-manifest.yaml`](../framework-core/tier-0-manifest.yaml)): security, Responsible AI, instruction precedence, grounding/claim validation, tool governance, context lifecycle (classes A–H), execution state, and observability traces apply before BA/QE skill depth. Module engines own domain depth; Core owns cross-module contracts.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐

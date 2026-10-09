@@ -1,6 +1,6 @@
 ---
 title: Orchestration
-version: 0.1.0
+version: 0.3.0
 tags: [framework-core, orchestration]
 ---
 
@@ -16,12 +16,15 @@ Contracts only. Module routers (e.g. QE `enterprise-orchestrator/`, BA `.cursor/
 
 ## Documents
 
-| Document | Focus |
-|----------|-------|
-| [request-router.md](request-router.md) | Intent → module → capability |
-| [context-manager.md](context-manager.md) | What to load; progressive disclosure |
-| [workflow-engine.md](workflow-engine.md) | Multi-step composition patterns |
-| [reasoning-pipeline.md](reasoning-pipeline.md) | Shared think → decide → deliver flow |
+| Document | Focus | Load |
+|----------|-------|------|
+| [request-router.md](request-router.md) | Intent → module → capability | Tier-0 always |
+| [context-manager.md](context-manager.md) | What to load; progressive disclosure | Tier-0 always |
+| [context-policy.md](context-policy.md) | Context classes A–H; lifecycle MUST/MUST NOT | Tier-0 always |
+| [execution-state-model.md](execution-state-model.md) | Agent states, gates, safe failure | Tier-0 always |
+| [execution-states.yaml](execution-states.yaml) | Machine-readable state graph | On demand |
+| [workflow-engine.md](workflow-engine.md) | Multi-step composition patterns | On demand |
+| [reasoning-pipeline.md](reasoning-pipeline.md) | Shared think → decide → deliver flow | On demand |
 
 ## Navigation
 

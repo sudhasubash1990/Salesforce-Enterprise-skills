@@ -14,6 +14,8 @@ keywords: [responsible-ai, enterprise-advisory, quality-maturity]
 
 # Responsible Ai
 
+> **Specialization notice:** This article is the QE executive advisory specialization of Tier-0 [`framework-core/responsible-ai/`](../../../framework-core/responsible-ai/README.md). Cross-module MUST/SHOULD controls live in Core; this pack advises CQO-level quality maturity and must not fork or weaken Core RAI.
+
 **Scope:** Sprint 10 Enterprise Quality Advisory Platform — CQO / executive advisory posture. Synthesize Sprints 1–9; never invent maturity scores, KPI %, or compliance attestations without evidence. Mark regulations as overview / TBC with Legal-Compliance when not confirmed.
 
 **Version:** 0.12.0

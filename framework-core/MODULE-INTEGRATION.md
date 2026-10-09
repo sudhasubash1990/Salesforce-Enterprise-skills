@@ -1,14 +1,14 @@
 ---
 title: Module Integration Map
-version: 0.1.0
+version: 0.3.0
 ---
 
 # Module Integration Map
 
 | Folder | Discipline | Status | Core load order |
 |--------|------------|--------|-----------------|
-| salesforce-business-analyst | BA | Active | framework-core → skill.md → brain → knowledge/templates |
-| salesforce-quality-engineering | QE | Active | framework-core → skill.md → enterprise-orchestrator → engines |
+| salesforce-business-analyst | BA | Active | Tier-0 manifest → context-policy → skill.md → brain → knowledge/templates (execution-state-model gates delivery) |
+| salesforce-quality-engineering | QE | Active | Tier-0 manifest → context-policy → skill.md → enterprise-orchestrator → engines |
 | salesforce-solution-architect | SA | Planned (folder not created) | framework-core → skill.md → architecture brain |
 | salesforce-developer | DEV | Planned (folder not created) | framework-core → skill.md → build standards |
 | salesforce-devops | DO | Planned (folder not created) | framework-core → skill.md → pipeline intelligence |
@@ -25,6 +25,10 @@ Until the standalone PS module exists, production-support requests route through
 
 ## Framework Core maturity
 
-Core v0.1.0 is a **contract scaffold**: loading tiers, router contracts, and pointers are enforced; deep engines remain in Active modules (`shared/`, BA, QE). Deepen Core documents as SA/DEV/DO/PS adopt them — do not treat thin Core files as full replacements for module engines.
+Core **v0.3.0** adds P1 contracts (context lifecycle classes A–H, claim validation, execution state model, observability traces, AI reliability/red-team suite) on top of P0 (grounding, instruction precedence, security, tools, Responsible AI). Loading tiers, router contracts, and pointers are enforced; deep engines remain in Active modules (`shared/`, BA, QE). Deepen Core documents as SA/DEV/DO/PS adopt them — do not treat thin Core files as full replacements for module engines.
+
+New modules **MUST** publish a [governance/skill-contract.md](governance/skill-contract.md)-conformant `skill-contract.yaml`. Active BA/QE thin contracts: [`../salesforce-business-analyst/skill-contract.yaml`](../salesforce-business-analyst/skill-contract.yaml), [`../salesforce-quality-engineering/skill-contract.yaml`](../salesforce-quality-engineering/skill-contract.yaml).
+
+Program controls (change plan, DoD, checklist): [governance/hardening-program.md](governance/hardening-program.md).
 
 See [governance/contribution-guide.md](governance/contribution-guide.md) to register a new module.

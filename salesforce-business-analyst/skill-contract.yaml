@@ -1,0 +1,64 @@
+# Thin Standard Skill Contract for BA Module 1.
+# Does NOT replace skill.md or Cursor discovery stub — aligns to framework-core/governance/skill-contract.md.
+
+skill:
+  name: salesforce-business-analyst
+  version: "1.7.1"
+  purpose: >-
+    Discover, analyse, and document Salesforce business requirements (BRD/FRD,
+    user stories, fit-gap, workshops, RTM, RAID) with platform-native preference.
+  triggers:
+    - BRD / FRD / business requirements
+    - user story / backlog / acceptance criteria
+    - fit-gap / workshop / discovery
+    - RTM / RAID / KPI / OCM
+  non_triggers:
+    - QE test strategy / defect intelligence / automation ROI
+    - Sev1 hypercare / production incident QE lens
+    - Apex/LWC implementation design (unless explicitly asked)
+  required_inputs:
+    - user_request_or_task
+  optional_inputs:
+    - industry_context
+    - salesforce_clouds
+    - approved_project_artifacts
+    - stakeholder_list
+  context_required:
+    - "A: Tier-0 framework-core/tier-0-manifest.yaml always_load"
+    - "B: skill.md + brain (identity, reasoning, validation, anti-hallucination)"
+    - "C: PROJECT_CONTEXT.md / outputs/<project>/ when project-scoped"
+    - "D: current user task"
+  authoritative_sources:
+    - framework-core/grounding/source-authority.md
+    - approved project BRD/FRD/stories
+    - official Salesforce product documentation
+  grounding_policy: framework-core/grounding/grounding-policy.md + claim-validation.md; specialize via brain/anti-hallucination.md
+  allowed_tools:
+    - retrieve_context.py
+    - local file write under outputs/
+    - output-engine/convert.py
+    - Azure DevOps MCP (when user authorizes publish)
+  max_action_risk: T3
+  human_approval_conditions:
+    - ADO create/update work items (T3)
+    - compliance or unresolved conflict claims
+    - material scope / regulatory ambiguity
+  outputs:
+    - markdown artifacts under outputs/<project>/
+    - office conversions per output-engine
+    - optional ADO work items when authorized
+  assumptions_policy: Label unknowns as assumption/open-question; MUST NOT invent regulatory, SLA, or product facts
+  validation_checks:
+    - skill.md Pre-Execution Gate
+    - brain/validation-framework.md
+    - brain/anti-hallucination.md
+    - framework-core/grounding/claim-validation.md
+    - checklists.md artifact gates
+  failure_conditions:
+    - missing persona/objective for user stories
+    - verified claim without eligible evidence
+    - QE-dominated request not redirected
+    - mandatory validator failed (FAILED_SAFELY)
+  related_skills:
+    - salesforce-quality-engineering
+    - framework-core

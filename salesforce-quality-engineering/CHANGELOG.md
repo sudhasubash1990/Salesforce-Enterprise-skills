@@ -1,3 +1,11 @@
+## [Unreleased]
+
+### Changed
+
+- Added thin [`skill-contract.yaml`](skill-contract.yaml); prompts.md points at Standard Prompt Contract.
+- Cross-link Tier-0 Framework Core v0.3.0 (context-policy, execution-state-model, claim-validation) from skill Pre-Execution Gate and enterprise-orchestrator.
+- Cross-link Tier-0 Framework Core v0.2.0 (RAI / tool governance) from skill Pre-Execution Gate and AI governance specialization banner.
+
 ---
 title: Changelog
 module: Salesforce Quality Engineering

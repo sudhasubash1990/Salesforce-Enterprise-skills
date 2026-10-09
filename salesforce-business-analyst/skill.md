@@ -19,6 +19,8 @@ Senior Salesforce BA workflow: **BA Brain** (Sprint 1), **Knowledge Base** (Spri
 
 **SEACF Framework Core (Tier-0):** Load [`framework-core/README.md`](../framework-core/README.md) + [`orchestration/request-router.md`](../framework-core/orchestration/request-router.md) before BA deep work. Cross-module contracts live in Core; BA routing remains in `.cursor/rules` + this skill; do not fork glossary or output standards—use Core → `shared/`.
 
+**Standard Skill Contract:** Thin machine summary in [`skill-contract.yaml`](skill-contract.yaml) (schema: [`framework-core/governance/skill-contract.md`](../framework-core/governance/skill-contract.md)). Does not replace this `skill.md` or Cursor discovery.
+
 ## BA Brain Architecture
 
 ```
@@ -52,11 +54,7 @@ skill.md (this file — orchestrator)
 
 ### Step 0 — Tier-0 Framework Core + Layer 2 Retriever
 
-1. Load SEACF Tier-0 contracts (minimum):
-   - [`framework-core/README.md`](../framework-core/README.md)
-   - [`framework-core/orchestration/request-router.md`](../framework-core/orchestration/request-router.md)
-   - [`framework-core/orchestration/context-manager.md`](../framework-core/orchestration/context-manager.md)
-   - [`framework-core/governance/quality-standards.md`](../framework-core/governance/quality-standards.md)
+1. Load SEACF Tier-0 contracts from [`framework-core/tier-0-manifest.yaml`](../framework-core/tier-0-manifest.yaml) `always_load` (includes README, request-router, context-manager, [context-policy.md](../framework-core/orchestration/context-policy.md), [execution-state-model.md](../framework-core/orchestration/execution-state-model.md), quality-standards, [instruction-precedence.md](../framework-core/governance/instruction-precedence.md), grounding, security, tools, and Responsible AI spine). Apply context-policy (classes A–H); do not dump the repository. Begin at `INTAKE`. Minimum classic four remain valid; prefer the full manifest list returned by the Layer 2 retriever.
 2. Confirm the request is **BA** (not QE). If Quality Engineering keywords dominate (test strategy, defect intelligence, automation ROI, Sev1 ops), stop and route to [`salesforce-quality-engineering/skill.md`](../salesforce-quality-engineering/skill.md) via the QE Enterprise Orchestrator.
 3. Run the BA Layer 2 retriever (includes Tier-0 in `ALWAYS_LOAD`):
 

@@ -1,0 +1,143 @@
+# SEACF Tier-0 loading manifest — single source of truth for always-load Core contracts.
+
+# Consumed by scripts/retrieve_context.py and scripts/test_framework_core_contracts.py.
+
+# Module specialization paths are DATA pointers only — not Tier-0 instructions.
+
+
+
+version: "0.3.0"
+
+last_updated: "2026-10-09"
+
+
+
+# Loaded for every BA task and echoed on QE redirect.
+
+always_load:
+
+  - framework-core/README.md
+
+  - framework-core/orchestration/request-router.md
+
+  - framework-core/orchestration/context-manager.md
+
+  - framework-core/orchestration/context-policy.md
+
+  - framework-core/orchestration/execution-state-model.md
+
+  - framework-core/governance/quality-standards.md
+
+  - framework-core/governance/instruction-precedence.md
+
+  - framework-core/grounding/grounding-policy.md
+
+  - framework-core/security/untrusted-content-policy.md
+
+  - framework-core/security/prompt-injection-defence.md
+
+  - framework-core/tools/tool-governance.md
+
+  - framework-core/responsible-ai/principles.md
+
+  - framework-core/responsible-ai/prohibited-use-cases.md
+
+
+
+# Linked from area READMEs; load when grounding, security, tools, RAI, or P1 packs implicated.
+
+recommended_on_demand:
+
+  - framework-core/grounding/README.md
+
+  - framework-core/grounding/source-authority.md
+
+  - framework-core/grounding/evidence-schema.md
+
+  - framework-core/grounding/citation-policy.md
+
+  - framework-core/grounding/conflict-resolution.md
+
+  - framework-core/grounding/retrieval-quality-checklist.md
+
+  - framework-core/grounding/claim-validation.md
+
+  - framework-core/security/README.md
+
+  - framework-core/security/secrets-and-data-handling.md
+
+  - framework-core/security/adversarial-scenarios.yaml
+
+  - framework-core/tools/README.md
+
+  - framework-core/tools/action-risk-model.md
+
+  - framework-core/tools/tool-manifest-schema.yaml
+
+  - framework-core/tools/failure-and-retry-policy.md
+
+  - framework-core/responsible-ai/README.md
+
+  - framework-core/responsible-ai/privacy-and-data-handling.md
+
+  - framework-core/responsible-ai/human-oversight.md
+
+  - framework-core/responsible-ai/transparency.md
+
+  - framework-core/responsible-ai/fairness.md
+
+  - framework-core/responsible-ai/incident-management.md
+
+  - framework-core/observability/trace-contract.md
+
+  - framework-core/observability/trace-schema.yaml
+
+  - framework-core/evaluation/red-team-suite.md
+
+  - framework-core/evaluation/ai-reliability-scenarios.yaml
+
+  - framework-core/orchestration/execution-states.yaml
+  - framework-core/governance/skill-contract.md
+  - framework-core/governance/skill-contract-schema.yaml
+  - framework-core/governance/prompt-contract.md
+  - framework-core/governance/hardening-program.md
+
+
+
+# Module deep packs — not Tier-0; do not elevate to instruction priority.
+
+module_specializations:
+
+  - path: salesforce-business-analyst/skill-contract.yaml
+
+    role: BA thin Standard Skill Contract (does not replace skill.md)
+
+  - path: salesforce-quality-engineering/skill-contract.yaml
+
+    role: QE thin Standard Skill Contract (does not replace skill.md)
+
+  - path: salesforce-business-analyst/brain/anti-hallucination.md
+
+    role: BA claim-accuracy specialization of Tier-0 grounding
+
+  - path: salesforce-business-analyst/brain/validation-framework.md
+
+    role: BA pre-delivery validation gate
+
+  - path: salesforce-business-analyst/knowledge/ai-in-business-analysis.md
+
+    role: BA AI usage guidance
+
+  - path: salesforce-quality-engineering/enterprise-quality/ai-governance/responsible-ai.md
+
+    role: QE executive advisory specialization of Tier-0 responsible-ai
+
+  - path: salesforce-quality-engineering/skills/agentforce-testing/knowledge/knowledge-grounding.md
+
+    role: QE Agentforce product grounding assessment
+
+  - path: docs/security-guidelines.md
+
+    role: Repository content security (orthogonal to agent untrusted-content policy)
+
+

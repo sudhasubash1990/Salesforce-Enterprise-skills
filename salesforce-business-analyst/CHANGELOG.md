@@ -27,6 +27,13 @@ Skill-specific version history.
 
 ## [Unreleased]
 
+### Changed
+
+- Added thin [`skill-contract.yaml`](skill-contract.yaml); prompts.md points at Standard Prompt Contract.
+- Cross-link Tier-0 Framework Core v0.3.0 (context-policy, claim-validation, execution-state-model) from skill Pre-Execution Gate, validation-framework, and anti-hallucination.
+- Cross-link Tier-0 Framework Core v0.2.0 (grounding / instruction precedence) from skill Pre-Execution Gate and anti-hallucination.
+
+
 ## [1.7.1] - 2026-07-18
 
 ### Changed

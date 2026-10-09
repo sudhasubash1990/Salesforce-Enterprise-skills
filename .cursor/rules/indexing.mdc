@@ -13,10 +13,26 @@ Files listed first should receive higher retrieval weight.
 
 ```
 framework-core/README.md
+framework-core/tier-0-manifest.yaml
 framework-core/orchestration/request-router.md
 framework-core/orchestration/context-manager.md
+framework-core/orchestration/context-policy.md
+framework-core/orchestration/execution-state-model.md
 framework-core/governance/quality-standards.md
+framework-core/governance/instruction-precedence.md
+framework-core/governance/skill-contract.md
+framework-core/governance/prompt-contract.md
+framework-core/governance/hardening-program.md
+framework-core/grounding/grounding-policy.md
+framework-core/grounding/claim-validation.md
+framework-core/security/untrusted-content-policy.md
+framework-core/security/prompt-injection-defence.md
+framework-core/tools/tool-governance.md
+framework-core/responsible-ai/principles.md
+framework-core/responsible-ai/prohibited-use-cases.md
+framework-core/observability/trace-contract.md
 framework-core/evaluation/certification-engine.md
+framework-core/evaluation/red-team-suite.md
 salesforce-business-analyst/skill.md
 salesforce-business-analyst/brain/README.md
 salesforce-business-analyst/brain/reasoning-framework.md

@@ -37,6 +37,8 @@ SEACF modules must share one orchestration, governance, and evaluation language 
 
 Every hop passes: IDs, assumptions, open questions, evidence refs, residual risk.
 
+Composition **MUST NOT** skip `VALIDATING` or required `HUMAN_APPROVAL_REQUIRED` / tool gates from [execution-state-model.md](execution-state-model.md).
+
 
 ## Inputs
 

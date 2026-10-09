@@ -1,6 +1,6 @@
 ---
 title: Evaluation
-version: 0.1.0
+version: 0.3.0
 tags: [framework-core, evaluation]
 ---
 
@@ -8,7 +8,7 @@ tags: [framework-core, evaluation]
 
 ## Purpose
 
-Cross-module benchmarking, scoring, certification, and release-readiness contracts.
+Cross-module benchmarking, scoring, certification, and release-readiness contracts — plus AI reliability / red-team suites.
 
 ## Documents
 
@@ -18,6 +18,15 @@ Cross-module benchmarking, scoring, certification, and release-readiness contrac
 | [scoring-model.md](scoring-model.md) | Weighted Pass/Partial/Fail |
 | [certification-engine.md](certification-engine.md) | Bronze→Enterprise Certified methodology |
 | [release-readiness.md](release-readiness.md) | Framework + Salesforce seasonal readiness |
+| [red-team-suite.md](red-team-suite.md) | AI reliability suites and pass criteria |
+| [ai-reliability-scenarios.yaml](ai-reliability-scenarios.yaml) | Scenario catalog (GRD/CTX/HALL/… + ADV reuse) |
+
+## AI safety / adversarial
+
+- Injection contract fixtures: [../security/adversarial-scenarios.yaml](../security/adversarial-scenarios.yaml)
+- P1 reliability suite: [red-team-suite.md](red-team-suite.md) + `fixtures/`
+- Deterministic pytest via `scripts/test_framework_core_contracts.py` and `scripts/test_retrieve_context.py`
+- **Deferred:** live LLM-executed red-team runner (manual use of fixtures until then)
 
 ## Module implementations
 

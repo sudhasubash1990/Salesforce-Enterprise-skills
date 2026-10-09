@@ -1,0 +1,57 @@
+# Machine-readable SEACF agent execution state graph (P1).
+# Consumed by scripts/test_framework_core_contracts.py.
+
+version: "0.3.0"
+last_updated: "2026-10-09"
+
+states:
+  INTAKE:
+    allowed_next: [CONTEXT_REQUIRED, READY, FAILED_SAFELY]
+  CONTEXT_REQUIRED:
+    allowed_next: [READY, FAILED_SAFELY]
+  READY:
+    allowed_next: [RETRIEVING, ANALYZING, FAILED_SAFELY]
+  RETRIEVING:
+    allowed_next: [ANALYZING, FAILED_SAFELY]
+  ANALYZING:
+    allowed_next: [CLARIFICATION_REQUIRED, PLANNING, FAILED_SAFELY]
+  CLARIFICATION_REQUIRED:
+    allowed_next: [ANALYZING, FAILED_SAFELY]
+  PLANNING:
+    allowed_next: [GENERATING, FAILED_SAFELY]
+  GENERATING:
+    allowed_next: [VALIDATING, FAILED_SAFELY]
+  VALIDATING:
+    allowed_next: [HUMAN_APPROVAL_REQUIRED, COMPLETED, FAILED_SAFELY]
+    notes: COMPLETED only when mandatory validators pass; else FAILED_SAFELY
+  HUMAN_APPROVAL_REQUIRED:
+    allowed_next: [EXECUTING_ACTION, COMPLETED, FAILED_SAFELY]
+  EXECUTING_ACTION:
+    allowed_next: [COMPLETED, FAILED_SAFELY]
+    requires:
+      - risk_tier_assigned
+      - approval_for_t3_plus
+    predecessors_for_entry: [HUMAN_APPROVAL_REQUIRED]
+  COMPLETED:
+    allowed_next: []
+    terminal: true
+    requires_validators_passed: true
+  FAILED_SAFELY:
+    allowed_next: []
+    terminal: true
+
+# Any non-terminal state may transition to FAILED_SAFELY (already listed above).
+required_state_names:
+  - INTAKE
+  - CONTEXT_REQUIRED
+  - READY
+  - RETRIEVING
+  - ANALYZING
+  - CLARIFICATION_REQUIRED
+  - PLANNING
+  - GENERATING
+  - VALIDATING
+  - HUMAN_APPROVAL_REQUIRED
+  - EXECUTING_ACTION
+  - COMPLETED
+  - FAILED_SAFELY

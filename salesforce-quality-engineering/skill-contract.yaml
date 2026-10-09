@@ -1,0 +1,64 @@
+# Thin Standard Skill Contract for QE Module 2.
+# Does NOT replace skill.md, Enterprise Orchestrator, or Cursor discovery stub.
+
+skill:
+  name: salesforce-quality-engineering
+  version: "0.25.0"
+  purpose: >-
+    Route and execute Salesforce quality engineering work (test strategy, design,
+    automation intelligence, defects, production support QE lens, certification)
+    via the Enterprise Orchestrator.
+  triggers:
+    - test strategy / test design
+    - defect intelligence / automation ROI
+    - Sev1 / hypercare / production support (QE)
+    - enterprise orchestrator / CQO advisory
+    - certification / regression suite (QE)
+  non_triggers:
+    - BA story authorship / BRD drafting as primary deliverable
+    - pure discovery workshop facilitation without QE lens
+  required_inputs:
+    - user_request_or_task
+  optional_inputs:
+    - industry_context
+    - coverage_scope
+    - ADO_project_refs
+    - approved_requirements_pack
+  context_required:
+    - "A: Tier-0 framework-core/tier-0-manifest.yaml always_load"
+    - "B: skill.md + enterprise-orchestrator + relevant sprint/skill packs"
+    - "C: project quality artifacts when available"
+    - "D: current user task"
+  authoritative_sources:
+    - framework-core/grounding/source-authority.md
+    - approved requirements and test baselines
+    - official Salesforce product documentation
+  grounding_policy: framework-core/grounding/grounding-policy.md + claim-validation.md; Agentforce specialization where applicable
+  allowed_tools:
+    - enterprise-orchestrator routing
+    - local file write under outputs/
+    - Azure DevOps MCP (when user authorizes)
+    - specialized skill tools per pack
+  max_action_risk: T3
+  human_approval_conditions:
+    - ADO writes (T3)
+    - T4 deployment/org mutation (refuse unless explicitly authorized)
+    - executive advisory recommendations requiring oversight
+  outputs:
+    - QE strategies, designs, scorecards, certification evidence
+    - defects/test cases when authorized
+  assumptions_policy: Label unknowns; MUST NOT invent coverage %, SLA, or certification levels without scored evidence
+  validation_checks:
+    - skill.md Pre-Execution Gate
+    - framework-core/grounding/claim-validation.md
+    - validation/ Sprint 11 packs as applicable
+    - execution-state-model gates before EXECUTING_ACTION
+  failure_conditions:
+    - BA-primary request not handed off
+    - EXECUTING_ACTION without risk tier/approval
+    - mandatory validator failed (FAILED_SAFELY)
+    - invented KPI/certification asserted as verified
+  related_skills:
+    - salesforce-business-analyst
+    - framework-core
+    - QE specialized skills under skills/

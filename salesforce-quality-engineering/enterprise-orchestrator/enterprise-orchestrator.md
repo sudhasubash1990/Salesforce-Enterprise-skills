@@ -8,6 +8,8 @@ tags: [enterprise-orchestrator, coordinator, routing]
 
 ## Purpose
 
+Tool-using capabilities (including Agentforce Testing and ADO/MCP writes) MUST follow [framework-core/tools/tool-governance.md](../../framework-core/tools/tool-governance.md) risk tiers. Reasoning does not authorize mutation. Orchestrator runs follow [framework-core/orchestration/execution-state-model.md](../../framework-core/orchestration/execution-state-model.md): **MUST NOT** enter `EXECUTING_ACTION` without risk tier and approval gates; **MUST NOT** claim `COMPLETED` when a mandatory validator failed.
+
 Act as the **single routing coordinator** for SEACF Module 2 (Salesforce Quality Engineering). Classify intent, select sprint capabilities, compose multi-capability work, and escalate synthesis to the Sprint 10 Advisory Engine when executive recommendations are needed.
 
 ## Business Context

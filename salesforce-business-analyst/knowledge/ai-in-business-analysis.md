@@ -29,6 +29,8 @@ salesforce-cloud: Platform
 
 ## Overview
 
+Cross-module Responsible AI contracts: [framework-core/responsible-ai/principles.md](../../framework-core/responsible-ai/principles.md) and [human-oversight.md](../../framework-core/responsible-ai/human-oversight.md). This article specializes BA usage; it MUST NOT weaken Tier-0 RAI.
+
 Responsible use of AI for requirements analysis, workshops, and documentation on Salesforce programs.
 
 ## Purpose
