@@ -46,6 +46,17 @@ Machine schema: [trace-schema.yaml](trace-schema.yaml).
 | `output_artifacts` | Paths or IDs of delivered artifacts |
 | `status` | Execution-state name: `COMPLETED` or `FAILED_SAFELY` (see [execution-state-model.md](../orchestration/execution-state-model.md)) |
 
+### Optional diagnostic fields (backward compatible)
+
+| Field | Content |
+|-------|---------|
+| `context_bundles` | Context sources/bundles loaded and brief why |
+| `routing_outcome` | Module/skill route or redirect (e.g., ba, qe-redirect) |
+| `unresolved_unknowns` | `U-###` IDs still open |
+| `human_review_triggers` | Risk level / review gates fired |
+
+These fields are for **developer/maintainer diagnostics**. Agents **MUST NOT** flood normal BA/QE business deliverables with internal routing detail unless the user requests diagnostics.
+
 ## Normative rules
 
 1. Agents **MUST** record request identity, selected skills, evidence IDs, major policy decisions, assumptions, tool call outcomes, approval state, validation results, and final artifact IDs when a trace is produced.
@@ -54,6 +65,7 @@ Machine schema: [trace-schema.yaml](trace-schema.yaml).
 4. Default retention **MUST** be in-session only. Persist under `outputs/<project>/` **only** when the user or project policy requests an audit copy.
 5. Trace redaction and retention policies **MUST** align with [../responsible-ai/privacy-and-data-handling.md](../responsible-ai/privacy-and-data-handling.md) and [../security/secrets-and-data-handling.md](../security/secrets-and-data-handling.md).
 6. `status` **MUST** use execution-state names from [../orchestration/execution-state-model.md](../orchestration/execution-state-model.md).
+7. Optional diagnostic fields **MAY** be omitted; required fields **MUST NOT** change meaning for existing consumers.
 
 ## Runtime note
 

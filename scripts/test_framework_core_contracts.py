@@ -178,8 +178,41 @@ def test_trace_schema_required_fields():
         "status",
     }
     assert expected <= required, f"trace-schema missing fields: {sorted(expected - required)}"
+    # Optional diagnostic fields must not be promoted into required_fields
+    optional = set(data.get("optional_fields") or [])
+    for opt in (
+        "context_bundles",
+        "routing_outcome",
+        "unresolved_unknowns",
+        "human_review_triggers",
+    ):
+        assert opt in optional, f"trace-schema missing optional field {opt}"
+        assert opt not in required, f"optional field {opt} must not be required"
     prohibited = data.get("prohibited") or []
     assert any("chain" in str(p).lower() or "reasoning" in str(p).lower() for p in prohibited)
+
+
+def test_handoff_schema_and_fixture():
+    registry = _load_yaml(REGISTRY_PATH)
+    schema_rel = registry["handoff_schema_path"]
+    fixture_rel = registry["handoff_fixture_path"]
+    schema = _load_yaml(REPO / schema_rel)
+    for key in (
+        "required_ba_fields",
+        "required_qe_fields",
+        "constraints",
+    ):
+        assert key in schema, f"handoff schema missing {key}"
+    assert "requirement_id" in (schema.get("required_ba_fields") or [])
+    assert schema.get("constraints", {}).get("assumption_must_not_become_requirement") is True
+
+    handoff_spec = importlib.util.spec_from_file_location(
+        "validate_handoff_pack", REPO / "scripts" / "validate_handoff_pack.py"
+    )
+    handoff_mod = importlib.util.module_from_spec(handoff_spec)
+    handoff_spec.loader.exec_module(handoff_mod)
+    errors = handoff_mod.validate_handoff_pack(REPO / fixture_rel, schema)
+    assert not errors, "HANDOFF-001 fixture failed validation:\n" + "\n".join(errors)
 
 
 def test_ai_reliability_scenarios_cover_suites_and_fixtures():
@@ -197,6 +230,7 @@ def test_ai_reliability_scenarios_cover_suites_and_fixtures():
         "privacy",
         "routing",
         "regression",
+        "cross_module",
     }
     assert expected_suites <= suites, f"missing suites: {sorted(expected_suites - suites)}"
     scenarios = data.get("scenarios") or []
@@ -211,6 +245,8 @@ def test_ai_reliability_scenarios_cover_suites_and_fixtures():
     assert not missing_fixtures, f"Missing reliability fixtures: {missing_fixtures}"
     for suite in expected_suites:
         assert by_suite.get(suite, 0) >= 1, f"suite {suite} has no scenarios"
+    handoff_ids = [sc.get("id") for sc in scenarios if sc.get("id") == "HANDOFF-001"]
+    assert handoff_ids, "HANDOFF-001 scenario missing from ai-reliability-scenarios.yaml"
 
 
 def test_negative_claim_fixture_fails_validation():

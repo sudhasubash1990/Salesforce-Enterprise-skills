@@ -1,0 +1,60 @@
+# SEACF BA → QE handoff pack schema (additive, Framework Core v0.3.0).
+# Validated by scripts/validate_handoff_pack.py and contract pytest.
+
+version: "0.3.0"
+last_updated: "2026-10-09"
+
+required_ba_fields:
+  - requirement_id
+  - requirement_statement
+  - acceptance_criteria
+  - assumptions
+  - evidence_refs
+
+optional_ba_fields:
+  - business_rules
+  - non_functional_requirements
+  - risks
+
+required_qe_fields:
+  - test_scenarios
+  - traceability_refs
+
+optional_qe_fields:
+  - positive_negative_coverage
+  - integration_coverage
+  - data_coverage
+  - automation_candidate
+  - coverage_gaps
+
+acceptance_criteria_item_fields:
+  - id
+  - statement
+
+assumption_item_fields:
+  - id
+  - statement
+  - validation_needed
+
+evidence_ref_item_fields:
+  - id
+  - source_ref
+
+test_scenario_item_fields:
+  - id
+  - title
+  - linked_requirement_ids
+  - linked_ac_ids
+
+traceability_ref_item_fields:
+  - requirement_id
+  - acceptance_criteria_ids
+  - test_scenario_ids
+
+# Normative constraints (documented for validators)
+constraints:
+  assumption_must_not_become_requirement: true
+  preserve_requirement_and_ac_ids: true
+  coverage_gaps_returned_to_ba: true
+
+example_path: framework-core/evaluation/fixtures/handoff-001-ba-story-pack.yaml

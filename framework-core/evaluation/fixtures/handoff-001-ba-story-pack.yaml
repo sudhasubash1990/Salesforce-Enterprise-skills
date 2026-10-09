@@ -1,0 +1,81 @@
+# HANDOFF-001 fixture — anonymized BA story pack for BA→QE handoff regression.
+# Synthetic program only. MUST NOT be treated as project-approved requirements.
+
+version: "0.3.0"
+scenario_id: HANDOFF-001
+
+ba_output:
+  requirement_id: BR-010
+  requirement_statement: >
+    Customer service agents shall log customer complaints as Cases linked to the
+    customer Account so that complaint history is searchable and reportable.
+  acceptance_criteria:
+    - id: AC1
+      statement: Given an Account, when an agent creates a complaint Case, then the Case is linked to that Account.
+    - id: AC2
+      statement: Given missing Account, when the agent saves, then the system blocks save with a clear validation message.
+    - id: AC3
+      statement: Given a user without Case create permission, when they attempt create, then create is denied.
+  business_rules:
+    - id: BR1
+      statement: Complaint Cases use a dedicated record type (name TBD with Architecture).
+  non_functional_requirements:
+    - id: NFR-001
+      statement: Case create for authorized agents completes within interactive UI response norms (exact SLA TBD).
+  risks:
+    - id: RSK-001
+      statement: Record-type naming not approved; may block configuration until Architecture decides.
+  assumptions:
+    - id: A-001
+      statement: Omni-Channel routing will be used for skill-based distribution in a later sprint.
+      rationale: Workshop preference only; not approved scope.
+      validation_needed: true
+  evidence_refs:
+    - id: E-001
+      source_ref: framework-core/grounding/examples/claim-classification-brd-snippet.md
+      claim: Fictional BR-010 Case logging pattern
+
+# Expected QE consumption (pass criteria for validators / human review of agent output)
+qe_expected:
+  must_preserve_ids:
+    - BR-010
+    - AC1
+    - AC2
+    - AC3
+  must_not_promote_to_requirement:
+    - A-001
+  test_scenarios_min: 2
+  coverage_gaps_required: true
+  sample_coverage_gap:
+    id: CG-001
+    type: open-question
+    question: Confirm Case record type name before automation selection.
+    linked_assumption_id: A-001
+
+sample_qe_input:
+  test_scenarios:
+    - id: TS-010-01
+      title: Happy path — create complaint Case linked to Account
+      linked_requirement_ids: [BR-010]
+      linked_ac_ids: [AC1]
+    - id: TS-010-02
+      title: Validation — missing Account blocks save
+      linked_requirement_ids: [BR-010]
+      linked_ac_ids: [AC2]
+    - id: TS-010-03
+      title: Permission — Case create denied without privilege
+      linked_requirement_ids: [BR-010]
+      linked_ac_ids: [AC3]
+  positive_negative_coverage: true
+  integration_coverage: false
+  data_coverage: true
+  automation_candidate: true
+  traceability_refs:
+    - requirement_id: BR-010
+      acceptance_criteria_ids: [AC1, AC2, AC3]
+      test_scenario_ids: [TS-010-01, TS-010-02, TS-010-03]
+  coverage_gaps:
+    - id: CG-001
+      type: open-question
+      question: Confirm Case record type name before automation selection.
+      linked_assumption_id: A-001

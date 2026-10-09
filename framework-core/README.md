@@ -8,7 +8,7 @@ last_updated: 2026-10-09
 
 # SEACF Framework Core
 
-**Status:** v0.3.0 — Tier-0 contracts for routing, context lifecycle, execution state, grounding/claim validation, security, tool governance, Responsible AI, observability traces, and AI reliability evaluation. Canonical deep content stays in `shared/`, `docs/`, and Active module packs (BA, QE). Thin Core files are intentional contracts, not incomplete copies of module engines.
+**Status:** v0.3.0 — Tier-0 contracts for routing, context lifecycle, execution state, grounding/claim validation, security, tool governance, Responsible AI, observability traces, and AI reliability evaluation. Additive P2 gap-closure (same version): BA→QE handoff, project memory, human-review metadata, context-engineering index, evaluation ba/qe/cross-module indexes. Canonical deep content stays in `shared/`, `docs/`, and Active module packs (BA, QE). Thin Core files are intentional contracts, not incomplete copies of module engines.
 
 **Tier-0 manifest:** [tier-0-manifest.yaml](tier-0-manifest.yaml) (single source of truth for `always_load`).
 
@@ -71,9 +71,11 @@ CONTEXT ENGINE --> GROUNDING / SOURCE AUTHORITY --> REQUEST ROUTER
 | [tools/](tools/README.md) | Tool governance, risk tiers, manifests, retry |
 | [responsible-ai/](responsible-ai/README.md) | Cross-module RAI and data governance |
 | [observability/](observability/README.md) | Decision/audit trace contract (no chain-of-thought) |
+| [handoffs/](handoffs/README.md) | Cross-module BA→QE handoff contract + schema |
+| [memory/](memory/README.md) | Structured project memory contract |
 | [shared-knowledge/](shared-knowledge/README.md) | Cross-module Salesforce, industry, consulting, glossary |
-| [governance/](governance/README.md) | Documentation, quality, precedence, skill/prompt contracts, hardening program, versioning |
-| [evaluation/](evaluation/README.md) | Benchmark, scoring, certification, AI reliability / red-team |
+| [governance/](governance/README.md) | Documentation, quality, precedence, skill/prompt contracts, human review, hardening program, versioning |
+| [evaluation/](evaluation/README.md) | Benchmark, scoring, certification, AI reliability / red-team + ba/qe/cross-module indexes |
 | [tier-0-manifest.yaml](tier-0-manifest.yaml) | Machine-readable always_load / on-demand lists |
 
 ## Module integration

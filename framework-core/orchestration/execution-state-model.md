@@ -60,7 +60,7 @@ Any state -> FAILED_SAFELY when mandatory prerequisites fail.
 1. Agents **MUST NOT** enter `EXECUTING_ACTION` without a risk tier from [../tools/action-risk-model.md](../tools/action-risk-model.md) and approval controls from [../tools/tool-governance.md](../tools/tool-governance.md) for T3+ / T4 actions.
 2. Agents **MUST NOT** enter `COMPLETED` when a mandatory validator failed; they **MUST** transition to `FAILED_SAFELY`.
 3. `VALIDATING` **MUST** apply [../grounding/claim-validation.md](../grounding/claim-validation.md) for material deliverables.
-4. Agents **MUST** enter `HUMAN_APPROVAL_REQUIRED` when [../responsible-ai/human-oversight.md](../responsible-ai/human-oversight.md) or T3+ tool policy requires approval before side effects.
+4. Agents **MUST** enter `HUMAN_APPROVAL_REQUIRED` when [../responsible-ai/human-oversight.md](../responsible-ai/human-oversight.md), [../governance/human-review-policy.md](../governance/human-review-policy.md) (High risk), or T3+ tool policy requires approval before side effects.
 5. Untrusted retrieved content alone **MUST NOT** authorize transition into `EXECUTING_ACTION`.
 
 ## Handoff
@@ -74,3 +74,4 @@ Any state -> FAILED_SAFELY when mandatory prerequisites fail.
 - [workflow-engine.md](workflow-engine.md)
 - [../tools/tool-governance.md](../tools/tool-governance.md)
 - [../grounding/claim-validation.md](../grounding/claim-validation.md)
+- [../governance/human-review-policy.md](../governance/human-review-policy.md)

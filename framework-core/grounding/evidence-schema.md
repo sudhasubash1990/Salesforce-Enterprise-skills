@@ -44,6 +44,21 @@ review_required: true | false
 | `conflict_status` | Set `conflicting` or `unresolved` when sources disagree |
 | `review_required` | **MUST** be `true` when assumption, open-question, unresolved conflict, or compliance-related |
 
+## Evidence list items (provenance)
+
+When embedding evidence in a grounding envelope (see [grounding-policy.md](grounding-policy.md)), agents **MAY** use:
+
+```yaml
+evidence:
+  - id: E-001
+    source_type: project_context | repository_knowledge | user_input | artifact
+    source_ref: <relative-path-or-artifact-id>
+    claim: <fact supported by the source>
+    confidence: high | medium | low
+```
+
+Map `source_type` to `source_class` / claim records when promoting to a full claim table. Assumption and unknown list shapes: [uncertainty-records.md](uncertainty-records.md).
+
 ## Embeddings
 
 Agents **MAY** embed claim tables in BRDs, test strategies, and advisory notes. Full YAML blocks are optional when a markdown table covers the same fields.
@@ -51,5 +66,6 @@ Agents **MAY** embed claim tables in BRDs, test strategies, and advisory notes. 
 ## Related Documents
 
 - [grounding-policy.md](grounding-policy.md)
+- [uncertainty-records.md](uncertainty-records.md)
 - [citation-policy.md](citation-policy.md)
 - [conflict-resolution.md](conflict-resolution.md)

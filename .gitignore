@@ -119,3 +119,6 @@ salesforce-quality-engineering/scripts/_local/
 #project context
 .cursor/rules/project-context.mdc
 PROJECT_CONTEXT.md
+
+# Implementation Guidance
+/ImplementationGuidance

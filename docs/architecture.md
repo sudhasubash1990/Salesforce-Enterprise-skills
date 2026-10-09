@@ -26,7 +26,7 @@ Repository architecture for Salesforce Enterprise Skills.
 
 ## Conceptual Layers
 
-SEACF **Tier-0** contracts live in [`framework-core/`](../framework-core/README.md) (see [`tier-0-manifest.yaml`](../framework-core/tier-0-manifest.yaml)): security, Responsible AI, instruction precedence, grounding/claim validation, tool governance, context lifecycle (classes A–H), execution state, and observability traces apply before BA/QE skill depth. Module engines own domain depth; Core owns cross-module contracts.
+SEACF **Tier-0** contracts live in [`framework-core/`](../framework-core/README.md) (see [`tier-0-manifest.yaml`](../framework-core/tier-0-manifest.yaml)): security, Responsible AI, instruction precedence, grounding/claim validation, tool governance, context lifecycle (classes A–H), execution state, and observability traces apply before BA/QE skill depth. Additive cross-module packs include BA→QE handoff, project memory, and human-review policy. Module engines own domain depth; Core owns cross-module contracts. See also [ai-architecture.md](ai-architecture.md) and [ai-safety-and-grounding.md](ai-safety-and-grounding.md).
 
 ```
 ┌─────────────────────────────────────────────────────────────┐

@@ -70,6 +70,8 @@ difficulty: string
 review_cycle: string             # quarterly | semi-annual
 parent_id: string                # Traceability to parent requirement/doc
 reviewers: [string]
+risk_level: low | medium | high  # Human-review risk; see framework-core/governance/human-review-policy.md
+human_review_status: draft | review_required | approved  # MUST NOT set approved from automation alone
 ```
 
 ## Legacy Field Migration

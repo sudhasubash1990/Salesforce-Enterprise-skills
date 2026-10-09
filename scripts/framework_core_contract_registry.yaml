@@ -211,6 +211,46 @@ contracts:
       - "approval"
       - "recommendation"
 
+  - path: framework-core/grounding/uncertainty-records.md
+    min_must_count: 2
+    required_substrings:
+      - "MUST NOT"
+      - "A-001"
+      - "U-001"
+      - "validation_needed"
+
+  - path: framework-core/orchestration/context-engineering-contract.md
+    min_must_count: 2
+    required_substrings:
+      - "MUST"
+      - "Priority"
+      - "User request"
+      - "Retrieved knowledge"
+
+  - path: framework-core/handoffs/ba-qe-handoff.md
+    min_must_count: 3
+    required_substrings:
+      - "MUST"
+      - "MUST NOT"
+      - "requirement_id"
+      - "assumption"
+
+  - path: framework-core/memory/project-memory-contract.md
+    min_must_count: 3
+    required_substrings:
+      - "MUST"
+      - "approved_decisions"
+      - "superseded"
+      - "provenance"
+
+  - path: framework-core/governance/human-review-policy.md
+    min_must_count: 2
+    required_substrings:
+      - "MUST NOT"
+      - "risk_level"
+      - "human_review_status"
+      - "High"
+
 adversarial_scenarios_path: framework-core/security/adversarial-scenarios.yaml
 tool_manifest_schema_path: framework-core/tools/tool-manifest-schema.yaml
 tier0_manifest_path: framework-core/tier-0-manifest.yaml
@@ -219,6 +259,8 @@ trace_schema_path: framework-core/observability/trace-schema.yaml
 ai_reliability_scenarios_path: framework-core/evaluation/ai-reliability-scenarios.yaml
 claim_negative_fixture_path: framework-core/grounding/examples/verified-sla-no-source.yaml
 skill_contract_schema_path: framework-core/governance/skill-contract-schema.yaml
+handoff_schema_path: framework-core/handoffs/ba-qe-handoff-schema.yaml
+handoff_fixture_path: framework-core/evaluation/fixtures/handoff-001-ba-story-pack.yaml
 module_skill_contracts:
   - salesforce-business-analyst/skill-contract.yaml
   - salesforce-quality-engineering/skill-contract.yaml

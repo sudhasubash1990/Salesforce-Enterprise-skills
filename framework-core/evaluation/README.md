@@ -19,7 +19,10 @@ Cross-module benchmarking, scoring, certification, and release-readiness contrac
 | [certification-engine.md](certification-engine.md) | Bronze→Enterprise Certified methodology |
 | [release-readiness.md](release-readiness.md) | Framework + Salesforce seasonal readiness |
 | [red-team-suite.md](red-team-suite.md) | AI reliability suites and pass criteria |
-| [ai-reliability-scenarios.yaml](ai-reliability-scenarios.yaml) | Scenario catalog (GRD/CTX/HALL/… + ADV reuse) |
+| [ai-reliability-scenarios.yaml](ai-reliability-scenarios.yaml) | Scenario catalog (GRD/CTX/HALL/… + ADV + HANDOFF) |
+| [ba/](ba/README.md) | BA evaluation index (pointers) |
+| [qe/](qe/README.md) | QE evaluation index (pointers) |
+| [cross-module/](cross-module/README.md) | BA→QE handoff regression |
 
 ## AI safety / adversarial
 

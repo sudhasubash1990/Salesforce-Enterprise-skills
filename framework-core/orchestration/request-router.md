@@ -25,7 +25,7 @@ SEACF modules must share one orchestration, governance, and evaluation language 
 ## Evaluation Method
 
 1. Apply [../governance/instruction-precedence.md](../governance/instruction-precedence.md) and Priority 1 security/RAI before routing.  
-2. Begin execution at `INTAKE` per [execution-state-model.md](execution-state-model.md); assemble context per [context-policy.md](context-policy.md) (classes A–H) before the module gate — do not dump the repository.  
+2. Begin execution at `INTAKE` per [execution-state-model.md](execution-state-model.md); assemble context per [context-policy.md](context-policy.md) (classes A–H) and the layer map in [context-engineering-contract.md](context-engineering-contract.md) before the module gate — do not dump the repository.  
 3. Detect **discipline** (BA / QE / SA / DEV / DO / PS).  
 4. Detect **capability** within module (e.g. BRD vs user story; requirement analysis vs advisory).  
 5. Emit Route line: `Module · Primary capability · Support · Advisory/Validation`.  

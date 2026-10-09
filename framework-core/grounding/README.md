@@ -1,6 +1,6 @@
 ---
 title: Grounding and Evidence
-version: 0.2.0
+version: 0.3.0
 tags: [framework-core, grounding]
 status: draft
 last_updated: 2026-10-09
@@ -14,17 +14,25 @@ Cross-module contracts so material outputs distinguish verified evidence from as
 
 ## Scope
 
-**In:** Source authority, evidence schema, citation, conflict resolution, retrieval quality.  
+**In:** Source authority, evidence schema, uncertainty records, citation, conflict resolution, retrieval quality.  
 **Out:** Module-specific claim checklists (BA anti-hallucination, QE Agentforce grounding assessment).
+
+## Spec path aliases
+
+| Spec name | Canonical path |
+|-----------|----------------|
+| `GROUNDING-CONTRACT.md` | [grounding-policy.md](grounding-policy.md) |
+| `EVIDENCE-SCHEMA.md` | [evidence-schema.md](evidence-schema.md) |
 
 ## Documents
 
 | Document | Role | Load |
 |----------|------|------|
-| [grounding-policy.md](grounding-policy.md) | Normative MUST/MUST NOT | Tier-0 always |
+| [grounding-policy.md](grounding-policy.md) | Normative MUST/MUST NOT + grounding envelope | Tier-0 always |
 | [claim-validation.md](claim-validation.md) | Pre-delivery claim checklist; evidence vs model confidence | On demand |
 | [source-authority.md](source-authority.md) | `source_class` taxonomy | On demand |
-| [evidence-schema.md](evidence-schema.md) | Claim record fields | On demand |
+| [evidence-schema.md](evidence-schema.md) | Claim record fields + evidence provenance list | On demand |
+| [uncertainty-records.md](uncertainty-records.md) | Assumption / unknown list shapes | On demand |
 | [citation-policy.md](citation-policy.md) | When and how to cite | On demand |
 | [conflict-resolution.md](conflict-resolution.md) | Conflict records + escalation | On demand |
 | [retrieval-quality-checklist.md](retrieval-quality-checklist.md) | Pre-evidence retrieval checks | On demand |

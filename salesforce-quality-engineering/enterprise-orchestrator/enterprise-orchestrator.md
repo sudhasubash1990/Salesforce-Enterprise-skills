@@ -54,10 +54,11 @@ After Sprints 1–10, the module contains many specialist engines. Without an or
 3. Resolve primary capability via capability-routing-table.md
 4. Resolve supporting capabilities (composition-patterns.md)
 5. Enforce Pre-Execution Gate from skill.md for selected path(s)
-6. Execute primary engine; call support engines for evidence only
-7. If executive / portfolio / maturity / release decision / audit / roadmap
+6. If BA artifacts are inputs → apply [ba-qe-handoff.md](../../framework-core/handoffs/ba-qe-handoff.md) (preserve IDs; do not promote assumptions)
+7. Execute primary engine; call support engines for evidence only
+8. If executive / portfolio / maturity / release decision / audit / roadmap
       → Sprint 10 Enterprise Quality Advisory Engine
-8. Compose unified response (facts vs assumptions; no invented scores)
+9. Compose unified response (facts vs assumptions; no invented scores)
 ```
 
 ### Architecture

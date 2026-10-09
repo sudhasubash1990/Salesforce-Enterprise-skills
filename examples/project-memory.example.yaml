@@ -1,0 +1,69 @@
+# Synthetic project memory example — anonymized fictional program.
+# MUST NOT be treated as real client data. Safe for public repository.
+
+version: "0.3.0"
+project_memory:
+  project_code: DEMO-SVC-001
+  status: active
+  approved_decisions:
+    - id: DEC-001
+      statement: Complaint logging uses standard Case object linked to Account.
+      status: approved
+      provenance: [E-DEMO-001]
+      supersedes: []
+      superseded_by: null
+      last_updated: "2026-10-01"
+  requirements:
+    - id: BR-010
+      statement: Agents shall log customer complaints as Cases linked to Account.
+      status: approved
+      provenance: [E-DEMO-001]
+      last_updated: "2026-10-01"
+  assumptions:
+    - id: A-001
+      statement: Omni-Channel will be used for skill-based routing in a later sprint.
+      status: open
+      provenance: []
+      last_updated: "2026-10-02"
+  open_questions:
+    - id: U-001
+      statement: Is chat channel in Phase 1 or deferred to Phase 2?
+      status: open
+      provenance: []
+      last_updated: "2026-10-02"
+  solution_decisions:
+    - id: SOL-001
+      statement: Prefer Config (record types + page layouts) before custom Apex for complaint Case.
+      status: approved
+      provenance: [E-DEMO-002]
+      last_updated: "2026-10-03"
+  test_decisions:
+    - id: TST-001
+      statement: UAT scenarios will cover AC1–AC3 for BR-010 before automation candidate selection.
+      status: proposed
+      provenance: []
+      last_updated: "2026-10-04"
+  rejected_options:
+    - id: OPT-001
+      statement: Custom Complaint__c object instead of Case.
+      status: rejected
+      provenance: [E-DEMO-002]
+      last_updated: "2026-10-03"
+  superseded_items:
+    - id: DEC-000
+      statement: Draft decision to defer all Case logging to email-only process.
+      status: superseded
+      provenance: []
+      superseded_by: DEC-001
+      last_updated: "2026-09-20"
+  provenance:
+    - id: E-DEMO-001
+      source_type: artifact
+      source_ref: framework-core/grounding/examples/claim-classification-brd-snippet.md
+      claim: Fictional BR-010 Case logging pattern
+      confidence: medium
+    - id: E-DEMO-002
+      source_type: repository_knowledge
+      source_ref: shared/salesforce-capability-map.md
+      claim: Prefer standard Case for service complaint patterns
+      confidence: medium

@@ -85,6 +85,10 @@ Lessons Learned
 | Interview | Brain, knowledge, scenarios | Candidate assessment | scorecard / rubric |
 | Governance | — | All categories | validate_metadata.py |
 
+## BA → QE handoff (Framework Core)
+
+For machine-stable BA→QE packs (requirement/AC IDs, assumptions, evidence refs, coverage gaps), use the Cross-module contract [framework-core/handoffs/ba-qe-handoff.md](../framework-core/handoffs/ba-qe-handoff.md). This narrative chain remains the program-level model; the handoff schema is the executable interchange.
+
 ## Forward Traceability
 
 Every business requirement should trace forward to:

@@ -25,7 +25,9 @@ Until the standalone PS module exists, production-support requests route through
 
 ## Framework Core maturity
 
-Core **v0.3.0** adds P1 contracts (context lifecycle classes A–H, claim validation, execution state model, observability traces, AI reliability/red-team suite) on top of P0 (grounding, instruction precedence, security, tools, Responsible AI). Loading tiers, router contracts, and pointers are enforced; deep engines remain in Active modules (`shared/`, BA, QE). Deepen Core documents as SA/DEV/DO/PS adopt them — do not treat thin Core files as full replacements for module engines.
+Core **v0.3.0** includes P0 (grounding, instruction precedence, security, tools, Responsible AI), P1 (context lifecycle A–H, claim validation, execution state, observability traces, AI reliability/red-team), and **additive P2 gap-closure** (context-engineering index, BA→QE handoff, project memory, human-review policy, evaluation ba/qe/cross-module indexes) without a version bump. Loading tiers, router contracts, and pointers are enforced; deep engines remain in Active modules (`shared/`, BA, QE). Deepen Core documents as SA/DEV/DO/PS adopt them — do not treat thin Core files as full replacements for module engines.
+
+Cross-module handoff: [handoffs/ba-qe-handoff.md](handoffs/ba-qe-handoff.md). Structured memory: [memory/project-memory-contract.md](memory/project-memory-contract.md).
 
 New modules **MUST** publish a [governance/skill-contract.md](governance/skill-contract.md)-conformant `skill-contract.yaml`. Active BA/QE thin contracts: [`../salesforce-business-analyst/skill-contract.yaml`](../salesforce-business-analyst/skill-contract.yaml), [`../salesforce-quality-engineering/skill-contract.yaml`](../salesforce-quality-engineering/skill-contract.yaml).
 

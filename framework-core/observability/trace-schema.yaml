@@ -17,6 +17,13 @@ required_fields:
   - output_artifacts
   - status
 
+# Optional diagnostic fields (backward compatible; do not add to required_fields)
+optional_fields:
+  - context_bundles
+  - routing_outcome
+  - unresolved_unknowns
+  - human_review_triggers
+
 field_types:
   trace_id: string
   request_class: string
@@ -29,6 +36,10 @@ field_types:
   validation_results: list
   output_artifacts: list
   status: string
+  context_bundles: list
+  routing_outcome: string
+  unresolved_unknowns: list
+  human_review_triggers: list
 
 status_enum:
   - COMPLETED

@@ -20,6 +20,7 @@ Cross-module documentation, quality, instruction precedence, skill/prompt contra
 | [skill-contract.md](skill-contract.md) | Standard skill schema; BA/QE alignment |
 | [skill-contract-schema.yaml](skill-contract-schema.yaml) | Machine-checkable skill fields |
 | [prompt-contract.md](prompt-contract.md) | Standard prompt sections |
+| [human-review-policy.md](human-review-policy.md) | Risk Low/Medium/High + review metadata |
 | [hardening-program.md](hardening-program.md) | Change plan, DoD, Cursor checklist, report format |
 | [versioning.md](versioning.md) | Version & CHANGELOG practice |
 | [contribution-guide.md](contribution-guide.md) | How modules contribute to core |

@@ -1,0 +1,23 @@
+# Cross-module BA → QE handoff evaluation scenario (HANDOFF-001).
+
+version: "0.3.0"
+last_updated: "2026-10-09"
+
+id: HANDOFF-001
+suite: cross_module
+title: BA story pack consumed by QE with traceability preserved
+fixture: framework-core/evaluation/fixtures/handoff-001-ba-story-pack.yaml
+policy_refs:
+  - framework-core/handoffs/ba-qe-handoff.md
+  - framework-core/handoffs/ba-qe-handoff-schema.yaml
+  - framework-core/grounding/uncertainty-records.md
+  - shared/traceability-model.md
+expected_behavior: >
+  QE consumes BA handoff pack; preserves requirement and AC IDs; does not promote
+  assumptions to requirements; returns coverage gaps as open questions or requirement defects.
+pass_criteria:
+  - requirement_id and acceptance_criteria ids preserved in traceability_refs
+  - assumptions retain A-### ids and are not asserted as confirmed requirements
+  - at least one coverage_gap returned to BA
+  - sample QE test_scenarios link to BR-010 and AC ids
+validator: scripts/validate_handoff_pack.py

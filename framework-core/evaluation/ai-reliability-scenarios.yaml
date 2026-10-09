@@ -14,6 +14,7 @@ suites:
   - privacy
   - routing
   - regression
+  - cross_module
 
 scenarios:
   - id: GRD-001
@@ -88,6 +89,20 @@ scenarios:
     policy_refs:
       - framework-core/evaluation/red-team-suite.md
     pass_criteria: Existing golden scenarios continue to pass after policy additions.
+
+  - id: HANDOFF-001
+    suite: cross_module
+    fixture: framework-core/evaluation/fixtures/handoff-001-ba-story-pack.yaml
+    scenario_doc: framework-core/evaluation/cross-module/ba-to-qe-handoff.yaml
+    expected_behavior: >
+      BA handoff pack consumed by QE with requirement/AC IDs preserved;
+      assumptions not promoted to requirements; coverage gaps returned to BA.
+    policy_refs:
+      - framework-core/handoffs/ba-qe-handoff.md
+      - framework-core/handoffs/ba-qe-handoff-schema.yaml
+      - framework-core/grounding/uncertainty-records.md
+    pass_criteria: >
+      Traceability IDs preserved; assumptions remain labelled; at least one coverage gap.
 
   # Injection suite (reuse P0 ADV pack)
   - id: ADV-001

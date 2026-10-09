@@ -62,6 +62,18 @@ recommended_on_demand:
 
   - framework-core/grounding/claim-validation.md
 
+  - framework-core/grounding/uncertainty-records.md
+
+  - framework-core/orchestration/context-engineering-contract.md
+
+  - framework-core/handoffs/ba-qe-handoff.md
+
+  - framework-core/handoffs/ba-qe-handoff-schema.yaml
+
+  - framework-core/memory/project-memory-contract.md
+
+  - framework-core/governance/human-review-policy.md
+
   - framework-core/security/README.md
 
   - framework-core/security/secrets-and-data-handling.md

@@ -116,3 +116,7 @@ python scripts/validate_repository.py
 2. Optionally add skill-contract YAML for each QE specialized skill under `skills/`.
 3. Hook LLM red-team manual runs into evaluation scorecards.
 4. Reduce `validate_metadata.py` noise for light-schema / examples trees.
+
+## Appendix — P2 additive gap-closure (same Core v0.3.0)
+
+See [seacf-p2-handoff-memory-report.md](seacf-p2-handoff-memory-report.md): grounding envelope, uncertainty records, context-engineering index, BA→QE handoff + HANDOFF-001, project memory, human-review policy, optional trace diagnostics, docs/ai-architecture + ai-safety.
